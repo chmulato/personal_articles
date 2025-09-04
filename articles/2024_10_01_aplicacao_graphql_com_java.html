@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre aplicação graphql com java">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, Spring, APIs, DevOps, IA">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2024_10_01_aplicacao_graphql_com_java.html">
+    <meta property="og:title" content="Aplicação Graphql Com Java">
+    <meta property="og:description" content="Artigo técnico sobre aplicação graphql com java">
+    <meta property="og:image" content="https://chmulato.dev/img/2024_10_01_aplicacao_graphql_com_java_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2024_10_01_aplicacao_graphql_com_java.html">
+    <meta property="twitter:title" content="Aplicação Graphql Com Java">
+    <meta property="twitter:description" content="Artigo técnico sobre aplicação graphql com java">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2024_10_01_aplicacao_graphql_com_java_featured.jpg">
+    
+    <title>Aplicação Graphql Com Java | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="../assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Java & Spring</span>
+                    <time class="article-date" datetime="01/10/2024">01/10/2024</time>
+                </div>
+                
+                <h1 class="article-title">Aplicação Graphql Com Java</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">APIs</span> <span class="tag">DevOps</span> <span class="tag">IA</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                <h1 id="aplicacao-graphql-com-java"><a class="toclink" href="#aplicacao-graphql-com-java">Aplicação Graphql Com Java</a></h1>
+<p><img alt="Aplicação GraphQL com Java" src="img/image_not_found.png" /></p>
+<p>Aplicação GraphQL com Java</p>
+<p><strong>Aplicação de GraphQL com Java</strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="img/image_not_found.png" /></a></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/?lipi=urn%3Ali%3Apage%3Ad_flagship3_pulse_read%3Bau%2B4ptncQ7WWyVPxchNtJA%3D%3D">Christian Mulato</a></strong></p>
+<p>Desenvolvedor Java Sênior na Develcode</p>
+<p>1 de outubro de 2024</p>
+<p><strong>Introdução</strong></p>
+<p>Nos últimos anos, a maneira como desenvolvemos e consumimos APIs tem evoluído significativamente. Uma das inovações mais notáveis nesse campo é o <em>GraphQL * [vide rodapé]</em>, uma linguagem de consulta para APIs desenvolvida pelo Facebook (atual Meta). O <em>GraphQL</em> permite que os clientes solicitem exatamente os dados de que precisam, sem excesso ou falta de informações, o que é especialmente útil em aplicações Java, onde a eficiência e a precisão são cruciais.</p>
+<p>Este artigo explora a implementação de <em>GraphQL</em> com Java, destacando os passos necessários para configurar um servidor <em>GraphQL</em>, definir esquemas, resolver consultas e integrar com bancos de dados. Além disso, discutiremos os benefícios de migrar de APIs baseadas em JSON para GraphQL, incluindo consultas mais precisas, redução de <em>overfetching</em> e <em>underfetching</em>, desempenho melhorado, e uma manutenção mais simplificada.</p>
+<p>Resumidamente:</p>
+<ul>
+<li><strong><em>GraphQL</em></strong> é uma linguagem de consulta para APIs desenvolvida pelo <em>Facebook</em> (atual Meta) que permite aos clientes solicitar exatamente os dados de que precisam, sem excesso ou falta de informações. Isso é especialmente útil em aplicações Java, onde a eficiência e a precisão são cruciais.</li>
+</ul>
+<p><strong>Implementação com Java</strong></p>
+<p>Para implementar <em>GraphQL</em> em Java, você pode usar bibliotecas como <em>GraphQL Java</em>.</p>
+<p>Aqui estão os passos básicos:</p>
+<p><strong>Configuração do Servidor:</strong> Crie um servidor <em>GraphQL</em> usando <em>frameworks</em> como <em>Spring Boot.</em></p>
+<p>__Definição do <em>Schema</em>: __Defina o <em>esquema (schema)</em> <em>GraphQL</em>, que descreve os tipos de dados e as operações disponíveis.</p>
+<p><strong>Resolvendo Consultas:</strong> Implemente <em>resolvers</em> que processam as consultas e retornam os dados solicitados.</p>
+<p><strong>Integração com Banco de Dados:</strong> Conecte seu servidor <em>GraphQL</em> a um banco de dados para buscar e manipular dados conforme necessário.</p>
+<p>![Texto</p>
+<p>Descrição gerada automaticamente](img/image_not_found.png)</p>
+<p>Exemplo de código Java para utilização GraphQL</p>
+<p><strong>Por que Migrar do JSON para GraphQL?</strong></p>
+<p>A migração de APIs baseadas em <em>JSON</em> para <em>GraphQL</em> oferece várias vantagens significativas que podem melhorar a eficiência e a flexibilidade das aplicações.</p>
+<p>Aqui estão alguns dos principais motivos para considerar essa mudança:</p>
+<p><strong>Consultas Precisas e Flexíveis:</strong> Diferente das <em>APIs REST</em> tradicionais que retornam dados em um formato fixo, <em>GraphQL</em> permite que os clientes especifiquem exatamente quais dados precisam. Isso elimina a necessidade de múltiplas chamadas à API para obter todas as informações necessárias, tornando as consultas mais eficientes.</p>
+<p><strong>Redução de <em>Overfetching</em></strong> e <strong><em>Underfetching</em></strong><em> *[vide rodapé]</em>: Com <em>GraphQL</em>, evita-se o problema de <em>overfetching</em> (receber dados demais) e <em>underfetching</em> (receber dados de menos), comuns em <em>APIs REST</em>. Isso significa que os clientes recebem exatamente os dados que solicitaram, sem excesso ou falta de informações.</p>
+<p>__Desempenho Melhorado: __Ao retornar apenas os dados solicitados, <em>GraphQL</em> pode melhorar o desempenho das aplicações, reduzindo a quantidade de dados transferidos pela rede. Isso é especialmente benéfico para aplicações móveis ou com largura de banda limitada.</p>
+<p>__Evolução e Manutenção Simplificadas: __Com <em>GraphQL</em>, é mais fácil evoluir e manter a API. Novos campos e tipos podem ser adicionados ao esquema sem impactar os clientes existentes, desde que as consultas antigas continuem válidas. Isso facilita a introdução de novas funcionalidades sem quebrar a compatibilidade com versões anteriores.</p>
+<p><strong>Ferramentas de Desenvolvimento Avançadas:</strong> <em>GraphQL</em> oferece um ecossistema robusto de ferramentas de desenvolvimento, como o <em>GraphiQL *[vide rodapé],</em> que permite explorar e testar a API de forma interativa. Isso acelera o desenvolvimento e a depuração, melhorando a produtividade dos desenvolvedores.</p>
+<p><strong>Conclusão</strong></p>
+<p>A adoção de <em>GraphQL</em> em aplicações Java representa um avanço significativo na forma como desenvolvemos e consumimos APIs. Com sua capacidade de permitir consultas precisas e flexíveis, <em>GraphQL</em> resolve problemas comuns das APIs REST, como o <em>overfetching</em> e <em>underfetching</em>, proporcionando uma experiência mais eficiente tanto para desenvolvedores quanto para usuários finais.</p>
+<p>Além disso, a migração para <em>GraphQL</em> pode melhorar o desempenho das aplicações ao reduzir a quantidade de dados transferidos e simplificar a manutenção e evolução das APIs. As ferramentas avançadas de desenvolvimento disponíveis no ecossistema <em>GraphQL</em>, como o <em>GraphiQL</em>, também contribuem para um processo de desenvolvimento mais ágil e produtivo.</p>
+<p>Em resumo, a implementação de <em>GraphQL</em> com Java não só otimiza a comunicação entre cliente e servidor, mas também prepara as aplicações para um futuro mais dinâmico e adaptável às necessidades dos usuários. Ao considerar esses benefícios, fica claro que a migração de APIs baseadas em <em>JSON</em> para <em>GraphQL</em> é uma escolha estratégica para desenvolvedores que buscam eficiência, flexibilidade e inovação.</p>
+<p>Notas:</p>
+<ul>
+<li><strong>GraphQL</strong> é uma linguagem de consulta para APIs desenvolvida pelo Facebook (atual Meta) que permite aos clientes solicitarem exatamente os dados de que precisam, sem excesso ou falta de informações. Diferente das APIs REST tradicionais, onde os <em>endpoints</em> retornam dados em um formato fixo, <em>GraphQL</em> oferece uma flexibilidade maior ao permitir que os clientes definam a estrutura da resposta. Isso resulta em consultas mais eficientes, reduzindo a quantidade de dados transferidos e melhorando o desempenho das aplicações.</li>
+<li><strong><em>Overfetching e underfetching</em></strong> são problemas comuns em APIs REST. <em>Overfetching</em> ocorre quando uma API retorna mais dados do que o necessário para uma determinada solicitação, resultando em desperdício de largura de banda e processamento. <em>Underfetching</em>, por outro lado, acontece quando a API não fornece todos os dados necessários em uma única solicitação, obrigando o cliente a fazer múltiplas chamadas à API para obter todas as informações desejadas. Ambos os problemas podem ser mitigados com o uso de GraphQL, que permite consultas mais precisas e eficientes.</li>
+<li><strong><em>JSON (JavaScript Object Notation)</em></strong> é um formato leve de intercâmbio de dados que é fácil para humanos lerem e escreverem, e fácil para máquinas interpretarem e gerarem. Em APIs REST (<em>Representational State Transfer</em>), JSON é amplamente utilizado para transmitir dados entre o cliente e o servidor devido à sua simplicidade e eficiência. As APIs REST utilizam métodos HTTP padrão (como <em>GET, POST, PUT e DELETE</em>) para realizar operações <em>CRUD (Create, Read, Update, Delete)</em> e retornam dados no formato JSON, permitindo uma comunicação clara e estruturada entre diferentes sistemas.</li>
+<li><strong><em>GraphiQL</em></strong> é uma ferramenta de desenvolvimento interativa e baseada na web para trabalhar com <em>APIs GraphQL</em>. Ela permite que os desenvolvedores explorem a estrutura de uma <em>API GraphQL</em>, façam consultas, mutações e assinaturas em tempo real, e visualizem os resultados de maneira intuitiva. Como uma IDE (<em>Integrated Development Environment</em>) específica para <em>GraphQL</em>, <em>GraphiQL</em> facilita a criação e depuração de consultas, tornando o processo de desenvolvimento mais eficiente e produtivo</li>
+</ul>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

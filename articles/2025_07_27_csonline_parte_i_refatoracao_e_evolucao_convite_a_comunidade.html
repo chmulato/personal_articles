@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre csonline - parte i - refatoração e evolução - convite à comunidade">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, Spring, Docker, APIs, Testes, Maven">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2025_07_27_csonline_parte_i_refatoracao_e_evolucao_convite_a_comunidade.html">
+    <meta property="og:title" content="Csonline - Parte I - Refatoração E Evolução - Convite À Comunidade">
+    <meta property="og:description" content="Artigo técnico sobre csonline - parte i - refatoração e evolução - convite à comunidade">
+    <meta property="og:image" content="https://chmulato.dev/img/2025_07_27_csonline_parte_i_refatoracao_e_evolucao_convite_a_comunidade_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2025_07_27_csonline_parte_i_refatoracao_e_evolucao_convite_a_comunidade.html">
+    <meta property="twitter:title" content="Csonline - Parte I - Refatoração E Evolução - Convite À Comunidade">
+    <meta property="twitter:description" content="Artigo técnico sobre csonline - parte i - refatoração e evolução - convite à comunidade">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2025_07_27_csonline_parte_i_refatoracao_e_evolucao_convite_a_comunidade_featured.jpg">
+    
+    <title>Csonline - Parte I - Refatoração E Evolução - Convite À Comunidade | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="../assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Java & Spring</span>
+                    <time class="article-date" datetime="27/07/2025">27/07/2025</time>
+                </div>
+                
+                <h1 class="article-title">Csonline - Parte I - Refatoração E Evolução - Convite À Comunidade</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Docker</span> <span class="tag">APIs</span> <span class="tag">Testes</span> <span class="tag">Maven</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                <h1 id="csonline-parte-i-refatoracao-e-evolucao-convite-a-comunidade"><a class="toclink" href="#csonline-parte-i-refatoracao-e-evolucao-convite-a-comunidade">Csonline - Parte I - Refatoração E Evolução - Convite À Comunidade</a></h1>
+<p><img alt="Participe do desafio" src="img/image_not_found.png" /></p>
+<p>Participe do desafio</p>
+<p><strong>Refatoração e Evolução do CSOnline: Convite à Comunidade</strong></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato, #OPEN_TO_WORK" src="img/image_not_found.png" /></a></strong></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato </a></strong></p>
+<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
+<p>27 de julho de 2025</p>
+<p><strong>Um pouco de história</strong></p>
+<p>O __CSOnline __nasceu como uma aplicação legado baseada em JSF rodando em Tomcat, com consultas SQL e uma fábrica de conexões manual (JDBC). Com o tempo, percebemos a necessidade de modernizar a arquitetura para garantir escalabilidade, manutenção e integração com novas tecnologias.</p>
+<p><strong>O que foi feito hoje</strong></p>
+<p>Avançamos significativamente na migração, levando toda a camada de persistência para JPA/EclipseLink, corrigindo queries JPQL, ajustando o tratamento de exceções e garantindo a integridade referencial entre entidades. Também aprimoramos os testes unitários com JUnit 5 e integramos o Log4j2 para uma melhor rastreabilidade.</p>
+<p>Além disso, resolvemos desafios envolvendo mapeamentos de cascata, removendo entidades filhas corretamente e ajustando dependências Maven para garantir builds limpos e confiáveis.</p>
+<p>O __backend __está sendo migrado para REST com Jakarta, tornando a aplicação mais flexível e pronta para integrações modernas. O front-end será aberto para colaboração de entusiastas, permitindo que quem gosta de UI/UX proponha novas interfaces e experiências.</p>
+<p><strong>Convite à colaboração</strong></p>
+<p>Quer contribuir? Faça um fork da branch service_restfull, proponha melhorias, corrija bugs ou sugira novas funcionalidades. Se você é entusiasta de Java, arquitetura de sistemas ou front-end, seu talento é bem-vindo!</p>
+<p>O código está disponível no repositório principal: <a href="https://github.com/chmulato/csonline"><strong>https://github.com/chmulato/csonline</strong></a></p>
+<p>Os endpoints REST para integração estão disponíveis na branch <strong>main</strong>.</p>
+<p>Vamos juntos construir uma solução robusta e inovadora para gestão de entregas. Comente, compartilhe e contribua!</p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

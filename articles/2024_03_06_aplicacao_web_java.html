@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre aplicação web java">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, Spring, Docker, APIs, Testes, Arquitetura">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2024_03_06_aplicacao_web_java.html">
+    <meta property="og:title" content="Aplicação Web Java">
+    <meta property="og:description" content="Artigo técnico sobre aplicação web java">
+    <meta property="og:image" content="https://chmulato.dev/img/2024_03_06_aplicacao_web_java_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2024_03_06_aplicacao_web_java.html">
+    <meta property="twitter:title" content="Aplicação Web Java">
+    <meta property="twitter:description" content="Artigo técnico sobre aplicação web java">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2024_03_06_aplicacao_web_java_featured.jpg">
+    
+    <title>Aplicação Web Java | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="../assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Java & Spring</span>
+                    <time class="article-date" datetime="06/03/2024">06/03/2024</time>
+                </div>
+                
+                <h1 class="article-title">Aplicação Web Java</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Docker</span> <span class="tag">APIs</span> <span class="tag">Testes</span> <span class="tag">Arquitetura</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                <h1 id="aplicacao-web-java"><a class="toclink" href="#aplicacao-web-java">Aplicação Web Java</a></h1>
+<p><em>Publicado em 06/03/2024 por <a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></em></p>
+<h2 id="resumo-executivo"><a class="toclink" href="#resumo-executivo">Resumo Executivo</a></h2>
+<p>author: "Christian Mulato"</p>
+<p><strong>Categoria:</strong> Java &amp; Spring<br />
+<strong>Nível:</strong> Intermediário/Avançado<br />
+<strong>Tags:</strong> Java, Spring, Docker, APIs, Testes, Arquitetura</p>
+<h1 id="aplicacao-web-java_1"><a class="toclink" href="#aplicacao-web-java_1">Aplicação Web Java</a></h1>
+<p><em>Publicado em 06/03/2024 por <a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></em></p>
+<h2 id="resumo-executivo_1"><a class="toclink" href="#resumo-executivo_1">Resumo Executivo</a></h2>
+<p>Aplicação Web Java</p>
+<p><strong>Categoria:</strong> Java &amp; Spring<br />
+<strong>Nível:</strong> Intermediário/Avançado<br />
+<strong>Tags:</strong> Java, Spring, APIs, DevOps, IA</p>
+<h1 id="aplicacao-web-java_2"><a class="toclink" href="#aplicacao-web-java_2">Aplicação Web Java</a></h1>
+<p><img alt="Aplicação Web Java" src="img/image_not_found.png" /></p>
+<p>Aplicação Web Java</p>
+<p><strong>Aplicação Web Java</strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="img/image_not_found.png" /></a></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p>Desenvolvedor Java Sênior na Develcode</p>
+<p>6 de março de 2024</p>
+<p>O <strong>JavaServer Faces</strong> (<strong>JSF</strong>), embora tenha sido uma escolha popular para o desenvolvimento web em Java, enfrentou alguns desafios que contribuíram para a perda de força em comparação com outras tecnologias. Aqui estão algumas razões:</p>
+<p><strong>1. Complexidade e Curva de Aprendizado:</strong></p>
+<p>- O JSF é um framework robusto, mas sua complexidade pode ser intimidante para desenvolvedores iniciantes.</p>
+<p>- A curva de aprendizado para entender os conceitos do JSF, como ciclo de vida, componentes e gerenciamento de estado, pode ser íngreme.</p>
+<p><strong>2. Concorrência de Outros Frameworks:</strong></p>
+<p>- Outros frameworks, como Spring MVC, Spring Boot e tecnologias baseadas em JavaScript (como Angular, React e Vue.js), ganharam popularidade.</p>
+<p>- Esses frameworks oferecem abordagens diferentes e muitas vezes mais leves para o desenvolvimento web.</p>
+<p><strong>3. Limitações e Desafios de Desempenho:</strong></p>
+<p>- O JSF pode ser mais pesado em termos de recursos e desempenho em comparação com outras alternativas.</p>
+<p>- Alguns desenvolvedores relataram problemas de desempenho, especialmente em aplicações de grande escala.</p>
+<p><strong>4. Mudanças no Ecossistema Java:</strong></p>
+<p>- O ecossistema Java evoluiu, e novas tecnologias e padrões surgiram.</p>
+<p>- Muitos desenvolvedores migraram para abordagens mais modernas e flexíveis.</p>
+<p><strong>5. Preferência por APIs RESTful e Single-Page Applications (SPAs):</strong></p>
+<p>- APIs RESTful e SPAs se tornaram populares para construir interfaces de usuário dinâmicas e interativas.</p>
+<p>- Essas abordagens não dependem tanto de componentes de servidor como o JSF.</p>
+<p>No entanto, é importante observar que o JSF ainda é usado em muitos projetos legados e pode ser uma escolha válida para determinados cenários. A decisão de usar o JSF ou outra tecnologia deve ser baseada nos requisitos específicos do projeto e nas preferências da equipe de desenvolvimento.</p>
+<h2 id="conclusao"><a class="toclink" href="#conclusao">Conclusão</a></h2>
+<p>Este artigo apresentou conceitos importantes sobre aplicação web java. A implementação demonstrada oferece uma base sólida para desenvolvimento e pode ser expandida conforme as necessidades específicas do projeto.</p>
+<h3 id="principais-pontos-abordados"><a class="toclink" href="#principais-pontos-abordados">Principais Pontos Abordados:</a></h3>
+<ul>
+<li>Conceitos fundamentais e arquitetura</li>
+<li>Implementação prática com exemplos de código</li>
+<li>Boas práticas e recomendações</li>
+<li>Considerações para produção</li>
+</ul>
+<h3 id="proximos-passos"><a class="toclink" href="#proximos-passos">Próximos Passos:</a></h3>
+<ul>
+<li>Explore a documentação oficial das tecnologias mencionadas</li>
+<li>Experimente os exemplos de código em seu ambiente</li>
+<li>Adapte as soluções para suas necessidades específicas</li>
+<li>Considere testes e monitoramento em ambientes de produção</li>
+</ul>
+<h2 id="sobre-o-autor"><a class="toclink" href="#sobre-o-autor">Sobre o Autor</a></h2>
+<p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos, atua no desenvolvimento de soluções enterprise robustas.</p>
+<p><strong>Conecte-se:</strong>
+- <a href="https://www.linkedin.com/in/chmulato/">LinkedIn</a>
+- <a href="https://github.com/chmulato">GitHub</a></p>
+<h2 id="conclusao_1"><a class="toclink" href="#conclusao_1">Conclusão</a></h2>
+<p>Este artigo apresentou conceitos importantes sobre aplicação web java. A implementação demonstrada oferece uma base sólida para desenvolvimento e pode ser expandida conforme as necessidades específicas do projeto.</p>
+<h3 id="principais-pontos-abordados_1"><a class="toclink" href="#principais-pontos-abordados_1">Principais Pontos Abordados:</a></h3>
+<ul>
+<li>Conceitos fundamentais e arquitetura</li>
+<li>Implementação prática com exemplos de código</li>
+<li>Boas práticas e recomendações</li>
+<li>Considerações para produção</li>
+</ul>
+<h3 id="proximos-passos_1"><a class="toclink" href="#proximos-passos_1">Próximos Passos:</a></h3>
+<ul>
+<li>Explore a documentação oficial das tecnologias mencionadas</li>
+<li>Experimente os exemplos de código em seu ambiente</li>
+<li>Adapte as soluções para suas necessidades específicas</li>
+<li>Considere testes e monitoramento em ambientes de produção</li>
+</ul>
+<h2 id="sobre-o-autor_1"><a class="toclink" href="#sobre-o-autor_1">Sobre o Autor</a></h2>
+<p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos, atua no desenvolvimento de soluções enterprise robustas.</p>
+<p><strong>Conecte-se:</strong>
+- <a href="https://www.linkedin.com/in/chmulato/">LinkedIn</a>
+- <a href="https://github.com/chmulato">GitHub</a></p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

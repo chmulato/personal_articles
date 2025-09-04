@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre csonline - parte ii - avanços contínuos no projeto">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, Spring, Docker, APIs, Testes, Arquitetura">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2025_08_02_csonline_parte_ii_avancos_continuos_no_projeto.html">
+    <meta property="og:title" content="Csonline - Parte Ii - Avanços Contínuos No Projeto">
+    <meta property="og:description" content="Artigo técnico sobre csonline - parte ii - avanços contínuos no projeto">
+    <meta property="og:image" content="https://chmulato.dev/img/2025_08_02_csonline_parte_ii_avancos_continuos_no_projeto_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2025_08_02_csonline_parte_ii_avancos_continuos_no_projeto.html">
+    <meta property="twitter:title" content="Csonline - Parte Ii - Avanços Contínuos No Projeto">
+    <meta property="twitter:description" content="Artigo técnico sobre csonline - parte ii - avanços contínuos no projeto">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2025_08_02_csonline_parte_ii_avancos_continuos_no_projeto_featured.jpg">
+    
+    <title>Csonline - Parte Ii - Avanços Contínuos No Projeto | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="../assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Java & Spring</span>
+                    <time class="article-date" datetime="02/08/2025">02/08/2025</time>
+                </div>
+                
+                <h1 class="article-title">Csonline - Parte Ii - Avanços Contínuos No Projeto</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Docker</span> <span class="tag">APIs</span> <span class="tag">Testes</span> <span class="tag">Arquitetura</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                <h1 id="csonline-parte-ii-avancos-continuos-no-projeto"><a class="toclink" href="#csonline-parte-ii-avancos-continuos-no-projeto">Csonline - Parte Ii - Avanços Contínuos No Projeto</a></h1>
+<p><img alt="Acompanhe o progresso" src="img/image_not_found.png" /></p>
+<p>Acompanhe o progresso</p>
+<p><strong>Avanços contínuos no projeto</strong></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato, #OPEN_TO_WORK" src="img/image_not_found.png" /></a></strong></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato </a></strong></p>
+<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
+<p>2 de agosto de 2025</p>
+<p>Desde nosso último artigo, o <strong>CSOnline __tem avançado rapidamente. O que começou como uma aplicação JSF legado agora está se transformando em uma arquitetura moderna e distribuída, com uma clara separação entre </strong><em>backend </em><strong>e </strong><em>frontend</em>__. Esta evolução reflete nosso compromisso com boas práticas de desenvolvimento e preparação para os desafios do mercado atual.</p>
+<p><strong>Backend: Solidez e Maturidade</strong></p>
+<p>Nosso __<em>backend </em>__Jakarta EE 10 está mais robusto do que nunca:</p>
+<ul>
+<li><strong>Migração completa para Jakarta EE</strong>: Atualizamos todos os pacotes javax.* para jakarta.*, garantindo compatibilidade com os servidores de aplicação mais recentes</li>
+<li><strong>Persistência aprimorada</strong>: Consolidamos o HSQLDB como nossa solução exclusiva de banco de dados, simplificando a configuração e implantação</li>
+<li><strong>Inicialização de dados otimizada</strong>: Implementamos um DataInitializer com suporte a múltiplos scripts SQL, proporcionando uma experiência de desenvolvimento mais fluida</li>
+<li><strong>Documentação extensiva</strong>: Swagger/OpenAPI completamente integrado, permitindo testes interativos de todas as APIs REST</li>
+<li><strong>Flexibilidade de configuração</strong>: Suporte a ambientes com JTA (produção) e RESOURCE_LOCAL (desenvolvimento), documentados detalhadamente</li>
+</ul>
+<p>Os endpoints REST agora estão 100% funcionais, com testes unitários abrangentes garantindo a confiabilidade de cada operação CRUD.</p>
+<p><strong>Frontend: A revolução em Vue.js</strong></p>
+<p>O grande destaque desta fase é nosso novo __<em>frontend </em>__SPA desenvolvido em Vue.js 3:</p>
+<ul>
+<li><strong>Arquitetura Composition API</strong>: Utilizando o que há de mais moderno no ecossistema Vue</li>
+<li><strong>Módulos independentes</strong>: Separação clara entre gestão de usuários, entregadores, empresas, entregas, equipes, SMS/WhatsApp e preços</li>
+<li><strong>Interface responsiva</strong>: Design moderno que se adapta a qualquer dispositivo</li>
+<li><strong>Vite como build tool</strong>: Garantindo carregamento rápido e otimizado</li>
+<li><strong>Sistema completo de navegação</strong>: Fluxo intuitivo desde o login até o logout</li>
+</ul>
+<p>O <strong><em>frontend </em>__já está 100% funcional com dados simulados, pronto para integração com os endpoints REST do </strong><em>backend</em>__. A experiência do usuário foi cuidadosamente elaborada para garantir produtividade e facilidade de uso.</p>
+<p><strong>Integração e Deploy</strong></p>
+<p>Desenvolvemos scripts PowerShell que automatizam todo o processo de build e deploy:</p>
+<ul>
+<li><strong>Build integrado</strong>: <strong><em>Frontend </em>__e </strong><em>backend </em>__em um único comando</li>
+<li><strong>Configuração do WildFly 31</strong>: Scripts para DataSource JDBC e HTTPS/SSL</li>
+<li><strong>Documentação detalhada</strong>: Instruções passo a passo para desenvolvedores e usuários finais</li>
+</ul>
+<p>Nossa documentação inclui diagramas de sequência, guias de configuração e tutoriais completos para quem deseja explorar ou contribuir com o projeto.</p>
+<p><strong>Próximos passos e oportunidades</strong></p>
+<p>Estamos prestes a iniciar a fase de integração entre o <strong><em>frontend </em>__Vue.js e o </strong><em>backend </em>__Jakarta EE. Esta é uma excelente oportunidade para:</p>
+<ul>
+<li><strong>Desenvolvedores frontend</strong>: Contribuir com componentes Vue.js, ajustes de UX/UI e animações</li>
+<li><strong>Especialistas em Jakarta EE</strong>: Refinar endpoints REST, otimizar queries e melhorar a segurança</li>
+<li><strong>DevOps</strong>: Aprimorar pipelines de CI/CD e estratégias de deploy</li>
+<li><strong>QA</strong>: Desenvolver testes automatizados E2E com Cypress ou similares</li>
+</ul>
+<p>O __CSOnline __está se tornando não apenas um sistema de gestão de entregas, mas uma plataforma completa que demonstra as melhores práticas em desenvolvimento fullstack moderno.</p>
+<p><strong>Como participar</strong></p>
+<p>Se você se interessou por este projeto:</p>
+<ol>
+<li>Faça um fork do repositório: <a href="https://github.com/chmulato/csonline"><strong>https://github.com/chmulato/csonline</strong></a></li>
+<li>Explore a documentação em doc/INDEX.md</li>
+<li>Veja o sistema em funcionamento seguindo o guia no README.md</li>
+<li>Proponha melhorias através de Pull Requests ou discussões no Issues</li>
+</ol>
+<p>Acreditamos que o desenvolvimento colaborativo gera não apenas software de melhor qualidade, mas também comunidades mais fortes e desenvolvedores mais experientes.</p>
+<p>Acompanhe a evolução do __CSOnline __e faça parte desta jornada de transformação tecnológica!</p>
+<p>#java #jakartaee #vuejs #spa #frontend #backend #fullstack #opensource #hsqldb #wildfly #devops #linkedin #devcommunity</p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

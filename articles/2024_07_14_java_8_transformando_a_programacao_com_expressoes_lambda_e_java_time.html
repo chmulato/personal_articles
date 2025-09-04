@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre java 8 transformando a programação com expressões lambda e java time">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, APIs, DevOps, IA">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2024_07_14_java_8_transformando_a_programacao_com_expressoes_lambda_e_java_time.html">
+    <meta property="og:title" content="Java 8 Transformando A Programação Com Expressões Lambda E Java Time">
+    <meta property="og:description" content="Artigo técnico sobre java 8 transformando a programação com expressões lambda e java time">
+    <meta property="og:image" content="https://chmulato.dev/img/2024_07_14_java_8_transformando_a_programacao_com_expressoes_lambda_e_java_time_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2024_07_14_java_8_transformando_a_programacao_com_expressoes_lambda_e_java_time.html">
+    <meta property="twitter:title" content="Java 8 Transformando A Programação Com Expressões Lambda E Java Time">
+    <meta property="twitter:description" content="Artigo técnico sobre java 8 transformando a programação com expressões lambda e java time">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2024_07_14_java_8_transformando_a_programacao_com_expressoes_lambda_e_java_time_featured.jpg">
+    
+    <title>Java 8 Transformando A Programação Com Expressões Lambda E Java Time | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="../assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Java & Spring</span>
+                    <time class="article-date" datetime="14/07/2024">14/07/2024</time>
+                </div>
+                
+                <h1 class="article-title">Java 8 Transformando A Programação Com Expressões Lambda E Java Time</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">DevOps</span> <span class="tag">IA</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                <h1 id="java-8-transformando-a-programacao-com-expressoes-lambda-e-java-time"><a class="toclink" href="#java-8-transformando-a-programacao-com-expressoes-lambda-e-java-time">Java 8 Transformando A Programação Com Expressões Lambda E Java Time</a></h1>
+<p><img alt="Algumas novidades do Java 8 (e versões superiores)" src="img/image_not_found.png" /></p>
+<p>Algumas novidades do Java 8 (e versões superiores)</p>
+<p><strong>Java 8+: Transformando a Programação com Expressões Lambda e java.time.</strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="img/image_not_found.png" /></a></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p>Desenvolvedor Java Sênior na Develcode</p>
+<p>14 de julho de 2024</p>
+<p>Embarque conosco nesta jornada fascinante pelo universo do Java 8, uma versão que marcou um antes e um depois na história desta linguagem de programação. Vamos explorar as revolucionárias <strong>Expressões Lambda e a API de Streams</strong>, que transformaram a forma como lidamos com coleções de dados, tornando o código mais eficiente e legível. Além disso, mergulharemos no <strong>pacote java.time</strong>, uma poderosa ferramenta que trouxe uma nova era para a manipulação de datas e horas, proporcionando robustez e eficiência. Prepare-se para descobrir como o Java 8 e suas versões superiores podem otimizar seu código e elevar suas habilidades de programação a um novo patamar.</p>
+<p><strong>Expressões Lambda e Streams API: Introdução de expressões lambda e a API de Streams, que revolucionaram o processamento de coleções de dados.</strong></p>
+<p>No Java 8, as expressões <em>lambda</em> foram introduzidas como uma maneira concisa de representar funções anônimas. </p>
+<p>Elas permitem que você escreva blocos de código de forma mais compacta e expressiva, especialmente quando se trata de operações em coleções de dados. </p>
+<p>Por exemplo, você pode usar expressões <em>lambda</em> para filtrar, mapear ou reduzir elementos em uma lista. </p>
+<p>Já a API de Streams oferece uma abstração de alto nível para processamento de coleções, permitindo operações como filtragem, mapeamento, ordenação e agregação de dados. </p>
+<p>Ela é baseada em sequências de operações, o que torna o código mais legível e eficiente. </p>
+<p>Em resumo, essas duas adições revolucionaram a forma como lidamos com coleções de dados no Java. </p>
+<p>Para usar expressões lambda em Java, siga estas etapas:</p>
+<p><strong>1. Sintaxe:</strong></p>
+<ul>
+<li>Uma expressão lambda é definida usando o operador -&gt;.</li>
+<li>Ela consiste em parâmetros (se houver) e um corpo.</li>
+<li>Exemplo: <strong>(x, y) -&gt; x + y</strong></li>
+</ul>
+<p><strong>2. Interfaces Funcionais:</strong></p>
+<ul>
+<li>As expressões lambda são usadas principalmente com interfaces funcionais.</li>
+<li>Uma interface funcional tem apenas um método abstrato.</li>
+<li>Exemplos: Runnable, Consumer, Predicate.</li>
+</ul>
+<p><strong>3. Exemplos:</strong></p>
+<ul>
+<li><strong>Runnable:</strong></li>
+</ul>
+<p><img alt="" src="img/image_not_found.png" /></p>
+<p>Exemplo de código Java aplicando o Lambda.</p>
+<ul>
+<li><strong>Consumer</strong> (recebe um argumento, não retorna valor):</li>
+</ul>
+<p><img alt="" src="img/image_not_found.png" /></p>
+<p>Exemplo de código Java aplicando o Lambda.</p>
+<ul>
+<li><strong>Predicate</strong> (avalia uma condição):</li>
+</ul>
+<p><img alt="" src="img/image_not_found.png" /></p>
+<p>Exemplo de código Java aplicando o Lambda.</p>
+<p><strong>4. Benefícios:</strong></p>
+<ul>
+<li>Concisão: Reduz a quantidade de código.</li>
+<li>Legibilidade: Expressa a intenção de forma clara.</li>
+</ul>
+<p>Lembre-se de que as expressões lambda são poderosas e flexíveis. </p>
+<p><strong>- Quais são os principais métodos da API de Streams?</strong></p>
+<p>A API de Streams no Java oferece uma variedade de métodos para processar sequências de elementos. Alguns dos principais métodos incluem:</p>
+<ol>
+<li>__reduce(): __Combina os elementos de um stream em um único resultado, aplicando uma operação associativa. Por exemplo, calcular a soma ou o produto dos elementos.</li>
+<li>__max() e min(): __Encontram o maior e o menor elemento do stream, com base em um critério de comparação.</li>
+<li><strong>forEach():</strong> Executa uma ação para cada elemento do stream. Útil para realizar operações em cada item sem retornar um novo stream.</li>
+<li><strong>findFirst() e findAny():</strong> Encontram o primeiro elemento do stream. <strong>findFirst()</strong> retorna o primeiro elemento encontrado, enquanto__ findAny()__ retorna qualquer elemento.</li>
+<li><strong>count()</strong>: Retorna o número de elementos no stream.</li>
+<li>__collect(): __Agrupa os elementos do stream em uma coleção ou em outro tipo de resultado, como uma lista, conjunto ou mapa.</li>
+</ol>
+<p>Esses métodos são apenas alguns exemplos. A API de Streams oferece muitas outras operações intermediárias e terminais para manipular dados de forma eficiente e declarativa. </p>
+<p>Alguns exemplos práticos:</p>
+<p>Vamos considerar um exemplo usando a API de Streams para processar uma lista de números inteiros. Suponha que temos a seguinte lista:</p>
+<p><img alt="" src="img/image_not_found.png" /></p>
+<p>Exemplo de código Java aplicando a API de Streams.</p>
+<p>Aqui estão alguns exemplos de operações que podemos realizar:</p>
+<p><strong>1. Filtrar números pares:</strong></p>
+<p><img alt="" src="img/image_not_found.png" /></p>
+<p>Exemplo de código Java com a API de Streams aplicando filtro.</p>
+<p><strong>2. Calcular a soma dos números:</strong></p>
+<p><img alt="" src="img/image_not_found.png" /></p>
+<p>Exemplo de código Java com a API de Streams utilizando cálculo.</p>
+<p><strong>3. Encontrar o maior número:</strong></p>
+<p><img alt="" src="img/image_not_found.png" /></p>
+<p>Exemplo de código Java com a API de Streams utilizando fórmula.</p>
+<p><strong>4. Verificar se há algum número maior que 5:</strong></p>
+<p><img alt="" src="img/image_not_found.png" /></p>
+<p>Exemplo de código Java com a API de Streams utilizando regra de negócio.</p>
+<p>Esses são apenas alguns exemplos básicos. A <strong>API de Streams</strong> oferece muitas outras possibilidades para manipular e processar dados de forma elegante e eficiente. </p>
+<p><strong>Quais são os benefícios de usar Streams em Java?</strong></p>
+<p>As streams em Java oferecem uma abordagem elegante e funcional para o processamento de dados em coleções. Aqui estão alguns benefícios:</p>
+<p><strong>1. Concisão e Legibilidade:</strong></p>
+<p>- As streams permitem escrever código mais conciso e legível.</p>
+<p>- Expressões lambda e métodos como filter, map e reduce simplificam o código.</p>
+<p><strong>2. Eficiência:</strong></p>
+<p>- Streams podem ser paralelizadas, aproveitando o poder de processamento multi-core do sistema operacional.</p>
+<p>- Operações intermediárias são avaliadas sob demanda, economizando recursos.</p>
+<p><strong>3. Composição de Operações:</strong></p>
+<p>- Você pode encadear várias operações em uma única expressão.</p>
+<p>- Isso facilita a criação de sequência de processamento de dados.</p>
+<p><strong>4. Não Destrutividade:</strong></p>
+<p>- Streams não modificam a coleção original.</p>
+<p>- Os resultados são obtidos em novas streams ou coleções.</p>
+<p>As streams tornam o processamento de dados mais expressivo e eficiente. </p>
+<p><strong>Quais são os principais métodos da API de Streams em Java 8+?</strong></p>
+<p>A API de Streams do Java 8 introduziu uma série de métodos poderosos para processamento de dados. Aqui estão alguns dos principais métodos:</p>
+<ol>
+<li><strong>filter(Predicate predicate):</strong> Retorna um stream que inclui elementos que correspondem ao predicado fornecido.</li>
+<li><strong>map(Function mapper):</strong> Transforma os elementos usando a função fornecida.</li>
+<li><strong>flatMap(Function mapper):</strong> Transforma cada elemento em um stream e então "achata" todos os streams em um único stream.</li>
+<li><strong>limit(long maxSize):</strong> Limita o stream ao número de elementos fornecido.</li>
+<li><strong>collect(Collector collector):</strong> Reduz o stream a um tipo de coleção usando o coletor fornecido.</li>
+<li><strong>forEach(Consumer action):</strong> Aplica uma ação a cada elemento do stream.</li>
+<li><strong>reduce(BinaryOperator accumulator):</strong> Reduz o stream a um único valor usando o operador fornecido.</li>
+<li><strong>sorted():</strong> Retorna um stream com os elementos ordenados.</li>
+<li><strong>anyMatch(), allMatch(), noneMatch():</strong> Retorna um booleano indicando se algum, todos ou nenhum dos elementos correspondem ao predicado fornecido, respectivamente.</li>
+<li><strong>findFirst(), findAny():</strong> Retorna um Optional que contém o primeiro ou qualquer elemento do stream, respectivamente.</li>
+</ol>
+<p>Esses métodos podem ser encadeados para realizar operações complexas de processamento de dados de maneira eficiente e legível. </p>
+<p>Lembre-se de que os streams são projetados para trabalhar com Expressões Lambda em Java, tornando o código ainda mais conciso.</p>
+<p>Aqui está um exemplo prático de como você pode usar a API de Streams do Java 8.</p>
+<p>Vamos supor que temos uma lista de nomes e queremos encontrar os nomes que começam com a letra "A" e imprimi-los: </p>
+<p><img alt="" src="img/image_not_found.png" /></p>
+<p>Exemplo de código Java para utilizar a API de Streams do Java 8.</p>
+<p>Quando você executa este código, ele imprimirá:</p>
+<p><img alt="" src="img/image_not_found.png" /></p>
+<p>Resultado do código Java acima.</p>
+<p>Este é um exemplo simples, mas a API de Streams é muito poderosa e pode ser usada para operações de processamento de dados muito mais complexas.</p>
+<p><strong>Java.time: Novo pacote para manipulação de datas e horas de forma mais eficiente e robusta:</strong></p>
+<p>O <strong>pacote java.time</strong> introduzido no Java 8 oferece uma abordagem abrangente e eficiente para a manipulação de datas e horas. Ele resolve muitos dos problemas existentes nas antigas classes Date e Calendar, fornecendo uma API mais intuitiva e robusta. Com classes imutáveis e métodos fluentes, ele simplifica tarefas como formatação, análise, cálculo de duração e manipulação de fusos horários. Além disso, é totalmente compatível com o padrão ISO-8601, o que facilita a interoperabilidade com outras tecnologias e padrões.</p>
+<p><strong>Quais são as principais classes do pacote java.time?</strong></p>
+<p>O pacote <strong>java.time</strong> do <strong>Java 8+</strong> inclui várias classes importantes para a manipulação de datas e horas. Aqui estão algumas das principais:</p>
+<ol>
+<li>__LocalDate: __Representa uma data sem horário e fuso horário. É útil para representar datas de aniversário ou datas de calendário.</li>
+<li><strong>LocalTime:</strong> Representa um horário sem data e fuso horário. É útil para representar horários do dia.</li>
+<li>__LocalDateTime: __Representa uma data e hora sem fuso horário. É útil para representar carimbos de data/hora em um contexto específico.</li>
+<li><strong>ZonedDateTime:</strong> Representa uma data e hora com um fuso horário. É útil para lidar com situações em que o fuso horário é importante, como em um aplicativo de calendário.</li>
+<li><strong>Period:</strong> Representa uma quantidade de tempo em termos de anos, meses e dias. É útil para calcular diferenças entre datas.</li>
+<li><strong>Duration:</strong> Representa uma quantidade de tempo em termos de segundos e nanossegundos. É útil para calcular diferenças de tempo de alta precisão.</li>
+<li><strong>Instant:</strong> Representa um ponto específico na linha do tempo. É útil para registrar eventos de log ou marcar carimbos de data/hora.</li>
+<li>__ZoneId: __Representa um identificador de fuso horário. É útil para converter entre fusos horários.</li>
+<li><strong>DateTimeFormatter:</strong> Fornece a capacidade de formatar e analisar datas e horas.</li>
+</ol>
+<p>Essas classes fornecem uma API abrangente para lidar com datas, horas e fusos horários de maneira eficiente e intuitiva.</p>
+<p>Aqui está um exemplo simples de como você pode usar a classe <strong>LocalDate</strong> do pacote java.time:</p>
+<p><img alt="" src="img/image_not_found.png" /></p>
+<p>Exemplo de código Java com aplicação da biblioteca Local.Date.</p>
+<p>Quando você executa este código, ele imprimirá a data atual, uma data específica, a data de amanhã e a data de ontem. </p>
+<p>A classe <strong>LocalDate</strong> fornece muitos outros métodos úteis para manipular datas de maneira eficiente e intuitiva.</p>
+<p>Aqui está um exemplo simples de como você pode usar a classe <strong>LocalTime</strong> do pacote java.time:</p>
+<p><img alt="" src="img/image_not_found.png" /></p>
+<p>Exemplo de código Java com aplicação da biblioteca Local.Time.</p>
+<p>Quando você executa este código, ele imprimirá a hora atual, uma hora específica, a hora de uma hora a partir de agora e a hora de trinta minutos atrás. </p>
+<p>A classe <strong>LocalTime</strong> fornece muitos outros métodos úteis para manipular horas de maneira eficiente e intuitiva. </p>
+<p><strong>Como posso converter uma hora para o formato ISO-8601 usando java.time?</strong></p>
+<p>Você pode usar a classe <strong>LocalTime</strong> do pacote java.time para converter uma hora para o formato ISO-8601. Aqui está um exemplo:</p>
+<p><img alt="" src="img/image_not_found.png" /></p>
+<p>Exemplo de código Java com aplicação da biblioteca Local.Time no formato (ISO-8601)</p>
+<p>Quando você executa este código, ele imprimirá a hora atual no <strong>formato ISO-8601</strong> (por exemplo, "13:45:30.123").</p>
+<p>A classe <strong>DateTimeFormatter</strong> fornece vários formatadores predefinidos, incluindo <strong>ISO_LOCAL_TIME</strong> para o formato de hora ISO-8601. </p>
+<p>Você também pode criar seu próprio formatador usando o método <strong>DateTimeFormatter.ofPattern(String pattern)</strong>. </p>
+<p>Por exemplo, <strong>DateTimeFormatter.ofPattern("HH:mm:ss")</strong> criará um formatador que formata a hora como "13:45:30". </p>
+<p>Concluímos nossa jornada explorando as maravilhas do Java 8, uma versão que trouxe inovações significativas e mudou a forma como programamos. As <strong>Expressões Lambda e a API de Streams</strong> abriram novos horizontes para o processamento de dados, enquanto o <strong>pacote java.time</strong> revolucionou a manipulação de datas e horas. Esperamos que este artigo tenha lhe proporcionado uma visão valiosa e inspiradora das possibilidades que o Java 8 e versões superiores oferecem. Continue explorando, aprendendo e inovando, pois o mundo da programação está sempre evoluindo e há sempre algo novo para descobrir. </p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

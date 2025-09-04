@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre o desaparecimento do ejb">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, Spring, Docker, APIs, Arquitetura, DevOps">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2024_03_24_o_desaparecimento_do_ejb.html">
+    <meta property="og:title" content="O Desaparecimento Do Ejb">
+    <meta property="og:description" content="Artigo técnico sobre o desaparecimento do ejb">
+    <meta property="og:image" content="https://chmulato.dev/img/2024_03_24_o_desaparecimento_do_ejb_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2024_03_24_o_desaparecimento_do_ejb.html">
+    <meta property="twitter:title" content="O Desaparecimento Do Ejb">
+    <meta property="twitter:description" content="Artigo técnico sobre o desaparecimento do ejb">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2024_03_24_o_desaparecimento_do_ejb_featured.jpg">
+    
+    <title>O Desaparecimento Do Ejb | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="../assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Java & Spring</span>
+                    <time class="article-date" datetime="24/03/2024">24/03/2024</time>
+                </div>
+                
+                <h1 class="article-title">O Desaparecimento Do Ejb</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Docker</span> <span class="tag">APIs</span> <span class="tag">Arquitetura</span> <span class="tag">DevOps</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                <h1 id="o-desaparecimento-do-ejb"><a class="toclink" href="#o-desaparecimento-do-ejb">O Desaparecimento Do Ejb</a></h1>
+<p><img alt="Entreprise JavaBeans - EJB do JavaEE" src="img/image_not_found.png" /></p>
+<p>Entreprise JavaBeans - EJB do JavaEE</p>
+<p><strong>O desaparecimento do EJB</strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="img/image_not_found.png" /></a></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p>Desenvolvedor Java Sênior na Develcode</p>
+<p>24 de março de 2024</p>
+<p>O <strong>Enterprise JavaBeans </strong>(<strong>EJB</strong>), que costumava ser uma parte central do desenvolvimento de aplicações distribuídas em Java, passou por mudanças significativas ao longo do tempo. Vamos explorar algumas razões pelas quais o EJB perdeu parte de sua relevância:</p>
+<p><strong>1. Complexidade e Overhead:</strong></p>
+<p>- Nas versões anteriores do EJB, havia uma quantidade significativa de complexidade e overhead associados à configuração e gerenciamento de componentes EJB.</p>
+<p>- Os desenvolvedores precisavam lidar com arquivos de configuração XML, anotações específicas e detalhes de transações, o que tornava o desenvolvimento mais trabalhoso.</p>
+<p><strong>2. Desempenho:</strong></p>
+<p>- O EJB também apresentava problemas de desempenho. A invocação de métodos remotos era feita principalmente usando CORBA (e posteriormente outros protocolos semelhantes), o que nem sempre era eficiente.</p>
+<p>- Muitas aplicações não necessitavam de toda a funcionalidade distribuída oferecida pelo EJB, o que tornava seu uso excessivo para cenários mais simples.</p>
+<p><strong>3. Evolução das Tecnologias:</strong></p>
+<p>- Com o tempo, outras tecnologias surgiram e evoluíram, como o Spring Framework e a Java Persistence API (JPA).</p>
+<p>- O Spring Framework oferecia uma alternativa mais leve e flexível para o desenvolvimento de componentes empresariais, enquanto a JPA simplificava o acesso a bancos de dados relacionais.</p>
+<p><strong>4. Padrões de Design Alternativos:</strong></p>
+<p>- Padrões como POJOs (Plain Old Java Objects) e Injeção de Dependência (DI) ganharam popularidade.</p>
+<p>- Esses padrões permitiam que os desenvolvedores criassem componentes empresariais sem a necessidade de um container EJB pesado.</p>
+<p><strong>5. EJB 3.x e Simplificação:</strong></p>
+<p>- A especificação EJB 3.x trouxe melhorias significativas. Ela introduziu anotações, simplificou a configuração e permitiu que os desenvolvedores criassem componentes EJB mais facilmente.</p>
+<p>- A nova versão permitia que os desenvolvedores se concentrassem na lógica de negócios, sem se preocupar tanto com detalhes de infraestrutura.</p>
+<p><strong>6. Alternativas Modernas:</strong></p>
+<p>- Com a ascensão de arquiteturas baseadas em <strong><em>microsserviços</em></strong>, muitas empresas optaram por tecnologias mais leves e específicas para suas necessidades.</p>
+<p>- O EJB, por sua natureza mais robusta, não se encaixava bem nesses cenários.</p>
+<p>Em resumo, embora o EJB ainda seja usado em alguns contextos, sua relevância diminuiu à medida que outras alternativas mais leves e flexíveis surgiram no mundo do desenvolvimento de software empresarial.</p>
+<p>Ainda existem oportunidades de trabalho relacionadas ao suporte de aplicações em EJB. Embora o EJB tenha perdido parte de sua relevância como uma escolha central para o desenvolvimento de aplicações distribuídas, muitas empresas ainda mantêm sistemas legados que utilizam essa tecnologia. Como resultado, há demanda contínua por profissionais que possam oferecer suporte, manutenção e otimização dessas aplicações.</p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
