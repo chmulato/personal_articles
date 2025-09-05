@@ -285,15 +285,49 @@ class SiteManager:
         return success_count
     
     def generate_index_html(self):
-        """Gera o arquivo index.html com lista de artigos"""
+        """Gera o arquivo index.html com lista de artigos organizados por ano/mês/dia"""
         try:
             articles = []
             
-            # Ler todos os arquivos MD para extrair metadados
-            md_files = list(self.md_dir.glob("*.md"))
-            logging.info(f"Processando metadados de {len(md_files)} artigos")
+            # Ler apenas os arquivos HTML existentes no diretório articles
+            html_files = list(self.articles_dir.glob("*.html"))
+            logging.info(f"Processando metadados de {len(html_files)} artigos")
             
-            for md_file in sorted(md_files):
+            # Para cada arquivo HTML, encontrar o MD correspondente
+            for html_file in sorted(html_files):
+                # Procurar arquivo MD correspondente
+                md_file = self.md_dir / f"{html_file.stem}.md"
+                if not md_file.exists():
+                    # Tentar encontrar MD com nome similar (pode ter variações de case/underscores)
+                    possible_md_files = list(self.md_dir.glob("*.md"))
+                    md_file = None
+                    for possible_md in possible_md_files:
+                        if html_file.stem.lower().replace(' ', '_') == possible_md.stem.lower().replace(' ', '_'):
+                            md_file = possible_md
+                            break
+                    
+                    if not md_file:
+                        # Se não encontrar MD, usar dados padrão baseados no nome do arquivo
+                        title = html_file.stem.replace('_', ' ').replace('-', ' ').title()
+                        # Extrair data do nome do arquivo (YYYY_MM_DD_titulo)
+                        parts = html_file.stem.split('_')
+                        if len(parts) >= 3 and parts[0].isdigit() and parts[1].isdigit() and parts[2].isdigit():
+                            date = f"{parts[2]}/{parts[1]}/{parts[0]}"
+                        else:
+                            date = "01/01/2024"
+                        
+                        article = {
+                            'title': title,
+                            'date': date,
+                            'description': f'Artigo técnico sobre {title.lower()}',
+                            'category': 'Tecnologia',
+                            'tags': ['Java', 'Spring'],
+                            'filename': html_file.name
+                        }
+                        articles.append(article)
+                        continue
+                
+                # Processar metadados do arquivo MD correspondente
                 try:
                     with open(md_file, 'r', encoding='utf-8') as f:
                         content = f.read()
@@ -317,43 +351,124 @@ class SiteManager:
                         'description': description,
                         'category': category,
                         'tags': tags,
-                        'filename': f"{md_file.stem}.html"
+                        'filename': html_file.name
                     }
                     
                     articles.append(article)
                     
                 except Exception as e:
-                    logging.warning(f"Erro ao processar metadados de {md_file}: {e}")
+                    logging.error(f"Erro ao processar {md_file}: {e}")
+                    # Usar dados padrão se houver erro
+                    title = html_file.stem.replace('_', ' ').replace('-', ' ').title()
+                    parts = html_file.stem.split('_')
+                    if len(parts) >= 3 and parts[0].isdigit() and parts[1].isdigit() and parts[2].isdigit():
+                        date = f"{parts[2]}/{parts[1]}/{parts[0]}"
+                    else:
+                        date = "01/01/2024"
+                    
+                    article = {
+                        'title': title,
+                        'date': date,
+                        'description': f'Artigo técnico sobre {title.lower()}',
+                        'category': 'Tecnologia',
+                        'tags': ['Java', 'Spring'],
+                        'filename': html_file.name
+                    }
+                    articles.append(article)
             
-            # Ordenar artigos por data (mais recentes primeiro)
+            # Organizar artigos por ano, mês e dia
             def parse_date(date_str):
                 try:
                     return datetime.strptime(date_str, '%d/%m/%Y')
                 except:
                     return datetime(2024, 1, 1)
             
+            # Ordenar artigos por data (mais recentes primeiro)
             articles.sort(key=lambda x: parse_date(x['date']), reverse=True)
             
-            # Gerar HTML dos artigos
-            articles_html = ""
+            # Agrupar artigos por ano e mês
+            grouped_articles = {}
             for article in articles:
-                # Limitar tags exibidas a 3
-                tags_html = " ".join([f'<span class="tag">{tag}</span>' 
-                                    for tag in article['tags'][:3]])
+                date_obj = parse_date(article['date'])
+                year = date_obj.year
+                month = date_obj.month
+                month_name = date_obj.strftime('%B')  # Nome do mês em inglês
+                month_key = f"{year}-{month:02d}"
                 
+                if year not in grouped_articles:
+                    grouped_articles[year] = {}
+                
+                if month_key not in grouped_articles[year]:
+                    grouped_articles[year][month_key] = {
+                        'month_name': month_name,
+                        'month_num': month,
+                        'articles': []
+                    }
+                
+                grouped_articles[year][month_key]['articles'].append(article)
+            
+            # Gerar HTML dos artigos organizados
+            articles_html = ""
+            
+            # Ordenar anos (mais recentes primeiro)
+            for year in sorted(grouped_articles.keys(), reverse=True):
                 articles_html += f'''
-        <article class="article-card">
-            <div class="article-meta">
-                <span class="category">{article['category']}</span>
-                <span class="date">{article['date']}</span>
+        <div class="year-section">
+            <h2 class="year-header">{year}</h2>
+'''
+                
+                # Ordenar meses dentro do ano (mais recentes primeiro)
+                months = grouped_articles[year]
+                for month_key in sorted(months.keys(), reverse=True):
+                    month_data = months[month_key]
+                    month_name = month_data['month_name']
+                    month_articles = month_data['articles']
+                    
+                    # Traduzir nomes dos meses para português
+                    month_names_pt = {
+                        'January': 'Janeiro', 'February': 'Fevereiro', 'March': 'Março',
+                        'April': 'Abril', 'May': 'Maio', 'June': 'Junho',
+                        'July': 'Julho', 'August': 'Agosto', 'September': 'Setembro',
+                        'October': 'Outubro', 'November': 'Novembro', 'December': 'Dezembro'
+                    }
+                    month_name_pt = month_names_pt.get(month_name, month_name)
+                    
+                    articles_html += f'''
+            <div class="month-section">
+                <h3 class="month-header">{month_name_pt} {year}</h3>
+                <div class="articles-grid">
+'''
+                    
+                    # Ordenar artigos dentro do mês por dia (mais recentes primeiro)
+                    month_articles.sort(key=lambda x: parse_date(x['date']), reverse=True)
+                    
+                    for article in month_articles:
+                        # Limitar tags exibidas a 3
+                        tags_html = " ".join([f'<span class="tag">{tag}</span>' 
+                                            for tag in article['tags'][:3]])
+                        
+                        articles_html += f'''
+                    <article class="article-card">
+                        <div class="article-meta">
+                            <span class="category">{article['category']}</span>
+                            <span class="date">{article['date']}</span>
+                        </div>
+                        <h4 class="article-title">
+                            <a href="articles/{article['filename']}">{article['title']}</a>
+                        </h4>
+                        <p class="article-description">{article['description']}</p>
+                        <div class="article-tags">{tags_html}</div>
+                    </article>
+'''
+                    
+                    articles_html += '''
+                </div>
             </div>
-            <h2 class="article-title">
-                <a href="articles/{article['filename']}">{article['title']}</a>
-            </h2>
-            <p class="article-description">{article['description']}</p>
-            <div class="article-tags">{tags_html}</div>
-        </article>
-        '''
+'''
+                
+                articles_html += '''
+        </div>
+'''
             
             # Template do index.html (usar o template existente)
             index_template = self.get_index_template()
@@ -374,6 +489,7 @@ class SiteManager:
             
         except Exception as e:
             logging.error(f"❌ Erro ao gerar index.html: {e}")
+    
     
     def get_index_template(self):
         """Retorna template HTML para o index.html"""
