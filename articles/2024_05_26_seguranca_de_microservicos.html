@@ -24,13 +24,13 @@
     <title>Segurança De Microserviços | Christian Mulato Dev Blog</title>
     
     <!-- Styles -->
-    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="assets/css/article.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="../assets/js/article.js" defer></script>
+    <script src="assets/js/article.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -66,11 +66,11 @@
             </header>
             
             <div class="article-content">
-                <h1 id="seguranca-de-microservicos"><a class="toclink" href="#seguranca-de-microservicos">Segurança De Microserviços</a></h1>
-<p><img alt="Seguranças de Microserviços com JWT" src="img/image_not_found.png" /></p>
+                
+<p><img alt="Seguranças de Microserviços com JWT" src="assets/img/2024_05_26_Segurança de Microserviços_image1.png" /></p>
 <p>Seguranças de Microserviços com JWT</p>
 <p><strong>Segurança de Microserviços</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="img/image_not_found.png" /></a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_05_26_Segurança de Microserviços_image11.png" /></a></p>
 <p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>26 de maio de 2024</p>
@@ -104,11 +104,11 @@
 <p><strong>Geração de Token:</strong> Quando um usuário faz login com sucesso, você precisará gerar um token JWT para eles. Isso pode ser feito usando a biblioteca jjwt. O token deve incluir detalhes do usuário e um carimbo de data/hora de expiração.</p>
 <p><strong>Validação de Token:</strong> Quando uma solicitação chega com um token JWT, você precisará validar o token. Isso inclui verificar a assinatura e a data de expiração do token, bem como quaisquer outras reivindicações que você possa ter incluído no token.</p>
 <p>Vamos ver um exemplo de código simplificado para ilustrar esses passos:</p>
-<p><img alt="" src="img/image_not_found.png" /></p>
+<p><img alt="" src="assets/img/2024_05_26_Segurança de Microserviços_image12.png" /></p>
 <p>Exemplo de código e a dependência JJWT em Maven para autenticação com JWT.</p>
 <p>A Autenticação JWT oferece escalabilidade ao permitir que sistemas distribuídos autentiquem usuários sem a necessidade de um estado de sessão centralizado, melhorando assim a capacidade de lidar com um grande número de solicitações. Além disso, os JWTs são compactos e podem ser transmitidos facilmente, o que melhora o desempenho ao reduzir a sobrecarga de rede. Finalmente, a natureza autocontida dos JWTs facilita a integração entre diferentes serviços em um ambiente de microserviços, pois cada serviço pode validar os tokens de forma independente.</p>
 <p>Agora vamos ver um exemplo simplificado de como você pode implementar a autenticação JWT em um microserviço usando Java e Spring Boot:</p>
-<p><img alt="" src="img/image_not_found.png" /></p>
+<p><img alt="" src="assets/img/2024_05_26_Segurança de Microserviços_image1.png" /></p>
 <p>Exemplo de autenticação com a biblioteca JJWT do Spring Boot.</p>
 <p>Este código define uma classe__ __<em>JwtUtil</em> que tem dois métodos principais: addAuthentication e getAuthentication.</p>
 <p>O método addAuthentication é chamado quando um usuário faz login com sucesso. Ele gera um token JWT e o adiciona ao cabeçalho Authorization da resposta HTTP.</p>
@@ -139,5 +139,73 @@
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christian Mulato</h3>
+                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+                <a href="../index.html">Artigos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script>
+        // Tema manager
+        class ThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggle');
+                this.themeIcon = document.getElementById('themeIcon');
+                this.init();
+            }
+            
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = savedTheme || systemTheme;
+                
+                this.setTheme(currentTheme);
+                this.updateIcon(currentTheme);
+                
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                this.setTheme(newTheme);
+                this.updateIcon(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+            
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            
+            updateIcon(theme) {
+                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                this.themeToggle.setAttribute('aria-label', 
+                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+            }
+        }
+        
+        // Inicializar quando DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+        });
+    </script>
 </body>
 </html>
