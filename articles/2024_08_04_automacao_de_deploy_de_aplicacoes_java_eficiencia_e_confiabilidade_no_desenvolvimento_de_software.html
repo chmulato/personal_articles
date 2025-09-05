@@ -24,13 +24,13 @@
     <title>Automação De Deploy De Aplicações Java Eficiência E Confiabilidade No Desenvolvimento De Software | Christian Mulato Dev Blog</title>
     
     <!-- Styles -->
-    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="assets/css/article.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="../assets/js/article.js" defer></script>
+    <script src="assets/js/article.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -66,11 +66,11 @@
             </header>
             
             <div class="article-content">
-                <h1 id="automacao-de-deploy-de-aplicacoes-java-eficiencia-e-confiabilidade-no-desenvolvimento-de-software"><a class="toclink" href="#automacao-de-deploy-de-aplicacoes-java-eficiencia-e-confiabilidade-no-desenvolvimento-de-software">Automação De Deploy De Aplicações Java Eficiência E Confiabilidade No Desenvolvimento De Software</a></h1>
-<p><img alt="Deploy para Aplicações Java." src="img/image_not_found.png" /></p>
+                
+<p><img alt="Deploy para Aplicações Java." src="assets/img/2024_08_04_Automação de Deploy de Aplicações Java Eficiência e Confiabilidade no Desenvolvimento de Software_image1.png" /></p>
 <p>Deploy para Aplicações Java.</p>
 <p><strong>Automação de Deploy de Aplicações Java: Eficiência e Confiabilidade no Desenvolvimento de Software</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="img/image_not_found.png" /></a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_08_04_Automação de Deploy de Aplicações Java Eficiência e Confiabilidade no Desenvolvimento de Software_image11.png" /></a></p>
 <p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>4 de agosto de 2024</p>
@@ -124,7 +124,7 @@
 <p>Para criar uma imagem <strong>Docker</strong> a partir de um <strong>Dockerfile</strong>, você pode usar o comando docker build. E para criar e executar um <em>container</em> a partir dessa imagem, você pode usar o comando docker run.</p>
 <p>Um exemplo básico de um <em>Dockerfile</em> para uma aplicação Java:</p>
 <p>![Texto</p>
-<p>Descrição gerada automaticamente](img/image_not_found.png)</p>
+<p>Descrição gerada automaticamente](img/2024_08_04_Automação de Deploy de Aplicações Java Eficiência e Confiabilidade no Desenvolvimento de Software_image12.png)</p>
 <p>Exemplo de arquivo Dockerfile.</p>
 <p>Este <em>Dockerfile</em> cria uma imagem <em>Docker</em> que executa um arquivo JAR chamado "meu-aplicativo.jar". Ele usa a imagem base "openjdk:8-jdk-alpine", que é uma imagem leve que inclui o <strong>OpenJDK 8</strong>. O arquivo JAR da aplicação é adicionado ao diretório /app no <em>container</em> e a porta 8080 é exposta para conexões externas. O comando ENTRYPOINT especifica que a aplicação deve ser iniciada com o comando java -jar meu-aplicativo.jar.</p>
 <p>Por favor, substitua "meu-aplicativo.jar" pelo nome do seu arquivo JAR. E lembre-se de construir o JAR da sua aplicação no diretório target/ antes de construir a imagem <em>Docker</em>.</p>
@@ -147,7 +147,7 @@
 </ol>
 <p>Aqui está um exemplo de um arquivo de fluxo de trabalho do <strong>GitHub Actions</strong> para uma aplicação Java:</p>
 <p>![Interface gráfica do usuário, Aplicativo</p>
-<p>Descrição gerada automaticamente com confiança média](img/image_not_found.png)</p>
+<p>Descrição gerada automaticamente com confiança média](img/2024_08_04_Automação de Deploy de Aplicações Java Eficiência e Confiabilidade no Desenvolvimento de Software_image1.png)</p>
 <p>Exemplo de um arquivo de fluxo de trabalho do GitHub Actions.</p>
 <p>Este é um exemplo simples e o seu__ pipeline de CI/CD__ pode precisar de configurações adicionais dependendo das necessidades do seu projeto.</p>
 <p>Lembre-se, a configuração de um <strong>pipeline de CI/CD</strong> é uma prática indispensável para o fornecimento eficiente de software de alta qualidade, pois permite que os desenvolvedores automatizem o processo de criação, teste e implantação de alterações de código, reduzindo o risco de erro humano e permitindo iterações mais rápidas.</p>
@@ -217,5 +217,73 @@
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christian Mulato</h3>
+                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+                <a href="../index.html">Artigos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script>
+        // Tema manager
+        class ThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggle');
+                this.themeIcon = document.getElementById('themeIcon');
+                this.init();
+            }
+            
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = savedTheme || systemTheme;
+                
+                this.setTheme(currentTheme);
+                this.updateIcon(currentTheme);
+                
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                this.setTheme(newTheme);
+                this.updateIcon(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+            
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            
+            updateIcon(theme) {
+                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                this.themeToggle.setAttribute('aria-label', 
+                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+            }
+        }
+        
+        // Inicializar quando DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+        });
+    </script>
 </body>
 </html>
