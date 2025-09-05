@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre jdbc versus jndi">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, APIs, DevOps, IA">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2024_03_31_jdbc_versus_jndi.html">
+    <meta property="og:title" content="Jdbc Versus Jndi">
+    <meta property="og:description" content="Artigo técnico sobre jdbc versus jndi">
+    <meta property="og:image" content="https://chmulato.dev/img/2024_03_31_jdbc_versus_jndi_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2024_03_31_jdbc_versus_jndi.html">
+    <meta property="twitter:title" content="Jdbc Versus Jndi">
+    <meta property="twitter:description" content="Artigo técnico sobre jdbc versus jndi">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2024_03_31_jdbc_versus_jndi_featured.jpg">
+    
+    <title>Jdbc Versus Jndi | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Java & Spring</span>
+                    <time class="article-date" datetime="31/03/2024">31/03/2024</time>
+                </div>
+                
+                <h1 class="article-title">Jdbc Versus Jndi</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">DevOps</span> <span class="tag">IA</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                
+<p><img alt="Configuração de acesso ao banco de dados da sua aplicação." src="assets/img/2024_03_31_JDBC versus JNDI_image1.jpeg" /></p>
+<p>Configuração de acesso ao banco de dados da sua aplicação.</p>
+<p><strong>JDBC versus JNDI</strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_03_31_JDBC versus JNDI_image1.jpeg" /></a></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p>Desenvolvedor Java Sênior na Develcode</p>
+<p>31 de março de 2024</p>
+<p>A diferença entre uma conexão de banco de dados JDBC (<strong>Java Database Connectivity</strong>) e uma conexão de banco de dados JNDI (<strong>Java Naming and Directory Interface</strong>) está na forma como elas são configuradas e utilizadas:</p>
+<p><strong>1. JDBC:</strong></p>
+<p>- Definição: O JDBC é uma API do Java que possibilita que uma aplicação construída na linguagem consiga acessar um banco de dados configurado local ou remotamente.</p>
+<p>- Componentes:</p>
+<p>- Pacotes: A API JDBC é composta pelos pacotes java.sql e javax.sql, incluídos no JavaSE.</p>
+<p>- Drivers: Os drivers JDBC são responsáveis pela conexão e interação com um banco de dados específico. Eles podem ser totalmente desenvolvidos em Java ou escritos de forma nativa, acessando outras bibliotecas ou drivers de sistema.</p>
+<p>- Tipos de Drivers:</p>
+<p>- Tipo 1 (JDBC-ODBC): Permite o acesso a drivers ODBC, um padrão consolidado para o acesso a bases de dados.</p>
+<p>- Tipo 2: Implementa o protocolo do proprietário do banco de dados, transformando chamadas JDBC em chamadas do banco com o uso da API proprietária.</p>
+<p>- Tipo 3: Faz a conversão das chamadas JDBC em outras chamadas do banco de dados, direcionando-as para uma camada intermediária de software (middleware).</p>
+<p>- Tipo 4: É um driver puro Java que se comunica diretamente com o banco de dados, sem a necessidade de camadas intermediárias.</p>
+<p><strong>2. JNDI:</strong></p>
+<p>- Definição: O JNDI é uma API que permite que aplicações Java localizem e acessem objetos em um ambiente distribuído. Ele é frequentemente usado para configurar conexões com recursos, como bancos de dados, servidores de correio e serviços de diretório.</p>
+<p>- Utilização:</p>
+<p>- O JNDI é usado para obter referências a objetos, como conexões de banco de dados, a partir de um servidor de aplicação ou outro contexto.</p>
+<p>- Ele permite que as configurações de conexão (como URL, usuário e senha) sejam centralizadas e gerenciadas externamente, facilitando a manutenção e a escalabilidade.</p>
+<p>Em resumo, o <strong>JDBC</strong> é uma API para acessar bancos de dados diretamente, enquanto o <strong>JNDI</strong> é usado para obter referências a recursos, como conexões de banco de dados, de forma mais flexível e centralizada.</p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christian Mulato</h3>
+                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+                <a href="../index.html">Artigos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script>
+        // Tema manager
+        class ThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggle');
+                this.themeIcon = document.getElementById('themeIcon');
+                this.init();
+            }
+            
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = savedTheme || systemTheme;
+                
+                this.setTheme(currentTheme);
+                this.updateIcon(currentTheme);
+                
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                this.setTheme(newTheme);
+                this.updateIcon(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+            
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            
+            updateIcon(theme) {
+                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                this.themeToggle.setAttribute('aria-label', 
+                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+            }
+        }
+        
+        // Inicializar quando DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+        });
+    </script>
+</body>
+</html>

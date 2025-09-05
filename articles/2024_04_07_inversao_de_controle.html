@@ -24,13 +24,13 @@
     <title>Inversão De Controle | Christian Mulato Dev Blog</title>
     
     <!-- Styles -->
-    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="assets/css/article.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="../assets/js/article.js" defer></script>
+    <script src="assets/js/article.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -66,11 +66,11 @@
             </header>
             
             <div class="article-content">
-                <h1 id="inversao-de-controle"><a class="toclink" href="#inversao-de-controle">Inversão De Controle</a></h1>
-<p><img alt="O conceito da inversão de controle." src="img/image_not_found.png" /></p>
+                
+<p><img alt="O conceito da inversão de controle." src="assets/img/2024_04_07_Inversão de Controle_image1.png" /></p>
 <p>O conceito da inversão de controle.</p>
 <p><strong>Inversão de Controle (IoC)</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="img/image_not_found.png" /></a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_04_07_Inversão de Controle_image3.jpeg" /></a></p>
 <p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>7 de abril de 2024</p>
@@ -92,7 +92,7 @@
 <p><strong>3. Implementação:</strong></p>
 <p>- Na prática, a IoC é alcançada por meio da dependência de abstrações (interfaces) em vez de implementações concretas.</p>
 <p>- Em vez de criar objetos dentro de uma classe, recebemos esses objetos como parâmetros (por exemplo, por meio de construtores).</p>
-<p><img alt="" src="img/image_not_found.png" /></p>
+<p><img alt="" src="assets/img/2024_04_07_Inversão de Controle_image3.jpeg" /></p>
 <p>Arquitetura Hexagonal aplicada com a IoC.</p>
 <p><strong>Arquitetura Hexagonal</strong> (Ports and Adapters)</p>
 <p>A Arquitetura Hexagonal, também conhecida como Ports and Adapters, é um padrão arquitetural que visa isolar a lógica de negócios da aplicação do mundo externo. Vejamos os principais pontos:</p>
@@ -131,5 +131,73 @@
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christian Mulato</h3>
+                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+                <a href="../index.html">Artigos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script>
+        // Tema manager
+        class ThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggle');
+                this.themeIcon = document.getElementById('themeIcon');
+                this.init();
+            }
+            
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = savedTheme || systemTheme;
+                
+                this.setTheme(currentTheme);
+                this.updateIcon(currentTheme);
+                
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                this.setTheme(newTheme);
+                this.updateIcon(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+            
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            
+            updateIcon(theme) {
+                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                this.themeToggle.setAttribute('aria-label', 
+                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+            }
+        }
+        
+        // Inicializar quando DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+        });
+    </script>
 </body>
 </html>
