@@ -6,7 +6,7 @@
     <meta name="description" content="Artigos técnicos sobre desenvolvimento Java, arquitetura de software e tecnologia">
     <title>Christian Mulato Dev Blog</title>
     
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="articles/assets/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -22,14 +22,34 @@
             </div>
         </header>
 
+        <!-- Filtros de Busca -->
+        <section class="filters-section">
+            <div class="filters-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="🔍 Buscar artigos..." />
+                </div>
+                <div class="category-filter">
+                    <select id="categoryFilter">
+                        <option value="">📂 Todas as categorias</option>
+                        <option value="java">☕ Java & Spring</option>
+                        <option value="arquitetura">🏗️ Arquitetura</option>
+                        <option value="devops">🐳 DevOps</option>
+                        <option value="apis">🔧 APIs</option>
+                        <option value="testes">🧪 Testes</option>
+                        <option value="ia">🤖 IA & Tecnologia</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
         <main class="main">
             <section class="articles-section">
                 <div class="section-header">
                     <h2>Artigos Técnicos</h2>
                     <p>Explorando Java, Spring Boot, Docker, APIs e arquitetura de software</p>
                     <div class="stats">
-                        <span class="stat">📚 59 artigos publicados</span>
-                        <span class="stat">🚀 Março 2024 - Setembro 2025</span>
+                        <span class="stat">57 artigos publicados</span>
+                        <span class="stat">Março 2024 - Setembro 2025</span>
                     </div>
                 </div>
                 
@@ -37,37 +57,6 @@
                     
         <div class="year-section">
             <h2 class="year-header">2025</h2>
-
-            <div class="month-section">
-                <h3 class="month-header">Setembro 2025</h3>
-                <div class="articles-grid">
-
-                    <article class="article-card">
-                        <div class="article-meta">
-                            <span class="category">Java & Spring</span>
-                            <span class="date">14/09/2025</span>
-                        </div>
-                        <h4 class="article-title">
-                            <a href="articles/2025_09_14_Arquitetura_Hexagonal_vs_Clean_Architecture.html">Arquitetura Hexagonal vs. Arquitetura Limpa: Comparação Prática em Java</a>
-                        </h4>
-                        <p class="article-description">Artigo técnico sobre arquitetura hexagonal vs. arquitetura limpa: comparação prática em java</p>
-                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">Arquitetura</span> <span class="tag">Design Patterns</span></div>
-                    </article>
-
-                    <article class="article-card">
-                        <div class="article-meta">
-                            <span class="category">DevOps & Containers</span>
-                            <span class="date">07/09/2025</span>
-                        </div>
-                        <h4 class="article-title">
-                            <a href="articles/2025_09_07_Decisoes_Tecnicas_que_a_IA_Nao_Pode_Tomar_Licoes_de_Desenvolvimento_em_Visao_Computacional.html">Decisões Técnicas que a IA Não Pode Tomar: Lições de Desenvolvimento em Visão Computacional</a>
-                        </h4>
-                        <p class="article-description">Artigo técnico sobre decisões técnicas que a ia não pode tomar: lições de desenvolvimento em visão computacional</p>
-                        <div class="article-tags"><span class="tag">IA</span> <span class="tag">Inteligência Artificial</span></div>
-                    </article>
-
-                </div>
-            </div>
 
             <div class="month-section">
                 <h3 class="month-header">Agosto 2025</h3>
@@ -91,7 +80,7 @@
                             <span class="date">24/08/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_08_24_CSOnline - Final - Gestão CD Da Experiência Real ao MVP Enterprise Moderno.html">CSOnline - Gestão CD: MVP Enterprise Completo e Lições de 11 Anos</a>
+                            <a href="articles/2025_08_24_csonline_-_final_-_gestao_cd_da_experiencia_real_ao_mvp_enterprise_moderno.html">CSOnline - Gestão CD: MVP Enterprise Completo e Lições de 11 Anos</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre csonline - gestão cd: mvp enterprise completo e lições de 11 anos</p>
                         <div class="article-tags"><span class="tag">IA</span> <span class="tag">Inteligência Artificial</span></div>
@@ -99,14 +88,14 @@
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="category">APIs & Microserviços</span>
+                            <span class="category">Java & Spring</span>
                             <span class="date">20/08/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_08_20_Do Caus Manual à Confiança Autamatizada.html">Da Necessidade ao Sistema: Como Construímos uma Suite de Testes Automatizados para APIs REST</a>
+                            <a href="articles/2025_08_20_do_caus_manual_a_confianca_autamatizada.html">Do Caus Manual À Confiança Autamatizada</a>
                         </h4>
-                        <p class="article-description">Artigo técnico sobre da necessidade ao sistema: como construímos uma suite de testes automatizados para apis rest</p>
-                        <div class="article-tags"><span class="tag">APIs</span> <span class="tag">REST</span> <span class="tag">Testes</span></div>
+                        <p class="article-description">Artigo técnico sobre do caus manual à confiança autamatizada</p>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Docker</span></div>
                     </article>
 
                     <article class="article-card">
@@ -115,7 +104,7 @@
                             <span class="date">17/08/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_08_17_CSOnline - Final - Gestão CD Da Experiência Real ao MVP Enterprise Moderno.html">CSOnline - Gestão CD: MVP Enterprise Completo e Lições de 11 Anos</a>
+                            <a href="articles/2025_08_17_csonline_-_final_-_gestao_cd_da_experiencia_real_ao_mvp_enterprise_moderno.html">CSOnline - Gestão CD: MVP Enterprise Completo e Lições de 11 Anos</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre csonline - gestão cd: mvp enterprise completo e lições de 11 anos</p>
                         <div class="article-tags"><span class="tag">IA</span> <span class="tag">Inteligência Artificial</span></div>
@@ -127,7 +116,7 @@
                             <span class="date">12/08/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_08_12_CSOnline - Parte IV - Gestão CD Marco de Documentação Interativa Alcançado.html">CSOnline - Parte IV - Gestão CD: Marco de Documentação Interativa Alcançado</a>
+                            <a href="articles/2025_08_12_csonline_-_parte_iv_-_gestao_cd_marco_de_documentacao_interativa_alcancado.html">CSOnline - Parte IV - Gestão CD: Marco de Documentação Interativa Alcançado</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre csonline - parte iv - gestão cd: marco de documentação interativa alcançado</p>
                         <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
@@ -139,7 +128,7 @@
                             <span class="date">09/08/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_08_09_CSOnline – Parte III - Segurança JWT Autorização por Papéis e Testes 100 Verdes.html">CSOnline – Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes</a>
+                            <a href="articles/2025_08_09_csonline_parte_iii_-_seguranca_jwt_autorizacao_por_papeis_e_testes_100_verdes.html">CSOnline – Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre csonline – parte iii: segurança jwt, autorização por papéis e testes 100% verdes</p>
                         <div class="article-tags"><span class="tag">Testes</span> <span class="tag">TDD</span></div>
@@ -151,7 +140,7 @@
                             <span class="date">06/08/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_08_06_Automatizando Testes de APIs REST com Robot Framework - Guia Prático.html">Automatizando Testes de APIs REST com Robot Framework: Guia Prático</a>
+                            <a href="articles/2025_08_06_automatizando_testes_de_apis_rest_com_robot_framework_-_guia_pratico.html">Automatizando Testes de APIs REST com Robot Framework: Guia Prático</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre automatizando testes de apis rest com robot framework: guia prático</p>
                         <div class="article-tags"><span class="tag">APIs</span> <span class="tag">REST</span> <span class="tag">Testes</span></div>
@@ -163,7 +152,7 @@
                             <span class="date">02/08/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_08_02_CSOnline - Parte II - Avanços contínuos no projeto.html">Avanços contínuos no projeto</a>
+                            <a href="articles/2025_08_02_csonline_-_parte_ii_-_avancos_continuos_no_projeto.html">Avanços contínuos no projeto</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre avanços contínuos no projeto</p>
                         <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
@@ -171,14 +160,14 @@
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="category">Desenvolvimento</span>
+                            <span class="category">Java & Spring</span>
                             <span class="date">01/08/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_08_01_Lula vs Bolsonaro e Us and Them_O que ainda não entendemos sobre a polarização.html">Lula vs Bolsonaro & Us and Them: O que ainda não entendemos sobre a polarização</a>
+                            <a href="articles/2025_08_01_lula_vs_bolsonaro_e_us_and_them_o_que_ainda_nao_entendemos_sobre_a_polarizacao.html">Lula Vs Bolsonaro E Us And Them O Que Ainda Não Entendemos Sobre A Polarização</a>
                         </h4>
-                        <p class="article-description">Artigo técnico sobre lula vs bolsonaro & us and them: o que ainda não entendemos sobre a polarização</p>
-                        <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
+                        <p class="article-description">Artigo técnico sobre lula vs bolsonaro e us and them o que ainda não entendemos sobre a polarização</p>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Docker</span></div>
                     </article>
 
                 </div>
@@ -194,7 +183,7 @@
                             <span class="date">27/07/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_07_27_CSOnline - Parte I - Refatoração e Evolução - Convite à Comunidade.html">Refatoração e Evolução do CSOnline: Convite à Comunidade</a>
+                            <a href="articles/2025_07_27_csonline_-_parte_i_-_refatoracao_e_evolucao_-_convite_a_comunidade.html">Refatoração e Evolução do CSOnline: Convite à Comunidade</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre refatoração e evolução do csonline: convite à comunidade</p>
                         <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
@@ -206,7 +195,7 @@
                             <span class="date">24/07/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_07_24_Do MVC para a Arquitetura Hexagonal - Uma Transição Necessária.html">Do MVC para a Arquitetura Hexagonal: Uma Transição Necessária</a>
+                            <a href="articles/2025_07_24_do_mvc_para_a_arquitetura_hexagonal_-_uma_transicao_necessaria.html">Do MVC para a Arquitetura Hexagonal: Uma Transição Necessária</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre do mvc para a arquitetura hexagonal: uma transição necessária</p>
                         <div class="article-tags"><span class="tag">Arquitetura</span> <span class="tag">Design Patterns</span> <span class="tag">IA</span></div>
@@ -218,7 +207,7 @@
                             <span class="date">21/07/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_07_21_Programação com Agentes - O novo padrão no desenvolvimento de software.html">Programação com Agentes: O novo padrão no desenvolvimento de software.</a>
+                            <a href="articles/2025_07_21_programacao_com_agentes_-_o_novo_padrao_no_desenvolvimento_de_software.html">Programação com Agentes: O novo padrão no desenvolvimento de software.</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre programação com agentes: o novo padrão no desenvolvimento de software.</p>
                         <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
@@ -230,7 +219,7 @@
                             <span class="date">19/07/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_07_19_Arquitetura Escalável para Web Crawling com Java e Docker - Um Caso Real.html">Arquitetura Escalável para Web Crawling com Java e Docker: Um Caso Real</a>
+                            <a href="articles/2025_07_19_arquitetura_escalavel_para_web_crawling_com_java_e_docker_-_um_caso_real.html">Arquitetura Escalável para Web Crawling com Java e Docker: Um Caso Real</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre arquitetura escalável para web crawling com java e docker: um caso real</p>
                         <div class="article-tags"><span class="tag">Java</span> <span class="tag">Docker</span> <span class="tag">Containers</span></div>
@@ -238,14 +227,14 @@
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="category">DevOps & Containers</span>
+                            <span class="category">Java & Spring</span>
                             <span class="date">12/07/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_07_12_O custo da inteligência artificial e a manipulação dos mercados de trabalho na era digital.html">O custo da inteligência artificial e a manipulação dos mercados de trabalho na era digital</a>
+                            <a href="articles/2025_07_12_o_custo_da_inteligencia_artificial_e_a_manipulacao_dos_mercados_de_trabalho_na_era_digital.html">O Custo Da Inteligência Artificial E A Manipulação Dos Mercados De Trabalho Na Era Digital</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre o custo da inteligência artificial e a manipulação dos mercados de trabalho na era digital</p>
-                        <div class="article-tags"><span class="tag">IA</span> <span class="tag">Inteligência Artificial</span></div>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Docker</span></div>
                     </article>
 
                     <article class="article-card">
@@ -254,7 +243,7 @@
                             <span class="date">07/07/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_07_07_Parte Final - Kafka Avançado e Produção.html">Parte Final: Kafka Avançado e Produção</a>
+                            <a href="articles/2025_07_07_parte_final_-_kafka_avancado_e_producao.html">Parte Final: Kafka Avançado e Produção</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre parte final: kafka avançado e produção</p>
                         <div class="article-tags"><span class="tag">Apache Kafka</span> <span class="tag">Mensageria</span></div>
@@ -266,7 +255,7 @@
                             <span class="date">05/07/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_07_05_Parte II - Java com Apache Kafka.html">Parte II: Java com Apache Kafka</a>
+                            <a href="articles/2025_07_05_parte_ii_-_java_com_apache_kafka.html">Parte II: Java com Apache Kafka</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre parte ii: java com apache kafka</p>
                         <div class="article-tags"><span class="tag">Java</span> <span class="tag">Apache Kafka</span> <span class="tag">Mensageria</span></div>
@@ -278,7 +267,7 @@
                             <span class="date">03/07/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_07_03_Da Prancheta ao Prompt - O Futuro da Criação de Softwares com Inteligência Artificial.html">Visualizar publicação</a>
+                            <a href="articles/2025_07_03_da_prancheta_ao_prompt_-_o_futuro_da_criacao_de_softwares_com_inteligencia_artificial.html">Visualizar publicação</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre visualizar publicação</p>
                         <div class="article-tags"><span class="tag">IA</span> <span class="tag">Inteligência Artificial</span></div>
@@ -297,7 +286,7 @@
                             <span class="date">30/06/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_06_30_Parte I - Fundamentos do Apache Kafka.html">Parte I: Fundamentos do Apache Kafka</a>
+                            <a href="articles/2025_06_30_parte_i_-_fundamentos_do_apache_kafka.html">Parte I: Fundamentos do Apache Kafka</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre parte i: fundamentos do apache kafka</p>
                         <div class="article-tags"><span class="tag">Apache Kafka</span> <span class="tag">Mensageria</span></div>
@@ -309,10 +298,10 @@
                             <span class="date">24/06/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_06_24_Implementando Testes Unitários em um Projeto Java com Maven.html">Implementando Testes Unitários em um Projeto Java com Maven</a>
+                            <a href="articles/2025_06_24_implementando_testes_unitarios_em_um_projeto_java_com_maven.html">Implementando Testes Unitários Em Um Projeto Java Com Maven</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre implementando testes unitários em um projeto java com maven</p>
-                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">Testes</span> <span class="tag">TDD</span></div>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Docker</span></div>
                     </article>
 
                     <article class="article-card">
@@ -321,7 +310,7 @@
                             <span class="date">22/06/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_06_22_CEO de Si Mesmo - O Brasil que terceiriza até a dignidade.html">CEO de Si Mesmo: O Brasil que terceiriza até a dignidade.</a>
+                            <a href="articles/2025_06_22_ceo_de_si_mesmo_-_o_brasil_que_terceiriza_ate_a_dignidade.html">CEO de Si Mesmo: O Brasil que terceiriza até a dignidade.</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre ceo de si mesmo: o brasil que terceiriza até a dignidade.</p>
                         <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
@@ -340,7 +329,7 @@
                             <span class="date">24/05/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_05_24_Da Planta à Nuvem - A Nova Jornada do Engenheiro Químico na Era dos Dados.html">Da Planta à Nuvem: A Nova Jornada do Engenheiro Químico na Era dos Dados</a>
+                            <a href="articles/2025_05_24_da_planta_a_nuvem_-_a_nova_jornada_do_engenheiro_quimico_na_era_dos_dados.html">Da Planta à Nuvem: A Nova Jornada do Engenheiro Químico na Era dos Dados</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre da planta à nuvem: a nova jornada do engenheiro químico na era dos dados</p>
                         <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
@@ -352,7 +341,7 @@
                             <span class="date">17/05/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_05_17_Inteligência Artificial na Engenharia Química - Uma Nova Ferramenta para Resolver Problemas Clássicos com Agilidade e Precisão.html">Inteligência Artificial na Engenharia Química: Uma Nova Ferramenta para Resolver Problemas Clássicos com Agilidade e Precisão</a>
+                            <a href="articles/2025_05_17_inteligencia_artificial_na_engenharia_quimica_-_uma_nova_ferramenta_para_resolver_problemas_classicos_com_agilidade_e_precisao.html">Inteligência Artificial na Engenharia Química: Uma Nova Ferramenta para Resolver Problemas Clássicos com Agilidade e Precisão</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre inteligência artificial na engenharia química: uma nova ferramenta para resolver problemas clássicos com agilidade e precisão</p>
                         <div class="article-tags"><span class="tag">IA</span> <span class="tag">Inteligência Artificial</span></div>
@@ -364,7 +353,7 @@
                             <span class="date">15/05/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_05_15_Do engenho ao exílio - A ironia da engenharia nacional.html">Do engenho ao exílio: a ironia da engenharia nacional</a>
+                            <a href="articles/2025_05_15_do_engenho_ao_exilio_-_a_ironia_da_engenharia_nacional.html">Do engenho ao exílio: a ironia da engenharia nacional</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre do engenho ao exílio: a ironia da engenharia nacional</p>
                         <div class="article-tags"><span class="tag">IA</span> <span class="tag">Inteligência Artificial</span></div>
@@ -376,7 +365,7 @@
                             <span class="date">11/05/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_05_11_Entre números e máquinas - O mistério que alimenta a inteligência artificial.html">Entre números e máquinas: o mistério que alimenta a inteligência artificial</a>
+                            <a href="articles/2025_05_11_entre_numeros_e_maquinas_-_o_misterio_que_alimenta_a_inteligencia_artificial.html">Entre números e máquinas: o mistério que alimenta a inteligência artificial</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre entre números e máquinas: o mistério que alimenta a inteligência artificial</p>
                         <div class="article-tags"><span class="tag">IA</span> <span class="tag">Inteligência Artificial</span></div>
@@ -388,7 +377,7 @@
                             <span class="date">08/05/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_05_08_A persistência do analfabetismo funcional no Brasil - Um entrave ao desenvolvimento social.html">A persistência do analfabetismo funcional no Brasil: um entrave ao desenvolvimento social</a>
+                            <a href="articles/2025_05_08_a_persistencia_do_analfabetismo_funcional_no_brasil_-_um_entrave_ao_desenvolvimento_social.html">A persistência do analfabetismo funcional no Brasil: um entrave ao desenvolvimento social</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre a persistência do analfabetismo funcional no brasil: um entrave ao desenvolvimento social</p>
                         <div class="article-tags"><span class="tag">IA</span> <span class="tag">Inteligência Artificial</span></div>
@@ -400,7 +389,7 @@
                             <span class="date">05/05/2025</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2025_05_05_Renda Básica Universal - Liberdade Ócio e o Futuro Humano.html">Renda Básica Universal: Liberdade, Ócio e o Futuro Humano</a>
+                            <a href="articles/2025_05_05_renda_basica_universal_-_liberdade_ocio_e_o_futuro_humano.html">Renda Básica Universal: Liberdade, Ócio e o Futuro Humano</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre renda básica universal: liberdade, ócio e o futuro humano</p>
                         <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
@@ -479,10 +468,10 @@
                             <span class="date">02/09/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_09_02_Transformando a Comunicação Assíncrona com Filas em Java.html">2024 09 02 Transformando A Comunicação Assíncrona Com Filas Em Java</a>
+                            <a href="articles/2024_09_02_transformando_a_comunicacao_assincrona_com_filas_em_java.html">Transformando A Comunicação Assíncrona Com Filas Em Java</a>
                         </h4>
-                        <p class="article-description">Artigo técnico sobre 2024 09 02 transformando a comunicação assíncrona com filas em java</p>
-                        <div class="article-tags"><span class="tag">Java</span></div>
+                        <p class="article-description">Artigo técnico sobre transformando a comunicação assíncrona com filas em java</p>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">Kubernetes</span> <span class="tag">APIs</span></div>
                     </article>
 
                 </div>
@@ -498,10 +487,10 @@
                             <span class="date">26/08/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_08_26_Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot_Um Guia Prático.html">Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot: Um Guia Prático</a>
+                            <a href="articles/2024_08_26_implementando_e_documentando_apis_restful_com_openapi_e_spring_boot_um_guia_pratico.html">Implementando E Documentando Apis Restful Com Openapi E Spring Boot Um Guia Prático</a>
                         </h4>
-                        <p class="article-description">Artigo técnico sobre implementando e documentando apis restful com openapi e spring boot: um guia prático</p>
-                        <div class="article-tags"><span class="tag">Spring</span> <span class="tag">Spring Boot</span> <span class="tag">APIs</span></div>
+                        <p class="article-description">Artigo técnico sobre implementando e documentando apis restful com openapi e spring boot um guia prático</p>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">APIs</span></div>
                     </article>
 
                     <article class="article-card">
@@ -510,22 +499,22 @@
                             <span class="date">18/08/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token.html">Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token</a>
+                            <a href="articles/2024_08_18_criando_endpoints_get_e_post_em_java_com_openapi_e_autenticacao_via_token.html">Criando Endpoints Get E Post Em Java Com Openapi E Autenticação Via Token</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre criando endpoints get e post em java com openapi e autenticação via token</p>
-                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">REST</span></div>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">APIs</span></div>
                     </article>
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="category">Arquitetura de Software</span>
+                            <span class="category">Java & Spring</span>
                             <span class="date">11/08/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_08_11_Arquitetura Serverless Como Simplificar o Desenvolvimento e Escalar Aplicacoes.html">Arquitetura Serverless: Como Simplificar o Desenvolvimento e Escalar Aplicações.</a>
+                            <a href="articles/2024_08_11_arquitetura_serverless_como_simplificar_o_desenvolvimento_e_escalar_aplicacoes.html">Arquitetura Serverless Como Simplificar O Desenvolvimento E Escalar Aplicacoes</a>
                         </h4>
-                        <p class="article-description">Artigo técnico sobre arquitetura serverless: como simplificar o desenvolvimento e escalar aplicações.</p>
-                        <div class="article-tags"><span class="tag">Arquitetura</span> <span class="tag">Design Patterns</span></div>
+                        <p class="article-description">Artigo técnico sobre arquitetura serverless como simplificar o desenvolvimento e escalar aplicacoes</p>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">Testes</span></div>
                     </article>
 
                     <article class="article-card">
@@ -553,10 +542,10 @@
                             <span class="date">28/07/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_07_28_Boas Práticas de Desenvolvimento em Java.html">Boas Práticas de Desenvolvimento em Java</a>
+                            <a href="articles/2024_07_28_boas_praticas_de_desenvolvimento_em_java.html">Boas Práticas De Desenvolvimento Em Java</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre boas práticas de desenvolvimento em java</p>
-                        <div class="article-tags"><span class="tag">Java</span></div>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">APIs</span></div>
                     </article>
 
                     <article class="article-card">
@@ -565,10 +554,10 @@
                             <span class="date">21/07/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP.html">Explorando o Java HTTP Client: Uma Ferramenta Moderna para Chamadas HTTP</a>
+                            <a href="articles/2024_07_21_explorando_o_java_http_client_uma_ferramenta_moderna_para_chamadas_http.html">Explorando O Java Http Client Uma Ferramenta Moderna Para Chamadas Http</a>
                         </h4>
-                        <p class="article-description">Artigo técnico sobre explorando o java http client: uma ferramenta moderna para chamadas http</p>
-                        <div class="article-tags"><span class="tag">Java</span></div>
+                        <p class="article-description">Artigo técnico sobre explorando o java http client uma ferramenta moderna para chamadas http</p>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">Testes</span></div>
                     </article>
 
                     <article class="article-card">
@@ -577,22 +566,22 @@
                             <span class="date">14/07/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_07_14_Java 8 Transformando a Programação com Expressões Lambda e java time.html">Java 8+: Transformando a Programação com Expressões Lambda e java.time.</a>
+                            <a href="articles/2024_07_14_java_8_transformando_a_programacao_com_expressoes_lambda_e_java_time.html">Java 8 Transformando A Programação Com Expressões Lambda E Java Time</a>
                         </h4>
-                        <p class="article-description">Artigo técnico sobre java 8+: transformando a programação com expressões lambda e java.time.</p>
-                        <div class="article-tags"><span class="tag">Java</span></div>
+                        <p class="article-description">Artigo técnico sobre java 8 transformando a programação com expressões lambda e java time</p>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">DevOps</span></div>
                     </article>
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="category">DevOps & Containers</span>
+                            <span class="category">Java & Spring</span>
                             <span class="date">07/07/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_07_07_API Gateway para o gerenciamento das fronteiras da aplicação.html">API Gateway para o gerenciamento das fronteiras da aplicação.</a>
+                            <a href="articles/2024_07_07_api_gateway_para_o_gerenciamento_das_fronteiras_da_aplicacao.html">Api Gateway Para O Gerenciamento Das Fronteiras Da Aplicação</a>
                         </h4>
-                        <p class="article-description">Artigo técnico sobre api gateway para o gerenciamento das fronteiras da aplicação.</p>
-                        <div class="article-tags"><span class="tag">APIs</span> <span class="tag">REST</span> <span class="tag">IA</span></div>
+                        <p class="article-description">Artigo técnico sobre api gateway para o gerenciamento das fronteiras da aplicação</p>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">Arquitetura</span></div>
                     </article>
 
                 </div>
@@ -604,14 +593,14 @@
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="category">Desenvolvimento</span>
+                            <span class="category">Java & Spring</span>
                             <span class="date">30/06/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_06_30_Containers no Desenvolvimento de Aplicações.html">Containers no Desenvolvimento de Aplicações</a>
+                            <a href="articles/2024_06_30_containers_no_desenvolvimento_de_aplicacoes.html">Containers No Desenvolvimento De Aplicações</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre containers no desenvolvimento de aplicações</p>
-                        <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Docker</span></div>
                     </article>
 
                     <article class="article-card">
@@ -620,22 +609,22 @@
                             <span class="date">23/06/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_06_23_Contratos de API Uma Abordagem Prática em Java.html">Contratos de API: Uma Abordagem Prática em Java</a>
+                            <a href="articles/2024_06_23_contratos_de_api_uma_abordagem_pratica_em_java.html">Contratos De Api Uma Abordagem Prática Em Java</a>
                         </h4>
-                        <p class="article-description">Artigo técnico sobre contratos de api: uma abordagem prática em java</p>
-                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">REST</span></div>
+                        <p class="article-description">Artigo técnico sobre contratos de api uma abordagem prática em java</p>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">Testes</span></div>
                     </article>
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="category">DevOps & Containers</span>
+                            <span class="category">Java & Spring</span>
                             <span class="date">16/06/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_06_16_A Importância do Suporte Remoto para Escritórios de Negócios.html">A Importância do Suporte Remoto para Escritórios de Negócios</a>
+                            <a href="articles/2024_06_16_a_importancia_do_suporte_remoto_para_escritorios_de_negocios.html">A Importância Do Suporte Remoto Para Escritórios De Negócios</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre a importância do suporte remoto para escritórios de negócios</p>
-                        <div class="article-tags"><span class="tag">IA</span> <span class="tag">Inteligência Artificial</span></div>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">DevOps</span> <span class="tag">IA</span></div>
                     </article>
 
                     <article class="article-card">
@@ -644,10 +633,10 @@
                             <span class="date">09/06/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_06_09_Gerenciamento de Filas em Sistemas Distribuídos com Java.html">Gerenciamento de Filas em Sistemas Distribuídos com Java</a>
+                            <a href="articles/2024_06_09_gerenciamento_de_filas_em_sistemas_distribuidos_com_java.html">Gerenciamento De Filas Em Sistemas Distribuídos Com Java</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre gerenciamento de filas em sistemas distribuídos com java</p>
-                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">IA</span> <span class="tag">Inteligência Artificial</span></div>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">Kafka</span></div>
                     </article>
 
                     <article class="article-card">
@@ -656,7 +645,7 @@
                             <span class="date">02/06/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_06_02_Test-Driven Development aplicado ao desenvolvimento Java.html">TDD (Test-Driven Development) aplicado ao desenvolvimento Java</a>
+                            <a href="articles/2024_06_02_test-driven_development_aplicado_ao_desenvolvimento_java.html">TDD (Test-Driven Development) aplicado ao desenvolvimento Java</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre tdd (test-driven development) aplicado ao desenvolvimento java</p>
                         <div class="article-tags"><span class="tag">Java</span> <span class="tag">Testes</span> <span class="tag">TDD</span></div>
@@ -695,14 +684,14 @@
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="category">DevOps & Containers</span>
+                            <span class="category">Java & Spring</span>
                             <span class="date">12/05/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_05_12_O Recurso Computacional.html">O Recurso Computacional</a>
+                            <a href="articles/2024_05_12_o_recurso_computacional.html">O Recurso Computacional</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre o recurso computacional</p>
-                        <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">Docker</span> <span class="tag">Arquitetura</span></div>
                     </article>
 
                     <article class="article-card">
@@ -711,7 +700,7 @@
                             <span class="date">05/05/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_05_05_JakartaEE - Desenvolvimento Seguro.html">JakartaEE - Desenvolvimento Seguro</a>
+                            <a href="articles/2024_05_05_jakartaee_-_desenvolvimento_seguro.html">JakartaEE - Desenvolvimento Seguro</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre jakartaee - desenvolvimento seguro</p>
                         <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
@@ -726,14 +715,14 @@
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="category">Desenvolvimento</span>
+                            <span class="category">Java & Spring</span>
                             <span class="date">28/04/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_04_28_Tratamento de erros.html">Tratamento de erros</a>
+                            <a href="articles/2024_04_28_tratamento_de_erros.html">Tratamento De Erros</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre tratamento de erros</p>
-                        <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">Testes</span></div>
                     </article>
 
                     <article class="article-card">
@@ -754,10 +743,10 @@
                             <span class="date">14/04/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_04_14_Algumas novidades do JavaEE.html">Algumas novidades do JavaEE</a>
+                            <a href="articles/2024_04_14_algumas_novidades_do_javaee.html">Algumas Novidades Do Javaee</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre algumas novidades do javaee</p>
-                        <div class="article-tags"><span class="tag">Java</span></div>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">DevOps</span></div>
                     </article>
 
                     <article class="article-card">
@@ -781,38 +770,38 @@
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="category">Desenvolvimento</span>
+                            <span class="category">Java & Spring</span>
                             <span class="date">31/03/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_03_31_JDBC versus JNDI.html">JDBC versus JNDI</a>
+                            <a href="articles/2024_03_31_jdbc_versus_jndi.html">Jdbc Versus Jndi</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre jdbc versus jndi</p>
-                        <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">DevOps</span></div>
                     </article>
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="category">DevOps & Containers</span>
+                            <span class="category">Java & Spring</span>
                             <span class="date">24/03/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_03_24_O desaparecimento do EJB.html">O desaparecimento do EJB</a>
+                            <a href="articles/2024_03_24_o_desaparecimento_do_ejb.html">O Desaparecimento Do Ejb</a>
                         </h4>
                         <p class="article-description">Artigo técnico sobre o desaparecimento do ejb</p>
-                        <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Docker</span></div>
                     </article>
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="category">Desenvolvimento</span>
+                            <span class="category">Java & Spring</span>
                             <span class="date">20/03/2024</span>
                         </div>
                         <h4 class="article-title">
-                            <a href="articles/2024_03_20_Produtividade versus Renda.html">Produtividade versus Renda.</a>
+                            <a href="articles/2024_03_20_produtividade_versus_renda.html">Produtividade Versus Renda</a>
                         </h4>
-                        <p class="article-description">Artigo técnico sobre produtividade versus renda.</p>
-                        <div class="article-tags"><span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span></div>
+                        <p class="article-description">Artigo técnico sobre produtividade versus renda</p>
+                        <div class="article-tags"><span class="tag">Java</span> <span class="tag">DevOps</span> <span class="tag">IA</span></div>
                     </article>
 
                     <article class="article-card">
@@ -859,6 +848,11 @@
         </footer>
     </div>
     
-    <script src="assets/js/main.js"></script>
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script src="articles/assets/js/main.js"></script>
 </body>
 </html>
