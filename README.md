@@ -20,30 +20,69 @@ Este blog contém uma coleção curada de artigos técnicos cobrindo:
 - **🧪 Testes**: TDD, Testes Unitários, Integração
 - **🤖 IA & Tecnologia**: Inteligência Artificial aplicada ao desenvolvimento
 
-## 🏗️ Estrutura do Projeto
+## � Sistema de Temas Dark/Light
+
+O site possui um sistema completo de alternância entre temas claro e escuro para melhor experiência de leitura:
+
+### ✨ Funcionalidades Principais
+- **🔄 Alternância Intuitiva**: Botão flutuante no canto superior direito
+- **💾 Persistência**: Tema escolhido é salvo automaticamente entre sessões
+- **📱 Responsivo**: Funciona perfeitamente em desktop e mobile
+- **⚡ Transições Suaves**: Animações de 0.3s para mudança fluida
+- **🔍 Auto-detecção**: Respeita preferência do sistema operacional
+
+### 🎯 Benefícios para Usuários
+- **👁️ Melhor Legibilidade**: Especialmente em ambientes com pouca luz
+- **🔋 Economia de Bateria**: Tema escuro consome menos energia em telas OLED
+- **😌 Redução de Fadiga Visual**: Menos strain ocular durante leitura prolongada
+- **♿ Acessibilidade**: Contrastes otimizados seguindo diretrizes WCAG
+
+### 🛠️ Implementação Técnica
+- **CSS Variables**: Sistema baseado em variáveis para fácil manutenção
+- **LocalStorage**: Persistência de preferência do usuário
+- **Media Queries**: Detecção automática de preferência do sistema
+- **ARIA Labels**: Botões acessíveis com descrições apropriadas
+
+### 🎨 Paleta de Cores
+
+| Elemento | Tema Claro | Tema Escuro |
+|----------|------------|-------------|
+| **Fundo Principal** | `#ffffff` | `#111827` |
+| **Fundo Secundário** | `#f9fafb` | `#1f2937` |
+| **Texto Principal** | `#1f2937` | `#f9fafb` |
+| **Texto Secundário** | `#6b7280` | `#d1d5db` |
+| **Accent Color** | `#2563eb` | `#3b82f6` |
+
+**Status: ✅ Implementado em todos os 57+ artigos e página principal**
+
+## �🏗️ Estrutura do Projeto
 
 ```
 site_artiches/
 ├── 📄 index.html                    # Página principal do site
 ├── 📖 README.md                     # Este arquivo
 ├── 📁 docx/                         # 📜 Artigos originais (176 arquivos DOCX)
-├── ⚙️ assets/                       # Recursos estáticos
-│   ├── 🎨 css/                     # Estilos CSS
-│   │   ├── main.css                # Estilo principal
-│   │   └── article.css             # Estilo dos artigos
-│   └── 🔧 js/                      # JavaScript
-│       ├── main.js                 # Funcionalidades principais
-│       └── search.js               # Sistema de busca
-├── 📰 articles/                     # Artigos publicados
-│   ├── 📄 *.html                   # 60 artigos em HTML
-│   └── 📁 img/                     # Recursos dos artigos
+├── 📁 articles/                     # Artigos publicados
+│   ├── ⚙️ assets/                  # Recursos estáticos
+│   │   ├── 🎨 css/                 # Estilos CSS
+│   │   │   ├── main.css            # Estilo principal
+│   │   │   └── article.css         # Estilo dos artigos
+│   │   └── 🔧 js/                  # JavaScript
+│   │       ├── main.js             # Funcionalidades principais
+│   │       └── search.js           # Sistema de busca
+│   │   └── � img/                 # Recursos dos artigos (165 imagens)
+│   ├── 📄 *.html                   # 57 artigos em HTML
 │       ├── 🖼️ *.png, *.jpeg        # 216 imagens dos artigos
 │       └── 📝 *.md                 # 60 arquivos Markdown originais
 └── 🛠️ scr/                         # Scripts de gerenciamento
-    ├── 🎛️ site_manager.py          # Gerenciador principal
+    ├── 📁 json/                    # Configurações e relatórios JSON
+    │   └── ⚙️ config.json          # Configurações do site
+    ├── 📁 log/                     # Logs centralizados
+    ├── 🎛️ site_manager.py          # Gerenciador principal do site
     ├── 🏗️ build_site.py            # Build completo do site
-    ├── 🧹 cleanup.py               # Organização de arquivos
-    └── ⚙️ config.json              # Configurações do site
+    ├── 🔄 convert_md_to_html.py    # Conversão Markdown → HTML
+    ├── ✅ validate_articles.py     # Validação de artigos e links
+    └── 🔧 fix_articles.py          # Correção automática de problemas
 ```
 
 ## 🛠️ Scripts de Gerenciamento
@@ -55,15 +94,15 @@ Ferramenta principal para gerenciar o site:
 # Converter um artigo específico
 python scr/site_manager.py convert "2024_03_06_aplicacao_web_java.md"
 
-# Gerar página index (em desenvolvimento)
+# Gerar página index
 python scr/site_manager.py index
 
-# Validar links e recursos (em desenvolvimento)
-python scr/site_manager.py validate
+# Atualizar metadados
+python scr/site_manager.py update-metadata
 ```
 
 ### 🏗️ Build Completo
-Executa o build completo do site:
+Executa o build completo do site com validação e correção automática:
 
 ```bash
 python scr/build_site.py
@@ -74,11 +113,35 @@ python scr/build_site.py
 - ✅ Aplica templates responsivos com metadados SEO
 - ✅ Processa código com syntax highlighting
 - ✅ Gera estrutura de navegação
+- ✅ Valida artigos e corrige problemas automaticamente
 - ✅ Otimiza imagens e recursos
 
-### 🧹 Limpeza e Organização
+### 🔄 Conversão MD → HTML
+Converte arquivos Markdown individuais para HTML:
+
 ```bash
-python scr/cleanup.py
+python scr/convert_md_to_html.py
+```
+
+### ✅ Validação de Artigos
+Verifica integridade dos artigos:
+
+```bash
+python scr/validate_articles.py
+```
+
+**Verificações realizadas:**
+- 🔍 Detecção de artigos duplicados
+- 📝 Validação de estrutura HTML
+- 🔗 Verificação de links quebrados
+- 🎨 Consistência de formatação CSS
+- 📊 Geração de relatórios detalhados
+
+### 🔧 Correção Automática
+Corrige problemas encontrados na validação:
+
+```bash
+python scr/fix_articles.py
 ```
 
 ## 🚀 Como Executar Localmente
@@ -122,6 +185,8 @@ xdg-open index.html
 | **🖼️ Imagens** | 216 |
 | **📝 Arquivos Markdown** | 60 |
 | **🌐 Páginas HTML** | 60 |
+| **🎨 Suporte a Temas** | Dark/Light Mode ✅ |
+| **📱 Responsividade** | 100% Mobile-First |
 | **📅 Período** | Março 2024 - Setembro 2025 |
 | **🔄 Última Atualização** | 04/09/2025 |
 
@@ -159,6 +224,9 @@ xdg-open index.html
 - [x] Syntax highlighting para código
 - [x] Organização automática de imagens
 - [x] Metadados e frontmatter padronizados
+- [x] **Sistema de temas Dark/Light mode**
+- [x] **Persistência de preferências do usuário**
+- [x] **Auto-detecção de tema do sistema**
 
 ### 🚧 Em Desenvolvimento
 - [ ] Sistema de busca avançada
@@ -173,7 +241,6 @@ xdg-open index.html
 - [ ] Newsletter integration
 - [ ] Analytics dashboard
 - [ ] PWA support
-- [ ] Dark mode
 - [ ] Internacionalização (EN/PT)
 
 ## 🤝 Contribuindo

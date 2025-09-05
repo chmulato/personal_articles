@@ -48,7 +48,11 @@ Thumbs.db
 # Logs
 *.log
 logs/
-scr/*.log
+scr/log/*.log
+
+# JSON Reports and Config (track config.json but ignore reports)
+scr/json/*report*.json
+!scr/json/config.json
 
 # Temporary files
 *.tmp
@@ -59,6 +63,8 @@ scr/*.log
 *.backup
 *.backup2
 old_scripts/
+backup_before_fixes/
+backup_duplicates_removal/
 
 # Node modules (se usar npm no futuro)
 node_modules/
