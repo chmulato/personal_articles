@@ -104,42 +104,41 @@
 </ul>
 <p>Cada script seguia o mesmo padrão:</p>
 <p>function Test-EntityCRUD {</p>
-<div class="highlight"><pre><span></span><code><span class="n">param\(\[string\]$BaseUrl,</span><span class="w"> </span><span class="n">\[string\]$Entity\)</span>
+<div class="highlight"><pre><span></span><code><span class="n">param([string]$BaseUrl,</span><span class="w"> </span><span class="n">[string]$Entity)</span>
 
 
 
-<span class="n">try</span><span class="w"> </span><span class="n">\{</span>
+<span class="n">try</span><span class="w"> </span><span class="n">{</span>
 
-<span class="w">    </span><span class="n">\#</span><span class="w"> </span><span class="n">GET</span><span class="w"> </span><span class="n">\-</span><span class="w"> </span><span class="n">Lista</span>
+<span class="w">    </span><span class="n">\#</span><span class="w"> </span><span class="n">GET</span><span class="w"> </span><span class="n">-</span><span class="w"> </span><span class="n">Lista</span>
 
-<span class="w">    </span><span class="nb">$list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke\-RestMethod</span><span class="w"> </span><span class="n">\-Uri</span><span class="w"> </span><span class="s">&quot;$BaseUrl/$Entity&quot;</span>
+<span class="w">    </span><span class="nb">$list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke-RestMethod</span><span class="w"> </span><span class="n">-Uri</span><span class="w"> </span><span class="s">&quot;$BaseUrl/$Entity&quot;</span>
 
-<span class="w">    </span><span class="n">Write\-Host</span><span class="w"> </span><span class="s">&quot;GET /$Entity : SUCESSO \($\($list\.Count\) registros\)&quot;</span><span class="w"> </span><span class="n">\-ForegroundColor</span><span class="w"> </span><span class="n">Green</span>
-
-
-
-<span class="w">    </span><span class="n">\#</span><span class="w"> </span><span class="n">GET</span><span class="w"> </span><span class="n">\-</span><span class="w"> </span><span class="n">Individual</span><span class="w"> </span><span class="n">\(se</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="n">não</span><span class="w"> </span><span class="n">estiver</span><span class="w"> </span><span class="n">vazia\)</span>
-
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">\($list\.Count</span><span class="w"> </span><span class="n">\-gt</span><span class="w"> </span><span class="mh">0</span><span class="n">\)</span><span class="w"> </span><span class="n">\{</span>
-
-<span class="w">        </span><span class="n">$individual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke\-RestMethod</span><span class="w"> </span><span class="n">\-Uri</span><span class="w"> </span><span class="s">&quot;$BaseUrl/$Entity/$\($list\[0\]\.id\)&quot;</span>
-
-<span class="w">        </span><span class="n">Write\-Host</span><span class="w"> </span><span class="s">&quot;GET /$Entity/\{id\} : SUCESSO&quot;</span><span class="w"> </span><span class="n">\-ForegroundColor</span><span class="w"> </span><span class="n">Green</span>
-
-<span class="w">    </span><span class="n">\}</span>
+<span class="w">    </span><span class="n">Write-Host</span><span class="w"> </span><span class="s">&quot;GET /$Entity : SUCESSO ($($list.Count) registros)&quot;</span><span class="w"> </span><span class="n">-ForegroundColor</span><span class="w"> </span><span class="n">Green</span>
 
 
 
-<span class="w">    </span><span class="n">\#</span><span class="w"> </span><span class="n">POST</span><span class="p">,</span><span class="w"> </span><span class="n">PUT</span><span class="p">,</span><span class="w"> </span><span class="n">DELETE\.\.\.</span>
+<span class="w">    </span><span class="n">\#</span><span class="w"> </span><span class="n">GET</span><span class="w"> </span><span class="n">-</span><span class="w"> </span><span class="n">Individual</span><span class="w"> </span><span class="n">(se</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="n">não</span><span class="w"> </span><span class="n">estiver</span><span class="w"> </span><span class="n">vazia)</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">($list.Count</span><span class="w"> </span><span class="n">-gt</span><span class="w"> </span><span class="mh">0</span><span class="n">)</span><span class="w"> </span><span class="n">{</span>
+
+<span class="w">        </span><span class="n">$individual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke-RestMethod</span><span class="w"> </span><span class="n">-Uri</span><span class="w"> </span><span class="s">&quot;$BaseUrl/$Entity/$($list[0].id)&quot;</span>
+
+<span class="w">        </span><span class="n">Write-Host</span><span class="w"> </span><span class="s">&quot;GET /$Entity/{id} : SUCESSO&quot;</span><span class="w"> </span><span class="n">-ForegroundColor</span><span class="w"> </span><span class="n">Green</span>
+
+<span class="w">    </span><span class="n">}</span>
 
 
 
-<span class="n">\}</span><span class="w"> </span><span class="n">catch</span><span class="w"> </span><span class="n">\{</span>
+<span class="w">    </span><span class="n">\#</span><span class="w"> </span><span class="n">POST</span><span class="p">,</span><span class="w"> </span><span class="n">PUT</span><span class="p">,</span><span class="w"> </span><span class="n">DELETE...</span>
 
-<span class="w">    </span><span class="n">Write\-Host</span><span class="w"> </span><span class="s">&quot;ERRO em $Entity : $\($\_\.Exception\.Message\)&quot;</span><span class="w"> </span><span class="n">\-ForegroundColor</span><span class="w"> </span><span class="n">Red</span>
-</code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="err">\</span><span class="p">}</span>
+
+<span class="n">}</span><span class="w"> </span><span class="n">catch</span><span class="w"> </span><span class="n">{</span>
+
+<span class="w">    </span><span class="n">Write-Host</span><span class="w"> </span><span class="s">&quot;ERRO em $Entity : $($\_.Exception.Message)&quot;</span><span class="w"> </span><span class="n">-ForegroundColor</span><span class="w"> </span><span class="n">Red</span>
+
+<span class="err">\</span><span class="p">}</span>
 
 <span class="err">\</span><span class="p">}</span>
 </code></pre></div>
@@ -292,3 +291,4 @@
     </script>
 </body>
 </html>
+
