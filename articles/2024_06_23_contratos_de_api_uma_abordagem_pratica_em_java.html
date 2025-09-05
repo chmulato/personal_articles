@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre contratos de api uma abordagem prática em java">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, APIs, Testes, Arquitetura, DevOps, IA">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2024_06_23_contratos_de_api_uma_abordagem_pratica_em_java.html">
+    <meta property="og:title" content="Contratos De Api Uma Abordagem Prática Em Java">
+    <meta property="og:description" content="Artigo técnico sobre contratos de api uma abordagem prática em java">
+    <meta property="og:image" content="https://chmulato.dev/img/2024_06_23_contratos_de_api_uma_abordagem_pratica_em_java_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2024_06_23_contratos_de_api_uma_abordagem_pratica_em_java.html">
+    <meta property="twitter:title" content="Contratos De Api Uma Abordagem Prática Em Java">
+    <meta property="twitter:description" content="Artigo técnico sobre contratos de api uma abordagem prática em java">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2024_06_23_contratos_de_api_uma_abordagem_pratica_em_java_featured.jpg">
+    
+    <title>Contratos De Api Uma Abordagem Prática Em Java | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Java & Spring</span>
+                    <time class="article-date" datetime="23/06/2024">23/06/2024</time>
+                </div>
+                
+                <h1 class="article-title">Contratos De Api Uma Abordagem Prática Em Java</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">Testes</span> <span class="tag">Arquitetura</span> <span class="tag">DevOps</span> <span class="tag">IA</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                
+<p><img alt="Contratos de API (REST ou SOAP)" src="assets/img/2024_06_23_Contratos de API Uma Abordagem Prática em Java_image1.png" /></p>
+<p>Contratos de API (REST ou SOAP)</p>
+<p><strong>Contratos de API: Uma Abordagem Prática em Java</strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_06_23_Contratos de API Uma Abordagem Prática em Java_image3.png" /></a></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p>Desenvolvedor Java Sênior na Develcode</p>
+<p>23 de junho de 2024</p>
+<p><strong>Introdução</strong></p>
+<p>Os contratos de API desempenham um papel fundamental no desenvolvimento de sistemas distribuídos e na integração entre diferentes componentes. Eles definem as regras, formatos de dados e comportamentos esperados para a interação entre o provedor e o consumidor da API. Neste artigo, exploraremos a importância dos contratos de API e como implementá-los em Java.</p>
+<p><strong>O que são Contratos de API?</strong></p>
+<p>Um contrato de API é um acordo formal que especifica como uma API deve ser projetada, implementada e consumida. Ele define os endpoints, métodos, parâmetros, formatos de dados e fluxos de comunicação. Existem várias formas de contratos de API, incluindo:</p>
+<ol>
+<li><strong>Especificação de Interface</strong>: Isso pode ser feito usando padrões como o OpenAPI (anteriormente conhecido como Swagger*) ou o RAML* (<em>vide-rodapé</em>). Essas especificações descrevem a API em detalhes, permitindo a geração automática de documentação e código-fonte.</li>
+<li><strong>Contratos Implícitos</strong>: Mesmo sem uma especificação formal, os contratos podem ser inferidos a partir do código-fonte da API. Por exemplo, os nomes dos métodos, os parâmetros e os retornos podem servir como contratos implícitos.</li>
+</ol>
+<p><strong>Benefícios dos Contratos de API</strong></p>
+<p><strong>1. Consistência na Implementação</strong></p>
+<p>Um contrato bem definido garante que todos os desenvolvedores sigam as mesmas regras. Isso evita surpresas desagradáveis durante a integração e facilita a manutenção.</p>
+<p><strong>2. Geração Automática de Código e Documentação</strong></p>
+<p>Com uma especificação de contrato, podemos gerar automaticamente o código-fonte da API e a documentação. Isso economiza tempo e mantém a documentação atualizada.</p>
+<p><strong>3. Comunicação Clara entre Equipes</strong></p>
+<p>Os contratos reduzem mal-entendidos entre as equipes de desenvolvimento e integração. Todos têm uma visão compartilhada das expectativas e responsabilidades.</p>
+<p><strong>REST vs. SOAP: Como o Contrato Influencia a Escolha</strong></p>
+<ul>
+<li><strong>REST (Representational State Transfer)</strong> é baseado em princípios simples e usa os métodos HTTP (como GET, POST, PUT e DELETE) para interagir com recursos. Ele é sem estado, o que significa que cada solicitação é independente e não mantém informações de sessão.</li>
+<li><strong>SOAP (Simple Object Access Protocol)</strong> , por outro lado, é altamente estruturado e usa XML para definir mensagens. Ele é fortemente acoplado, o que significa que as partes envolvidas precisam entender detalhes específicos da mensagem.</li>
+</ul>
+<p>Dentro de uma influência de escolha, o contrato (como o OpenAPI) desempenha um papel crucial na escolha entre REST e SOAP.</p>
+<p>Se você precisa de escalabilidade, flexibilidade e suporte a arquiteturas modernas (como micro-serviços), REST é a melhor escolha.</p>
+<p>Se você lida com integrações legadas ou precisa de maior integridade de dados (como transações financeiras), o rigoroso contrato do SOAP pode ser mais adequado.</p>
+<p><strong>Exemplo de Contrato (REST)</strong></p>
+<p>Vamos considerar um exemplo de contrato de API usando o padrão OpenAPI (anteriormente conhecido como Swagger). O OpenAPI é uma especificação que descreve APIs RESTful e permite que desenvolvedores gerem documentação, códigos de cliente e até mesmo testes automatizados.</p>
+<p>Podemos ver um exemplo simplificado de um contrato de API usando OpenAPI:</p>
+<p><img alt="" src="assets/img/2024_06_23_Contratos de API Uma Abordagem Prática em Java_image1.png" /></p>
+<p>Exemplo de um contrato de OpenAPI.</p>
+<p>Neste exemplo:</p>
+<p>A rota /tasks tem dois métodos: GET para obter uma lista de tarefas e POST para criar uma nova tarefa.</p>
+<p>A resposta 200 para o método GET retorna uma lista de tarefas no formato JSON.</p>
+<p>O esquema Task define a estrutura de uma tarefa com propriedades como id, title e completed.</p>
+<p>Saibam que um contrato de API pode ser mais complexo, incluindo autenticação, parâmetros de consulta, cabeçalhos e outras informações relevantes para a interação entre o provedor e o consumidor da API.</p>
+<p><strong>Conclusão</strong></p>
+<p>Os contratos de API são essenciais para o desenvolvimento eficiente e a integração bem-sucedida de sistemas. Ao adotar uma abordagem baseada em contratos, os desenvolvedores podem criar APIs consistentes, documentadas e de alta qualidade em Java e outras linguagens de programação.</p>
+<p>Nota:</p>
+<p><strong>RAML</strong> (RESTful API Modeling Language) é uma linguagem poderosa usada para descrever APIs RESTful de forma legível por humanos. Ela fornece uma maneira estruturada e padronizada de definir APIs, incluindo endpoints, métodos, parâmetros, formatos de solicitação e resposta, entre outros. Com o RAML, você pode projetar, implementar, testar e documentar suas APIs de maneira eficiente, facilitando a colaboração entre equipes de desenvolvimento e garantindo consistência na implementação.</p>
+<p><strong>Swagger</strong> também é um conjunto de regras (ou seja, uma especificação) para um formato que descreve APIs RESTful. Esse formato é legível tanto por máquinas quanto por humanos. Como resultado, ele também pode ser usado para compartilhar documentação entre gerentes de produto, testadores e desenvolvedores, além de ser aproveitado por várias ferramentas para automatizar processos relacionados a APIs.</p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christian Mulato</h3>
+                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+                <a href="../index.html">Artigos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script>
+        // Tema manager
+        class ThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggle');
+                this.themeIcon = document.getElementById('themeIcon');
+                this.init();
+            }
+            
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = savedTheme || systemTheme;
+                
+                this.setTheme(currentTheme);
+                this.updateIcon(currentTheme);
+                
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                this.setTheme(newTheme);
+                this.updateIcon(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+            
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            
+            updateIcon(theme) {
+                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                this.themeToggle.setAttribute('aria-label', 
+                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+            }
+        }
+        
+        // Inicializar quando DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+        });
+    </script>
+</body>
+</html>
