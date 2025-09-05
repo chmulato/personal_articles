@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre parte final: kafka avançado e produção">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Apache Kafka, Mensageria">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2025_07_07_parte_final_-_kafka_avancado_e_producao.html">
+    <meta property="og:title" content="Parte Final: Kafka Avançado e Produção">
+    <meta property="og:description" content="Artigo técnico sobre parte final: kafka avançado e produção">
+    <meta property="og:image" content="https://chmulato.dev/img/2025_07_07_Parte Final - Kafka Avançado e Produção_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2025_07_07_parte_final_-_kafka_avancado_e_producao.html">
+    <meta property="twitter:title" content="Parte Final: Kafka Avançado e Produção">
+    <meta property="twitter:description" content="Artigo técnico sobre parte final: kafka avançado e produção">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2025_07_07_Parte Final - Kafka Avançado e Produção_featured.jpg">
+    
+    <title>Parte Final: Kafka Avançado e Produção | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Desenvolvimento</span>
+                    <time class="article-date" datetime="07/07/2025">07/07/2025</time>
+                </div>
+                
+                <h1 class="article-title">Parte Final: Kafka Avançado e Produção</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Apache Kafka</span> <span class="tag">Mensageria</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                <p><img alt="Kafka Avançado e Produção" src="assets/img/2025_07_07_Parte Final - Kafka Avançado e Produção_image5.png" /></p>
+<p>Kafka Avançado e Produção</p>
+<p>Parte Final: Kafka Avançado e Produção</p>
+<p><img alt="Christian Mulato, #OPEN_TO_WORK" src="assets/img/2025_07_07_Parte Final - Kafka Avançado e Produção_image6.jpg" /></p>
+<p>Christian Mulato</p>
+<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
+<p>7 de julho de 2025</p>
+<p>Visão Geral</p>
+<p>Esta parte é dedicada a tópicos avançados, integração com o ecossistema Kafka, monitoramento, segurança e práticas recomendadas para ambientes de produção.</p>
+<p>Artefatos Práticos</p>
+<p>Os principais artefatos para colocar em prática os tópicos avançados desta parte estão organizados na pasta artefatos-final/ do repositório:</p>
+<ul>
+<li>docker-compose-multibroker.yml: Exemplo de configuração de cluster Kafka com múltiplos brokers</li>
+<li>monitoramento/: Scripts e exemplos para Prometheus e Grafana</li>
+<li>seguranca/: Arquivos de configuração de autenticação/autorização (SASL/SSL, ACLs)</li>
+<li>schema-registry/: Exemplo de schema Avro</li>
+<li>kafka-connect/: Exemplo de configuração de conector JDBC</li>
+<li>backup-e-automacao/: Script de backup de tópicos</li>
+<li>boas-praticas/: Checklist de produção</li>
+</ul>
+<p>Consulte cada subpasta para exemplos práticos e adapte conforme o seu ambiente.</p>
+<p>Processamento Avançado</p>
+<p>Kafka Streams</p>
+<ul>
+<li>Processamento de dados em tempo real diretamente no Kafka</li>
+<li>Exemplo de uso para agregações, joins e transformações</li>
+</ul>
+<p>Kafka Connect</p>
+<ul>
+<li>Integração com bancos de dados, sistemas legados e APIs</li>
+<li>Uso de conectores prontos (JDBC, Elasticsearch, etc.)</li>
+</ul>
+<p>Schema Registry</p>
+<ul>
+<li>Gerenciamento de esquemas de dados (Avro, Protobuf, JSON Schema)</li>
+<li>Evolução de schemas e compatibilidade</li>
+</ul>
+<p>Monitoramento e Observabilidade</p>
+<ul>
+<li>Monitoramento de brokers, tópicos e consumidores</li>
+<li>Uso de JMX, Prometheus e Grafana para métricas</li>
+<li>Monitoramento de lag de consumidores</li>
+<li>Alertas e dashboards</li>
+</ul>
+<p>Segurança</p>
+<ul>
+<li>Autenticação (SASL, SSL/TLS)</li>
+<li>Autorização (ACLs)</li>
+<li>Boas práticas para ambientes corporativos</li>
+</ul>
+<p>Deploy e Operação</p>
+<ul>
+<li>Deploy em cluster (alta disponibilidade e replicação)</li>
+<li>Kafka em nuvem (Confluent Cloud, AWS MSK, Azure Event Hubs)</li>
+<li>Backup, restauração e upgrades</li>
+<li>Gerenciamento de recursos e tuning de performance</li>
+</ul>
+<p>Boas Práticas para Produção</p>
+<ul>
+<li>Configuração de retenção de dados</li>
+<li>Estratégias de particionamento</li>
+<li>Políticas de replicação</li>
+<li>Testes de resiliência e failover</li>
+<li>Documentação e automação de operações</li>
+</ul>
+<p>Exercícios Sugeridos</p>
+<p>Para fixar o aprendizado e experimentar cenários reais de produção, pratique os seguintes desafios:</p>
+<ol>
+<li>Configurar um cluster Kafka com múltiplos brokers Monte um ambiente distribuído usando o docker-compose-multibroker.yml e explore como funcionam replicação, failover e balanceamento de partições.</li>
+<li>Implementar monitoramento com Prometheus e Grafana Utilize os exemplos de configuração para coletar métricas do Kafka e visualize-as em dashboards prontos. Experimente criar alertas para lag de consumidores e uso de disco.</li>
+<li>Configurar autenticação e autorização Ative SSL/SASL e defina ACLs para controlar o acesso aos tópicos. Teste diferentes cenários de permissão e bloqueio.</li>
+<li>Realizar testes de failover e recuperação Simule a queda de um broker e observe como o cluster se comporta. Teste a restauração de dados a partir de backups.</li>
+<li>Integrar Kafka com outros sistemas usando Kafka Connect Configure conectores para importar/exportar dados de bancos relacionais, arquivos ou APIs. Experimente transformar dados em trânsito.</li>
+</ol>
+<p>Exercícios Práticos</p>
+<p>Para praticar e aprofundar os tópicos avançados, consulte também o arquivo auxiliar:</p>
+<ul>
+<li>parte-final-avancado/exercicios-parte-final.md — Desafios práticos de produção, automação, monitoramento e segurança, com espaço para anotações e roteiro de estudos.</li>
+</ul>
+<p>Parabéns! Você concluiu o guia completo.</p>
+<p>Agora você está pronto para atuar com Apache Kafka em ambientes profissionais, dominando desde a arquitetura básica até práticas avançadas de produção, automação, segurança e monitoramento.</p>
+<p>Saiba que:</p>
+<p>Todo o conteúdo, exemplos práticos e arquivos de configuração desta parte estão disponíveis no repositório oficial do projeto no GitHub:</p>
+<p>🔗 github.com/chmulato/kafka-java-mastery</p>
+<p>Acesse, explore e contribua!</p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christian Mulato</h3>
+                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+                <a href="../index.html">Artigos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script>
+        // Tema manager
+        class ThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggle');
+                this.themeIcon = document.getElementById('themeIcon');
+                this.init();
+            }
+            
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = savedTheme || systemTheme;
+                
+                this.setTheme(currentTheme);
+                this.updateIcon(currentTheme);
+                
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                this.setTheme(newTheme);
+                this.updateIcon(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+            
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            
+            updateIcon(theme) {
+                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                this.themeToggle.setAttribute('aria-label', 
+                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+            }
+        }
+        
+        // Inicializar quando DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+        });
+    </script>
+</body>
+</html>

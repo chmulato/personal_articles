@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre do mvc para a arquitetura hexagonal: uma transição necessária">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Arquitetura, Design Patterns, IA, Inteligência Artificial">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2025_07_24_do_mvc_para_a_arquitetura_hexagonal_-_uma_transicao_necessaria.html">
+    <meta property="og:title" content="Do MVC para a Arquitetura Hexagonal: Uma Transição Necessária">
+    <meta property="og:description" content="Artigo técnico sobre do mvc para a arquitetura hexagonal: uma transição necessária">
+    <meta property="og:image" content="https://chmulato.dev/img/2025_07_24_Do MVC para a Arquitetura Hexagonal - Uma Transição Necessária_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2025_07_24_do_mvc_para_a_arquitetura_hexagonal_-_uma_transicao_necessaria.html">
+    <meta property="twitter:title" content="Do MVC para a Arquitetura Hexagonal: Uma Transição Necessária">
+    <meta property="twitter:description" content="Artigo técnico sobre do mvc para a arquitetura hexagonal: uma transição necessária">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2025_07_24_Do MVC para a Arquitetura Hexagonal - Uma Transição Necessária_featured.jpg">
+    
+    <title>Do MVC para a Arquitetura Hexagonal: Uma Transição Necessária | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Arquitetura de Software</span>
+                    <time class="article-date" datetime="24/07/2025">24/07/2025</time>
+                </div>
+                
+                <h1 class="article-title">Do MVC para a Arquitetura Hexagonal: Uma Transição Necessária</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Arquitetura</span> <span class="tag">Design Patterns</span> <span class="tag">IA</span> <span class="tag">Inteligência Artificial</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                <p><img alt="Do MVC para a Arquitetura Hexagonal." src="assets/img/2025_07_24_Do MVC para a Arquitetura Hexagonal - Uma Transição Necessária_image5.png" /></p>
+<p>Do MVC para a Arquitetura Hexagonal.</p>
+<p>Do MVC para a Arquitetura Hexagonal: Uma Transição Necessária</p>
+<p><img alt="Christian Mulato, #OPEN_TO_WORK" src="assets/img/2025_07_24_Do MVC para a Arquitetura Hexagonal - Uma Transição Necessária_image6.jpg" /></p>
+<p>Christian Mulato</p>
+<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
+<p>24 de julho de 2025</p>
+<p>Por que inventaram a Interface?</p>
+<p>No início da programação orientada a objetos, os desenvolvedores buscavam uma forma de criar sistemas mais flexíveis e fáceis de evoluir. Surgiu então a ideia de “interface”: um contrato que define o que uma classe deve fazer, mas não como ela faz. Isso permitiu separar o “o que” do “como”, facilitando a troca de implementações sem afetar o restante do sistema.</p>
+<p>Imagine um sistema de pagamentos: você pode ter uma interface Pagamento e várias implementações — cartão, boleto, pix. O código que usa a interface não precisa saber qual implementação está por trás, apenas que ela cumpre o contrato.</p>
+<p>Essa ideia é a base da Arquitetura Hexagonal. Ao colocar interfaces (portas) entre o núcleo da aplicação e o mundo externo (adaptadores), garantimos que a lógica de negócio não dependa de detalhes de infraestrutura. Assim, mudamos bancos, APIs ou frameworks sem mexer no coração do sistema — exatamente o que as interfaces sempre buscaram proporcionar.</p>
+<p>Introdução</p>
+<p>Durante muitos anos, o padrão MVC (Model-View-Controller) foi a principal escolha para estruturar aplicações web. Ele é simples, direto e fácil de ensinar. Mas conforme os sistemas crescem e as demandas mudam, muitos desenvolvedores se deparam com a necessidade de evoluir para arquiteturas mais flexíveis, como a Arquitetura Hexagonal (Ports and Adapters).</p>
+<p>Essa transição, embora poderosa, traz confusões e desafios reais de entendimento.</p>
+<p>O que é o MVC (Model-View-Controller)</p>
+<p>O MVC separa a aplicação em três responsabilidades principais:</p>
+<ul>
+<li>Model: Representa os dados e regras de negócio.</li>
+<li>View: Camada de apresentação.</li>
+<li>Controller: Lida com a entrada do usuário e coordena Model e View.</li>
+</ul>
+<p>Essa estrutura funciona bem para aplicações simples e monolíticas. O problema começa quando o negócio exige integração com múltiplos serviços, testes de unidade eficazes, trocas de UI, APIs, filas, eventos etc.</p>
+<p>Por que repensar o MVC tradicional</p>
+<ul>
+<li>O Controller acaba assumindo responsabilidades demais.</li>
+<li>Dificuldade de isolar a lógica de negócio para testes.</li>
+<li>Forte acoplamento com frameworks web (Spring MVC, JSF, etc).</li>
+<li>Problemas na manutenção com o tempo.</li>
+<li>Camadas da aplicação conhecem demais umas às outras.</li>
+</ul>
+<p>Introduzindo a Arquitetura Hexagonal</p>
+<p>A Arquitetura Hexagonal, proposta por Alistair Cockburn, reorganiza o sistema com foco no domínio e na inversão de dependências. Ela separa a lógica central (o núcleo da aplicação) de tudo que é externo, através de portas (interfaces) e adaptadores (implementações).</p>
+<p>Componentes principais</p>
+<ul>
+<li>Domínio / Núcleo: Lógica pura da aplicação (independente de banco, web, etc).</li>
+<li>Portas: Interfaces de entrada (driven) e saída (driving).</li>
+<li>Adaptadores: Controladores HTTP, repositórios, mensagens etc.</li>
+</ul>
+<p>Essa arquitetura permite:</p>
+<ul>
+<li>Testar o domínio sem precisar de banco ou servidor web.</li>
+<li>Substituir frameworks com impacto mínimo.</li>
+<li>Ter múltiplas interfaces para o mesmo núcleo (REST, CLI, gRPC)* [Vide rodapé].</li>
+<li>Clareza entre regra de negócio e infraestrutura.</li>
+</ul>
+<p>Um exemplo simples</p>
+<p>Em MVC</p>
+<p>@RestController</p>
+<div class="highlight"><pre><span></span><code><span class="err">public</span><span class="w"> </span><span class="err">class</span><span class="w"> </span><span class="err">PedidoCo</span><span class="kc">ntr</span><span class="err">oller</span><span class="w"> </span><span class="p">{</span>
+
+<span class="err">@Au</span><span class="kc">t</span><span class="err">owired</span><span class="w"> </span><span class="err">PedidoService</span><span class="w"> </span><span class="err">service;</span>
+
+<span class="err">@Pos</span><span class="kc">t</span><span class="err">Mappi</span><span class="kc">n</span><span class="err">g(</span><span class="s2">&quot;/pedidos&quot;</span><span class="err">)</span>
+
+<span class="err">public</span><span class="w"> </span><span class="err">Respo</span><span class="kc">nse</span><span class="err">E</span><span class="kc">nt</span><span class="err">i</span><span class="kc">t</span><span class="err">y&lt;Pedido&gt;</span><span class="w"> </span><span class="err">criar(@Reques</span><span class="kc">t</span><span class="err">Body</span><span class="w"> </span><span class="err">PedidoDTO</span><span class="w"> </span><span class="err">d</span><span class="kc">t</span><span class="err">o)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="err">re</span><span class="kc">turn</span><span class="w"> </span><span class="err">Respo</span><span class="kc">nse</span><span class="err">E</span><span class="kc">nt</span><span class="err">i</span><span class="kc">t</span><span class="err">y.ok(service.criar(d</span><span class="kc">t</span><span class="err">o));</span>
+
+<span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Em Hexagonal</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PedidoUseCase</span><span class="w"> </span><span class="p">{</span>
+
+<span class="n">Pedido</span><span class="w"> </span><span class="nf">criar</span><span class="p">(</span><span class="n">PedidoDTO</span><span class="w"> </span><span class="n">dto</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PedidoApplicationService</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">PedidoUseCase</span><span class="w"> </span><span class="p">{</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="n">PedidoRepository</span><span class="w"> </span><span class="n">repo</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="n">Pedido</span><span class="w"> </span><span class="nf">criar</span><span class="p">(</span><span class="n">PedidoDTO</span><span class="w"> </span><span class="n">dto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</code></pre></div>
+
+<p>// lógica de negócio aqui</p>
+<div class="highlight"><pre><span></span><code><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>E no adaptador REST:</p>
+<p>@RestController</p>
+<div class="highlight"><pre><span></span><code><span class="err">public</span><span class="w"> </span><span class="err">class</span><span class="w"> </span><span class="err">PedidoRes</span><span class="kc">t</span><span class="err">Adap</span><span class="kc">ter</span><span class="w"> </span><span class="p">{</span>
+
+<span class="err">priva</span><span class="kc">te</span><span class="w"> </span><span class="kc">f</span><span class="err">i</span><span class="kc">nal</span><span class="w"> </span><span class="err">PedidoUseCase</span><span class="w"> </span><span class="err">useCase;</span>
+
+<span class="err">@Pos</span><span class="kc">t</span><span class="err">Mappi</span><span class="kc">n</span><span class="err">g(</span><span class="s2">&quot;/pedidos&quot;</span><span class="err">)</span>
+
+<span class="err">public</span><span class="w"> </span><span class="err">Respo</span><span class="kc">nse</span><span class="err">E</span><span class="kc">nt</span><span class="err">i</span><span class="kc">t</span><span class="err">y&lt;Pedido&gt;</span><span class="w"> </span><span class="err">criar(@Reques</span><span class="kc">t</span><span class="err">Body</span><span class="w"> </span><span class="err">PedidoDTO</span><span class="w"> </span><span class="err">d</span><span class="kc">t</span><span class="err">o)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="err">re</span><span class="kc">turn</span><span class="w"> </span><span class="err">Respo</span><span class="kc">nse</span><span class="err">E</span><span class="kc">nt</span><span class="err">i</span><span class="kc">t</span><span class="err">y.ok(useCase.criar(d</span><span class="kc">t</span><span class="err">o));</span>
+
+<span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Os desafios da transição</p>
+<ol>
+<li>Desapego da estrutura em camadas (controller -&gt; service -&gt; repository)</li>
+<li>Aprender a nomear portas, adaptadores e entidades de forma expressiva</li>
+<li>Separar regras de negócio reais de lógica de infraestrutura</li>
+<li>Evitar duplicação entre DTOs, entidades e objetos de domínio</li>
+<li>Dominar a inversão de dependência com interfaces e injeção</li>
+<li>Reeducar a equipe para pensar em termos de casos de uso</li>
+</ol>
+<p>Conclusão</p>
+<p>Migrar do MVC tradicional para a Arquitetura Hexagonal é uma mudança de mentalidade. Exige esforço, mas traz benefícios significativos em projetos complexos e de longo prazo.</p>
+<p>Não se trata apenas de trocar nomes ou empacotar camadas de forma diferente. É um compromisso com uma arquitetura centrada no domínio, desacoplada e com maior foco na longevidade da aplicação.</p>
+<p>Aos poucos, você perceberá que:</p>
+<ul>
+<li>Seus testes ficam mais rápidos e significativos.</li>
+<li>Seu código se torna mais expressivo e reutilizável.</li>
+<li>Seu sistema se adapta mais facilmente a mudanças externas.</li>
+</ul>
+<p>A pergunta não é mais “posso fazer isso com MVC?”, mas sim: “minha lógica de negócio depende de algo que deveria ser externo?”</p>
+<p>Autor: Christian V. Uhdre Mulato (GitHub)</p>
+<p>LinkedIn: linkedin.com/in/chmulato</p>
+<p>O que são essas tecnologias?</p>
+<p>REST: Um estilo de arquitetura para APIs que usa HTTP para comunicação entre sistemas, geralmente em formato JSON.</p>
+<p>CLI: Command Line Interface, ou seja, interface de linha de comando, onde o usuário interage com o sistema por comandos de texto.</p>
+<p>gRPC: Um framework moderno de comunicação remota criado pela Google, baseado em HTTP/2 e Protobuf, eficiente para integração entre serviços distribuídos.</p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christian Mulato</h3>
+                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+                <a href="../index.html">Artigos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script>
+        // Tema manager
+        class ThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggle');
+                this.themeIcon = document.getElementById('themeIcon');
+                this.init();
+            }
+            
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = savedTheme || systemTheme;
+                
+                this.setTheme(currentTheme);
+                this.updateIcon(currentTheme);
+                
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                this.setTheme(newTheme);
+                this.updateIcon(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+            
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            
+            updateIcon(theme) {
+                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                this.themeToggle.setAttribute('aria-label', 
+                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+            }
+        }
+        
+        // Inicializar quando DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+        });
+    </script>
+</body>
+</html>

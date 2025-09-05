@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre automatizando testes de apis rest com robot framework: guia prático">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="APIs, REST, Testes, TDD, IA, Inteligência Artificial">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2025_08_06_automatizando_testes_de_apis_rest_com_robot_framework_-_guia_pratico.html">
+    <meta property="og:title" content="Automatizando Testes de APIs REST com Robot Framework: Guia Prático">
+    <meta property="og:description" content="Artigo técnico sobre automatizando testes de apis rest com robot framework: guia prático">
+    <meta property="og:image" content="https://chmulato.dev/img/2025_08_06_Automatizando Testes de APIs REST com Robot Framework - Guia Prático_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2025_08_06_automatizando_testes_de_apis_rest_com_robot_framework_-_guia_pratico.html">
+    <meta property="twitter:title" content="Automatizando Testes de APIs REST com Robot Framework: Guia Prático">
+    <meta property="twitter:description" content="Artigo técnico sobre automatizando testes de apis rest com robot framework: guia prático">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2025_08_06_Automatizando Testes de APIs REST com Robot Framework - Guia Prático_featured.jpg">
+    
+    <title>Automatizando Testes de APIs REST com Robot Framework: Guia Prático | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">APIs & Microserviços</span>
+                    <time class="article-date" datetime="06/08/2025">06/08/2025</time>
+                </div>
+                
+                <h1 class="article-title">Automatizando Testes de APIs REST com Robot Framework: Guia Prático</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">APIs</span> <span class="tag">REST</span> <span class="tag">Testes</span> <span class="tag">TDD</span> <span class="tag">IA</span> <span class="tag">Inteligência Artificial</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                <p><img alt="QA automatizando testes de API com Robot Framework" src="assets/img/2025_08_06_Automatizando Testes de APIs REST com Robot Framework - Guia Prático_image5.png" /></p>
+<p>QA automatizando testes de API com Robot Framework</p>
+<p>Automatizando Testes de APIs REST com Robot Framework: Guia Prático</p>
+<p><img alt="Christian Mulato, #OPEN_TO_WORK" src="assets/img/2025_08_06_Automatizando Testes de APIs REST com Robot Framework - Guia Prático_image6.jpg" /></p>
+<p>Christian Mulato</p>
+<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
+<p>6 de agosto de 2025</p>
+<p>A Rotina de Ana, a QA que Mudou Tudo</p>
+<p>Ana era QA sênior numa startup de fintech em crescimento acelerado. Todos os dias, ela chegava no escritório às 8h e já sabia o que a esperava: uma lista interminável de endpoints para testar manualmente.</p>
+<p>“GET /users/123”,</p>
+<p>“POST /transactions”,</p>
+<p>“PUT /accounts/456”</p>
+<p>… Ana abria o Postman, configurava headers, montava payloads JSON, executava requests e anotava resultados numa planilha. Eram mais de 50 endpoints, e cada deploy significava testar tudo novamente.</p>
+<p>O pior? Sexta-feira às 18h, deploy em produção. Ana ficava até tarde validando cada endpoint crítico, um por um, enquanto o time de desenvolvimento já havia ido embora. Se algo falhasse, rollback e fim de semana trabalhando.</p>
+<p>Um dia, após mais um deploy tardio que se estendeu pela madrugada, Ana decidiu: “Tem que ter um jeito melhor.”</p>
+<p>Foi então que ela descobriu o Robot Framework. Em duas semanas, Ana automatizou todos os testes de API. O que antes levava 4 horas, agora executava em 15 minutos. Deploys de sexta viraram rotina tranquila, e Ana recuperou seus fins de semana.</p>
+<p>Hoje, Ana é referência em automação na empresa. E tudo começou com uma simples keyword:</p>
+<p>“GET Deve Retornar 200”</p>
+<p>O Robot Framework oferece uma abordagem baseada em palavras-chave para automação de testes de APIs RESTful, combinando simplicidade de sintaxe com funcionalidades robustas. Este guia demonstra como implementar testes automatizados legíveis e extensíveis.</p>
+<p>Requisitos Técnicos</p>
+<p>Ambiente necessário:</p>
+<ul>
+<li>Python 3.8 ou superior</li>
+<li>pip (gerenciador de pacotes Python)</li>
+<li>Robot Framework</li>
+<li>Requests Library</li>
+</ul>
+<p>Configuração do Ambiente</p>
+<div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">robotframework</span>
+
+<span class="n">pip</span> <span class="n">install</span> <span class="n">robotframework</span><span class="o">-</span><span class="n">requests</span>
+</code></pre></div>
+
+<p>Arquitetura do Projeto</p>
+<p>tests/</p>
+<p>├── resources/</p>
+<p>│   └── keywords.robot</p>
+<p>├── suites/</p>
+<p>│   └── api_tests.robot</p>
+<p>└── variables/</p>
+<p>└── config.robot</p>
+<p>Configuração de Variáveis</p>
+<p>Arquivo: variables/config.robot</p>
+<p>*** Variables ***</p>
+<p>${BASE_URL}</p>
+<p>https://api.seuprojeto.com/v1</p>
+<p>Implementação de Keywords Reutilizáveis</p>
+<p>Arquivo: resources/keywords.robot</p>
+<p>*** Settings</p>
+<p>*** Library    RequestsLibrary</p>
+<p>*** Keywords</p>
+<p>*** Iniciar Sessão na API     Create Session    api    ${BASE_URL}</p>
+<p>GET Deve Retornar 200     [Arguments]    ${endpoint}     ${response}=</p>
+<p>GET On Session    api    ${endpoint}     Should Be Equal As Integers</p>
+<p>${response.status_code}    200</p>
+<p>Casos de Teste</p>
+<p>Arquivo: suites/api_tests.robot</p>
+<p>*** Settings ***</p>
+<p>Resource    ../variables/config.robot</p>
+<p>Resource    ../resources/keywords.robot</p>
+<p>Suite Setup    Iniciar Sessão na API</p>
+<p>*** Test Cases ***</p>
+<p>Testar Endpoint de Status</p>
+<p>GET Deve Retornar 200    /status</p>
+<p>Testar Endpoint de Usuário</p>
+<p>GET Deve Retornar 200    /users/1</p>
+<p>Execução dos Testes</p>
+<p>robot -d results tests/suites/api_tests.robot</p>
+<p>O comando gera um relatório HTML detalhado em results/report.html com status de execução e métricas de performance.</p>
+<p>Vantagens da Implementação</p>
+<ul>
+<li>Legibilidade: Sintaxe próxima à linguagem natural, facilitando compreensão por equipes não técnicas</li>
+<li>Modularidade: Keywords reutilizáveis reduzem duplicação de código</li>
+<li>Integração: Compatibilidade nativa com pipelines CI/CD</li>
+<li>Relatórios: Documentação automática de resultados</li>
+</ul>
+<p>Integração com CI/CD</p>
+<p>Exemplo de GitHub Actions:</p>
+<p>name: API Tests</p>
+<p>on: [push]</p>
+<p>jobs:</p>
+<p>test:</p>
+<p>runs-on: ubuntu-latest</p>
+<p>steps:</p>
+<ul>
+<li>
+<p>uses: actions/checkout@v2</p>
+</li>
+<li>
+<p>name: Set up Python</p>
+</li>
+</ul>
+<p>uses: actions/setup-python@v2</p>
+<p>with:</p>
+<p>python-version: 3.11</p>
+<ul>
+<li>name: Install dependencies</li>
+</ul>
+<p>run: |</p>
+<p>pip install robotframework robotframework-requests</p>
+<ul>
+<li>name: Run tests</li>
+</ul>
+<p>run: robot tests/suites/api_tests.robot</p>
+<p>Conclusão</p>
+<p>O Robot Framework oferece uma solução robusta para automação de testes de APIs REST, combinando sintaxe acessível com funcionalidades empresariais. A implementação de testes automatizados resulta em maior confiabilidade, redução de tempo de validação e melhoria contínua da qualidade do software.</p>
+<p>Principais benefícios alcançados:</p>
+<ul>
+<li>Redução significativa no tempo de execução de testes</li>
+<li>Padronização de processos de validação</li>
+<li>Documentação automática de cenários de teste</li>
+<li>Integração seamless com ferramentas de desenvolvimento</li>
+</ul>
+<p>Recursos Adicionais:</p>
+<ul>
+<li>Documentação oficial: Robot Framework</li>
+<li>Biblioteca de requisições: Requests Library</li>
+</ul>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christian Mulato</h3>
+                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+                <a href="../index.html">Artigos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script>
+        // Tema manager
+        class ThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggle');
+                this.themeIcon = document.getElementById('themeIcon');
+                this.init();
+            }
+            
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = savedTheme || systemTheme;
+                
+                this.setTheme(currentTheme);
+                this.updateIcon(currentTheme);
+                
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                this.setTheme(newTheme);
+                this.updateIcon(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+            
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            
+            updateIcon(theme) {
+                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                this.themeToggle.setAttribute('aria-label', 
+                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+            }
+        }
+        
+        // Inicializar quando DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre implementando testes unitários em um projeto java com maven">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, Spring, Docker, APIs, Testes, Maven">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2025_06_24_implementando_testes_unitarios_em_um_projeto_java_com_maven.html">
+    <meta property="og:title" content="Implementando Testes Unitários Em Um Projeto Java Com Maven">
+    <meta property="og:description" content="Artigo técnico sobre implementando testes unitários em um projeto java com maven">
+    <meta property="og:image" content="https://chmulato.dev/img/2025_06_24_implementando_testes_unitarios_em_um_projeto_java_com_maven_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2025_06_24_implementando_testes_unitarios_em_um_projeto_java_com_maven.html">
+    <meta property="twitter:title" content="Implementando Testes Unitários Em Um Projeto Java Com Maven">
+    <meta property="twitter:description" content="Artigo técnico sobre implementando testes unitários em um projeto java com maven">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2025_06_24_implementando_testes_unitarios_em_um_projeto_java_com_maven_featured.jpg">
+    
+    <title>Implementando Testes Unitários Em Um Projeto Java Com Maven | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Java & Spring</span>
+                    <time class="article-date" datetime="24/06/2025">24/06/2025</time>
+                </div>
+                
+                <h1 class="article-title">Implementando Testes Unitários Em Um Projeto Java Com Maven</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Docker</span> <span class="tag">APIs</span> <span class="tag">Testes</span> <span class="tag">Maven</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                
+<p><em>Publicado em 24/06/2025 por <a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></em></p>
+<h2 id="resumo-executivo"><a class="toclink" href="#resumo-executivo">Resumo Executivo</a></h2>
+<p>Implementando Testes Unitários com JaCoCo</p>
+<p><strong>Categoria:</strong> Java &amp; Spring<br />
+<strong>Nível:</strong> Intermediário/Avançado<br />
+<strong>Tags:</strong> Java, Spring, Docker, APIs, Testes, Maven</p>
+
+<p><img alt="Implementando Testes Unitários com JaCoCo" src="assets/img/2025_06_24_Implementando Testes Unitários em um Projeto Java com Maven_image1.png" /></p>
+<p>Implementando Testes Unitários com JaCoCo</p>
+<p><strong>Implementando Testes Unitários em um Projeto Java com Maven</strong></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato, #OPEN_TO_WORK" src="assets/img/2025_06_24_Implementando Testes Unitários em um Projeto Java com Maven_image3.png" /></a></strong></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato </a></strong></p>
+<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
+<p>24 de junho de 2025</p>
+<p>Este artigo aborda a implementação de testes unitários em um projeto Java utilizando Maven, com foco na classe <strong>FileBackup __e na geração de relatórios de cobertura de código com __JaCoCo</strong>. Vamos explorar como estruturar o projeto, escrever testes eficazes e garantir a qualidade do código.</p>
+<p><strong>Por que Escrever Testes Unitários?</strong></p>
+<p>Testes unitários garantem que cada parte do seu código funciona como esperado, facilitando a manutenção, __<em>refatoração </em>__e evolução do projeto. Eles ajudam a identificar rapidamente bugs e reduzem o custo de correção de erros.</p>
+<p><strong>Estrutura de Pastas Padrão</strong></p>
+<p>Para projetos Java seguindo o padrão Maven, a estrutura recomendada é:</p>
+<p>project-root/</p>
+<p>│</p>
+<p>├── src/</p>
+<p>│   ├── main/</p>
+<p>│   │   └── java/</p>
+<p>│   │       └── com/</p>
+<p>│   │           └── mulato/</p>
+<p>│   │               └── FileBackup.java</p>
+<p>│   └── test/</p>
+<p>│       └── java/</p>
+<p>│           └── com/</p>
+<p>│               └── mulato/</p>
+<p>│                   └── FileBackupTest.java</p>
+<p><strong>Boas Práticas para Testes Unitários</strong></p>
+<ul>
+<li><strong>Nomeie os métodos de teste de forma clara</strong>: O nome deve indicar o que está sendo testado e o resultado esperado.</li>
+<li><strong>Teste apenas uma lógica por método</strong>: Cada teste deve validar um único comportamento.</li>
+<li><strong>Evite dependências externas</strong>: Use mocks para simular recursos externos (banco de dados, arquivos, etc).</li>
+<li><strong>Garanta independência dos testes</strong>: Os testes devem poder ser executados em qualquer ordem.</li>
+<li><strong>Mantenha os testes rápidos</strong>: Testes lentos dificultam a integração contínua.</li>
+</ul>
+<p><strong>Configurando Dependências no Maven</strong></p>
+<p>No arquivo pom.xml, adicione as dependências do <strong>JUnit 5</strong> para testes e do __JaCoCo __para cobertura de código:</p>
+<p><dependency></p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;groupId&gt;</span>org\.junit\.jupiter<span class="nt">&lt;/groupId&gt;</span>
+
+<span class="nt">&lt;artifactId&gt;</span>junit\-jupiter<span class="nt">&lt;/artifactId&gt;</span>
+
+<span class="nt">&lt;version&gt;</span>5\.10\.2<span class="nt">&lt;/version&gt;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+
+<p>E o plugin do <strong>JaCoCo</strong> dentro da seção <build>:</p>
+<p><plugin></p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;groupId&gt;</span>org\.jacoco<span class="nt">&lt;/groupId&gt;</span>
+
+<span class="nt">&lt;artifactId&gt;</span>jacoco\-maven\-plugin<span class="nt">&lt;/artifactId&gt;</span>
+
+<span class="nt">&lt;version&gt;</span>0\.8\.11<span class="nt">&lt;/version&gt;</span>
+
+<span class="nt">&lt;executions&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;execution&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;goals&gt;</span>
+
+<span class="w">            </span><span class="nt">&lt;goal&gt;</span>prepare\-agent<span class="nt">&lt;/goal&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;/goals&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;/execution&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;execution&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;id&gt;</span>report<span class="nt">&lt;/id&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;phase&gt;</span>test<span class="nt">&lt;/phase&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;goals&gt;</span>
+
+<span class="w">            </span><span class="nt">&lt;goal&gt;</span>report<span class="nt">&lt;/goal&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;/goals&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;/execution&gt;</span>
+
+<span class="nt">&lt;/executions&gt;</span>
+</code></pre></div>
+
+<p></plugin></p>
+<p><strong>Tornando Métodos Testáveis</strong></p>
+<p>Para que os métodos possam ser testados, eles não devem ser private. Altere para static (sem modificador) ou public:</p>
+<p>// Antes</p>
+<div class="highlight"><pre><span></span><code>private static void copyDirectory\(\.\.\.\);
+
+private static int countFiles\(\.\.\.\);
+</code></pre></div>
+
+<p>// Depois</p>
+<p>static void copyDirectory(...);</p>
+<p>static int countFiles(...);</p>
+<p><strong>Exemplos de Asserts no JUnit</strong></p>
+<p>Além do <strong>assertEquals __e __assertTrue</strong>, o __JUnit __oferece outros métodos úteis:</p>
+<p>assertFalse(condition);</p>
+<p>assertNull(object);</p>
+<p>assertNotNull(object);</p>
+<p>assertThrows(Exception.class, () -&gt; { /* código */ });</p>
+<p><strong>Utilizando Mocks em Testes</strong></p>
+<p>Para testar métodos que dependem de recursos externos, utilize bibliotecas como <strong>Mockito</strong>:</p>
+<p><dependency></p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;groupId&gt;</span>org\.mockito<span class="nt">&lt;/groupId&gt;</span>
+
+<span class="nt">&lt;artifactId&gt;</span>mockito\-core<span class="nt">&lt;/artifactId&gt;</span>
+
+<span class="nt">&lt;version&gt;</span>5\.2\.0<span class="nt">&lt;/version&gt;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+
+<p>Exemplo de uso:</p>
+<p>import static org.mockito.Mockito.*;</p>
+<p>MyService service = mock(MyService.class);</p>
+<p>when(service.doSomething()).thenReturn("resultado");</p>
+<p><strong>Integração Contínua e Testes Automatizados</strong></p>
+<p>Configure pipelines de CI (como GitHub Actions, GitLab CI, Jenkins) para rodar os testes automaticamente a cada push. Isso garante que novas alterações não quebrem funcionalidades existentes.</p>
+<p><strong>Exemplo de pipeline com GitHub Actions</strong></p>
+<p>name: Java CI</p>
+<p>on: [push, pull_request]</p>
+<p>jobs:</p>
+<p>build:</p>
+<div class="highlight"><pre><span></span><code><span class="n">runs</span><span class="err">\</span><span class="o">-</span><span class="k">on</span><span class="err">:</span><span class="w"> </span><span class="n">ubuntu</span><span class="err">\</span><span class="o">-</span><span class="n">latest</span>
+
+<span class="nl">steps</span><span class="p">:</span>
+
+<span class="w">  </span><span class="err">\</span><span class="o">-</span><span class="w"> </span><span class="nl">uses</span><span class="p">:</span><span class="w"> </span><span class="n">actions</span><span class="o">/</span><span class="n">checkout</span><span class="nv">@v4</span>
+
+<span class="w">  </span><span class="err">\</span><span class="o">-</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="k">Set</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">JDK</span><span class="w"> </span><span class="mi">21</span>
+
+<span class="w">    </span><span class="nl">uses</span><span class="p">:</span><span class="w"> </span><span class="n">actions</span><span class="o">/</span><span class="n">setup</span><span class="err">\</span><span class="o">-</span><span class="n">java</span><span class="nv">@v4</span>
+
+<span class="w">    </span><span class="k">with</span><span class="err">:</span>
+
+<span class="w">      </span><span class="nl">distribution</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;temurin&#39;</span>
+
+<span class="w">      </span><span class="n">java</span><span class="err">\</span><span class="o">-</span><span class="nl">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;21&#39;</span>
+
+<span class="w">  </span><span class="err">\</span><span class="o">-</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">Build</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">Maven</span>
+
+<span class="w">    </span><span class="nl">run</span><span class="p">:</span><span class="w"> </span><span class="n">mvn</span><span class="w"> </span><span class="n">clean</span><span class="w"> </span><span class="n">test</span>
+</code></pre></div>
+
+<p><strong>Testes Parametrizados com JUnit 5</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org</span>\<span class="o">.</span><span class="n">junit</span>\<span class="o">.</span><span class="n">jupiter</span>\<span class="o">.</span><span class="n">params</span>\<span class="o">.</span><span class="n">ParameterizedTest</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org</span>\<span class="o">.</span><span class="n">junit</span>\<span class="o">.</span><span class="n">jupiter</span>\<span class="o">.</span><span class="n">params</span>\<span class="o">.</span><span class="n">provider</span>\<span class="o">.</span><span class="n">ValueSource</span><span class="p">;</span>
+</code></pre></div>
+
+<p>@ParameterizedTest</p>
+<p>@ValueSource(strings = {"file1.txt", "file2.txt"})</p>
+<p>void testFileNames(String fileName) {</p>
+<div class="highlight"><pre><span></span><code>assertTrue\(fileName\.startsWith\(&quot;file&quot;\)\);
+</code></pre></div>
+
+<p>}</p>
+<p><strong>Exemplo de Classe de Teste Unitário</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">package</span> <span class="n">com</span>\<span class="o">.</span><span class="n">mulato</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org</span>\<span class="o">.</span><span class="n">junit</span>\<span class="o">.</span><span class="n">jupiter</span>\<span class="o">.</span><span class="n">api</span>\<span class="o">.</span><span class="n">Test</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java</span>\<span class="o">.</span><span class="n">io</span>\<span class="o">.</span>\<span class="o">*</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java</span>\<span class="o">.</span><span class="n">util</span>\<span class="o">.</span><span class="n">concurrent</span>\<span class="o">.</span><span class="n">atomic</span>\<span class="o">.</span><span class="n">AtomicInteger</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">static</span> <span class="n">org</span>\<span class="o">.</span><span class="n">junit</span>\<span class="o">.</span><span class="n">jupiter</span>\<span class="o">.</span><span class="n">api</span>\<span class="o">.</span><span class="n">Assertions</span>\<span class="o">.</span>\<span class="o">*</span><span class="p">;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">FileBackupTest</span> \<span class="p">{</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nv">@Test</span>
+
+<span class="n">void</span><span class="w"> </span><span class="n">testCountFilesEmptyFolder</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">)</span><span class="w"> </span><span class="n">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="err">\{</span>
+
+<span class="w">    </span><span class="k">File</span><span class="w"> </span><span class="n">tempDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">File</span><span class="err">\</span><span class="p">(</span><span class="ss">&quot;testDirEmpty&quot;</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">tempDir</span><span class="err">\</span><span class="p">.</span><span class="n">mkdir</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="err">\{</span>
+
+<span class="w">        </span><span class="nc">int</span><span class="w"> </span><span class="nf">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FileBackup</span><span class="err">\</span><span class="p">.</span><span class="n">countFiles</span><span class="err">\</span><span class="p">(</span><span class="n">tempDir</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">assertEquals</span><span class="err">\</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nf">count</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">    </span><span class="err">\}</span><span class="w"> </span><span class="n">finally</span><span class="w"> </span><span class="err">\{</span>
+
+<span class="w">        </span><span class="n">tempDir</span><span class="err">\</span><span class="p">.</span><span class="k">delete</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">    </span><span class="err">\}</span>
+
+<span class="err">\}</span>
+
+<span class="nv">@Test</span>
+
+<span class="n">void</span><span class="w"> </span><span class="n">testCopyDirectory</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">)</span><span class="w"> </span><span class="n">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="err">\{</span>
+
+<span class="w">    </span><span class="k">File</span><span class="w"> </span><span class="n">sourceDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">File</span><span class="err">\</span><span class="p">(</span><span class="ss">&quot;sourceDir&quot;</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">File</span><span class="w"> </span><span class="n">destDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">File</span><span class="err">\</span><span class="p">(</span><span class="ss">&quot;destDir&quot;</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">sourceDir</span><span class="err">\</span><span class="p">.</span><span class="n">mkdir</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">destDir</span><span class="err">\</span><span class="p">.</span><span class="n">mkdir</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">File</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">File</span><span class="err">\</span><span class="p">(</span><span class="n">sourceDir</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;file\.txt&quot;</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="err">\</span><span class="p">(</span><span class="n">FileWriter</span><span class="w"> </span><span class="n">fw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileWriter</span><span class="err">\</span><span class="p">(</span><span class="k">file</span><span class="err">\</span><span class="p">)</span><span class="err">\</span><span class="p">)</span><span class="w"> </span><span class="err">\{</span>
+
+<span class="w">        </span><span class="n">fw</span><span class="err">\</span><span class="p">.</span><span class="k">write</span><span class="err">\</span><span class="p">(</span><span class="ss">&quot;test&quot;</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">    </span><span class="err">\}</span>
+
+<span class="w">    </span><span class="n">AtomicInteger</span><span class="w"> </span><span class="n">filesProcessed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AtomicInteger</span><span class="err">\</span><span class="p">(</span><span class="mi">0</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="err">\{</span>
+
+<span class="w">        </span><span class="n">FileBackup</span><span class="err">\</span><span class="p">.</span><span class="n">copyDirectory</span><span class="err">\</span><span class="p">(</span><span class="n">sourceDir</span><span class="p">,</span><span class="w"> </span><span class="n">destDir</span><span class="p">,</span><span class="w"> </span><span class="n">filesProcessed</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">File</span><span class="w"> </span><span class="n">copiedFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">File</span><span class="err">\</span><span class="p">(</span><span class="n">destDir</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;file\.txt&quot;</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">assertTrue</span><span class="err">\</span><span class="p">(</span><span class="n">copiedFile</span><span class="err">\</span><span class="p">.</span><span class="ow">exists</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">)</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">assertEquals</span><span class="err">\</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">filesProcessed</span><span class="err">\</span><span class="p">.</span><span class="k">get</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">)</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">    </span><span class="err">\}</span><span class="w"> </span><span class="n">finally</span><span class="w"> </span><span class="err">\{</span>
+
+<span class="w">        </span><span class="k">file</span><span class="err">\</span><span class="p">.</span><span class="k">delete</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">sourceDir</span><span class="err">\</span><span class="p">.</span><span class="k">delete</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="err">\</span><span class="p">(</span><span class="k">File</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">destDir</span><span class="err">\</span><span class="p">.</span><span class="n">listFiles</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">)</span><span class="err">\</span><span class="p">)</span><span class="w"> </span><span class="n">f</span><span class="err">\</span><span class="p">.</span><span class="k">delete</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">destDir</span><span class="err">\</span><span class="p">.</span><span class="k">delete</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">);</span>
+
+<span class="w">    </span><span class="err">\}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="err">\</span><span class="p">}</span>
+
+<span class="err">\</span><span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Testando o Método Main</strong></p>
+<p>Para garantir que o método main executa sem lançar exceções:</p>
+<div class="highlight"><pre><span></span><code><span class="n">package</span> <span class="n">com</span>\<span class="o">.</span><span class="n">mulato</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org</span>\<span class="o">.</span><span class="n">junit</span>\<span class="o">.</span><span class="n">jupiter</span>\<span class="o">.</span><span class="n">api</span>\<span class="o">.</span><span class="n">Test</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">static</span> <span class="n">org</span>\<span class="o">.</span><span class="n">junit</span>\<span class="o">.</span><span class="n">jupiter</span>\<span class="o">.</span><span class="n">api</span>\<span class="o">.</span><span class="n">Assertions</span>\<span class="o">.</span><span class="n">assertDoesNotThrow</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">MainTest</span> \<span class="p">{</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nv">@Test</span>
+
+<span class="n">void</span><span class="w"> </span><span class="n">testMainRunsWithoutException</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">)</span><span class="w"> </span><span class="err">\{</span>
+
+<span class="w">    </span><span class="n">assertDoesNotThrow</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">)</span><span class="w"> </span><span class="err">\</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Main</span><span class="err">\</span><span class="p">.</span><span class="n">main</span><span class="err">\</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="err">\</span><span class="o">[</span><span class="n">\</span><span class="o">]</span><span class="err">\{\}\</span><span class="p">)</span><span class="err">\</span><span class="p">);</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="err">\</span><span class="p">}</span>
+
+<span class="err">\</span><span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Gerando Relatórios de Cobertura com JaCoCo</strong></p>
+<p>Após configurar o plugin, execute:</p>
+<p>mvn clean test</p>
+<p>O relatório será gerado em: target/site/jacoco/index.html</p>
+<p>Abra esse arquivo no navegador para visualizar a cobertura dos testes.</p>
+<p><img alt="Conteúdo do artigo" src="assets/img/2025_06_24_Implementando Testes Unitários em um Projeto Java com Maven_image1.png" /></p>
+<p>Exemplo de relatório JaCoCo</p>
+<p><strong>Recursos e Leituras Complementares</strong></p>
+<ul>
+<li><a href="https://junit.org/junit5/docs/current/user-guide/"><strong>Documentação Oficial do JUnit 5</strong></a></li>
+<li><a href="https://site.mockito.org/"><strong>Mockito - Site Oficial</strong></a></li>
+<li><a href="https://www.jacoco.org/jacoco/trunk/doc/"><strong>Guia de Cobertura de Código com JaCoCo</strong></a></li>
+<li><a href="https://martinfowler.com/bliki/UnitTest.html"><strong>Boas Práticas de Testes Unitários (Martin Fowler)</strong></a></li>
+</ul>
+<p><strong>Resumo:</strong></p>
+<ul>
+<li>Estruture seu projeto conforme o padrão Maven.</li>
+<li>Adicione __JUnit __e __JaCoCo __ao pom.xml.</li>
+<li>Torne métodos utilitários testáveis (não privados).</li>
+<li>Escreva testes unitários para métodos de lógica.</li>
+<li>Gere e consulte o relatório de cobertura com <strong>JaCoCo</strong>.</li>
+<li>Considere automatizar seus testes com pipelines de CI modernos.</li>
+<li>Compartilhe suas experiências e dúvidas nos comentários!</li>
+</ul>
+<p><strong>Adendo: Hospedando o Código no GitHub e Publicando em Ambiente Produtivo</strong></p>
+<p>Além de implementar e testar seu projeto localmente, você pode hospedar o código no GitHub e publicar em ambientes produtivos. Veja como:</p>
+<p><strong>1. Hospedando no GitHub</strong></p>
+<ul>
+<li>Crie um repositório no GitHub.</li>
+<li>Faça o commit do seu projeto local e envie para o repositório remoto:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>init
+
+git<span class="w"> </span>add<span class="w"> </span><span class="se">\.</span>
+
+git<span class="w"> </span>commit<span class="w"> </span><span class="se">\-</span>m<span class="w"> </span><span class="s2">&quot;Primeiro commit&quot;</span>
+
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github<span class="se">\.</span>com/SEU<span class="se">\_</span>USUARIO/NOME<span class="se">\_</span>DO<span class="se">\_</span>REPOSITORIO<span class="se">\.</span>git
+
+git<span class="w"> </span>push<span class="w"> </span><span class="se">\-</span>u<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
+
+<p><strong>2. Publicando em Ambiente Produtivo</strong></p>
+<p>O método de publicação depende do tipo de aplicação:</p>
+<ul>
+<li><strong>Aplicação Desktop Java</strong></li>
+<li>Gere um JAR executável com Maven:</li>
+</ul>
+<p>mvn clean package</p>
+<ul>
+<li>Transfira o arquivo .jar para o servidor ou máquina onde será executado.</li>
+<li>Execute com:</li>
+</ul>
+<p>java -jar nome-do-arquivo.jar</p>
+<ul>
+<li><strong>Aplicação Web Java</strong></li>
+<li>Gere um arquivo .war ou .jar e faça o deploy em um servidor de aplicação (Tomcat, WildFly, etc.) ou em serviços de nuvem (Azure, AWS, Heroku, etc.).</li>
+<li><strong>Automação com CI/CD</strong></li>
+<li>Use GitHub Actions para automatizar testes, builds e até deploys para ambientes de produção.</li>
+</ul>
+<p><strong>Resumo:</strong></p>
+<ul>
+<li>GitHub serve para versionamento, colaboração e integração contínua.</li>
+<li>O deploy em produção depende do tipo de aplicação e do ambiente escolhido.</li>
+<li>Você pode automatizar o processo de build e deploy usando pipelines de CI/CD.</li>
+</ul>
+<p>Se quiser um exemplo de workflow de deploy ou dicas para um ambiente específico, deixe sua dúvida nos comentários!</p>
+<p>Código-fonte no GitHub: <a href="https://github.com/chmulato/backup_files"><strong>chmulato/backup_files</strong></a></p>
+<h2 id="conclusao"><a class="toclink" href="#conclusao">Conclusão</a></h2>
+<p>Este artigo apresentou conceitos importantes sobre implementando testes unitários em um projeto java com maven. A implementação demonstrada oferece uma base sólida para desenvolvimento e pode ser expandida conforme as necessidades específicas do projeto.</p>
+<h3 id="principais-pontos-abordados"><a class="toclink" href="#principais-pontos-abordados">Principais Pontos Abordados:</a></h3>
+<ul>
+<li>Conceitos fundamentais e arquitetura</li>
+<li>Implementação prática com exemplos de código</li>
+<li>Boas práticas e recomendações</li>
+<li>Considerações para produção</li>
+</ul>
+<h3 id="proximos-passos"><a class="toclink" href="#proximos-passos">Próximos Passos:</a></h3>
+<ul>
+<li>Explore a documentação oficial das tecnologias mencionadas</li>
+<li>Experimente os exemplos de código em seu ambiente</li>
+<li>Adapte as soluções para suas necessidades específicas</li>
+<li>Considere testes e monitoramento em ambientes de produção</li>
+</ul>
+<h2 id="sobre-o-autor"><a class="toclink" href="#sobre-o-autor">Sobre o Autor</a></h2>
+<p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos, atua no desenvolvimento de soluções enterprise robustas.</p>
+<p><strong>Conecte-se:</strong>
+- <a href="https://www.linkedin.com/in/chmulato/">LinkedIn</a>
+- <a href="https://github.com/chmulato">GitHub</a></p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christian Mulato</h3>
+                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+                <a href="../index.html">Artigos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script>
+        // Tema manager
+        class ThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggle');
+                this.themeIcon = document.getElementById('themeIcon');
+                this.init();
+            }
+            
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = savedTheme || systemTheme;
+                
+                this.setTheme(currentTheme);
+                this.updateIcon(currentTheme);
+                
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                this.setTheme(newTheme);
+                this.updateIcon(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+            
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            
+            updateIcon(theme) {
+                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                this.themeToggle.setAttribute('aria-label', 
+                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+            }
+        }
+        
+        // Inicializar quando DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre parte i: fundamentos do apache kafka">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Apache Kafka, Mensageria">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2025_06_30_parte_i_-_fundamentos_do_apache_kafka.html">
+    <meta property="og:title" content="Parte I: Fundamentos do Apache Kafka">
+    <meta property="og:description" content="Artigo técnico sobre parte i: fundamentos do apache kafka">
+    <meta property="og:image" content="https://chmulato.dev/img/2025_06_30_Parte I - Fundamentos do Apache Kafka_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2025_06_30_parte_i_-_fundamentos_do_apache_kafka.html">
+    <meta property="twitter:title" content="Parte I: Fundamentos do Apache Kafka">
+    <meta property="twitter:description" content="Artigo técnico sobre parte i: fundamentos do apache kafka">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2025_06_30_Parte I - Fundamentos do Apache Kafka_featured.jpg">
+    
+    <title>Parte I: Fundamentos do Apache Kafka | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Desenvolvimento</span>
+                    <time class="article-date" datetime="30/06/2025">30/06/2025</time>
+                </div>
+                
+                <h1 class="article-title">Parte I: Fundamentos do Apache Kafka</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Apache Kafka</span> <span class="tag">Mensageria</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                <p><img alt="Apache Kafka com Java - Gerenciamento de Filas." src="assets/img/2025_06_30_Parte I - Fundamentos do Apache Kafka_image5.png" /></p>
+<p>Apache Kafka com Java - Gerenciamento de Filas.</p>
+<p>Parte I: Fundamentos do Apache Kafka</p>
+<p><img alt="Christian Mulato, #OPEN_TO_WORK" src="assets/img/2025_06_30_Parte I - Fundamentos do Apache Kafka_image6.jpg" /></p>
+<p>Christian Mulato</p>
+<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
+<p>30 de junho de 2025</p>
+<p>Introdução</p>
+<p>Esta parte apresenta os conceitos essenciais do Apache Kafka, sua arquitetura, principais componentes e comandos básicos para quem está começando.</p>
+<p>O que é Apache Kafka?</p>
+<p>Apache Kafka é uma plataforma distribuída de streaming de eventos, projetada para alta performance, escalabilidade e tolerância a falhas. É amplamente utilizada para processamento de dados em tempo real, integração entre sistemas e pipelines de dados.</p>
+<p>Conceitos Principais</p>
+<ul>
+<li>Broker: Servidor Kafka responsável por armazenar e entregar mensagens.</li>
+<li>Topic: Canal lógico onde as mensagens são publicadas e consumidas.</li>
+<li>Partition: Subdivisão de um tópico para escalabilidade e paralelismo.</li>
+<li>Producer: Aplicação que envia mensagens para o Kafka.</li>
+<li>Consumer: Aplicação que lê mensagens do Kafka.</li>
+<li>Consumer Group: Grupo de consumidores que compartilham a leitura de partições.</li>
+<li>Offset: Posição sequencial de uma mensagem dentro de uma partição.</li>
+</ul>
+<p>Arquitetura Básica</p>
+<ol>
+<li>Producers publicam mensagens em tópicos.</li>
+<li>Brokers armazenam as mensagens.</li>
+<li>Consumers leem as mensagens dos tópicos.</li>
+<li>O Kafka garante alta disponibilidade e escalabilidade por meio de partições e replicação.</li>
+</ol>
+<p>Instalação Rápida com Docker</p>
+<p>docker-compose up -d</p>
+<p>Comandos Essenciais</p>
+<ul>
+<li>Criar um tópico:</li>
+</ul>
+<p>kafka-topics --create --topic meu-topico --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1</p>
+<ul>
+<li>Produzir mensagens:</li>
+</ul>
+<p>kafka-console-producer --topic meu-topico --bootstrap-server localhost:9092</p>
+<ul>
+<li>Consumir mensagens:</li>
+</ul>
+<p>kafka-console-consumer --topic meu-topico --from-beginning --bootstrap-server localhost:9092</p>
+<p>Exercícios Práticos</p>
+<ol>
+<li>Suba o ambiente Kafka localmente.</li>
+<li>Crie tópicos com diferentes números de partições.</li>
+<li>Produza e consuma mensagens usando o terminal.</li>
+<li>Experimente criar múltiplos consumidores em um mesmo grupo.</li>
+</ol>
+<p>Recursos Recomendados</p>
+<ul>
+<li>Documentação Oficial do Apache Kafka</li>
+<li>Livro: Kafka: The Definitive Guide (O'Reilly)</li>
+</ul>
+<p>Exemplo Java: Producer e Consumer Simples</p>
+<p>A seguir, você encontra exemplos didáticos de um Producer e um Consumer em Java, ideais para quem está começando a experimentar o Apache Kafka na prática. Os arquivos completos estão disponíveis em: parte1-fundamentos/src/main/java/SimpleProducer.java e parte1-fundamentos/src/main/java/SimpleConsumer.java.</p>
+<p>Como executar os exemplos</p>
+<ol>
+<li>Garanta que o Kafka está rodando em localhost:9092</li>
+</ol>
+<p>Utilize o docker-compose.yml fornecido na pasta parte1-fundamentos/ para subir o ambiente local rapidamente:</p>
+<p>docker-compose up -d</p>
+<ol>
+<li>Crie o tópico meu-topico se necessário</li>
+</ol>
+<p>Execute o comando abaixo para criar o tópico no seu cluster Kafka local:</p>
+<p>docker exec -it <nome_do_container_kafka> kafka-topics --bootstrap-server localhost:9092 --create --topic meu-topico --partitions 1 --replication-factor 1</p>
+<p>Substitua <nome_do_container_kafka> pelo nome real do container Kafka em execução (ex: kafka ou kafka1).</p>
+<ol>
+<li>Compile e execute os exemplos Java usando Maven</li>
+</ol>
+<p>O projeto já possui um pom.xml pronto na pasta parte1-fundamentos com todas as dependências necessárias. Basta rodar:</p>
+<div class="highlight"><pre><span></span><code><span class="na">mvn</span><span class="w"> </span><span class="s">compile</span>
+
+<span class="na">mvn</span><span class="w"> </span><span class="s">exec:java -Dexec.mainClass=SimpleProducer</span>
+
+<span class="na">mvn</span><span class="w"> </span><span class="s">exec:java -Dexec.mainClass=SimpleConsumer</span>
+</code></pre></div>
+
+<p>O SimpleProducer envia uma mensagem de exemplo para o tópico, e o SimpleConsumer consome e imprime as mensagens recebidas.</p>
+<p>Producer Java — Enviando uma mensagem</p>
+<p>O Producer é responsável por publicar mensagens em um tópico Kafka. Veja um exemplo básico:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.kafka.clients.producer.KafkaProducer</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.kafka.clients.producer.ProducerRecord</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Properties</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SimpleProducer</span><span class="w"> </span><span class="p">{</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="n">Properties</span><span class="w"> </span><span class="n">props</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Properties</span><span class="p">();</span>
+
+<span class="n">props</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;bootstrap.servers&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;localhost:9092&quot;</span><span class="p">);</span>
+
+<span class="n">props</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;key.serializer&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;org.apache.kafka.common.serialization.StringSerializer&quot;</span><span class="p">);</span>
+
+<span class="n">props</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;value.serializer&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;org.apache.kafka.common.serialization.StringSerializer&quot;</span><span class="p">);</span>
+
+<span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">KafkaProducer</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">producer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">KafkaProducer</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">props</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="n">producer</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ProducerRecord</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="s">&quot;meu-topico&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mensagem de exemplo&quot;</span><span class="p">));</span>
+</code></pre></div>
+
+<p>System.out.println("Mensagem enviada!");</p>
+<div class="highlight"><pre><span></span><code><span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Consumer Java — Lendo mensagens do tópico</p>
+<p>O Consumer é responsável por ler as mensagens publicadas em um tópico. Veja um exemplo básico:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.kafka.clients.consumer.ConsumerRecords</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.kafka.clients.consumer.KafkaConsumer</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.kafka.clients.consumer.ConsumerRecord</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Collections</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Properties</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">SimpleConsumer</span> <span class="p">{</span>
+
+<span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="n">Properties</span> <span class="n">props</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Properties</span><span class="p">();</span>
+
+<span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;bootstrap.servers&quot;</span><span class="p">,</span> <span class="s2">&quot;localhost:9092&quot;</span><span class="p">);</span>
+
+<span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;group.id&quot;</span><span class="p">,</span> <span class="s2">&quot;grupo-exemplo&quot;</span><span class="p">);</span>
+
+<span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;key.deserializer&quot;</span><span class="p">,</span> <span class="s2">&quot;org.apache.kafka.common.serialization.StringDeserializer&quot;</span><span class="p">);</span>
+
+<span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;value.deserializer&quot;</span><span class="p">,</span> <span class="s2">&quot;org.apache.kafka.common.serialization.StringDeserializer&quot;</span><span class="p">);</span>
+
+<span class="k">try</span> <span class="p">(</span><span class="n">KafkaConsumer</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">consumer</span> <span class="o">=</span> <span class="n">new</span> <span class="n">KafkaConsumer</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">props</span><span class="p">))</span> <span class="p">{</span>
+
+<span class="n">consumer</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">Collections</span><span class="o">.</span><span class="n">singletonList</span><span class="p">(</span><span class="s2">&quot;meu-topico&quot;</span><span class="p">));</span>
+
+<span class="n">ConsumerRecords</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">records</span> <span class="o">=</span> <span class="n">consumer</span><span class="o">.</span><span class="n">poll</span><span class="p">(</span><span class="n">java</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Duration</span><span class="o">.</span><span class="n">ofSeconds</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">ConsumerRecord</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">record</span> <span class="p">:</span> <span class="n">records</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div>
+
+<p>System.out.printf("Recebido: %s%n", record.value());</p>
+<div class="highlight"><pre><span></span><code><span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Dica: Você pode modificar os exemplos para enviar e consumir múltiplas mensagens, testar diferentes tópicos ou experimentar com múltiplos consumidores para entender o funcionamento dos consumer groups.</p>
+<p>Esses exemplos são apenas para fins didáticos e funcionam em ambientes locais com o Kafka rodando no padrão (localhost:9092).</p>
+<p>Exercícios Práticos</p>
+<p>Para praticar e aprofundar os conceitos desta parte, consulte também o arquivo auxiliar:</p>
+<ul>
+<li>parte1-fundamentos/exercicios-parte1.md — Exercícios de fundamentos, comandos básicos, experimentação inicial e espaço para anotações.</li>
+</ul>
+<p>Código-Fonte e Exemplos</p>
+<p>Todo o conteúdo, exemplos práticos e arquivos de configuração deste artigo estão disponíveis no repositório oficial do projeto no GitHub:</p>
+<p>🔗 github.com/chmulato/kafka-java-mastery</p>
+<p>Acesse, explore e contribua!</p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christian Mulato</h3>
+                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+                <a href="../index.html">Artigos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script>
+        // Tema manager
+        class ThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggle');
+                this.themeIcon = document.getElementById('themeIcon');
+                this.init();
+            }
+            
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = savedTheme || systemTheme;
+                
+                this.setTheme(currentTheme);
+                this.updateIcon(currentTheme);
+                
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                this.setTheme(newTheme);
+                this.updateIcon(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+            
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            
+            updateIcon(theme) {
+                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                this.themeToggle.setAttribute('aria-label', 
+                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+            }
+        }
+        
+        // Inicializar quando DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre do caus manual à confiança autamatizada">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, Spring, Docker, APIs, Testes, Arquitetura">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2025_08_20_do_caus_manual_a_confianca_autamatizada.html">
+    <meta property="og:title" content="Do Caus Manual À Confiança Autamatizada">
+    <meta property="og:description" content="Artigo técnico sobre do caus manual à confiança autamatizada">
+    <meta property="og:image" content="https://chmulato.dev/img/2025_08_20_do_caus_manual_a_confianca_autamatizada_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2025_08_20_do_caus_manual_a_confianca_autamatizada.html">
+    <meta property="twitter:title" content="Do Caus Manual À Confiança Autamatizada">
+    <meta property="twitter:description" content="Artigo técnico sobre do caus manual à confiança autamatizada">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2025_08_20_do_caus_manual_a_confianca_autamatizada_featured.jpg">
+    
+    <title>Do Caus Manual À Confiança Autamatizada | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Java & Spring</span>
+                    <time class="article-date" datetime="20/08/2025">20/08/2025</time>
+                </div>
+                
+                <h1 class="article-title">Do Caus Manual À Confiança Autamatizada</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Docker</span> <span class="tag">APIs</span> <span class="tag">Testes</span> <span class="tag">Arquitetura</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                
+<p><img alt="Automação de testes de API no CSOnline" src="assets/img/2025_08_20_Do Caus Manual à Confiança Autamatizada_image1.png" /></p>
+<p>Automação de testes de API no CSOnline</p>
+<p><strong>Da Necessidade ao Sistema: Como Construímos uma Suite de Testes Automatizados para APIs REST</strong></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato, #OPEN_TO_WORK" src="assets/img/2025_08_20_Do Caus Manual à Confiança Automatizada_image1.png" /></a></strong></p>
+<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato </a></strong></p>
+<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
+<p>20 de agosto de 2025</p>
+<p><strong>1.1     O Desafio Inicial</strong></p>
+<p>Durante o desenvolvimento do <strong>CSOnline</strong>, um sistema de gestão de entregas enterprise, nos deparamos com um problema comum mas crítico: como garantir que nossas APIs REST funcionassem consistentemente durante o desenvolvimento iterativo?</p>
+<p>Com 7 módulos (Usuários, Entregadores, Clientes, Entregas, Equipes, SMS e Preços) e múltiplos endpoints CRUD, testar manualmente cada funcionalidade a cada deploy tornou-se insustentável.</p>
+<p><strong>1.2     A Primeira Abordagem</strong></p>
+<p>Tudo começou com um script simples: <strong>test-couriers.ps1</strong>. Era interativo, testava apenas um endpoint e requeria input manual. Funcionava, mas não escalava.</p>
+<p># Primeira versão - manual e limitada</p>
+<p>Write-Host "Testando endpoint de couriers..."</p>
+<p>$response = Invoke-RestMethod -Uri "http://localhost:8080/csonline/api/couriers"</p>
+<p><strong>1.3     A Virada: Pensamento Sistemático</strong></p>
+<p>Em agosto de 2025, decidimos abordar o problema de forma estruturada. A ideia<em> </em>foi simples: se temos padrões na API, podemos ter padrões nos testes.</p>
+<p><strong>Decisões arquiteturais tomadas:</strong></p>
+<ul>
+<li><strong>Um script por endpoint</strong> - Cada módulo teria seu próprio script de teste</li>
+<li><strong>Operações CRUD completas</strong> - Não apenas GET, mas POST, PUT e DELETE</li>
+<li><strong>Tratamento de erros padronizado</strong> - Feedback claro e actionable</li>
+<li><strong>Automação total</strong> - Zero interação manual</li>
+</ul>
+<p><strong>1.4     A Implementação</strong></p>
+<p>Em uma tarde intensa, nasceram 7 scripts especializados:</p>
+<ul>
+<li>test-users.ps1</li>
+<li>test-customers.ps1</li>
+<li>test-deliveries.ps1</li>
+<li>test-teams.ps1</li>
+<li>test-sms.ps1</li>
+<li>test-login.ps1</li>
+<li>health-check-endpoints.ps1</li>
+</ul>
+<p>Cada script seguia o mesmo padrão:</p>
+<p>function Test-EntityCRUD {</p>
+<div class="highlight"><pre><span></span><code><span class="n">param\(\[string\]$BaseUrl,</span><span class="w"> </span><span class="n">\[string\]$Entity\)</span>
+
+
+
+<span class="n">try</span><span class="w"> </span><span class="n">\{</span>
+
+<span class="w">    </span><span class="n">\#</span><span class="w"> </span><span class="n">GET</span><span class="w"> </span><span class="n">\-</span><span class="w"> </span><span class="n">Lista</span>
+
+<span class="w">    </span><span class="nb">$list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke\-RestMethod</span><span class="w"> </span><span class="n">\-Uri</span><span class="w"> </span><span class="s">&quot;$BaseUrl/$Entity&quot;</span>
+
+<span class="w">    </span><span class="n">Write\-Host</span><span class="w"> </span><span class="s">&quot;GET /$Entity : SUCESSO \($\($list\.Count\) registros\)&quot;</span><span class="w"> </span><span class="n">\-ForegroundColor</span><span class="w"> </span><span class="n">Green</span>
+
+
+
+<span class="w">    </span><span class="n">\#</span><span class="w"> </span><span class="n">GET</span><span class="w"> </span><span class="n">\-</span><span class="w"> </span><span class="n">Individual</span><span class="w"> </span><span class="n">\(se</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="n">não</span><span class="w"> </span><span class="n">estiver</span><span class="w"> </span><span class="n">vazia\)</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">\($list\.Count</span><span class="w"> </span><span class="n">\-gt</span><span class="w"> </span><span class="mh">0</span><span class="n">\)</span><span class="w"> </span><span class="n">\{</span>
+
+<span class="w">        </span><span class="n">$individual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke\-RestMethod</span><span class="w"> </span><span class="n">\-Uri</span><span class="w"> </span><span class="s">&quot;$BaseUrl/$Entity/$\($list\[0\]\.id\)&quot;</span>
+
+<span class="w">        </span><span class="n">Write\-Host</span><span class="w"> </span><span class="s">&quot;GET /$Entity/\{id\} : SUCESSO&quot;</span><span class="w"> </span><span class="n">\-ForegroundColor</span><span class="w"> </span><span class="n">Green</span>
+
+<span class="w">    </span><span class="n">\}</span>
+
+
+
+<span class="w">    </span><span class="n">\#</span><span class="w"> </span><span class="n">POST</span><span class="p">,</span><span class="w"> </span><span class="n">PUT</span><span class="p">,</span><span class="w"> </span><span class="n">DELETE\.\.\.</span>
+
+
+
+<span class="n">\}</span><span class="w"> </span><span class="n">catch</span><span class="w"> </span><span class="n">\{</span>
+
+<span class="w">    </span><span class="n">Write\-Host</span><span class="w"> </span><span class="s">&quot;ERRO em $Entity : $\($\_\.Exception\.Message\)&quot;</span><span class="w"> </span><span class="n">\-ForegroundColor</span><span class="w"> </span><span class="n">Red</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="err">\</span><span class="p">}</span>
+
+<span class="err">\</span><span class="p">}</span>
+</code></pre></div>
+
+<p><strong>1.5     As Ferramentas de Orquestração</strong></p>
+<p>Não bastava ter scripts individuais. Precisávamos de ferramentas para executá-los de forma inteligente:</p>
+<ul>
+<li><strong>test-all-endpoints.ps1</strong> - O maestro que executa todos os testes em sequência, com opções de filtro.</li>
+<li><strong>health-check-endpoints.ps1</strong> - Diagnóstico rápido que gera relatórios de status.</li>
+<li><strong>run-tests.ps1</strong> - Interface simplificada na raiz do projeto.</li>
+</ul>
+<p><strong>1.6     As Descobertas</strong></p>
+<p>Os testes revelaram insights valiosos:</p>
+<ul>
+<li><strong>Taxa de sucesso: 80%</strong> (8 de 10 endpoints funcionando)</li>
+<li><strong>Problemas identificados:</strong> Serialização circular, endpoints individuais com 404</li>
+<li><strong>Padrões de falha:</strong> <strong><em>LocalDateTime</em></strong> causando problemas de <strong><em>deserialização</em></strong></li>
+</ul>
+<p><strong>1.7     Os Benefícios Realizados</strong></p>
+<ul>
+<li><strong>Detecção proativa de problemas</strong> - Bugs descobertos antes do deploy</li>
+<li><strong>Feedback imediato</strong> - Saber em segundos se uma mudança quebrou algo</li>
+<li><strong>Documentação viva</strong> - Os testes servem como especificação da API</li>
+<li><strong><em>Onboarding </em>facilitado</strong> - Novos desenvolvedores entendem rapidamente o estado do sistema</li>
+</ul>
+<p><strong>1.8     Lições Aprendidas</strong></p>
+<p><strong>Técnicas:</strong></p>
+<ul>
+<li>__<em>PowerShell </em>__é uma ferramenta poderosa para automação de testes de API</li>
+<li>Padronização é fundamental para manutenibilidade</li>
+<li>Feedback colorido e estruturado acelera o debugging</li>
+</ul>
+<p><strong>Organizacionais:</strong></p>
+<ul>
+<li>Investir tempo em automação de testes economiza horas de trabalho manual</li>
+<li>Testes devem ser executáveis por qualquer membro da equipe</li>
+<li>Documentação de testes é tão importante quanto a documentação da API</li>
+</ul>
+<p><strong>1.9     O Resultado</strong></p>
+<p>Hoje, qualquer mudança no __CSOnline __pode ser validada em minutos:</p>
+<p># Um comando para testar tudo</p>
+<p>.\run-tests.ps1</p>
+<p># Ou verificação rápida de saúde</p>
+<p>.\run-tests.ps1 -HealthCheck</p>
+<p><strong>1.10  Próximos Passos</strong></p>
+<p>A jornada não para aqui. Estamos expandindo para:</p>
+<ul>
+<li>Testes de carga automatizados</li>
+<li>Integração com CI/CD</li>
+<li>Testes de contratos com Pact</li>
+<li>Monitoramento de performance</li>
+</ul>
+<p><strong>1.11  Reflexão Final</strong></p>
+<p>Construir ferramentas de teste não é apenas sobre encontrar bugs. É sobre criar confiança. Confiança para <strong><em>refatorar</em></strong>, para experimentar, para inovar.</p>
+<p>No desenvolvimento de software, a pergunta não é “se” algo vai quebrar, mas “quando”. Ter uma rede de segurança robusta transforma o medo de mudança em coragem para evolução.</p>
+<p><strong>1.12  Recursos e Contato</strong></p>
+<p><strong>Call to Action:</strong> E você, como garante a qualidade das suas APIs durante o desenvolvimento? Compartilhe suas estratégias nos comentários!</p>
+<p><em>Artigo baseado na experiência real de desenvolvimento do sistema CSOnline - um projeto enterprise de gestão de entregas com Jakarta EE, Vue 3 e WildFly.</em></p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christian Mulato</h3>
+                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+                <a href="../index.html">Artigos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script>
+        // Tema manager
+        class ThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggle');
+                this.themeIcon = document.getElementById('themeIcon');
+                this.init();
+            }
+            
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = savedTheme || systemTheme;
+                
+                this.setTheme(currentTheme);
+                this.updateIcon(currentTheme);
+                
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                this.setTheme(newTheme);
+                this.updateIcon(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+            
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            
+            updateIcon(theme) {
+                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                this.themeToggle.setAttribute('aria-label', 
+                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+            }
+        }
+        
+        // Inicializar quando DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+        });
+    </script>
+</body>
+</html>

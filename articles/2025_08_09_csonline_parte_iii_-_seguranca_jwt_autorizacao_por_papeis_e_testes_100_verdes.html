@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre csonline – parte iii: segurança jwt, autorização por papéis e testes 100% verdes">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Testes, TDD">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chmulato.dev/articles/2025_08_09_csonline_parte_iii_-_seguranca_jwt_autorizacao_por_papeis_e_testes_100_verdes.html">
+    <meta property="og:title" content="CSOnline – Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes">
+    <meta property="og:description" content="Artigo técnico sobre csonline – parte iii: segurança jwt, autorização por papéis e testes 100% verdes">
+    <meta property="og:image" content="https://chmulato.dev/img/2025_08_09_CSOnline – Parte III - Segurança JWT Autorização por Papéis e Testes 100 Verdes_featured.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chmulato.dev/articles/2025_08_09_csonline_parte_iii_-_seguranca_jwt_autorizacao_por_papeis_e_testes_100_verdes.html">
+    <meta property="twitter:title" content="CSOnline – Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes">
+    <meta property="twitter:description" content="Artigo técnico sobre csonline – parte iii: segurança jwt, autorização por papéis e testes 100% verdes">
+    <meta property="twitter:image" content="https://chmulato.dev/img/2025_08_09_CSOnline – Parte III - Segurança JWT Autorização por Papéis e Testes 100 Verdes_featured.jpg">
+    
+    <title>CSOnline – Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes | Christian Mulato Dev Blog</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="assets/js/article.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-text">Christian Mulato</span>
+                    <span class="logo-subtitle">Dev Blog</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Artigos</a>
+                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Testes & Qualidade</span>
+                    <time class="article-date" datetime="09/08/2025">09/08/2025</time>
+                </div>
+                
+                <h1 class="article-title">CSOnline – Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes</h1>
+                
+                <div class="article-info">
+                    <span class="article-author">Por Christian Mulato</span>
+                    <div class="article-tags"><span class="tag">Testes</span> <span class="tag">TDD</span></div>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                <p><img alt="Evolução da aplicação CSOnline - Gestão de Centro de Distribuição (CDs)" src="assets/img/2025_08_09_CSOnline – Parte III - Segurança JWT Autorização por Papéis e Testes 100 Verdes_image5.png" /></p>
+<p>Evolução da aplicação CSOnline - Gestão de Centro de Distribuição (CDs)</p>
+<p>CSOnline – Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes</p>
+<p><img alt="Christian Mulato, #OPEN_TO_WORK" src="assets/img/2025_08_09_CSOnline – Parte III - Segurança JWT Autorização por Papéis e Testes 100 Verdes_image6.jpg" /></p>
+<p>Christian Mulato</p>
+<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
+<p>9 de agosto de 2025</p>
+<p>O que evoluiu nesta fase</p>
+<p>Nesta terceira etapa avançamos em segurança, qualidade e preparo para a integração total do frontend Vue com o backend Jakarta EE. O sistema agora possui autenticação JWT robusta, autorização por papéis coerente nos endpoints, suíte de testes completa e scripts de desenvolvimento mais amigáveis.</p>
+<p>Principais destaques:</p>
+<ul>
+<li>Segurança ponta a ponta com JWT (autenticação) e autorização por papéis (@RolesAllowed)</li>
+<li>Matriz de permissões alinhada aos casos de uso reais (ADMIN, BUSINESS, COURIER, CUSTOMER)</li>
+<li>Testes de controladores, serviços e repositórios estabilizados (191 testes passando)</li>
+<li>Ambiente de testes isolado (test.mode), base limpa por execução e Jackson registrado</li>
+<li>Endpoint de envio de SMS dedicado e ajustes finos em regras de acesso</li>
+<li>Prontos para integrar o SPA em Vue com os endpoints REST e tokens JWT</li>
+</ul>
+<p>Segurança: autenticação e autorização</p>
+<ul>
+<li>Implementamos um filtro de autenticação JWT (JwtAuthenticationFilter) que valida o token do header Authorization e propaga para o contexto os dados do usuário (login, role, id).</li>
+<li>Criamos um filtro de autorização (AuthorizationFilter) que lê as anotações @RolesAllowed nos recursos e aplica a decisão com base no papel do usuário autenticado.</li>
+<li>
+<p>Ajustamos as anotações de segurança nos controladores para refletir a regra de negócio:</p>
+</li>
+<li>
+<p>Users: criação, atualização e exclusão restritas a ADMIN</p>
+</li>
+<li>Teams: atualização e exclusão restritas a ADMIN</li>
+<li>Prices: listagem por business permitida a ADMIN e BUSINESS</li>
+<li>SMS: deleção e busca por entrega restritas a ADMIN e BUSINESS; novo POST /sms/{id}/send</li>
+</ul>
+<p>Resultado: respostas 401 e 403 passaram a refletir corretamente a ausência de token ou falta de permissão, e as operações válidas retornam 2xx como esperado.</p>
+<p>Testes: cobertura confiável do backend</p>
+<ul>
+<li>BaseControllerJerseyTest ativa o modo de teste (test.mode) e garante limpeza da base entre cenários, evitando interferência entre casos.</li>
+<li>Reescrevemos e ampliamos os testes dos módulos Price (repository/service/controller), além de padronizar os de Courier, Customer, Delivery, SMS, Team e User para sempre enviar os headers de autorização corretos.</li>
+<li>Resolvemos falhas pontuais (401/403/415/400/500) com ajustes em headers, content-type e alinhamento de payloads.</li>
+<li>Estado atual: 191 testes, todos passando, garantindo estabilidade para a próxima fase.</li>
+</ul>
+<p>DX e automação</p>
+<ul>
+<li>Scripts PowerShell simplificam o ciclo de desenvolvimento (build, deploy no WildFly 31, testes e verificação de saúde).</li>
+<li>Logs mais claros com Log4j2 ajudam no diagnóstico durante os testes.</li>
+<li>Documentação atualizada para orientar a configuração de ambiente e execução.</li>
+</ul>
+<p>Integração Frontend (Vue) ↔ Backend (Jakarta)</p>
+<p>Com a segurança e os contratos estabilizados, o próximo passo é ligar o SPA em Vue aos endpoints REST com JWT:</p>
+<ul>
+<li>Cliente HTTP com injeção automática do token JWT</li>
+<li>Tratamento padronizado de erros 401/403 no frontend (ex.: redireciono ao login/avisos de permissão)</li>
+<li>Guards de rota por papel (ADMIN, BUSINESS, COURIER, CUSTOMER)</li>
+<li>Habilitar CORS conforme necessário e mapear escopos de cada módulo (Users, Teams, Deliveries, SMS, Prices)</li>
+</ul>
+<p>Como contribuir</p>
+<ul>
+<li>Frontend: integrar telas ao backend, melhorar UX/UI, criar guards por papel, estados vazios e feedbacks.</li>
+<li>Backend: refinar validações, paginação/ordenação de listagens, monitoramento e métricas.</li>
+<li>QA: cenários E2E (Cypress/Playwright) para fluxos críticos de autenticação e autorização.</li>
+<li>DevOps: pipelines de CI/CD e empacotamento para ambientes (dev/homolog/prod).</li>
+</ul>
+<p>Faça um fork do repositório em https://github.com/chmulato/csonline e confira a documentação em doc/INDEX.md. Pull Requests são bem-vindos!</p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="article-author-bio">
+                    <h3>Sobre o Autor</h3>
+                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
+                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
+                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
+                        Conecte-se no LinkedIn
+                    </a>
+                </div>
+                
+                <div class="article-navigation">
+                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christian Mulato</h3>
+                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+                <a href="../index.html">Artigos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script>
+        // Tema manager
+        class ThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggle');
+                this.themeIcon = document.getElementById('themeIcon');
+                this.init();
+            }
+            
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = savedTheme || systemTheme;
+                
+                this.setTheme(currentTheme);
+                this.updateIcon(currentTheme);
+                
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                this.setTheme(newTheme);
+                this.updateIcon(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+            
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            
+            updateIcon(theme) {
+                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                this.themeToggle.setAttribute('aria-label', 
+                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+            }
+        }
+        
+        // Inicializar quando DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+        });
+    </script>
+</body>
+</html>
