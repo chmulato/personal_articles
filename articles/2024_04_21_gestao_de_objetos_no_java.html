@@ -24,13 +24,13 @@
     <title>Gestão De Objetos No Java | Christian Mulato Dev Blog</title>
     
     <!-- Styles -->
-    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="assets/css/article.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="../assets/js/article.js" defer></script>
+    <script src="assets/js/article.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -66,11 +66,11 @@
             </header>
             
             <div class="article-content">
-                <h1 id="gestao-de-objetos-no-java"><a class="toclink" href="#gestao-de-objetos-no-java">Gestão De Objetos No Java</a></h1>
-<p><img alt="Gerenciamento de Objetos em Java, os famosos Beans." src="img/image_not_found.png" /></p>
+                
+<p><img alt="Gerenciamento de Objetos em Java, os famosos Beans." src="assets/img/2024_04_21_Gestão de objetos no Java_image1.png" /></p>
 <p>Gerenciamento de Objetos em Java, os famosos Beans.</p>
 <p><strong>Gestão de objetos no Java</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="img/image_not_found.png" /></a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_04_21_Gestão de objetos no Java_image3.png" /></a></p>
 <p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>21 de abril de 2024</p>
@@ -86,7 +86,7 @@
 <p><strong>4. <em>Gerenciamento de Ciclo de Vida</em>:</strong> O contêiner IoC gerencia o ciclo de vida dos beans, incluindo a inicialização e a destruição.</p>
 <p>Além disso, o Spring oferece suporte a programação assíncrona e manipulação de threads, o que pode ser relevante durante a execução de sequências de passos que envolvem processamento paralelo ou assíncrono.</p>
 <p>Abaixo podemos ver um exemplo de código simples de como um bean, um objeto em Java, pode ser configurado e gerenciado no Spring:</p>
-<p><img alt="" src="img/image_not_found.png" /></p>
+<p><img alt="" src="assets/img/2024_04_21_Gestão de objetos no Java_image3.png" /></p>
 <p>Exemplo de código Java utilizando o Framework Spring.</p>
 <p>Neste exemplo, AppConfig é uma classe de configuração que define um método meuServico anotado com Bean, indicando ao Spring que ele deve gerenciar a criação e a instância desse objeto. A classe MeuServico é anotada com o arroba.</p>
 <p>A gestão de recursos em uma aplicação robusta é crucial para assegurar que o software funcione de maneira eficiente e confiável. Ela envolve o planejamento cuidadoso e a alocação de recursos como memória, processamento e armazenamento, além do monitoramento e otimização do uso desses recursos ao longo do tempo. Saiba que a gestão eficaz de recursos permite:</p>
@@ -120,5 +120,73 @@
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Christian Mulato</h3>
+                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+                <a href="../index.html">Artigos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <script>
+        // Tema manager
+        class ThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggle');
+                this.themeIcon = document.getElementById('themeIcon');
+                this.init();
+            }
+            
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = savedTheme || systemTheme;
+                
+                this.setTheme(currentTheme);
+                this.updateIcon(currentTheme);
+                
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                this.setTheme(newTheme);
+                this.updateIcon(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+            
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            
+            updateIcon(theme) {
+                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                this.themeToggle.setAttribute('aria-label', 
+                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+            }
+        }
+        
+        // Inicializar quando DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+        });
+    </script>
 </body>
 </html>
