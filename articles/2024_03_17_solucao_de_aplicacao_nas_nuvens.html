@@ -82,35 +82,35 @@
 <p><strong>5. Composições Ricas</strong>: O OpenWhisk permite combinar suas funções em composições ricas. Você pode escrever código em diferentes idiomas, como <strong>JavaScript/NodeJS, Swift, Python, Java</strong> ou executar lógica personalizada empacotando o código com <strong>Docker</strong>.</p>
 <p>Em resumo, o <strong>Apache OpenWhisk</strong> oferece uma maneira flexível e escalável de criar aplicativos serverless, permitindo que você se concentre na lógica de negócios e na criação de soluções independentes de nuvem.</p>
 <p>Aqui está um exemplo simples de como criar uma ação (ou função) usando o <strong>Apache OpenWhisk</strong>. Vamos supor que queremos criar uma ação que some dois números:</p>
-<p>// Javascript - Arquivo: soma.js</p>
-<p>function main(params) {</p>
-<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span>\<span class="p">{</span><span class="w"> </span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span>\<span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="p">;</span>
+<pre><code class="language-javascript">// Javascript - Arquivo: soma.js
+function main(params) {
+    const { num1, num2 } = params;
 
-<span class="k">if</span><span class="w"> </span>\<span class="p">(</span>\<span class="o">!</span><span class="n">num1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>\<span class="o">!</span><span class="n">num2</span>\<span class="p">)</span><span class="w"> </span>\<span class="p">{</span>
+    if (!num1 || !num2) {
+        return { error: 'Por favor, forneça os números para somar.' };
+    }
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span>\<span class="p">{</span><span class="w"> </span><span class="n">error</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Por favor, forneça os números para somar\.&#39;</span><span class="w"> </span>\<span class="p">};</span>
-
-\<span class="p">}</span>
-
-<span class="k">const</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span>\<span class="o">+</span><span class="w"> </span><span class="n">num2</span><span class="p">;</span>
-
-<span class="k">return</span><span class="w"> </span>\<span class="p">{</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span>\<span class="p">};</span>
-</code></pre></div>
-
-<p>}</p>
+    const resultado = num1 + num2;
+    return { resultado };
+}
+</code></pre>
 <p>Neste exemplo:</p>
 <p>- Criamos uma função chamada <em>main</em> que recebe um objeto <em>params</em>.</p>
 <p>- Verificamos se os números <em>num1</em> e <em>num2</em> foram fornecidos.</p>
 <p>- Se sim, somamos os números e retornamos o resultado.</p>
 <p>Para criar essa ação no OpenWhisk, você pode usar o seguinte comando na linha de comando:</p>
-<p>wsk action create minha-soma soma.js</p>
+<pre><code class="language-bash">wsk action create minha-soma soma.js
+</code></pre>
+
 <p>Agora, você pode invocar essa ação passando os parâmetros <em>num1</em> e <em>num2</em>:</p>
-<p>wsk action invoke minha-soma --param num1 10 --param num2 20</p>
+<pre><code class="language-bash">wsk action invoke minha-soma --param num1 10 --param num2 20
+</code></pre>
+
 <p>Isso retornará um objeto JSON com o resultado da soma:</p>
-<p>// Arquivo - JSON</p>
-<p>{</p>
-<p>"resultado": 30</p>
-<p>}</p>
+<pre><code class="language-json">{
+    "resultado": 30
+}
+</code></pre>
 <p>Lembre-se de que este é apenas um exemplo básico. O OpenWhisk oferece muito mais recursos, como gatilhos, regras e composições, para criar soluções <em>serverless</em> mais complexas.</p>
 <p>Para usar o <strong>Apache OpenWhisk</strong> localmente em um sistema operacional Linux, você pode seguir estas etapas:</p>
 <p><strong>1. Instalação do Docker e Docker Compose:</strong></p>
@@ -118,13 +118,15 @@
 <p>- Em seguida, instale o <strong>Docker Compose</strong>, que é uma ferramenta para definir e executar aplicativos Docker com vários contêineres.</p>
 <p><strong>2. Clone o Repositório do OpenWhisk:</strong></p>
 <p>- Abra um terminal e execute o seguinte comando para clonar o repositório do OpenWhisk:</p>
-<p>git clone https://github.com/apache/openwhisk.git</p>
+<pre><code class="language-bash">git clone https://github.com/apache/openwhisk.git
+</code></pre>
+
 <p><strong>3. Configuração do Ambiente:</strong></p>
 <p>- Navegue para o diretório openwhisk/tools/ubuntu-setup.</p>
 <p>- Execute o script de configuração para instalar as dependências necessárias:</p>
-<p>cd openwhisk/tools/ubuntu-setup</p>
-<div class="highlight"><pre><span></span><code> \./all\.sh
-</code></pre></div>
+<pre><code class="language-bash">cd openwhisk/tools/ubuntu-setup
+./all.sh
+</code></pre>
 
 <p><strong>4. Inicie o OpenWhisk Localmente:</strong></p>
 <p>- Execute o seguinte comando para iniciar o OpenWhisk localmente usando o Docker Compose:</p>

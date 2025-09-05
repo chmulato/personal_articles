@@ -4,7 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Artigo técnico sobre implementando testes unitários em um projeto java com maven">
-    <meta name="author" content="Christian Mulato">
+    <meta name="author" content="Christ- Aplicação Desktop Java
+- Gere um JAR executável com Maven:</li>
+</ul>
+<pre><code class="language-bash">mvn clean package
+</code></pre>
+<ul>
+<li>Transfira o arquivo .jar para o servidor ou máquina onde será executado.</li>
+<li>Execute com:</li>
+</ul>
+<pre><code class="language-bash">java -jar nome-do-arquivo.jar
+</code></pre>o">
     <meta name="keywords" content="Java, Testes, TDD">
     
     <!-- Open Graph -->
@@ -111,32 +121,35 @@
 </ul>
 <p>Configurando Dependências no Maven</p>
 <p>No arquivo pom.xml, adicione as dependências do JUnit 5 para testes e do JaCoCo para cobertura de código:</p>
-<p><dependency></p>
-<p><groupId>org.junit.jupiter</groupId></p>
-<p><artifactId>junit-jupiter</artifactId></p>
-<p><version>5.10.2</version></p>
-<p><scope>test</scope></p>
-<p></dependency></p>
-<p>E o plugin do JaCoCo dentro da seção <build>:</p>
-<p><plugin></p>
-<p><groupId>org.jacoco</groupId></p>
-<p><artifactId>jacoco-maven-plugin</artifactId></p>
-<p><version>0.8.11</version></p>
-<p><executions></p>
-<p><execution></p>
-<p><goals></p>
-<p><goal>prepare-agent</goal></p>
-<p></goals></p>
-<p></execution></p>
-<p><execution></p>
-<p><id>report</id></p>
-<p><phase>test</phase></p>
-<p><goals></p>
-<p><goal>report</goal></p>
-<p></goals></p>
-<p></execution></p>
-<p></executions></p>
-<p></plugin></p>
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;
+    &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;
+    &lt;version&gt;5.10.2&lt;/version&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<p>E o plugin do JaCoCo dentro da seção &lt;build&gt;:</p>
+<pre><code class="language-xml">&lt;plugin&gt;
+    &lt;groupId&gt;org.jacoco&lt;/groupId&gt;
+    &lt;artifactId&gt;jacoco-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;0.8.11&lt;/version&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;prepare-agent&lt;/goal&gt;
+            &lt;/goals&gt;
+        &lt;/execution&gt;
+        &lt;execution&gt;
+            &lt;id&gt;report&lt;/id&gt;
+            &lt;phase&gt;test&lt;/phase&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;report&lt;/goal&gt;
+            &lt;/goals&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;
+</code></pre>
 <p>Tornando Métodos Testáveis</p>
 <p>Para que os métodos possam ser testados, eles não devem ser private. Altere para static (sem modificador) ou public:</p>
 <p>// Antes</p>
@@ -153,105 +166,117 @@
 <p>assertThrows(Exception.class, () -&gt; { /<em> código </em>/ });</p>
 <p>Utilizando Mocks em Testes</p>
 <p>Para testar métodos que dependem de recursos externos, utilize bibliotecas como Mockito:</p>
-<p><dependency></p>
-<p><groupId>org.mockito</groupId></p>
-<p><artifactId>mockito-core</artifactId></p>
-<p><version>5.2.0</version></p>
-<p><scope>test</scope></p>
-<p></dependency></p>
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.mockito&lt;/groupId&gt;
+    &lt;artifactId&gt;mockito-core&lt;/artifactId&gt;
+    &lt;version&gt;5.2.0&lt;/version&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
 <p>Exemplo de uso:</p>
-<p>import static org.mockito.Mockito.*;</p>
-<p>MyService service = mock(MyService.class);</p>
-<p>when(service.doSomething()).thenReturn("resultado");</p>
+<pre><code class="language-java">import static org.mockito.Mockito.*;
+
+MyService service = mock(MyService.class);
+when(service.doSomething()).thenReturn("resultado");
+</code></pre>
 <p>Integração Contínua e Testes Automatizados</p>
 <p>Configure pipelines de CI (como GitHub Actions, GitLab CI, Jenkins) para rodar os testes automaticamente a cada push. Isso garante que novas alterações não quebrem funcionalidades existentes.</p>
-<p>Exemplo de pipeline com GitHub Actions</p>
-<p>name: Java CI</p>
-<p>on: [push, pull_request]</p>
-<p>jobs:</p>
-<p>build:</p>
-<p>runs-on: ubuntu-latest</p>
-<p>steps:</p>
-<ul>
-<li>
-<p>uses: actions/checkout@v4</p>
-</li>
-<li>
-<p>name: Set up JDK 21</p>
-</li>
-</ul>
-<p>uses: actions/setup-java@v4</p>
-<p>with:</p>
-<p>distribution: 'temurin'</p>
-<p>java-version: '21'</p>
-<ul>
-<li>name: Build with Maven</li>
-</ul>
-<p>run: mvn clean test</p>
-<p>Testes Parametrizados com JUnit 5</p>
-<p>import org.junit.jupiter.params.ParameterizedTest;</p>
-<p>import org.junit.jupiter.params.provider.ValueSource;</p>
-<p>@ParameterizedTest</p>
-<p>@ValueSource(strings = {"file1.txt", "file2.txt"})</p>
-<p>void testFileNames(String fileName) {</p>
-<p>assertTrue(fileName.startsWith("file"));</p>
-<p>}</p>
-<p>Exemplo de Classe de Teste Unitário</p>
-<p>package com.mulato;</p>
-<p>import org.junit.jupiter.api.Test;</p>
-<p>import java.io.*;</p>
-<p>import java.util.concurrent.atomic.AtomicInteger;</p>
-<p>import static org.junit.jupiter.api.Assertions.*;</p>
-<p>class FileBackupTest {</p>
-<p>@Test</p>
-<p>void testCountFilesEmptyFolder() throws IOException {</p>
-<p>File tempDir = new File("testDirEmpty");</p>
-<p>tempDir.mkdir();</p>
-<p>try {</p>
-<p>int count = FileBackup.countFiles(tempDir);</p>
-<p>assertEquals(0, count);</p>
-<p>} finally {</p>
-<p>tempDir.delete();</p>
-<p>}</p>
-<p>}</p>
-<p>@Test</p>
-<p>void testCopyDirectory() throws IOException {</p>
-<p>File sourceDir = new File("sourceDir");</p>
-<p>File destDir = new File("destDir");</p>
-<p>sourceDir.mkdir();</p>
-<p>destDir.mkdir();</p>
-<p>File file = new File(sourceDir, "file.txt");</p>
-<p>try (FileWriter fw = new FileWriter(file)) {</p>
-<p>fw.write("test");</p>
-<p>}</p>
-<p>AtomicInteger filesProcessed = new AtomicInteger(0);</p>
-<p>try {</p>
-<p>FileBackup.copyDirectory(sourceDir, destDir, filesProcessed);</p>
-<p>File copiedFile = new File(destDir, "file.txt");</p>
-<p>assertTrue(copiedFile.exists());</p>
-<p>assertEquals(1, filesProcessed.get());</p>
-<p>} finally {</p>
-<p>file.delete();</p>
-<p>sourceDir.delete();</p>
-<p>for (File f : destDir.listFiles()) f.delete();</p>
-<p>destDir.delete();</p>
-<p>}</p>
-<p>}</p>
-<p>}</p>
-<p>Testando o Método Main</p>
+<h3>Exemplo de pipeline com GitHub Actions</h3>
+<pre><code class="language-yaml">name: Java CI
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+    - name: Build with Maven
+      run: mvn clean test
+</code></pre>
+<h3>Testes Parametrizados com JUnit 5</h3>
+<pre><code class="language-java">import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
+@ParameterizedTest
+@ValueSource(strings = {"file1.txt", "file2.txt"})
+void testFileNames(String fileName) {
+    assertTrue(fileName.startsWith("file"));
+}
+</code></pre>
+<h3>Exemplo de Classe de Teste Unitário</h3>
+<pre><code class="language-java">package com.mulato;
+
+import org.junit.jupiter.api.Test;
+import java.io.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import static org.junit.jupiter.api.Assertions.*;
+
+class FileBackupTest {
+    @Test
+    void testCountFilesEmptyFolder() throws IOException {
+        File tempDir = new File("testDirEmpty");
+        tempDir.mkdir();
+        try {
+            int count = FileBackup.countFiles(tempDir);
+            assertEquals(0, count);
+        } finally {
+            tempDir.delete();
+        }
+    }
+
+    @Test
+    void testCopyDirectory() throws IOException {
+        File sourceDir = new File("sourceDir");
+        File destDir = new File("destDir");
+        sourceDir.mkdir();
+        destDir.mkdir();
+        File file = new File(sourceDir, "file.txt");
+        
+        try (FileWriter fw = new FileWriter(file)) {
+            fw.write("test");
+        }
+        
+        AtomicInteger filesProcessed = new AtomicInteger(0);
+        try {
+            FileBackup.copyDirectory(sourceDir, destDir, filesProcessed);
+            File copiedFile = new File(destDir, "file.txt");
+            assertTrue(copiedFile.exists());
+            assertEquals(1, filesProcessed.get());
+        } finally {
+            file.delete();
+            sourceDir.delete();
+            for (File f : destDir.listFiles()) f.delete();
+            destDir.delete();
+        }
+    }
+}
+</code></pre>
+<h3>Testando o Método Main</h3>
 <p>Para garantir que o método main executa sem lançar exceções:</p>
-<p>package com.mulato;</p>
-<p>import org.junit.jupiter.api.Test;</p>
-<p>import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;</p>
-<p>public class MainTest {</p>
-<p>@Test</p>
-<p>void testMainRunsWithoutException() {</p>
-<p>assertDoesNotThrow(() -&gt; Main.main(new String[]{}));</p>
-<p>}</p>
+<pre><code class="language-java">package com.mulato;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+
+public class MainTest {
+    @Test
+    void testMainRunsWithoutException() {
+        assertDoesNotThrow(() -&gt; Main.main(new String[]{}));
+    }
+}
+</code></pre>
 <p>}</p>
 <p>Gerando Relatórios de Cobertura com JaCoCo</p>
 <p>Após configurar o plugin, execute:</p>
-<p>mvn clean test</p>
+<pre><code class="language-bash">mvn clean test
+</code></pre>
+
 <p>O relatório será gerado em: target/site/jacoco/index.html</p>
 <p>Abra esse arquivo no navegador para visualizar a cobertura dos testes.</p>
 <p><img alt="Conteúdo do artigo" src="img/2025_06_24_Implementando Testes Unitários em um Projeto Java com Maven_image9.png" /></p>

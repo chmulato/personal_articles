@@ -96,7 +96,46 @@
 <p>No contexto de microserviços, isso facilita a troca de tecnologias sem afetar o núcleo. Por exemplo, podemos trocar de MySQL para PostgreSQL apenas alterando o adaptador de persistência.</p>
 <h3 id="exemplo-pratico-em-java"><a class="toclink" href="#exemplo-pratico-em-java">Exemplo Prático em Java:</a></h3>
 <p>Vamos supor um serviço simples de agendamento médico. O domínio poderia ter uma entidade Appointment e um caso de uso ScheduleAppointmentUseCase.</p>
-<p>// Domínio: Entidadepublic class Appointment {    private Long id;    private LocalDateTime dateTime;    private String patientId;    // getters, setters, business logic}// Domínio: Caso de Usopublic class ScheduleAppointmentUseCase {    private final AppointmentRepositoryPort repository;    public ScheduleAppointmentUseCase(AppointmentRepositoryPort repository) {        this.repository = repository;    }    public void execute(ScheduleAppointmentCommand command) {        // Lógica de negócio: validar disponibilidade, etc.        Appointment appointment = new Appointment(/<em>...</em>/);        repository.save(appointment);    }}// Porta de Saídapublic interface AppointmentRepositoryPort {    void save(Appointment appointment);    List<Appointment> findByPatient(String patientId);}// Adaptador de Saída (JPA)@Repositorypublic class JpaAppointmentRepositoryAdapter implements AppointmentRepositoryPort {    private final JpaAppointmentRepository jpaRepo;    @Override    public void save(Appointment appointment) {        // Conversão e salvamento    }}</p>
+<pre><code class="language-java">// Domínio: Entidade
+public class Appointment {
+    private Long id;
+    private LocalDateTime dateTime;
+    private String patientId;
+    // getters, setters, business logic
+}
+
+// Domínio: Caso de Uso
+public class ScheduleAppointmentUseCase {
+    private final AppointmentRepositoryPort repository;
+
+    public ScheduleAppointmentUseCase(AppointmentRepositoryPort repository) {
+        this.repository = repository;
+    }
+
+    public void execute(ScheduleAppointmentCommand command) {
+        // Lógica de negócio: validar disponibilidade, etc.
+        Appointment appointment = new Appointment(/*...*/);
+        repository.save(appointment);
+    }
+}
+
+// Porta de Saída
+public interface AppointmentRepositoryPort {
+    void save(Appointment appointment);
+    List&lt;Appointment&gt; findByPatient(String patientId);
+}
+
+// Adaptador de Saída (JPA)
+@Repository
+public class JpaAppointmentRepositoryAdapter implements AppointmentRepositoryPort {
+    private final JpaAppointmentRepository jpaRepo;
+
+    @Override
+    public void save(Appointment appointment) {
+        // Conversão e salvamento
+    }
+}
+</code></pre>
 <p>No chassis da RD Saúde, encapsulamos essas portas e adaptadores em módulos separados, permitindo que equipes diferentes trabalhem em paralelo sem conflitos.</p>
 <h2 id="o-que-e-clean-architecture"><a class="toclink" href="#o-que-e-clean-architecture">O que é Clean Architecture?</a></h2>
 <p>Proposta por Uncle Bob, a Clean Architecture é uma evolução da Arquitetura Hexagonal, com ênfase ainda maior na separação de camadas e na testabilidade. Ela organiza o código em círculos concêntricos, onde as camadas externas dependem das internas, mas não o contrário.</p>
@@ -110,7 +149,30 @@
 <p>A diferença chave é a rigidez: a Clean Architecture proíbe dependências de camadas externas para internas, usando injeção de dependência e interfaces para garantir isso.</p>
 <h3 id="exemplo-pratico-em-java_1"><a class="toclink" href="#exemplo-pratico-em-java_1">Exemplo Prático em Java:</a></h3>
 <p>Usando o mesmo exemplo, na Clean Architecture, o caso de uso ficaria na camada de aplicação, e as portas seriam interfaces na mesma camada.</p>
-<p>// Camada de Aplicação: Caso de Usopublic class ScheduleAppointmentUseCase {    private final AppointmentRepository repository;    public ScheduleAppointmentUseCase(AppointmentRepository repository) {        this.repository = repository;    }    public void execute(ScheduleAppointmentCommand command) {        // Mesmo lógica    }}// Interface na Camada de Aplicaçãopublic interface AppointmentRepository {    void save(Appointment appointment);}// Camada de Infraestrutura: Implementação@Repositorypublic class JpaAppointmentRepository implements AppointmentRepository {    // Implementação}</p>
+<pre><code class="language-java">// Camada de Aplicação: Caso de Uso
+public class ScheduleAppointmentUseCase {
+    private final AppointmentRepository repository;
+
+    public ScheduleAppointmentUseCase(AppointmentRepository repository) {
+        this.repository = repository;
+    }
+
+    public void execute(ScheduleAppointmentCommand command) {
+        // Mesmo lógica
+    }
+}
+
+// Interface na Camada de Aplicação
+public interface AppointmentRepository {
+    void save(Appointment appointment);
+}
+
+// Camada de Infraestrutura: Implementação
+@Repository
+public class JpaAppointmentRepository implements AppointmentRepository {
+    // Implementação
+}
+</code></pre>
 <h2 id="comparacao-pratica-hexagonal-vs-arquitetura-limpa"><a class="toclink" href="#comparacao-pratica-hexagonal-vs-arquitetura-limpa">Comparação Prática: Hexagonal vs. Arquitetura Limpa</a></h2>
 <p>Apresento abaixo a comparação por aspecto, usando parágrafos rotulados para cada arquitetura — formato pensado para leitura contínua no DOCX.</p>
 <h3 id="flexibilidade"><a class="toclink" href="#flexibilidade">Flexibilidade</a></h3>

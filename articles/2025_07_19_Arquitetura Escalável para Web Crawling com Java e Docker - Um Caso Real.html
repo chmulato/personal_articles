@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre arquitetura escalável para web crawling com java e docker: um caso real">
+    <meta n- Cobertura de código: &gt;90% com JUnit 5, Mockito, Testcontainers
+- Validação de regras de negócio e concorrência
+- Execução:</li>
+</ul>
+<pre><code class="language-bash">mvn test
+mvn jacoco:report
+</code></pre>
+
+<p>Deploy</p>
+<ul>
+<li>Local: Docker Compose</li>
+<li>Produção: Kubernetes com Helm</li>
+</ul>
+<pre><code class="language-bash">helm install crawler-api ./helm/web-crawler-api
+</code></pre>tion" content="Artigo técnico sobre arquitetura escalável para web crawling com java e docker: um caso real">
     <meta name="author" content="Christian Mulato">
     <meta name="keywords" content="Java, Docker, Containers, Arquitetura, Design Patterns">
     

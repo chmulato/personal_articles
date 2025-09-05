@@ -122,34 +122,43 @@
 <li>Clareza entre regra de negócio e infraestrutura.</li>
 </ul>
 <p>Um exemplo simples</p>
-<p>Em MVC</p>
-<p>@RestController</p>
-<p>public class PedidoController {</p>
-<p>@Autowired PedidoService service;</p>
-<p>@PostMapping("/pedidos")</p>
-<p>public ResponseEntity<Pedido> criar(@RequestBody PedidoDTO dto) {</p>
-<p>return ResponseEntity.ok(service.criar(dto));</p>
-<p>}</p>
-<p>}</p>
-<p>Em Hexagonal</p>
-<p>public interface PedidoUseCase {</p>
-<p>Pedido criar(PedidoDTO dto);</p>
-<p>}</p>
-<p>public class PedidoApplicationService implements PedidoUseCase {</p>
-<p>private PedidoRepository repo;</p>
-<p>public Pedido criar(PedidoDTO dto) {</p>
-<p>// lógica de negócio aqui</p>
-<p>}</p>
-<p>}</p>
+<h4>Em MVC</h4>
+<pre><code class="language-java">@RestController
+public class PedidoController {
+    @Autowired 
+    PedidoService service;
+    
+    @PostMapping("/pedidos")
+    public ResponseEntity&lt;Pedido&gt; criar(@RequestBody PedidoDTO dto) {
+        return ResponseEntity.ok(service.criar(dto));
+    }
+}
+</code></pre>
+<h4>Em Hexagonal</h4>
+<pre><code class="language-java">public interface PedidoUseCase {
+    Pedido criar(PedidoDTO dto);
+}
+
+public class PedidoApplicationService implements PedidoUseCase {
+    private PedidoRepository repo;
+    
+    public Pedido criar(PedidoDTO dto) {
+        // lógica de negócio aqui
+    }
+}
+</code></pre>
+
 <p>E no adaptador REST:</p>
-<p>@RestController</p>
-<p>public class PedidoRestAdapter {</p>
-<p>private final PedidoUseCase useCase;</p>
-<p>@PostMapping("/pedidos")</p>
-<p>public ResponseEntity<Pedido> criar(@RequestBody PedidoDTO dto) {</p>
-<p>return ResponseEntity.ok(useCase.criar(dto));</p>
-<p>}</p>
-<p>}</p>
+<pre><code class="language-java">@RestController
+public class PedidoRestAdapter {
+    private final PedidoUseCase useCase;
+    
+    @PostMapping("/pedidos")
+    public ResponseEntity&lt;Pedido&gt; criar(@RequestBody PedidoDTO dto) {
+        return ResponseEntity.ok(useCase.criar(dto));
+    }
+}
+</code></pre>
 <p>Os desafios da transição</p>
 <ol>
 <li>Desapego da estrutura em camadas (controller -&gt; service -&gt; repository)</li>

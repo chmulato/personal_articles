@@ -112,22 +112,26 @@
 <li>health-check-endpoints.ps1</li>
 </ul>
 <p>Cada script seguia o mesmo padrão:</p>
-<p>function Test-EntityCRUD {</p>
-<p>param([string]$BaseUrl, [string]$Entity)</p>
-<p>try {</p>
-<h1 id="get-lista"><a class="toclink" href="#get-lista">GET - Lista</a></h1>
-<p>$list = Invoke-RestMethod -Uri "$BaseUrl/$Entity"</p>
-<p>Write-Host "GET /$Entity : SUCESSO ($($list.Count) registros)" -ForegroundColor Green</p>
-<h1 id="get-individual-se-lista-nao-estiver-vazia"><a class="toclink" href="#get-individual-se-lista-nao-estiver-vazia">GET - Individual (se lista não estiver vazia)</a></h1>
-<p>if ($list.Count -gt 0) {</p>
-<p>$individual = Invoke-RestMethod -Uri "$BaseUrl/$Entity/$($list[0].id)"</p>
-<p>Write-Host "GET /$Entity/{id} : SUCESSO" -ForegroundColor Green</p>
-<p>}</p>
-<h1 id="post-put-delete"><a class="toclink" href="#post-put-delete">POST, PUT, DELETE...</a></h1>
-<p>} catch {</p>
-<p>Write-Host "ERRO em $Entity : $($_.Exception.Message)" -ForegroundColor Red</p>
-<p>}</p>
-<p>}</p>
+<pre><code class="language-powershell">function Test-EntityCRUD {
+    param([string]$BaseUrl, [string]$Entity)
+    
+    try {
+        # GET - Lista
+        $list = Invoke-RestMethod -Uri "$BaseUrl/$Entity"
+        Write-Host "GET /$Entity : SUCESSO ($($list.Count) registros)" -ForegroundColor Green
+        
+        # GET - Individual (se lista não estiver vazia)
+        if ($list.Count -gt 0) {
+            $individual = Invoke-RestMethod -Uri "$BaseUrl/$Entity/$($list[0].id)"
+            Write-Host "GET /$Entity/{id} : SUCESSO" -ForegroundColor Green
+        }
+        
+        # POST, PUT, DELETE...
+    } catch {
+        Write-Host "ERRO em $Entity : $($_.Exception.Message)" -ForegroundColor Red
+    }
+}
+</code></pre>
 <p>1.5     As Ferramentas de Orquestração</p>
 <p>Não bastava ter scripts individuais. Precisávamos de ferramentas para executá-los de forma inteligente:</p>
 <ul>

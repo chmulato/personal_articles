@@ -143,56 +143,66 @@
 <li>Crie o tópico meu-topico se necessário</li>
 </ol>
 <p>Execute o comando abaixo para criar o tópico no seu cluster Kafka local:</p>
-<p>docker exec -it <nome_do_container_kafka> kafka-topics --bootstrap-server localhost:9092 --create --topic meu-topico --partitions 1 --replication-factor 1</p>
-<p>Substitua <nome_do_container_kafka> pelo nome real do container Kafka em execução (ex: kafka ou kafka1).</p>
+<pre><code class="language-bash">docker exec -it &lt;nome_do_container_kafka&gt; kafka-topics --bootstrap-server localhost:9092 --create --topic meu-topico --partitions 1 --replication-factor 1
+</code></pre>
+
+<p>Substitua &lt;nome_do_container_kafka&gt; pelo nome real do container Kafka em execução (ex: kafka ou kafka1).</p>
 <ol>
 <li>Compile e execute os exemplos Java usando Maven</li>
 </ol>
 <p>O projeto já possui um pom.xml pronto na pasta parte1-fundamentos com todas as dependências necessárias. Basta rodar:</p>
-<p>mvn compile</p>
-<p>mvn exec:java -Dexec.mainClass=SimpleProducer</p>
-<p>mvn exec:java -Dexec.mainClass=SimpleConsumer</p>
+<pre><code class="language-bash">mvn compile
+mvn exec:java -Dexec.mainClass=SimpleProducer
+mvn exec:java -Dexec.mainClass=SimpleConsumer
+</code></pre>
 <p>O SimpleProducer envia uma mensagem de exemplo para o tópico, e o SimpleConsumer consome e imprime as mensagens recebidas.</p>
-<p>Producer Java — Enviando uma mensagem</p>
+<h3>Producer Java — Enviando uma mensagem</h3>
 <p>O Producer é responsável por publicar mensagens em um tópico Kafka. Veja um exemplo básico:</p>
-<p>import org.apache.kafka.clients.producer.KafkaProducer;</p>
-<p>import org.apache.kafka.clients.producer.ProducerRecord;</p>
-<p>import java.util.Properties;</p>
-<p>public class SimpleProducer {</p>
-<p>public static void main(String[] args) {</p>
-<p>Properties props = new Properties();</p>
-<p>props.put("bootstrap.servers", "localhost:9092");</p>
-<p>props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");</p>
-<p>props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");</p>
-<p>try (KafkaProducer<String, String> producer = new KafkaProducer&lt;&gt;(props)) {</p>
-<p>producer.send(new ProducerRecord&lt;&gt;("meu-topico", "mensagem de exemplo"));</p>
-<p>System.out.println("Mensagem enviada!");</p>
-<p>}</p>
-<p>}</p>
-<p>}</p>
-<p>Consumer Java — Lendo mensagens do tópico</p>
+<pre><code class="language-java">import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import java.util.Properties;
+
+public class SimpleProducer {
+    public static void main(String[] args) {
+        Properties props = new Properties();
+        props.put("bootstrap.servers", "localhost:9092");
+        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        
+        try (KafkaProducer&lt;String, String&gt; producer = new KafkaProducer&lt;&gt;(props)) {
+            producer.send(new ProducerRecord&lt;&gt;("meu-topico", "mensagem de exemplo"));
+            System.out.println("Mensagem enviada!");
+        }
+    }
+}
+</code></pre>
+<h3>Consumer Java — Lendo mensagens do tópico</h3>
 <p>O Consumer é responsável por ler as mensagens publicadas em um tópico. Veja um exemplo básico:</p>
-<p>import org.apache.kafka.clients.consumer.ConsumerRecords;</p>
-<p>import org.apache.kafka.clients.consumer.KafkaConsumer;</p>
-<p>import org.apache.kafka.clients.consumer.ConsumerRecord;</p>
-<p>import java.util.Collections;</p>
-<p>import java.util.Properties;</p>
-<p>public class SimpleConsumer {</p>
-<p>public static void main(String[] args) {</p>
-<p>Properties props = new Properties();</p>
-<p>props.put("bootstrap.servers", "localhost:9092");</p>
-<p>props.put("group.id", "grupo-exemplo");</p>
-<p>props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");</p>
-<p>props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");</p>
-<p>try (KafkaConsumer<String, String> consumer = new KafkaConsumer&lt;&gt;(props)) {</p>
-<p>consumer.subscribe(Collections.singletonList("meu-topico"));</p>
-<p>ConsumerRecords<String, String> records = consumer.poll(java.time.Duration.ofSeconds(5));</p>
-<p>for (ConsumerRecord<String, String> record : records) {</p>
-<p>System.out.printf("Recebido: %s%n", record.value());</p>
-<p>}</p>
-<p>}</p>
-<p>}</p>
-<p>}</p>
+<pre><code class="language-java">import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import java.util.Collections;
+import java.util.Properties;
+
+public class SimpleConsumer {
+    public static void main(String[] args) {
+        Properties props = new Properties();
+        props.put("bootstrap.servers", "localhost:9092");
+        props.put("group.id", "grupo-exemplo");
+        props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        
+        try (KafkaConsumer&lt;String, String&gt; consumer = new KafkaConsumer&lt;&gt;(props)) {
+            consumer.subscribe(Collections.singletonList("meu-topico"));
+            ConsumerRecords&lt;String, String&gt; records = consumer.poll(java.time.Duration.ofSeconds(5));
+            
+            for (ConsumerRecord&lt;String, String&gt; record : records) {
+                System.out.printf("Recebido: %s%n", record.value());
+            }
+        }
+    }
+}
+</code></pre>
 <p>Dica: Você pode modificar os exemplos para enviar e consumir múltiplas mensagens, testar diferentes tópicos ou experimentar com múltiplos consumidores para entender o funcionamento dos consumer groups.</p>
 <p>Esses exemplos são apenas para fins didáticos e funcionam em ambientes locais com o Kafka rodando no padrão (localhost:9092).</p>
 <p>Exercícios Práticos</p>

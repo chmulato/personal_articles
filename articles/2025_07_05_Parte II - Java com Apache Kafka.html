@@ -102,36 +102,43 @@
 <li>Dependência principal: org.apache.kafka:kafka-clients</li>
 </ul>
 <p>Exemplo de dependência Maven</p>
-<p><dependency></p>
-<p><groupId>org.apache.kafka</groupId></p>
-<p><artifactId>kafka-clients</artifactId></p>
-<p><version>3.7.0</version></p>
-<p></dependency></p>
-<p>Producer em Java</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.kafka&lt;/groupId&gt;
+    &lt;artifactId&gt;kafka-clients&lt;/artifactId&gt;
+    &lt;version&gt;3.7.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<h3>Producer em Java</h3>
 <p>Exemplo básico de envio de mensagens para um tópico Kafka:</p>
-<p>Properties props = new Properties();</p>
-<p>props.put("bootstrap.servers", "localhost:9092");</p>
-<p>props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");</p>
-<p>props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");</p>
-<p>KafkaProducer<String, String> producer = new KafkaProducer&lt;&gt;(props);</p>
-<p>ProducerRecord<String, String> record = new ProducerRecord&lt;&gt;("meu-topico", "chave", "mensagem");</p>
-<p>producer.send(record);</p>
-<p>producer.close();</p>
-<p>Consumer em Java</p>
+<pre><code class="language-java">Properties props = new Properties();
+props.put("bootstrap.servers", "localhost:9092");
+props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+
+KafkaProducer&lt;String, String&gt; producer = new KafkaProducer&lt;&gt;(props);
+ProducerRecord&lt;String, String&gt; record = new ProducerRecord&lt;&gt;("meu-topico", "chave", "mensagem");
+producer.send(record);
+producer.close();
+</code></pre>
+<h3>Consumer em Java</h3>
 <p>Exemplo básico de leitura de mensagens de um tópico:</p>
-<p>Properties props = new Properties();</p>
-<p>props.put("bootstrap.servers", "localhost:9092");</p>
-<p>props.put("group.id", "meu-grupo");</p>
-<p>props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");</p>
-<p>props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");</p>
-<p>KafkaConsumer<String, String> consumer = new KafkaConsumer&lt;&gt;(props);</p>
-<p>consumer.subscribe(Collections.singletonList("meu-topico"));</p>
-<p>while (true) {</p>
-<p>ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));</p>
-<p>for (ConsumerRecord<String, String> record : records) {</p>
-<p>System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());</p>
-<p>}</p>
-<p>}</p>
+<pre><code class="language-java">Properties props = new Properties();
+props.put("bootstrap.servers", "localhost:9092");
+props.put("group.id", "meu-grupo");
+props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+
+KafkaConsumer&lt;String, String&gt; consumer = new KafkaConsumer&lt;&gt;(props);
+consumer.subscribe(Collections.singletonList("meu-topico"));
+
+while (true) {
+    ConsumerRecords&lt;String, String&gt; records = consumer.poll(Duration.ofMillis(100));
+    for (ConsumerRecord&lt;String, String&gt; record : records) {
+        System.out.printf("offset = %d, key = %s, value = %s%n", 
+            record.offset(), record.key(), record.value());
+    }
+}
+</code></pre>
 <p>Exemplo Prático: Producer e Consumer em Java</p>
 <p>A seguir, você encontra exemplos didáticos de Producer e Consumer em Java, ideais para quem está começando a integrar aplicações com o Apache Kafka. Os arquivos completos estão em:</p>
 <p>parte2-java/src/main/java/com/mulato/PedidoProducer.java</p>
@@ -140,41 +147,54 @@
 <p>Como executar os exemplos</p>
 <p>1.Garanta que o Kafka está rodando em localhost:9092</p>
 <p>Utilize o docker-compose.yml fornecido na pasta parte2-java/ para subir o ambiente local rapidamente:</p>
-<p>docker-compose up -d</p>
+<pre><code class="language-bash">docker-compose up -d
+</code></pre>
+
 <p>2.Compile o projeto Java com Maven</p>
 <p>O projeto já possui um pom.xml pronto com todas as dependências necessárias. Basta rodar:</p>
-<p>mvn clean compile</p>
+<pre><code class="language-bash">mvn clean compile
+</code></pre>
+
 <p>3.Execute o Producer para enviar mensagens</p>
-<p>mvn exec:java -Dexec.mainClass="com.mulato.PedidoProducer"</p>
+<pre><code class="language-bash">mvn exec:java -Dexec.mainClass="com.mulato.PedidoProducer"
+</code></pre>
+
 <p>O Producer simula o envio de pedidos para o tópico Kafka.</p>
 <p>4.Execute o Consumer para ler as mensagens</p>
-<p>mvn exec:java -Dexec.mainClass="com.mulato.PedidoConsumer"</p>
+<pre><code class="language-bash">mvn exec:java -Dexec.mainClass="com.mulato.PedidoConsumer"
+</code></pre>
 <p>O Consumer consome e imprime os pedidos recebidos.</p>
-<p>Producer Java — Enviando pedidos</p>
+<h3>Producer Java — Enviando pedidos</h3>
 <p>O Producer é responsável por publicar mensagens (pedidos) em um tópico Kafka. Veja um exemplo básico:</p>
-<p>Properties props = new Properties();</p>
-<p>props.put("bootstrap.servers", "localhost:9092");</p>
-<p>props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");</p>
-<p>props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");</p>
-<p>KafkaProducer<String, String> producer = new KafkaProducer&lt;&gt;(props);</p>
-<p>ProducerRecord<String, String> record = new ProducerRecord&lt;&gt;("meu-topico", "chave", "mensagem");</p>
-<p>producer.send(record);</p>
-<p>producer.close();</p>
-<p>Consumer Java — Lendo pedidos do tópico</p>
+<pre><code class="language-java">Properties props = new Properties();
+props.put("bootstrap.servers", "localhost:9092");
+props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+
+KafkaProducer&lt;String, String&gt; producer = new KafkaProducer&lt;&gt;(props);
+ProducerRecord&lt;String, String&gt; record = new ProducerRecord&lt;&gt;("meu-topico", "chave", "mensagem");
+producer.send(record);
+producer.close();
+</code></pre>
+<h3>Consumer Java — Lendo pedidos do tópico</h3>
 <p>O Consumer é responsável por ler as mensagens publicadas no tópico. Veja um exemplo básico:</p>
-<p>Properties props = new Properties();</p>
-<p>props.put("bootstrap.servers", "localhost:9092");</p>
-<p>props.put("group.id", "meu-grupo");</p>
-<p>props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");</p>
-<p>props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");</p>
-<p>KafkaConsumer<String, String> consumer = new KafkaConsumer&lt;&gt;(props);</p>
-<p>consumer.subscribe(Collections.singletonList("meu-topico"));</p>
-<p>while (true) {</p>
-<p>ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));</p>
-<p>for (ConsumerRecord<String, String> record : records) {</p>
-<p>System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());</p>
-<p>}</p>
-<p>}</p>
+<pre><code class="language-java">Properties props = new Properties();
+props.put("bootstrap.servers", "localhost:9092");
+props.put("group.id", "meu-grupo");
+props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+
+KafkaConsumer&lt;String, String&gt; consumer = new KafkaConsumer&lt;&gt;(props);
+consumer.subscribe(Collections.singletonList("meu-topico"));
+
+while (true) {
+    ConsumerRecords&lt;String, String&gt; records = consumer.poll(Duration.ofMillis(100));
+    for (ConsumerRecord&lt;String, String&gt; record : records) {
+        System.out.printf("offset = %d, key = %s, value = %s%n", 
+            record.offset(), record.key(), record.value());
+    }
+}
+</code></pre>
 <p>Dica: Experimente rodar múltiplos consumers no mesmo grupo para ver como o Kafka distribui as mensagens entre eles.</p>
 <p>Esses exemplos são apenas para fins didáticos e funcionam em ambientes locais com o Kafka rodando no padrão (localhost:9092).</p>
 <p>Teste Integrado: Producer e Consumer na Prática</p>
@@ -189,13 +209,18 @@
 <p>Como executar o teste integrado</p>
 <p>1.Suba o ambiente Kafka e Zookeeper</p>
 <p>No terminal, dentro da pasta parte2-java/</p>
-<p>docker-compose up -d</p>
+<pre><code class="language-bash">docker-compose up -d
+</code></pre>
+
 <p>2.Garanta que o tópico pedidos existe</p>
 <p>Se necessário, crie o tópico executando dentro do container Kafka:</p>
-<p>docker exec -it <nome_do_container_kafka> kafka-topics --bootstrap-server localhost:9092 --create --topic pedidos --partitions 1 --replication-factor 1</p>
+<pre><code class="language-bash">docker exec -it &lt;nome_do_container_kafka&gt; kafka-topics --bootstrap-server localhost:9092 --create --topic pedidos --partitions 1 --replication-factor 1
+</code></pre>
+
 <p>Use docker ps para descobrir o nome do container Kafka.</p>
 <p>3.Execute o teste com Maven</p>
-<p>mvn test</p>
+<pre><code class="language-bash">mvn test
+</code></pre>
 <p>O teste irá:</p>
 <ul>
 <li>Enviar uma mensagem para o tópico pedidos.</li>
