@@ -21,12 +21,15 @@ import markdown
 from markdown.extensions import codehilite, tables, toc
 
 # Configurar logging
+log_dir = os.path.join(os.path.dirname(__file__), 'log')
+os.makedirs(log_dir, exist_ok=True)
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
         logging.StreamHandler(),
-        logging.FileHandler('site_manager.log', encoding='utf-8')
+        logging.FileHandler(os.path.join(log_dir, 'site_manager.log'), encoding='utf-8')
     ]
 )
 
@@ -166,13 +169,13 @@ class SiteManager:
     <title>{title} | {self.site_config['site_name']}</title>
     
     <!-- Styles -->
-    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="assets/css/article.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="../assets/js/article.js" defer></script>
+    <script src="assets/js/article.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -485,10 +488,10 @@ class SiteManager:
             with open(index_file, 'w', encoding='utf-8') as f:
                 f.write(index_content)
             
-            logging.info(f"✅ Index.html gerado com sucesso: {len(articles)} artigos")
+            logging.info(f"Index.html gerado com sucesso: {len(articles)} artigos")
             
         except Exception as e:
-            logging.error(f"❌ Erro ao gerar index.html: {e}")
+            logging.error(f"Erro ao gerar index.html: {e}")
     
     
     def get_index_template(self):
@@ -501,7 +504,7 @@ class SiteManager:
     <meta name="description" content="{site_description}">
     <title>{site_name}</title>
     
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="articles/assets/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -523,8 +526,8 @@ class SiteManager:
                     <h2>Artigos Técnicos</h2>
                     <p>Explorando Java, Spring Boot, Docker, APIs e arquitetura de software</p>
                     <div class="stats">
-                        <span class="stat">📚 {articles_count} artigos publicados</span>
-                        <span class="stat">🚀 Março 2024 - Setembro 2025</span>
+                        <span class="stat">{articles_count} artigos publicados</span>
+                        <span class="stat">Março 2024 - Setembro 2025</span>
                     </div>
                 </div>
                 
@@ -545,7 +548,7 @@ class SiteManager:
         </footer>
     </div>
     
-    <script src="assets/js/main.js"></script>
+    <script src="articles/assets/js/main.js"></script>
 </body>
 </html>'''
     
@@ -573,23 +576,23 @@ def main():
                 file_path = manager.img_dir / sys.argv[2]
                 if file_path.exists():
                     if manager.convert_md_to_html(file_path):
-                        print(f"✅ Artigo convertido: {sys.argv[2]}")
+                        print(f"Artigo convertido: {sys.argv[2]}")
                     else:
-                        print(f"❌ Erro na conversão: {sys.argv[2]}")
+                        print(f"Erro na conversão: {sys.argv[2]}")
                 else:
-                    print(f"❌ Arquivo não encontrado: {sys.argv[2]}")
+                    print(f"Arquivo não encontrado: {sys.argv[2]}")
             else:
                 # Converter todos os arquivos
                 success_count = manager.convert_all_articles()
-                print(f"✅ {success_count} artigos convertidos com sucesso")
+                print(f"{success_count} artigos convertidos com sucesso")
         
         elif command == "index":
             manager.generate_index_html()
-            print("✅ Index.html gerado")
+            print("Index.html gerado")
         
         elif command == "validate":
             manager.validate_site()
-            print("✅ Validação concluída")
+            print("Validação concluída")
         
         else:
             print("Comandos disponíveis:")
@@ -606,3 +609,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+

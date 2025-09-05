@@ -1,115 +1,110 @@
----
-title: "Automatizando Testes de APIs REST com Robot Framework: Guia Prático"
-date: "06/08/2025"
-author: "Christian Mulato"
-description: "Artigo técnico sobre automatizando testes de apis rest com robot framework: guia prático"
-category: "APIs & Microserviços"
-tags: ['APIs', 'REST', 'Testes', 'TDD', 'IA', 'Inteligência Artificial']
-featured_image: "img/2025_08_06_Automatizando Testes de APIs REST com Robot Framework - Guia Prático_featured.jpg"
----
-
-![QA automatizando testes de API com Robot Framework](img/2025_08_06_Automatizando Testes de APIs REST com Robot Framework - Guia Prático_image5.png)
+![QA automatizando testes de API com Robot Framework](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 QA automatizando testes de API com Robot Framework
 
-Automatizando Testes de APIs REST com Robot Framework: Guia Prático
+**Automatizando Testes de APIs REST com Robot Framework: Guia Prático**
 
-![Christian Mulato, #OPEN_TO_WORK](img/2025_08_06_Automatizando Testes de APIs REST com Robot Framework - Guia Prático_image6.jpg)
+[![Christian Mulato, #OPEN_TO_WORK](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
-Christian Mulato
+[**Christian Mulato **](https://www.linkedin.com/in/chmulato/)
 
-Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico
+Desenvolvedor Java Sênior \| Especialista em Back-end \| Jakarta, Spring Boot, REST APIs, Docker \| Engenheiro Químico
 
 6 de agosto de 2025
 
-A Rotina de Ana, a QA que Mudou Tudo
+**A Rotina de Ana, a QA que Mudou Tudo**
 
-Ana era QA sênior numa startup de fintech em crescimento acelerado. Todos os dias, ela chegava no escritório às 8h e já sabia o que a esperava: uma lista interminável de endpoints para testar manualmente.
+Ana era QA sênior numa startup de ***fintech*** em crescimento acelerado. Todos os dias, ela chegava no escritório às 8h e já sabia o que a esperava: uma lista interminável de endpoints para testar manualmente.
 
-“GET /users/123”,
+"GET /users/123",
 
-“POST /transactions”,
+"POST /transactions",
 
-“PUT /accounts/456”
+"PUT /accounts/456"
 
-… Ana abria o Postman, configurava headers, montava payloads JSON, executava requests e anotava resultados numa planilha. Eram mais de 50 endpoints, e cada deploy significava testar tudo novamente.
+... Ana abria o Postman, configurava headers, montava payloads JSON, executava requests e anotava resultados numa planilha. Eram mais de 50 endpoints, e cada deploy significava testar tudo novamente.
 
-O pior? Sexta-feira às 18h, deploy em produção. Ana ficava até tarde validando cada endpoint crítico, um por um, enquanto o time de desenvolvimento já havia ido embora. Se algo falhasse, rollback e fim de semana trabalhando.
+**O pior?** Sexta-feira às 18h, deploy em produção. Ana ficava até tarde validando cada endpoint crítico, um por um, enquanto o time de desenvolvimento já havia ido embora. Se algo falhasse, rollback e fim de semana trabalhando.
 
-Um dia, após mais um deploy tardio que se estendeu pela madrugada, Ana decidiu: “Tem que ter um jeito melhor.”
+Um dia, após mais um deploy tardio que se estendeu pela madrugada, Ana decidiu: "Tem que ter um jeito melhor."
 
 Foi então que ela descobriu o Robot Framework. Em duas semanas, Ana automatizou todos os testes de API. O que antes levava 4 horas, agora executava em 15 minutos. Deploys de sexta viraram rotina tranquila, e Ana recuperou seus fins de semana.
 
 Hoje, Ana é referência em automação na empresa. E tudo começou com uma simples keyword:
 
-“GET Deve Retornar 200”
+"GET Deve Retornar 200"
 
-O Robot Framework oferece uma abordagem baseada em palavras-chave para automação de testes de APIs RESTful, combinando simplicidade de sintaxe com funcionalidades robustas. Este guia demonstra como implementar testes automatizados legíveis e extensíveis.
+------------------------------------------------------------------------
 
-Requisitos Técnicos
+O Robot Framework oferece uma abordagem baseada em palavras-chave para automação de testes de **APIs RESTful**, combinando simplicidade de sintaxe com funcionalidades robustas. Este guia demonstra como implementar testes automatizados legíveis e extensíveis.
 
-Ambiente necessário:
+**Requisitos Técnicos**
+
+**Ambiente necessário:**
 
 - Python 3.8 ou superior
+
 - pip (gerenciador de pacotes Python)
+
 - Robot Framework
+
 - Requests Library
 
-Configuração do Ambiente
+**Configuração do Ambiente**
 
 pip install robotframework
 
 pip install robotframework-requests
 
-Arquitetura do Projeto
+**Arquitetura do Projeto**
 
 tests/
 
 ├── resources/
 
-│   └── keywords.robot
+│ └── keywords.robot
 
 ├── suites/
 
-│   └── api_tests.robot
+│ └── api_tests.robot
 
 └── variables/
 
 └── config.robot
 
-Configuração de Variáveis
+**Configuração de Variáveis**
 
-Arquivo: variables/config.robot
+**Arquivo: variables/config.robot**
 
-*** Variables ***
+\*\*\* Variables \*\*\*
 
-${BASE_URL}
+\${BASE_URL}
 
 https://api.seuprojeto.com/v1
 
-Implementação de Keywords Reutilizáveis
+**Implementação de Keywords Reutilizáveis**
 
-Arquivo: resources/keywords.robot
+**Arquivo: resources/keywords.robot**
 
-*** Settings
+\*\*\* Settings
 
-*** Library    RequestsLibrary
+\*\*\* Library    RequestsLibrary
 
-*** Keywords
+\*\*\* Keywords
 
-*** Iniciar Sessão na API     Create Session    api    ${BASE_URL}
+\*\*\* Iniciar Sessão na API     Create Session    api    \${BASE_URL}
 
-GET Deve Retornar 200     [Arguments]    ${endpoint}     ${response}=
+GET Deve Retornar 200     \[Arguments\]    \${endpoint}     \${response}=   
 
-GET On Session    api    ${endpoint}     Should Be Equal As Integers
+GET On Session    api    \${endpoint}     Should Be Equal As Integers   
 
-${response.status_code}    200
+\${response.status_code}    200
 
-Casos de Teste
+**Casos de Teste**
 
-Arquivo: suites/api_tests.robot
+**Arquivo: suites/api_tests.robot**
 
-*** Settings ***
+\*\*\* Settings \*\*\*
 
 Resource    ../variables/config.robot
 
@@ -117,7 +112,7 @@ Resource    ../resources/keywords.robot
 
 Suite Setup    Iniciar Sessão na API
 
-*** Test Cases ***
+\*\*\* Test Cases \*\*\*
 
 Testar Endpoint de Status
 
@@ -127,26 +122,29 @@ Testar Endpoint de Usuário
 
 GET Deve Retornar 200    /users/1
 
-Execução dos Testes
+**Execução dos Testes**
 
 robot -d results tests/suites/api_tests.robot
 
 O comando gera um relatório HTML detalhado em results/report.html com status de execução e métricas de performance.
 
-Vantagens da Implementação
+**Vantagens da Implementação**
 
-- Legibilidade: Sintaxe próxima à linguagem natural, facilitando compreensão por equipes não técnicas
-- Modularidade: Keywords reutilizáveis reduzem duplicação de código
-- Integração: Compatibilidade nativa com pipelines CI/CD
-- Relatórios: Documentação automática de resultados
+- **Legibilidade:** Sintaxe próxima à linguagem natural, facilitando compreensão por equipes não técnicas
 
-Integração com CI/CD
+- **Modularidade:** Keywords reutilizáveis reduzem duplicação de código
 
-Exemplo de GitHub Actions:
+- **Integração:** Compatibilidade nativa com pipelines CI/CD
+
+- **Relatórios:** Documentação automática de resultados
+
+**Integração com CI/CD**
+
+**Exemplo de GitHub Actions:**
 
 name: API Tests
 
-on: [push]
+on: \[push\]
 
 jobs:
 
@@ -156,9 +154,9 @@ runs-on: ubuntu-latest
 
 steps:
 
-- uses: actions/checkout@v2
+\- uses: actions/checkout@v2
 
-- name: Set up Python
+\- name: Set up Python
 
 uses: actions/setup-python@v2
 
@@ -166,28 +164,34 @@ with:
 
 python-version: 3.11
 
-- name: Install dependencies
+\- name: Install dependencies
 
-run: |
+run: \|
 
 pip install robotframework robotframework-requests
 
-- name: Run tests
+\- name: Run tests
 
 run: robot tests/suites/api_tests.robot
 
-Conclusão
+**Conclusão**
 
-O Robot Framework oferece uma solução robusta para automação de testes de APIs REST, combinando sintaxe acessível com funcionalidades empresariais. A implementação de testes automatizados resulta em maior confiabilidade, redução de tempo de validação e melhoria contínua da qualidade do software.
+O **Robot Framework** oferece uma solução robusta para automação de testes de APIs REST, combinando sintaxe acessível com funcionalidades empresariais. A implementação de testes automatizados resulta em maior confiabilidade, redução de tempo de validação e melhoria contínua da qualidade do software.
 
-Principais benefícios alcançados:
+**Principais benefícios alcançados:**
 
 - Redução significativa no tempo de execução de testes
+
 - Padronização de processos de validação
+
 - Documentação automática de cenários de teste
+
 - Integração seamless com ferramentas de desenvolvimento
 
-Recursos Adicionais:
+------------------------------------------------------------------------
 
-- Documentação oficial: Robot Framework
+**Recursos Adicionais:**
+
+- Documentação oficial: [**Robot Framework**](https://robotframework.org/)
+
 - Biblioteca de requisições: Requests Library

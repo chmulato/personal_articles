@@ -4,11 +4,19 @@ import markdown
 import logging
 from pathlib import Path
 from datetime import datetime
+import os
 
-# Configurar logging
+# Configuração de logging centralizada
+log_dir = Path("c:/dev/personal_articles/scr/log")
+log_dir.mkdir(exist_ok=True)
+
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler(os.path.join(log_dir, 'convert_md_to_html.log'), encoding='utf-8'),
+    ]
 )
 
 def extract_frontmatter(content):
@@ -95,7 +103,7 @@ def create_html_template(frontmatter, content_html, filename):
     <title>{title} | Christian Mulato Dev Blog</title>
     
     <!-- Styles -->
-    <link rel="stylesheet" href="../../assets/css/article.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
@@ -119,7 +127,7 @@ def create_html_template(frontmatter, content_html, filename):
             
             <div class="article-info">
                 <div class="author-info">
-                    <img src="../../assets/img/author.jpg" alt="{author}" class="author-avatar">
+                    <img src="../assets/img/author.jpg" alt="{author}" class="author-avatar">
                     <div>
                         <div class="author-name">{author}</div>
                         <div class="author-title">Desenvolvedor Java Sênior</div>
@@ -138,7 +146,7 @@ def create_html_template(frontmatter, content_html, filename):
         
         <footer class="article-footer">
             <div class="author-bio">
-                <img src="../../assets/img/author.jpg" alt="{author}" class="author-bio-avatar">
+                <img src="../assets/img/author.jpg" alt="{author}" class="author-bio-avatar">
                 <div class="author-bio-content">
                     <h3>{author}</h3>
                     <p>Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
@@ -243,7 +251,7 @@ def main():
     import sys
     
     print("=" * 80)
-    print("CONVERSOR MD→HTML - VERSÃO DIRETÓRIO IMG")
+    print("CONVERSOR MD->HTML - VERSAO DIRETORIO IMG")
     print("=" * 80)
     
     if len(sys.argv) > 1:
@@ -256,11 +264,11 @@ def main():
         
         if file_path.exists():
             if convert_md_to_html_from_img_dir(str(file_path)):
-                print(f"✅ Conversão realizada com sucesso: {filename}")
+                print(f" Conversão realizada com sucesso: {filename}")
             else:
-                print(f"❌ Erro na conversão: {filename}")
+                print(f" Erro na conversão: {filename}")
         else:
-            print(f"❌ Arquivo não encontrado: {file_path}")
+            print(f" Arquivo não encontrado: {file_path}")
     else:
         # Converter todos os arquivos
         print("Convertendo todos os artigos do diretório img...")
@@ -274,11 +282,15 @@ def main():
         print(f"Total processado: {success_count + error_count}")
         
         if error_count == 0:
-            print("\n✅ Todas as conversões foram concluídas com sucesso!")
+            print("\n Todas as conversões foram concluídas com sucesso!")
         else:
-            print(f"\n⚠️  {error_count} artigos apresentaram erros durante a conversão")
+            print(f"\n  {error_count} artigos apresentaram erros durante a conversão")
         
-        print(f"\n📁 Arquivos HTML salvos em: md/site_artiches/articles/")
+        print(f"\nPASTA: Arquivos HTML salvos em: md/site_artiches/articles/")
 
 if __name__ == "__main__":
     main()
+
+
+
+

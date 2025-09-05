@@ -92,9 +92,11 @@ No arquivo pom\.xml, adicione as dependências do __JUnit 5__ para testes e do _
 
     <version>5\.10\.2</version>
 
-    <scope>test</scope>
+```xml
+<scope>test</scope>
 
 </dependency>
+```
 
 E o plugin do __JaCoCo__ dentro da seção <build>:
 
@@ -142,9 +144,11 @@ Para que os métodos possam ser testados, eles não devem ser private\. Altere p
 
 // Antes
 
+```text
 private static void copyDirectory\(\.\.\.\);
 
 private static int countFiles\(\.\.\.\);
+```
 
 // Depois
 
@@ -176,9 +180,11 @@ Para testar métodos que dependem de recursos externos, utilize bibliotecas como
 
     <version>5\.2\.0</version>
 
-    <scope>test</scope>
+```xml
+<scope>test</scope>
 
 </dependency>
+```
 
 Exemplo de uso:
 
@@ -224,9 +230,11 @@ jobs:
 
 __Testes Parametrizados com JUnit 5__
 
+```python
 import org\.junit\.jupiter\.params\.ParameterizedTest;
 
 import org\.junit\.jupiter\.params\.provider\.ValueSource;
+```
 
 @ParameterizedTest
 
@@ -240,6 +248,7 @@ void testFileNames\(String fileName\) \{
 
 __Exemplo de Classe de Teste Unitário__
 
+```python
 package com\.mulato;
 
 import org\.junit\.jupiter\.api\.Test;
@@ -251,6 +260,7 @@ import java\.util\.concurrent\.atomic\.AtomicInteger;
 import static org\.junit\.jupiter\.api\.Assertions\.\*;
 
 class FileBackupTest \{
+```
 
     @Test
 
@@ -318,14 +328,17 @@ class FileBackupTest \{
 
         \}
 
-    \}
+```json
+\}
 
 \}
+```
 
 __Testando o Método Main__
 
 Para garantir que o método main executa sem lançar exceções:
 
+```python
 package com\.mulato;
 
 import org\.junit\.jupiter\.api\.Test;
@@ -333,6 +346,7 @@ import org\.junit\.jupiter\.api\.Test;
 import static org\.junit\.jupiter\.api\.Assertions\.assertDoesNotThrow;
 
 public class MainTest \{
+```
 
     @Test
 
@@ -340,9 +354,11 @@ public class MainTest \{
 
         assertDoesNotThrow\(\(\) \-> Main\.main\(new String\[\]\{\}\)\);
 
-    \}
+```json
+\}
 
 \}
+```
 
 __Gerando Relatórios de Cobertura com JaCoCo__
 
@@ -384,6 +400,7 @@ __1\. Hospedando no GitHub__
 - Crie um repositório no GitHub\.
 - Faça o commit do seu projeto local e envie para o repositório remoto:
 
+```bash
 git init
 
 git add \.
@@ -393,6 +410,7 @@ git commit \-m "Primeiro commit"
 git remote add origin https://github\.com/SEU\_USUARIO/NOME\_DO\_REPOSITORIO\.git
 
 git push \-u origin main
+```
 
 __2\. Publicando em Ambiente Produtivo__
 

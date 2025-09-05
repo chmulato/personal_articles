@@ -101,9 +101,11 @@ function Test\-EntityCRUD \{
 
         Write\-Host "ERRO em $Entity : $\($\_\.Exception\.Message\)" \-ForegroundColor Red
 
-    \}
+```json
+\}
 
 \}
+```
 
 __1\.5     As Ferramentas de Orquestração__
 

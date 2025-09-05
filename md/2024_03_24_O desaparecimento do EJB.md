@@ -1,64 +1,54 @@
----
-title: "O desaparecimento do EJB"
-date: "24/03/2024"
-author: "Christian Mulato"
-description: "Artigo técnico sobre o desaparecimento do ejb"
-category: "DevOps & Containers"
-tags: ['Desenvolvimento', 'Tecnologia', 'Programação']
-featured_image: "img/2024_03_24_O desaparecimento do EJB_featured.jpg"
----
-
-![Entreprise JavaBeans - EJB do JavaEE](img/2024_03_24_O desaparecimento do EJB_image5.png)
+![Entreprise JavaBeans - EJB do JavaEE](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Entreprise JavaBeans - EJB do JavaEE
 
-O desaparecimento do EJB
+**O desaparecimento do EJB**
 
-![Christian Mulato](img/2024_03_24_O desaparecimento do EJB_image6.jpg)
+[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
-Christian Mulato
+[**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
 Desenvolvedor Java Sênior na Develcode
 
 24 de março de 2024
 
-O Enterprise JavaBeans (EJB), que costumava ser uma parte central do desenvolvimento de aplicações distribuídas em Java, passou por mudanças significativas ao longo do tempo. Vamos explorar algumas razões pelas quais o EJB perdeu parte de sua relevância:
+O **Enterprise JavaBeans** (**EJB**), que costumava ser uma parte central do desenvolvimento de aplicações distribuídas em Java, passou por mudanças significativas ao longo do tempo. Vamos explorar algumas razões pelas quais o EJB perdeu parte de sua relevância:
 
-1. Complexidade e Overhead:
+**1. Complexidade e Overhead:**
 
-- Nas versões anteriores do EJB, havia uma quantidade significativa de complexidade e overhead associados à configuração e gerenciamento de componentes EJB.
+\- Nas versões anteriores do EJB, havia uma quantidade significativa de complexidade e overhead associados à configuração e gerenciamento de componentes EJB.
 
-- Os desenvolvedores precisavam lidar com arquivos de configuração XML, anotações específicas e detalhes de transações, o que tornava o desenvolvimento mais trabalhoso.
+\- Os desenvolvedores precisavam lidar com arquivos de configuração XML, anotações específicas e detalhes de transações, o que tornava o desenvolvimento mais trabalhoso.
 
-2. Desempenho:
+**2. Desempenho:**
 
-- O EJB também apresentava problemas de desempenho. A invocação de métodos remotos era feita principalmente usando CORBA (e posteriormente outros protocolos semelhantes), o que nem sempre era eficiente.
+\- O EJB também apresentava problemas de desempenho. A invocação de métodos remotos era feita principalmente usando CORBA (e posteriormente outros protocolos semelhantes), o que nem sempre era eficiente.
 
-- Muitas aplicações não necessitavam de toda a funcionalidade distribuída oferecida pelo EJB, o que tornava seu uso excessivo para cenários mais simples.
+\- Muitas aplicações não necessitavam de toda a funcionalidade distribuída oferecida pelo EJB, o que tornava seu uso excessivo para cenários mais simples.
 
-3. Evolução das Tecnologias:
+**3. Evolução das Tecnologias:**
 
-- Com o tempo, outras tecnologias surgiram e evoluíram, como o Spring Framework e a Java Persistence API (JPA).
+\- Com o tempo, outras tecnologias surgiram e evoluíram, como o Spring Framework e a Java Persistence API (JPA).
 
-- O Spring Framework oferecia uma alternativa mais leve e flexível para o desenvolvimento de componentes empresariais, enquanto a JPA simplificava o acesso a bancos de dados relacionais.
+\- O Spring Framework oferecia uma alternativa mais leve e flexível para o desenvolvimento de componentes empresariais, enquanto a JPA simplificava o acesso a bancos de dados relacionais.
 
-4. Padrões de Design Alternativos:
+**4. Padrões de Design Alternativos:**
 
-- Padrões como POJOs (Plain Old Java Objects) e Injeção de Dependência (DI) ganharam popularidade.
+\- Padrões como POJOs (Plain Old Java Objects) e Injeção de Dependência (DI) ganharam popularidade.
 
-- Esses padrões permitiam que os desenvolvedores criassem componentes empresariais sem a necessidade de um container EJB pesado.
+\- Esses padrões permitiam que os desenvolvedores criassem componentes empresariais sem a necessidade de um container EJB pesado.
 
-5. EJB 3.x e Simplificação:
+**5. EJB 3.x e Simplificação:**
 
-- A especificação EJB 3.x trouxe melhorias significativas. Ela introduziu anotações, simplificou a configuração e permitiu que os desenvolvedores criassem componentes EJB mais facilmente.
+\- A especificação EJB 3.x trouxe melhorias significativas. Ela introduziu anotações, simplificou a configuração e permitiu que os desenvolvedores criassem componentes EJB mais facilmente.
 
-- A nova versão permitia que os desenvolvedores se concentrassem na lógica de negócios, sem se preocupar tanto com detalhes de infraestrutura.
+\- A nova versão permitia que os desenvolvedores se concentrassem na lógica de negócios, sem se preocupar tanto com detalhes de infraestrutura.
 
-6. Alternativas Modernas:
+**6. Alternativas Modernas:**
 
-- Com a ascensão de arquiteturas baseadas em microsserviços, muitas empresas optaram por tecnologias mais leves e específicas para suas necessidades.
+\- Com a ascensão de arquiteturas baseadas em ***microsserviços***, muitas empresas optaram por tecnologias mais leves e específicas para suas necessidades.
 
-- O EJB, por sua natureza mais robusta, não se encaixava bem nesses cenários.
+\- O EJB, por sua natureza mais robusta, não se encaixava bem nesses cenários.
 
 Em resumo, embora o EJB ainda seja usado em alguns contextos, sua relevância diminuiu à medida que outras alternativas mais leves e flexíveis surgiram no mundo do desenvolvimento de software empresarial.
 

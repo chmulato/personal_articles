@@ -1,24 +1,14 @@
----
-title: "O custo da inteligência artificial e a manipulação dos mercados de trabalho na era digital"
-date: "12/07/2025"
-author: "Christian Mulato"
-description: "Artigo técnico sobre o custo da inteligência artificial e a manipulação dos mercados de trabalho na era digital"
-category: "DevOps & Containers"
-tags: ['IA', 'Inteligência Artificial']
-featured_image: "img/2025_07_12_O custo da inteligência artificial e a manipulação dos mercados de trabalho na era digital_featured.jpg"
----
-
-![O custo da inteligência artificial e o mercado de desenvolvimento de software.](img/2025_07_12_O custo da inteligência artificial e a manipulação dos mercados de trabalho na era digital_image5.png)
+![O custo da inteligência artificial e o mercado de desenvolvimento de software.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 O custo da inteligência artificial e o mercado de desenvolvimento de software.
 
-O custo da inteligência artificial e a manipulação dos mercados de trabalho na era digital
+**O custo da inteligência artificial e a manipulação dos mercados de trabalho na era digital**
 
-![Christian Mulato, #OPEN_TO_WORK](img/2025_07_12_O custo da inteligência artificial e a manipulação dos mercados de trabalho na era digital_image6.jpg)
+[![Christian Mulato, #OPEN_TO_WORK](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
-Christian Mulato
+[**Christian Mulato **](https://www.linkedin.com/in/chmulato/)
 
-Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico
+Desenvolvedor Java Sênior \| Especialista em Back-end \| Jakarta, Spring Boot, REST APIs, Docker \| Engenheiro Químico
 
 12 de julho de 2025
 
