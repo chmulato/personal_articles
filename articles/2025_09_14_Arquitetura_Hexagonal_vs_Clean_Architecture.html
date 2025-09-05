@@ -3,210 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre arquitetura hexagonal vs clean architecture">
+    <meta name="description" content="Artigo técnico sobre arquitetura hexagonal vs. arquitetura limpa: comparação prática em java">
     <meta name="author" content="Christian Mulato">
-    <meta name="keywords" content="Java, Spring, APIs, Microserviços, Testes, Kafka">
+    <meta name="keywords" content="Java, Arquitetura, Design Patterns">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
+    <meta property="og:title" content="Arquitetura Hexagonal vs. Arquitetura Limpa: Comparação Prática em Java">
+    <meta property="og:description" content="Artigo técnico sobre arquitetura hexagonal vs. arquitetura limpa: comparação prática em java">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://chmulato.dev/articles/2025_09_14_Arquitetura_Hexagonal_vs_Clean_Architecture.html">
-    <meta property="og:title" content="Arquitetura Hexagonal Vs Clean Architecture">
-    <meta property="og:description" content="Artigo técnico sobre arquitetura hexagonal vs clean architecture">
-    <meta property="og:image" content="https://chmulato.dev/img/2025_09_14_Arquitetura_Hexagonal_vs_Clean_Architecture_featured.jpg">
+    <meta property="og:author" content="Christian Mulato">
+    <meta property="og:article:published_time" content="14/09/2025">
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://chmulato.dev/articles/2025_09_14_Arquitetura_Hexagonal_vs_Clean_Architecture.html">
-    <meta property="twitter:title" content="Arquitetura Hexagonal Vs Clean Architecture">
-    <meta property="twitter:description" content="Artigo técnico sobre arquitetura hexagonal vs clean architecture">
-    <meta property="twitter:image" content="https://chmulato.dev/img/2025_09_14_Arquitetura_Hexagonal_vs_Clean_Architecture_featured.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arquitetura Hexagonal vs. Arquitetura Limpa: Comparação Prática em Java">
+    <meta name="twitter:description" content="Artigo técnico sobre arquitetura hexagonal vs. arquitetura limpa: comparação prática em java">
     
-    <title>Arquitetura Hexagonal Vs Clean Architecture | Christian Mulato Dev Blog</title>
+    <title>Arquitetura Hexagonal vs. Arquitetura Limpa: Comparação Prática em Java | Christian Mulato Dev Blog</title>
     
-    <!-- Styles -->
+    <!-- Fonts e Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/article.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="../assets/js/article.js" defer></script>
+    <!-- Prism.js para syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Arquitetura Hexagonal vs. Arquitetura Limpa: Comparação Prática em Java",
+        "description": "Artigo técnico sobre arquitetura hexagonal vs. arquitetura limpa: comparação prática em java",
+        "author": {
+            "@type": "Person",
+            "name": "Christian Mulato"
+        },
+        "datePublished": "14/09/2025",
+        "category": "Java & Spring"
+    }
+    </script>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-text">Christian Mulato</span>
-                    <span class="logo-subtitle">Dev Blog</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Artigos</a>
-                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
-                </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">← Voltar ao Blog</a>
+            <div class="nav-links">
+                <a href="../index.html">Artigos</a>
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <main class="main">
-        <article class="article">
-            <header class="article-header">
-                <div class="article-meta">
-                    <span class="article-category">Java & Spring</span>
-                    <time class="article-date" datetime="14/09/2025">14/09/2025</time>
-                </div>
-                
-                <h1 class="article-title">Arquitetura Hexagonal Vs Clean Architecture</h1>
-                
-                <div class="article-info">
-                    <span class="article-author">Por Christian Mulato</span>
-                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">APIs</span> <span class="tag">Microserviços</span> <span class="tag">Testes</span> <span class="tag">Kafka</span></div>
-                </div>
-            </header>
-            
-            <div class="article-content">
-                <h1 id="arquitetura-hexagonal-vs-clean-architecture"><a class="toclink" href="#arquitetura-hexagonal-vs-clean-architecture">Arquitetura Hexagonal Vs Clean Architecture</a></h1>
-<h1 id="arquitetura-hexagonal-vs-arquitetura-limpa-comparacao-pratica-em-java"><a class="toclink" href="#arquitetura-hexagonal-vs-arquitetura-limpa-comparacao-pratica-em-java"><a id="Xefd543c9061e3aafadada912ab9329dc0bcf792"></a>Arquitetura Hexagonal vs. Arquitetura Limpa: Comparação Prática em Java</a></h1>
-<p><img alt="Comparação entre Arquitetura Hexagonal e Arquitetura Limpa" src="img/image_not_found.png" /></p>
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category">Java & Spring</span>
+                <time class="date" datetime="14/09/2025">14/09/2025</time>
+            </div>
+            <h1 class="article-title">Arquitetura Hexagonal vs. Arquitetura Limpa: Comparação Prática em Java</h1>
+            <div class="author-info">
+                <span>Por <a href="https://www.linkedin.com/in/chmulato/" target="_blank">Christian Mulato</a></span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">Java</span> <span class="tag">Arquitetura</span> <span class="tag">Design Patterns</span>
+            </div>
+        </header>
+        
+        <div class="article-content">
+            <h1 id="arquitetura-hexagonal-vs-arquitetura-limpa-comparacao-pratica-em-java"><a class="toclink" href="#arquitetura-hexagonal-vs-arquitetura-limpa-comparacao-pratica-em-java">Arquitetura Hexagonal vs. Arquitetura Limpa: Comparação Prática em Java</a></h1>
+<p><img alt="Comparação entre Arquitetura Hexagonal e Arquitetura Limpa" src="img/2025_09_14_Arquitetura_Hexagonal_vs_Clean_Architecture_image3.png" /></p>
 <p>Comparação entre Arquitetura Hexagonal e Arquitetura Limpa</p>
-<p><em>Legenda: Imagem gerada por IA representando a comparação entre Arquitetura Hexagonal e Arquitetura Limpa, com elementos visuais de portas, adaptadores e camadas concêntricas.</em></p>
-<h2 id="introducao-uma-experiencia-pratica-na-rd-saude"><a class="toclink" href="#introducao-uma-experiencia-pratica-na-rd-saude"><a id="Xb9c5db4ec2f716110cd87355473696136cce612"></a>Introdução: Uma Experiência Prática na RD Saúde</a></h2>
+<p>Legenda: Imagem gerada por IA representando a comparação entre Arquitetura Hexagonal e Arquitetura Limpa, com elementos visuais de portas, adaptadores e camadas concêntricas.</p>
+<h2 id="introducao-uma-experiencia-pratica-na-rd-saude"><a class="toclink" href="#introducao-uma-experiencia-pratica-na-rd-saude">Introdução: Uma Experiência Prática na RD Saúde</a></h2>
 <p>Há alguns anos, enquanto trabalhava como desenvolvedor Java sênior na RD Saúde, enfrentei um desafio comum em projetos de microserviços: como manter o código limpo, testável e independente de frameworks externos, especialmente em um ambiente onde as mudanças nos requisitos eram frequentes e a integração com sistemas legados era inevitável.</p>
 <p>Naquele projeto, estávamos construindo um sistema de gestão de pacientes e agendamentos médicos, composto por vários microserviços. Inicialmente, adotamos uma abordagem mais tradicional com Spring Boot, mas logo percebemos os problemas: dependências acopladas, testes difíceis de isolar e dificuldades para trocar provedores de infraestrutura (como bancos de dados ou filas de mensagens) sem grandes refatorações.</p>
-<p>Foi aí que introduzimos a <strong>Arquitetura Hexagonal</strong>, também conhecida como Ports and Adapters, combinada com o conceito de <strong>chassis</strong> (um framework interno que encapsula as tecnologias transversais). Esse chassis nos permitiu abstrair camadas como persistência, comunicação externa e logging, tornando os microserviços mais modulares e resilientes.</p>
-<p>Mas, ao longo do tempo, comparamos essa abordagem com a <strong>Arquitetura Limpa</strong> (Clean Architecture) proposta por Robert C. Martin (Uncle Bob), que também enfatiza a separação de responsabilidades e a independência de frameworks. Neste artigo, vou compartilhar essa experiência prática, explicando as diferenças, vantagens e desvantagens de cada uma, com exemplos em Java.</p>
-<h2 id="o-que-e-arquitetura-hexagonal"><a class="toclink" href="#o-que-e-arquitetura-hexagonal"><a id="o-que-é-arquitetura-hexagonal"></a>O que é Arquitetura Hexagonal?</a></h2>
+<p>Foi aí que introduzimos a Arquitetura Hexagonal, também conhecida como Ports and Adapters, combinada com o conceito de chassis (um framework interno que encapsula as tecnologias transversais). Esse chassis nos permitiu abstrair camadas como persistência, comunicação externa e logging, tornando os microserviços mais modulares e resilientes.</p>
+<p>Mas, ao longo do tempo, comparamos essa abordagem com a Arquitetura Limpa (Clean Architecture) proposta por Robert C. Martin (Uncle Bob), que também enfatiza a separação de responsabilidades e a independência de frameworks. Neste artigo, vou compartilhar essa experiência prática, explicando as diferenças, vantagens e desvantagens de cada uma, com exemplos em Java.</p>
+<h2 id="o-que-e-arquitetura-hexagonal"><a class="toclink" href="#o-que-e-arquitetura-hexagonal">O que é Arquitetura Hexagonal?</a></h2>
 <p>A Arquitetura Hexagonal, introduzida por Alistair Cockburn em 2005, trata o software como um núcleo central (o domínio) cercado por portas e adaptadores. O objetivo é isolar a lógica de negócio das preocupações externas, como bancos de dados, APIs ou interfaces de usuário.</p>
-<h3 id="estrutura-basica"><a class="toclink" href="#estrutura-basica"><a id="estrutura-básica"></a>Estrutura Básica:</a></h3>
+<h3 id="estrutura-basica"><a class="toclink" href="#estrutura-basica">Estrutura Básica:</a></h3>
 <ul>
-<li><strong>Domínio (Core)</strong>: Contém as regras de negócio, entidades e casos de uso. É independente de qualquer tecnologia.</li>
-<li><strong>Portas</strong>: Interfaces que definem contratos para entrada (ex.: comandos do usuário) e saída (ex.: acesso a dados).</li>
-<li><strong>Adaptadores</strong>: Implementações concretas das portas, como controladores REST (adaptadores de entrada) ou repositórios JPA (adaptadores de saída).</li>
+<li>Domínio (Core): Contém as regras de negócio, entidades e casos de uso. É independente de qualquer tecnologia.</li>
+<li>Portas: Interfaces que definem contratos para entrada (ex.: comandos do usuário) e saída (ex.: acesso a dados).</li>
+<li>Adaptadores: Implementações concretas das portas, como controladores REST (adaptadores de entrada) ou repositórios JPA (adaptadores de saída).</li>
 </ul>
 <p>No contexto de microserviços, isso facilita a troca de tecnologias sem afetar o núcleo. Por exemplo, podemos trocar de MySQL para PostgreSQL apenas alterando o adaptador de persistência.</p>
-<h3 id="exemplo-pratico-em-java"><a class="toclink" href="#exemplo-pratico-em-java"><a id="exemplo-prático-em-java"></a>Exemplo Prático em Java:</a></h3>
+<h3 id="exemplo-pratico-em-java"><a class="toclink" href="#exemplo-pratico-em-java">Exemplo Prático em Java:</a></h3>
 <p>Vamos supor um serviço simples de agendamento médico. O domínio poderia ter uma entidade Appointment e um caso de uso ScheduleAppointmentUseCase.</p>
-<p>// Domínio: Entidade<br />
-public class Appointment {<br />
-    private Long id;<br />
-    private LocalDateTime dateTime;<br />
-    private String patientId;<br />
-    // getters, setters, business logic<br />
-}  </p>
-<p>// Domínio: Caso de Uso<br />
-public class ScheduleAppointmentUseCase {<br />
-    private final AppointmentRepositoryPort repository;  </p>
-<div class="highlight"><pre><span></span><code><span class="nt">public</span><span class="w"> </span><span class="nt">ScheduleAppointmentUseCase</span><span class="err">\</span><span class="o">(</span><span class="nt">AppointmentRepositoryPort</span><span class="w"> </span><span class="nt">repository</span><span class="err">\</span><span class="o">)</span><span class="w"> </span><span class="err">\</span><span class="p">{</span><span class="w">  </span>
-<span class="w">    </span><span class="err">this\.repository</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">repository</span><span class="p">;</span><span class="w">  </span>
-<span class="err">\</span><span class="p">}</span>
-
-<span class="nt">public</span><span class="w"> </span><span class="nt">void</span><span class="w"> </span><span class="nt">execute</span><span class="err">\</span><span class="o">(</span><span class="nt">ScheduleAppointmentCommand</span><span class="w"> </span><span class="nt">command</span><span class="err">\</span><span class="o">)</span><span class="w"> </span><span class="err">\</span><span class="p">{</span><span class="w">  </span>
-<span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="err">Lógica</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="n">negócio</span><span class="p">:</span><span class="w"> </span><span class="n">validar</span><span class="w"> </span><span class="n">disponibilidade</span><span class="p">,</span><span class="w"> </span><span class="n">etc</span><span class="err">\</span><span class="o">.</span><span class="w">  </span>
-<span class="w">    </span><span class="n">Appointment</span><span class="w"> </span><span class="n">appointment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">Appointment</span><span class="err">\</span><span class="p">(</span><span class="o">/</span><span class="err">\</span><span class="o">*</span><span class="err">\</span><span class="o">.</span><span class="err">\</span><span class="o">.</span><span class="err">\</span><span class="o">.</span><span class="err">\</span><span class="o">*/</span><span class="err">\</span><span class="p">);</span><span class="w">  </span>
-<span class="w">    </span><span class="err">repository\.save\(appointment\)</span><span class="p">;</span><span class="w">  </span>
-<span class="err">\</span><span class="p">}</span>
-</code></pre></div>
-
-<p>}  </p>
-<p>// Porta de Saída<br />
-public interface AppointmentRepositoryPort {<br />
-    void save(Appointment appointment);<br />
-    List<Appointment> findByPatient(String patientId);<br />
-}  </p>
-<p>// Adaptador de Saída (JPA)<br />
-@Repository<br />
-public class JpaAppointmentRepositoryAdapter implements AppointmentRepositoryPort {<br />
-    private final JpaAppointmentRepository jpaRepo;  </p>
-<div class="highlight"><pre><span></span><code><span class="nv">@Override</span><span class="w">  </span>
-<span class="k">public</span><span class="w"> </span><span class="n">void</span><span class="w"> </span><span class="k">save</span><span class="err">\</span><span class="p">(</span><span class="n">Appointment</span><span class="w"> </span><span class="n">appointment</span><span class="err">\</span><span class="p">)</span><span class="w"> </span><span class="err">\{</span><span class="w">  </span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Conversão</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">salvamento</span><span class="w">  </span>
-<span class="err">\}</span>
-</code></pre></div>
-
-<p>}</p>
-<p>Nos chassis da RD Saúde, encapsulamos essas portas e adaptadores em módulos separados, permitindo que equipes diferentes trabalhem em paralelo sem conflitos.</p>
-<h2 id="o-que-e-clean-architecture"><a class="toclink" href="#o-que-e-clean-architecture"><a id="o-que-é-clean-architecture"></a>O que é Clean Architecture?</a></h2>
+<p>// Domínio: Entidadepublic class Appointment {    private Long id;    private LocalDateTime dateTime;    private String patientId;    // getters, setters, business logic}// Domínio: Caso de Usopublic class ScheduleAppointmentUseCase {    private final AppointmentRepositoryPort repository;    public ScheduleAppointmentUseCase(AppointmentRepositoryPort repository) {        this.repository = repository;    }    public void execute(ScheduleAppointmentCommand command) {        // Lógica de negócio: validar disponibilidade, etc.        Appointment appointment = new Appointment(/<em>...</em>/);        repository.save(appointment);    }}// Porta de Saídapublic interface AppointmentRepositoryPort {    void save(Appointment appointment);    List<Appointment> findByPatient(String patientId);}// Adaptador de Saída (JPA)@Repositorypublic class JpaAppointmentRepositoryAdapter implements AppointmentRepositoryPort {    private final JpaAppointmentRepository jpaRepo;    @Override    public void save(Appointment appointment) {        // Conversão e salvamento    }}</p>
+<p>No chassis da RD Saúde, encapsulamos essas portas e adaptadores em módulos separados, permitindo que equipes diferentes trabalhem em paralelo sem conflitos.</p>
+<h2 id="o-que-e-clean-architecture"><a class="toclink" href="#o-que-e-clean-architecture">O que é Clean Architecture?</a></h2>
 <p>Proposta por Uncle Bob, a Clean Architecture é uma evolução da Arquitetura Hexagonal, com ênfase ainda maior na separação de camadas e na testabilidade. Ela organiza o código em círculos concêntricos, onde as camadas externas dependem das internas, mas não o contrário.</p>
-<h3 id="estrutura-basica_1"><a class="toclink" href="#estrutura-basica_1"><a id="estrutura-básica-1"></a>Estrutura Básica:</a></h3>
+<h3 id="estrutura-basica_1"><a class="toclink" href="#estrutura-basica_1">Estrutura Básica:</a></h3>
 <ul>
-<li><strong>Entidades</strong>: Regras de negócio independentes.</li>
-<li><strong>Casos de Uso</strong>: Aplicação das regras em cenários específicos.</li>
-<li><strong>Controladores/Apresentadores</strong>: Interface com o mundo externo.</li>
-<li><strong>Frameworks/Drivers</strong>: Detalhes de implementação (bancos, web, etc.).</li>
+<li>Entidades: Regras de negócio independentes.</li>
+<li>Casos de Uso: Aplicação das regras em cenários específicos.</li>
+<li>Controladores/Apresentadores: Interface com o mundo externo.</li>
+<li>Frameworks/Drivers: Detalhes de implementação (bancos, web, etc.).</li>
 </ul>
 <p>A diferença chave é a rigidez: a Clean Architecture proíbe dependências de camadas externas para internas, usando injeção de dependência e interfaces para garantir isso.</p>
-<h3 id="exemplo-pratico-em-java_1"><a class="toclink" href="#exemplo-pratico-em-java_1"><a id="exemplo-prático-em-java-1"></a>Exemplo Prático em Java:</a></h3>
+<h3 id="exemplo-pratico-em-java_1"><a class="toclink" href="#exemplo-pratico-em-java_1">Exemplo Prático em Java:</a></h3>
 <p>Usando o mesmo exemplo, na Clean Architecture, o caso de uso ficaria na camada de aplicação, e as portas seriam interfaces na mesma camada.</p>
-<p>// Camada de Aplicação: Caso de Uso<br />
-public class ScheduleAppointmentUseCase {<br />
-    private final AppointmentRepository repository;  </p>
-<div class="highlight"><pre><span></span><code>public ScheduleAppointmentUseCase\(AppointmentRepository repository\) \{  
-    this\.repository = repository;  
-\}
-
-public void execute\(ScheduleAppointmentCommand command\) \{  
-    // Mesmo lógica  
-\}
-</code></pre></div>
-
-<p>}  </p>
-<p>// Interface na Camada de Aplicação<br />
-public interface AppointmentRepository {<br />
-    void save(Appointment appointment);<br />
-}  </p>
-<p>// Camada de Infraestrutura: Implementação<br />
-@Repository<br />
-public class JpaAppointmentRepository implements AppointmentRepository {<br />
-    // Implementação<br />
-}</p>
-<h2 id="comparacao-pratica-hexagonal-vs-arquitetura-limpa"><a class="toclink" href="#comparacao-pratica-hexagonal-vs-arquitetura-limpa"><a id="X7ee7a2c191c446393535d34fc31f27dd5d50d64"></a>Comparação Prática: Hexagonal vs. Arquitetura Limpa</a></h2>
+<p>// Camada de Aplicação: Caso de Usopublic class ScheduleAppointmentUseCase {    private final AppointmentRepository repository;    public ScheduleAppointmentUseCase(AppointmentRepository repository) {        this.repository = repository;    }    public void execute(ScheduleAppointmentCommand command) {        // Mesmo lógica    }}// Interface na Camada de Aplicaçãopublic interface AppointmentRepository {    void save(Appointment appointment);}// Camada de Infraestrutura: Implementação@Repositorypublic class JpaAppointmentRepository implements AppointmentRepository {    // Implementação}</p>
+<h2 id="comparacao-pratica-hexagonal-vs-arquitetura-limpa"><a class="toclink" href="#comparacao-pratica-hexagonal-vs-arquitetura-limpa">Comparação Prática: Hexagonal vs. Arquitetura Limpa</a></h2>
 <p>Apresento abaixo a comparação por aspecto, usando parágrafos rotulados para cada arquitetura — formato pensado para leitura contínua no DOCX.</p>
-<h3 id="flexibilidade"><a class="toclink" href="#flexibilidade"><a id="flexibilidade"></a>Flexibilidade</a></h3>
+<h3 id="flexibilidade"><a class="toclink" href="#flexibilidade">Flexibilidade</a></h3>
 <p>Arquitetura Hexagonal — Alta para troca de adaptadores. O principal objetivo é isolar o domínio das dependências externas, o que facilita substituir tecnologias (por exemplo, trocar o banco de dados apenas alterando o adaptador de persistência).</p>
 <p>Arquitetura Limpa — Rigor adicional para independência de camadas. Esse rigor reduz o risco de acoplamento reverso e dá garantias maiores quando mudanças arquiteturais forem necessárias.</p>
-<h3 id="complexidade"><a class="toclink" href="#complexidade"><a id="complexidade"></a>Complexidade</a></h3>
+<h3 id="complexidade"><a class="toclink" href="#complexidade">Complexidade</a></h3>
 <p>Arquitetura Hexagonal — Menor curva inicial; adequada para equipes pequenas ou projetos que precisam de entregas rápidas, pois impõe menos camadas e menos burocracia de projeto.</p>
 <p>Arquitetura Limpa — Mais camadas e disciplina. Recomendável para sistemas grandes e de longa manutenção, onde a estrutura adicional compensa o custo inicial.</p>
-<h3 id="testabilidade"><a class="toclink" href="#testabilidade"><a id="testabilidade"></a>Testabilidade</a></h3>
+<h3 id="testabilidade"><a class="toclink" href="#testabilidade">Testabilidade</a></h3>
 <p>Arquitetura Hexagonal — Facilita testes de portas e adaptadores isoladamente, bom para testes unitários e integração de adaptadores específicos.</p>
 <p>Arquitetura Limpa — Excelente para testar casos de uso sem infraestrutura, favorecendo testes de negócio puros e refatorações seguras.</p>
-<h3 id="adaptacao-a-mudancas"><a class="toclink" href="#adaptacao-a-mudancas"><a id="adaptação-a-mudanças"></a>Adaptação a Mudanças</a></h3>
+<h3 id="adaptacao-a-mudancas"><a class="toclink" href="#adaptacao-a-mudancas">Adaptação a Mudanças</a></h3>
 <p>Arquitetura Hexagonal — Muito eficiente para mudanças externas (nova API, novo provedor de mensageria), pois as integrações ficam encapsuladas em adaptadores.</p>
 <p>Arquitetura Limpa — Melhor para mudanças internas, como refatorações de regras de negócio, em razão da separação rígida de responsabilidades entre camadas.</p>
-<h3 id="experiencia-na-rd-saude"><a class="toclink" href="#experiencia-na-rd-saude"><a id="experiência-na-rd-saúde"></a>Experiência na RD Saúde</a></h3>
+<h3 id="experiencia-na-rd-saude"><a class="toclink" href="#experiencia-na-rd-saude">Experiência na RD Saúde</a></h3>
 <p>Arquitetura Hexagonal — Usamos para acelerar integrações com sistemas legados; provou-se prática, porém exigiu disciplina para não contaminar o núcleo com detalhes de infraestrutura.</p>
 <p>Arquitetura Limpa — Aplicada em serviços posteriores; reduziu bugs de integração e aumentou a confiança em refatorações, embora tenha exigido maior tempo de configuração inicial.</p>
-<p>Na prática, a Arquitetura Hexagonal foi perfeita para nossos chassis: criamos adaptadores genéricos para logging, métricas e segurança, reutilizáveis em todos os microserviços. A Arquitetura Limpa, por sua vez, trouxe mais segurança durante refatorações críticas, especialmente ao introduzir regras de compliance médico.</p>
-<h2 id="conclusao"><a class="toclink" href="#conclusao"><a id="conclusão"></a>Conclusão</a></h2>
+<p>Na prática, a Arquitetura Hexagonal foi perfeita para nosso chassis: criamos adaptadores genéricos para logging, métricas e segurança, reutilizáveis em todos os microserviços. A Arquitetura Limpa, por sua vez, trouxe mais segurança durante refatorações críticas, especialmente ao introduzir regras de compliance médico.</p>
+<h2 id="conclusao"><a class="toclink" href="#conclusao">Conclusão</a></h2>
 <p>Ambas as arquiteturas promovem código sustentável, mas a escolha depende do contexto. Se você está começando um projeto e prioriza isolamento rápido, vá com Hexagonal. Para escalabilidade e manutenção a longo prazo, Clean Architecture é superior.</p>
 <p>Na RD Saúde, essa combinação nos permitiu entregar microserviços robustos e escaláveis. E você? Já usou alguma dessas abordagens? Compartilhe nos comentários!</p>
-<p><em>Christian Mulato</em><br />
-<em>Desenvolvedor Java Sênior</em><br />
-<em>14 de setembro de 2025</em></p>
-            </div>
-            
-            <footer class="article-footer">
-                <div class="article-author-bio">
-                    <h3>Sobre o Autor</h3>
-                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
-                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
-                        Conecte-se no LinkedIn
-                    </a>
-                </div>
-                
-                <div class="article-navigation">
-                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
-                </div>
-            </footer>
-        </article>
-    </main>
-    
-    <footer class="site-footer">
-        <div class="footer-container">
+<p>Christian MulatoDesenvolvedor Java Sênior14 de setembro de 2025</p>
+        </div>
+    </article>
+
+    <footer class="article-footer">
+        <div class="footer-content">
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
         </div>
     </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <!-- Copy code functionality -->
+    <script>
+        // Adicionar botões de copiar código
+        document.querySelectorAll('pre code').forEach((block) => {
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copiar';
+            button.onclick = () => {
+                navigator.clipboard.writeText(block.textContent);
+                button.textContent = 'Copiado!';
+                setTimeout(() => button.textContent = 'Copiar', 2000);
+            };
+            block.parentNode.appendChild(button);
+        });
+    </script>
 </body>
 </html>

@@ -3,129 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre decisoes tecnicas que a ia nao pode tomar licoes de desenvolvimento em visao computacional">
+    <meta name="description" content="Artigo técnico sobre decisões técnicas que a ia não pode tomar: lições de desenvolvimento em visão computacional">
     <meta name="author" content="Christian Mulato">
-    <meta name="keywords" content="Java, APIs, Testes, Kafka, Arquitetura, DevOps">
+    <meta name="keywords" content="IA, Inteligência Artificial">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
+    <meta property="og:title" content="Decisões Técnicas que a IA Não Pode Tomar: Lições de Desenvolvimento em Visão Computacional">
+    <meta property="og:description" content="Artigo técnico sobre decisões técnicas que a ia não pode tomar: lições de desenvolvimento em visão computacional">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://chmulato.dev/articles/2025_09_07_Decisoes_Tecnicas_que_a_IA_Nao_Pode_Tomar_Licoes_de_Desenvolvimento_em_Visao_Computacional.html">
-    <meta property="og:title" content="Decisoes Tecnicas Que A Ia Nao Pode Tomar Licoes De Desenvolvimento Em Visao Computacional">
-    <meta property="og:description" content="Artigo técnico sobre decisoes tecnicas que a ia nao pode tomar licoes de desenvolvimento em visao computacional">
-    <meta property="og:image" content="https://chmulato.dev/img/2025_09_07_Decisoes_Tecnicas_que_a_IA_Nao_Pode_Tomar_Licoes_de_Desenvolvimento_em_Visao_Computacional_featured.jpg">
+    <meta property="og:author" content="Christian Mulato">
+    <meta property="og:article:published_time" content="07/09/2025">
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://chmulato.dev/articles/2025_09_07_Decisoes_Tecnicas_que_a_IA_Nao_Pode_Tomar_Licoes_de_Desenvolvimento_em_Visao_Computacional.html">
-    <meta property="twitter:title" content="Decisoes Tecnicas Que A Ia Nao Pode Tomar Licoes De Desenvolvimento Em Visao Computacional">
-    <meta property="twitter:description" content="Artigo técnico sobre decisoes tecnicas que a ia nao pode tomar licoes de desenvolvimento em visao computacional">
-    <meta property="twitter:image" content="https://chmulato.dev/img/2025_09_07_Decisoes_Tecnicas_que_a_IA_Nao_Pode_Tomar_Licoes_de_Desenvolvimento_em_Visao_Computacional_featured.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Decisões Técnicas que a IA Não Pode Tomar: Lições de Desenvolvimento em Visão Computacional">
+    <meta name="twitter:description" content="Artigo técnico sobre decisões técnicas que a ia não pode tomar: lições de desenvolvimento em visão computacional">
     
-    <title>Decisoes Tecnicas Que A Ia Nao Pode Tomar Licoes De Desenvolvimento Em Visao Computacional | Christian Mulato Dev Blog</title>
+    <title>Decisões Técnicas que a IA Não Pode Tomar: Lições de Desenvolvimento em Visão Computacional | Christian Mulato Dev Blog</title>
     
-    <!-- Styles -->
+    <!-- Fonts e Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/article.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="../assets/js/article.js" defer></script>
+    <!-- Prism.js para syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Decisões Técnicas que a IA Não Pode Tomar: Lições de Desenvolvimento em Visão Computacional",
+        "description": "Artigo técnico sobre decisões técnicas que a ia não pode tomar: lições de desenvolvimento em visão computacional",
+        "author": {
+            "@type": "Person",
+            "name": "Christian Mulato"
+        },
+        "datePublished": "07/09/2025",
+        "category": "DevOps & Containers"
+    }
+    </script>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-text">Christian Mulato</span>
-                    <span class="logo-subtitle">Dev Blog</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Artigos</a>
-                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
-                </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">← Voltar ao Blog</a>
+            <div class="nav-links">
+                <a href="../index.html">Artigos</a>
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <main class="main">
-        <article class="article">
-            <header class="article-header">
-                <div class="article-meta">
-                    <span class="article-category">Java & Spring</span>
-                    <time class="article-date" datetime="07/09/2025">07/09/2025</time>
-                </div>
-                
-                <h1 class="article-title">Decisoes Tecnicas Que A Ia Nao Pode Tomar Licoes De Desenvolvimento Em Visao Computacional</h1>
-                
-                <div class="article-info">
-                    <span class="article-author">Por Christian Mulato</span>
-                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">Testes</span> <span class="tag">Kafka</span> <span class="tag">Arquitetura</span> <span class="tag">DevOps</span></div>
-                </div>
-            </header>
-            
-            <div class="article-content">
-                <h1 id="decisoes-tecnicas-que-a-ia-nao-pode-tomar-licoes-de-desenvolvimento-em-visao-computacional"><a class="toclink" href="#decisoes-tecnicas-que-a-ia-nao-pode-tomar-licoes-de-desenvolvimento-em-visao-computacional">Decisoes Tecnicas Que A Ia Nao Pode Tomar Licoes De Desenvolvimento Em Visao Computacional</a></h1>
-<p><img alt="Decisões Técnicas que a IA Não Pode Tomar" src="img/image_not_found.png" /></p>
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category">DevOps & Containers</span>
+                <time class="date" datetime="07/09/2025">07/09/2025</time>
+            </div>
+            <h1 class="article-title">Decisões Técnicas que a IA Não Pode Tomar: Lições de Desenvolvimento em Visão Computacional</h1>
+            <div class="author-info">
+                <span>Por <a href="https://www.linkedin.com/in/chmulato/" target="_blank">Christian Mulato</a></span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">IA</span> <span class="tag">Inteligência Artificial</span>
+            </div>
+        </header>
+        
+        <div class="article-content">
+            <p><img alt="Decisões Técnicas que a IA Não Pode Tomar" src="img/2025_09_07_Decisoes_Tecnicas_que_a_IA_Nao_Pode_Tomar_Licoes_de_Desenvolvimento_em_Visao_Computacional_image3.png" /></p>
 <p>Decisões Técnicas que a IA Não Pode Tomar</p>
-<p><em>Ilustração representando a colaboração entre engenheiros humanos e inteligência artificial em sistemas de visão computacional. A imagem destaca o papel estratégico do profissional na tomada de decisões técnicas.</em></p>
-<p><a id="Xe6d428e15721b1bc2b93b025ad7bdddd770115c"></a># Decisões Técnicas que a IA Não Pode Tomar: Lições de Desenvolvimento em Visão Computacional</p>
+<p>Ilustração representando a colaboração entre engenheiros humanos e inteligência artificial em sistemas de visão computacional. A imagem destaca o papel estratégico do profissional na tomada de decisões técnicas.</p>
+<h1 id="decisoes-tecnicas-que-a-ia-nao-pode-tomar-licoes-de-desenvolvimento-em-visao-computacional"><a class="toclink" href="#decisoes-tecnicas-que-a-ia-nao-pode-tomar-licoes-de-desenvolvimento-em-visao-computacional">Decisões Técnicas que a IA Não Pode Tomar: Lições de Desenvolvimento em Visão Computacional</a></h1>
 <p>Vivemos em um momento em que a inteligência artificial (IA) tem mostrado resultados impressionantes. Sistemas de visão computacional conseguem identificar padrões complexos em imagens, detectar objetos em tempo real e até interpretar comportamentos com uma precisão surpreendente. No entanto, enquanto a IA automatiza tarefas repetitivas e analisa volumes massivos de dados, existem decisões críticas que apenas a mente humana pode tomar.</p>
 <p>Recentemente, me vi estudando para um teste técnico em uma empresa especializada em visão computacional. Essa experiência me fez refletir profundamente: mesmo com ferramentas de IA altamente sofisticadas, o desenvolvimento de um sistema completo ainda depende da capacidade do engenheiro de software em tomar decisões estratégicas sobre arquitetura, integração e escalabilidade.</p>
-<p><a id="o-que-a-ia-faz-bem"></a>## O que a IA faz bem</p>
+<h2 id="o-que-a-ia-faz-bem"><a class="toclink" href="#o-que-a-ia-faz-bem">O que a IA faz bem</a></h2>
 <p>A IA é excelente para automatizar tarefas que seguem padrões previsíveis. Em visão computacional, por exemplo, redes neurais podem:</p>
 <ul>
-<li><strong>Classificar imagens</strong> em categorias complexas, como identificar defeitos em peças industriais.</li>
-<li><strong>Detectar objetos ou movimentos</strong> em vídeos em tempo real, como em drones de monitoramento.</li>
-<li><strong>Auxiliar na extração de informações</strong> relevantes a partir de grandes volumes de dados visuais.</li>
+<li>Classificar imagens em categorias complexas, como identificar defeitos em peças industriais.</li>
+<li>Detectar objetos ou movimentos em vídeos em tempo real, como em drones de monitoramento.</li>
+<li>Auxiliar na extração de informações relevantes a partir de grandes volumes de dados visuais.</li>
 </ul>
 <p>Essas tarefas são repetitivas, consomem muito processamento humano e requerem análise de grandes quantidades de dados. Nesses casos, a IA se torna indispensável, reduzindo tempo e custo.</p>
 <p>No entanto, a IA não é autônoma quando se trata de decisões de engenharia. Ela não decide como os sistemas devem ser estruturados, como os dados devem fluir entre serviços ou como garantir que um sistema suporte milhares de requisições simultâneas sem falhar.</p>
-<p><a id="decisões-técnicas-humanas"></a>## Decisões técnicas humanas</p>
+<h2 id="decisoes-tecnicas-humanas"><a class="toclink" href="#decisoes-tecnicas-humanas">Decisões técnicas humanas</a></h2>
 <p>Mesmo que uma IA seja capaz de processar imagens com precisão, cabe aos engenheiros decidir como o sistema será construído. Algumas decisões críticas incluem:</p>
 <ul>
-<li><strong>Estruturas de dados e algoritmos:</strong> escolher a estrutura correta (arrays, listas, filas, filas de prioridade, árvores) impacta diretamente o desempenho do sistema. Uma decisão inadequada pode tornar o processamento lento ou consumir memória excessiva.</li>
-<li><strong>Integração entre serviços:</strong> em sistemas complexos, diferentes módulos precisam se comunicar de forma eficiente. APIs REST, mensageria assíncrona com RabbitMQ ou Kafka, e bancos de dados relacionais ou NoSQL são escolhas que afetam diretamente a confiabilidade e a escalabilidade.</li>
-<li><strong>Escalabilidade e resiliência:</strong> o volume de imagens e eventos pode crescer rapidamente. Decidir se o sistema deve escalar verticalmente (aumentando recursos de uma máquina) ou horizontalmente (adicionando instâncias) é crucial. Além disso, é necessário planejar caching, balanceamento de carga e padrões de resiliência, como circuit breakers, para garantir que o sistema não falhe sob pressão.</li>
-<li><strong>Arquitetura do sistema:</strong> optar por microsserviços, eventos ou arquitetura monolítica depende do objetivo do projeto, da equipe disponível e da necessidade de manutenção futura. A escolha errada pode gerar gargalos de performance e dificuldades de manutenção.</li>
+<li>Estruturas de dados e algoritmos: escolher a estrutura correta (arrays, listas, filas, filas de prioridade, árvores) impacta diretamente o desempenho do sistema. Uma decisão inadequada pode tornar o processamento lento ou consumir memória excessiva.</li>
+<li>Integração entre serviços: em sistemas complexos, diferentes módulos precisam se comunicar de forma eficiente. APIs REST, mensageria assíncrona com RabbitMQ ou Kafka, e bancos de dados relacionais ou NoSQL são escolhas que afetam diretamente a confiabilidade e a escalabilidade.</li>
+<li>Escalabilidade e resiliência: o volume de imagens e eventos pode crescer rapidamente. Decidir se o sistema deve escalar verticalmente (aumentando recursos de uma máquina) ou horizontalmente (adicionando instâncias) é crucial. Além disso, é necessário planejar caching, balanceamento de carga e padrões de resiliência, como circuit breakers, para garantir que o sistema não falhe sob pressão.</li>
+<li>Arquitetura do sistema: optar por microsserviços, eventos ou arquitetura monolítica depende do objetivo do projeto, da equipe disponível e da necessidade de manutenção futura. A escolha errada pode gerar gargalos de performance e dificuldades de manutenção.</li>
 </ul>
-<p><a id="um-exemplo-prático"></a>## Um exemplo prático</p>
+<h2 id="um-exemplo-pratico"><a class="toclink" href="#um-exemplo-pratico">Um exemplo prático</a></h2>
 <p>Imagine um sistema que processa imagens capturadas por drones em tempo real para detectar anomalias em plantações. A arquitetura precisa considerar vários pontos:</p>
 <ul>
-<li><strong>Coleta das imagens:</strong> os drones enviam fotos periodicamente. Um simples upload síncrono poderia sobrecarregar o sistema. A decisão técnica foi usar fila de mensagens assíncronas, garantindo que cada imagem seja processada quando houver capacidade disponível.</li>
-<li><strong>Processamento das imagens:</strong> múltiplos workers Python ou Java processam as imagens, rodando redes neurais treinadas. A distribuição do trabalho entre instâncias garante alta disponibilidade e escalabilidade.</li>
-<li><strong>Armazenamento e consulta:</strong> os resultados precisam ser persistidos em um banco de dados eficiente para consulta e histórico. A escolha entre SQL ou NoSQL impacta diretamente a rapidez na recuperação de informações e no armazenamento de grandes volumes de dados.</li>
-<li><strong>Dashboard e integração:</strong> os resultados devem ser apresentados em tempo real para os usuários, integrando o backend com APIs REST e front-end. Cada decisão sobre tecnologia, protocolo e framework influencia a experiência final do usuário.</li>
+<li>Coleta das imagens: os drones enviam fotos periodicamente. Um simples upload síncrono poderia sobrecarregar o sistema. A decisão técnica foi usar fila de mensagens assíncronas, garantindo que cada imagem seja processada quando houver capacidade disponível.</li>
+<li>Processamento das imagens: múltiplos workers Python ou Java processam as imagens, rodando redes neurais treinadas. A distribuição do trabalho entre instâncias garante alta disponibilidade e escalabilidade.</li>
+<li>Armazenamento e consulta: os resultados precisam ser persistidos em um banco de dados eficiente para consulta e histórico. A escolha entre SQL ou NoSQL impacta diretamente a rapidez na recuperação de informações e no armazenamento de grandes volumes de dados.</li>
+<li>Dashboard e integração: os resultados devem ser apresentados em tempo real para os usuários, integrando o backend com APIs REST e front-end. Cada decisão sobre tecnologia, protocolo e framework influencia a experiência final do usuário.</li>
 </ul>
 <p>Percebe-se que, apesar de a IA realizar o processamento, cada camada do sistema exige decisões humanas que impactam diretamente na eficiência, confiabilidade e escalabilidade.</p>
-<p><a id="conclusão"></a>## Conclusão</p>
+<h2 id="conclusao"><a class="toclink" href="#conclusao">Conclusão</a></h2>
 <p>O avanço da inteligência artificial é inegável e transformador, mas não elimina a necessidade do pensamento estratégico humano. Em sistemas complexos de visão computacional, a IA atua como uma ferramenta poderosa, mas não pode substituir o engenheiro de software na escolha de arquiteturas, integrações e padrões de escalabilidade.</p>
 <p>Para quem atua no desenvolvimento de sistemas inteligentes, essa reflexão é essencial: dominar IA é importante, mas compreender profundamente como estruturar sistemas, escolher tecnologias e tomar decisões críticas continua sendo o diferencial que separa projetos robustos de soluções frágeis.</p>
-<p><strong>A lição é clara:</strong> enquanto a IA otimiza processos, o engenheiro permanece como o decisor estratégico. Mesmo com algoritmos avançados, é a combinação de inteligência humana e artificial que garante que um sistema de visão computacional seja eficiente, escalável e confiável.</p>
-            </div>
-            
-            <footer class="article-footer">
-                <div class="article-author-bio">
-                    <h3>Sobre o Autor</h3>
-                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
-                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
-                        Conecte-se no LinkedIn
-                    </a>
-                </div>
-                
-                <div class="article-navigation">
-                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
-                </div>
-            </footer>
-        </article>
-    </main>
-    
-    <footer class="site-footer">
-        <div class="footer-container">
+<p>A lição é clara: enquanto a IA otimiza processos, o engenheiro permanece como o decisor estratégico. Mesmo com algoritmos avançados, é a combinação de inteligência humana e artificial que garante que um sistema de visão computacional seja eficiente, escalável e confiável.</p>
+        </div>
+    </article>
+
+    <footer class="article-footer">
+        <div class="footer-content">
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
         </div>
     </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <!-- Copy code functionality -->
+    <script>
+        // Adicionar botões de copiar código
+        document.querySelectorAll('pre code').forEach((block) => {
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copiar';
+            button.onclick = () => {
+                navigator.clipboard.writeText(block.textContent);
+                button.textContent = 'Copiado!';
+                setTimeout(() => button.textContent = 'Copiar', 2000);
+            };
+            block.parentNode.appendChild(button);
+        });
+    </script>
 </body>
 </html>

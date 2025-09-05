@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre jdbc versus jndi">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Desenvolvimento, Tecnologia, Programação">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="JDBC versus JNDI">
+    <meta property="og:description" content="Artigo técnico sobre jdbc versus jndi">
+    <meta property="og:type" content="article">
+    <meta property="og:author" content="Christian Mulato">
+    <meta property="og:article:published_time" content="31/03/2024">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JDBC versus JNDI">
+    <meta name="twitter:description" content="Artigo técnico sobre jdbc versus jndi">
+    
+    <title>JDBC versus JNDI | Christian Mulato Dev Blog</title>
+    
+    <!-- Fonts e Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    
+    <!-- Prism.js para syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "JDBC versus JNDI",
+        "description": "Artigo técnico sobre jdbc versus jndi",
+        "author": {
+            "@type": "Person",
+            "name": "Christian Mulato"
+        },
+        "datePublished": "31/03/2024",
+        "category": "Desenvolvimento"
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">← Voltar ao Blog</a>
+            <div class="nav-links">
+                <a href="../index.html">Artigos</a>
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category">Desenvolvimento</span>
+                <time class="date" datetime="31/03/2024">31/03/2024</time>
+            </div>
+            <h1 class="article-title">JDBC versus JNDI</h1>
+            <div class="author-info">
+                <span>Por <a href="https://www.linkedin.com/in/chmulato/" target="_blank">Christian Mulato</a></span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span>
+            </div>
+        </header>
+        
+        <div class="article-content">
+            <p><img alt="Configuração de acesso ao banco de dados da sua aplicação." src="img/2024_03_31_JDBC versus JNDI_image5.jpg" /></p>
+<p>Configuração de acesso ao banco de dados da sua aplicação.</p>
+<p>JDBC versus JNDI</p>
+<p><img alt="Christian Mulato" src="img/2024_03_31_JDBC versus JNDI_image6.jpg" /></p>
+<p>Christian Mulato</p>
+<p>Desenvolvedor Java Sênior na Develcode</p>
+<p>31 de março de 2024</p>
+<p>A diferença entre uma conexão de banco de dados JDBC (Java Database Connectivity) e uma conexão de banco de dados JNDI (Java Naming and Directory Interface) está na forma como elas são configuradas e utilizadas:</p>
+<ol>
+<li>
+<p>JDBC:</p>
+</li>
+<li>
+<p>Definição: O JDBC é uma API do Java que possibilita que uma aplicação construída na linguagem consiga acessar um banco de dados configurado local ou remotamente.</p>
+</li>
+<li>
+<p>Componentes:</p>
+</li>
+<li>
+<p>Pacotes: A API JDBC é composta pelos pacotes java.sql e javax.sql, incluídos no JavaSE.</p>
+</li>
+<li>
+<p>Drivers: Os drivers JDBC são responsáveis pela conexão e interação com um banco de dados específico. Eles podem ser totalmente desenvolvidos em Java ou escritos de forma nativa, acessando outras bibliotecas ou drivers de sistema.</p>
+</li>
+<li>
+<p>Tipos de Drivers:</p>
+</li>
+<li>
+<p>Tipo 1 (JDBC-ODBC): Permite o acesso a drivers ODBC, um padrão consolidado para o acesso a bases de dados.</p>
+</li>
+<li>
+<p>Tipo 2: Implementa o protocolo do proprietário do banco de dados, transformando chamadas JDBC em chamadas do banco com o uso da API proprietária.</p>
+</li>
+<li>
+<p>Tipo 3: Faz a conversão das chamadas JDBC em outras chamadas do banco de dados, direcionando-as para uma camada intermediária de software (middleware).</p>
+</li>
+<li>
+<p>Tipo 4: É um driver puro Java que se comunica diretamente com o banco de dados, sem a necessidade de camadas intermediárias.</p>
+</li>
+<li>
+<p>JNDI:</p>
+</li>
+<li>
+<p>Definição: O JNDI é uma API que permite que aplicações Java localizem e acessem objetos em um ambiente distribuído. Ele é frequentemente usado para configurar conexões com recursos, como bancos de dados, servidores de correio e serviços de diretório.</p>
+</li>
+<li>
+<p>Utilização:</p>
+</li>
+<li>
+<p>O JNDI é usado para obter referências a objetos, como conexões de banco de dados, a partir de um servidor de aplicação ou outro contexto.</p>
+</li>
+<li>
+<p>Ele permite que as configurações de conexão (como URL, usuário e senha) sejam centralizadas e gerenciadas externamente, facilitando a manutenção e a escalabilidade.</p>
+</li>
+</ol>
+<p>Em resumo, o JDBC é uma API para acessar bancos de dados diretamente, enquanto o JNDI é usado para obter referências a recursos, como conexões de banco de dados, de forma mais flexível e centralizada.</p>
+        </div>
+    </article>
+
+    <footer class="article-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <!-- Copy code functionality -->
+    <script>
+        // Adicionar botões de copiar código
+        document.querySelectorAll('pre code').forEach((block) => {
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copiar';
+            button.onclick = () => {
+                navigator.clipboard.writeText(block.textContent);
+                button.textContent = 'Copiado!';
+                setTimeout(() => button.textContent = 'Copiar', 2000);
+            };
+            block.parentNode.appendChild(button);
+        });
+    </script>
+</body>
+</html>

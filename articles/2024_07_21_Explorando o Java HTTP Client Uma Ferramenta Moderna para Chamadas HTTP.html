@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre explorando o java http client: uma ferramenta moderna para chamadas http">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Explorando o Java HTTP Client: Uma Ferramenta Moderna para Chamadas HTTP">
+    <meta property="og:description" content="Artigo técnico sobre explorando o java http client: uma ferramenta moderna para chamadas http">
+    <meta property="og:type" content="article">
+    <meta property="og:author" content="Christian Mulato">
+    <meta property="og:article:published_time" content="21/07/2024">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Explorando o Java HTTP Client: Uma Ferramenta Moderna para Chamadas HTTP">
+    <meta name="twitter:description" content="Artigo técnico sobre explorando o java http client: uma ferramenta moderna para chamadas http">
+    
+    <title>Explorando o Java HTTP Client: Uma Ferramenta Moderna para Chamadas HTTP | Christian Mulato Dev Blog</title>
+    
+    <!-- Fonts e Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    
+    <!-- Prism.js para syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Explorando o Java HTTP Client: Uma Ferramenta Moderna para Chamadas HTTP",
+        "description": "Artigo técnico sobre explorando o java http client: uma ferramenta moderna para chamadas http",
+        "author": {
+            "@type": "Person",
+            "name": "Christian Mulato"
+        },
+        "datePublished": "21/07/2024",
+        "category": "Java & Spring"
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">← Voltar ao Blog</a>
+            <div class="nav-links">
+                <a href="../index.html">Artigos</a>
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category">Java & Spring</span>
+                <time class="date" datetime="21/07/2024">21/07/2024</time>
+            </div>
+            <h1 class="article-title">Explorando o Java HTTP Client: Uma Ferramenta Moderna para Chamadas HTTP</h1>
+            <div class="author-info">
+                <span>Por <a href="https://www.linkedin.com/in/chmulato/" target="_blank">Christian Mulato</a></span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">Java</span>
+            </div>
+        </header>
+        
+        <div class="article-content">
+            <p><img alt="Explorando o Java HTTP Client do Java 11+." src="img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image35.png" /></p>
+<p>Explorando o Java HTTP Client do Java 11+.</p>
+<p>Explorando o Java HTTP Client: Uma Ferramenta Moderna para Chamadas HTTP</p>
+<p><img alt="Christian Mulato" src="img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image36.jpg" /></p>
+<p>Christian Mulato</p>
+<p>Desenvolvedor Java Sênior na Develcode</p>
+<p>21 de julho de 2024</p>
+<p>Olá, desenvolvedores Java! Hoje, vamos mergulhar em um recurso poderoso introduzido no Java 11 - o Java HTTP Client. Esta API moderna e versátil supera as limitações da antiga HttpURLConnection, oferecendo uma interface mais intuitiva e fácil de usar.</p>
+<p>O Java HTTP Client suporta HTTP/2 e WebSocket, além de permitir o envio de requisições síncronas e assíncronas. Ele pode lidar com diferentes tipos de corpo de requisição e resposta, como String, InputStream, File e diretamente para um Subscriber do java.util.concurrent.Flow. Além disso, ele também suporta a configuração de tempo limite de requisição, autenticação automática e redirecionamento.</p>
+<p>Neste artigo, vamos explorar como usar o Java HTTP Client, desde a criação de uma instância até a configuração de várias opções, como timeout, proxy e autenticação. Também vamos aprender a fazer solicitações GET e POST, a analisar respostas e a lidar com diferentes códigos de status HTTP. Além disso, vamos discutir como testar suas chamadas HTTP e comparar o Java HTTP Client com outras bibliotecas populares.</p>
+<p>Então, se você está procurando uma alternativa moderna e poderosa para fazer chamadas HTTP em comparação com a HttpURLConnection, continue lendo!</p>
+<p>Aqui estão os tópicos mencionados no documento em ordem de apresentação:</p>
+<ul>
+<li>Introdução ao Java HTTP Client.</li>
+<li>Configuração do HttpClient.</li>
+<li>Envio de Requisições GET.</li>
+<li>Análise da Resposta.</li>
+<li>Envio de Requisições POST.</li>
+<li>Tratamento de Respostas.</li>
+<li>Trabalhando com Headers.</li>
+<li>Tratamento de Erros e Exceções.</li>
+<li>AsyncHttpClient e Chamadas Assíncronas.</li>
+<li>Testes Unitários para Clientes HTTP.</li>
+<li>Comparação com Outras Bibliotecas.</li>
+</ul>
+<p>Cada tópico aborda diferentes aspectos do Java HTTP Client, desde a introdução e configuração até o tratamento de erros e comparações com outras bibliotecas. Isso deve fornecer uma visão abrangente do Java HTTP Client para vocês.</p>
+<p>Introdução ao Java HTTP Client:</p>
+<p>O Java HTTP Client é uma API moderna e versátil introduzida no Java 11 para lidar com requisições HTTP. Ele supera as limitações da antiga HttpURLConnection ao oferecer uma API mais intuitiva e fácil de usar, com suporte para HTTP/2 e WebSocket, além de permitir o envio de requisições síncronas e assíncronas. A capacidade de lidar com diferentes tipos de corpo de requisição e resposta, como String, InputStream, File e diretamente para um Subscriber do java.util.concurrent.Flow, torna o Java HTTP Client uma escolha superior. Além disso, ele também suporta a configuração de tempo limite de requisição, autenticação automática e redirecionamento, o que o torna uma alternativa moderna e poderosa para fazer chamadas HTTP em comparação com a HttpURLConnection.</p>
+<p>Para usar o Java HTTP Client, você precisa seguir alguns passos. Aqui está um exemplo simples de como fazer uma requisição GET:</p>
+<p>![Texto</p>
+<p>Descrição gerada automaticamente](img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image37.png)</p>
+<p>Exemplo simples de como fazer uma requisição GET com Java HTTP Client.</p>
+<p>Neste exemplo, primeiro criamos um HttpClient usando o método newHttpClient().</p>
+<p>Em seguida, construímos uma requisição HTTP GET para “http://example.com” usando HttpRequest.newBuilder().</p>
+<p>Finalmente, enviamos a requisição e obtemos a resposta como uma String usando client.send().</p>
+<p>Este é um exemplo básico. O Java HTTP Client é muito mais poderoso e flexível, permitindo que você faça requisições POST, lidar com redirecionamentos, autenticação e muito mais.</p>
+<p>Configuração do HttpClient:</p>
+<p>Vamos abordar aqui um exemplo de como você pode criar uma instância de HttpClient e configurá-la com opções como timeout, proxy e autenticação em Java:</p>
+<p>![Texto</p>
+<p>Descrição gerada automaticamente](img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image38.png)</p>
+<p>Exemplo de como criar uma instância de HttpClient.</p>
+<p>Este código cria um HttpClient com as seguintes configurações:</p>
+<ul>
+<li>Versão HTTP: HTTP/2</li>
+<li>Redirecionamento: Normal</li>
+<li>Timeout de conexão: 20 segundos</li>
+<li>Proxy: proxy.example.com na porta 8080</li>
+<li>Autenticação: Usuário “username” com senha “password”</li>
+</ul>
+<p>Em seguida, ele cria uma HttpRequest para “http://example.com”, envia a solicitação e imprime a resposta.</p>
+<p>Por favor, substitua “proxy.example.com”, “username”, “password” e “http://example.com” pelos valores reais que você deseja usar.</p>
+<p>Você pode configurar o timeout de leitura usando o método ofSeconds da classe Duration no HttpClient.</p>
+<p>Aqui está um exemplo:</p>
+<p>![Texto</p>
+<p>Descrição gerada automaticamente com confiança baixa](img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image39.png)</p>
+<p>Exemplo de como criar uma instância de HttpClient com timeout.</p>
+<p>Neste exemplo, o timeout de conexão é configurado para 10 segundos. Se a conexão não for estabelecida dentro deste período, uma exceção será lançada.</p>
+<p>No entanto, a partir do Java 11, o HttpClient não fornece um método direto para configurar o timeout de leitura.</p>
+<p>O timeout de leitura é geralmente manipulado no lado do servidor.</p>
+<p>Se o servidor não enviar uma resposta dentro de um determinado período de tempo, ele fechará a conexão. Nesse caso, o HttpClient lançará uma exceção.</p>
+<p>Se você precisar de um controle mais granular sobre o timeout de leitura, pode ser necessário usar uma biblioteca de terceiros que ofereça esse recurso, como o Apache HttpClient ou o OkHttp.</p>
+<p>Envio de Requisições GET:</p>
+<p>Como podemos fazer uma requisição HTTP GET usando o Java HTTP Client:</p>
+<p>![Interface gráfica do usuário, Texto, Aplicativo</p>
+<p>Descrição gerada automaticamente](img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image40.png)</p>
+<p>Exemplo de requisição HTTP GET em código Java com a biblioteca Java HTTP Client.</p>
+<p>Este exemplo, estamos criando um novo HttpClient e construindo uma solicitação HTTP GET para “http://example.com”.</p>
+<p>Em seguida, enviamos a solicitação e imprimimos o código de status e o corpo da resposta.</p>
+<p>Lembre-se de substituir “http://example.com” pelo URL do seu destino.</p>
+<p>Além disso, este é um exemplo simples e não inclui o tratamento de erros adequado que você deve incluir no código de produção.</p>
+<p>Por exemplo, você pode querer adicionar um bloco try-catch para lidar com possíveis exceções.</p>
+<p>Para analisar a resposta JSON e converter em objetos Java, você pode usar a biblioteca Jackson. Aqui está um exemplo de como você pode fazer isso:</p>
+<p>![Interface gráfica do usuário</p>
+<p>Descrição gerada automaticamente com confiança baixa](img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image41.png)</p>
+<p>Exemplo de uma requisição passando um objeto JSON com a bilbioteca Java HTTP Client.</p>
+<p>Neste exemplo, estamos usando a biblioteca Jackson para converter a resposta JSON em um Map<String, Object>. Primeiro, criamos um novo ObjectMapper, que é a classe principal da biblioteca Jackson. Em seguida, usamos o método readValue para converter a resposta JSON em um mapa.</p>
+<p>Lembre-se de adicionar a dependência da biblioteca Jackson ao seu projeto.</p>
+<p>Além disso, este é um exemplo simples e não inclui o tratamento de erros adequado que você deve incluir no código de produção.</p>
+<p>Por exemplo, você pode querer adicionar um bloco try-catch para lidar com possíveis exceções.</p>
+<p>Além disso, você pode querer criar classes de modelo para representar a estrutura do seu JSON, em vez de usar um mapa genérico.</p>
+<p>Isso tornará seu código mais legível e seguro.</p>
+<p>Como faço para converter JSON em objetos Java usando outras bibliotecas, como o Gson?</p>
+<p>Você pode usar a biblioteca Java Gson, do Google, para converter JSON em objetos Java.</p>
+<p>Aqui está um exemplo de como você pode fazer isso:</p>
+<p>![Texto</p>
+<p>Descrição gerada automaticamente com confiança média](img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image42.png)</p>
+<p>Exemplo de código Java para conversão de JSON para um objeto Java.</p>
+<p>Neste exemplo, estamos usando a biblioteca Gson para converter a resposta JSON em um Map<String, Object>. Primeiro, criamos um novo objeto Gson. Em seguida, usamos o método fromJson para converter a resposta JSON em um mapa.</p>
+<p>Lembre-se de adicionar a dependência da biblioteca Gson ao seu projeto.</p>
+<p>Além disso, este é um exemplo simples e não inclui o tratamento de erros adequado que você deve incluir no código de produção. Por exemplo, você pode querer adicionar um bloco try-catch para lidar com possíveis exceções. Além disso, você pode querer criar classes de modelo para representar a estrutura do seu JSON, em vez de usar um mapa genérico. Isso tornará seu código mais legível e seguro.</p>
+<p>Envio de Requisições POST:</p>
+<p>Vamos demostrar um outro exemplo de como você pode preparar e enviar uma solicitação HTTP POST usando o Java HTTP Client:</p>
+<p><img alt="Imagem do artigo" src="img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image43.png" /></p>
+<p>Exemplo de requisição HTTP POST em código Java com a biblioteca Java HTTP Client.</p>
+<p>Neste exemplo, estamos criando um novo HttpClient e construindo uma solicitação HTTP POST para “http://example.com”. Estamos enviando um JSON como corpo da solicitação. Em seguida, enviamos a solicitação e imprimimos o código de status e o corpo da resposta.</p>
+<p>Lembre-se de substituir “http://example.com” pelo URL do seu destino e "{\"key\":\"value\"}" pelo seu JSON. Além disso, este é um exemplo simples e não inclui o tratamento de erros adequado que você deve incluir no código de produção.</p>
+<p>Por exemplo, você pode querer adicionar um bloco try-catch para lidar com possíveis exceções. Além disso, você pode querer adicionar mais cabeçalhos conforme necessário para a sua solicitação. Por exemplo, alguns servidores podem exigir um cabeçalho de autenticação.</p>
+<p>Aqui está um exemplo de como você pode enviar dados no corpo de uma solicitação HTTP POST usando o Java HTTP Client. Vamos mostrar dois exemplos, um para enviar dados JSON e outro para enviar dados de formulário.</p>
+<p>Exemplo 1: Enviando dados JSON</p>
+<p>![Linha do tempo</p>
+<p>Descrição gerada automaticamente com confiança média](img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image44.png)</p>
+<p>Exemplo de requisição HTTP POST em código Java com envio de dados JSON.</p>
+<p>Exemplo 2: Enviando dados de formulário</p>
+<p>![Interface gráfica do usuário, Texto, Aplicativo</p>
+<p>Descrição gerada automaticamente](img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image45.png)</p>
+<p>Exemplo de requisição HTTP POST em código Java com envio de dados do formulário.</p>
+<p>No primeiro exemplo, estamos enviando um JSON como corpo da solicitação.</p>
+<p>No segundo exemplo, estamos enviando dados de formulário.</p>
+<p>Para isso, codificamos cada par de chave-valor como chave=valor e juntamos todos os pares com &amp; para formar a string do corpo da solicitação.</p>
+<p>Lembre-se de substituir “http://exemplo.com” pelo URL do seu destino e os dados do formulário ou JSON pelos seus próprios dados. Além disso, estes são exemplos simples e não incluem o tratamento de erros adequado que você deve incluir no código de produção.</p>
+<p>Por exemplo, você pode querer adicionar um bloco try-catch para lidar com possíveis exceções. Além disso, você pode querer adicionar mais cabeçalhos conforme necessário para a sua solicitação. Por exemplo, alguns servidores podem exigir um cabeçalho de autenticação.</p>
+<p>Tratamento de Respostas, como lidar com diferentes códigos de status HTTP (200, 404, 500):</p>
+<p>Aqui está um exemplo de como você pode lidar com diferentes códigos de status HTTP usando o Java HTTP Client:</p>
+<p>![Uma imagem contendo Texto</p>
+<p>Descrição gerada automaticamente](img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image46.png)</p>
+<p>Exemplo de código de requisição com Java HTTP Client com tratamento do status de resposta.</p>
+<p>Neste exemplo, estamos verificando o código de status da resposta HTTP e lidando com diferentes códigos de status.</p>
+<p>Se o código de status for entre 200 e 299, isso significa que a solicitação foi bem-sucedida e podemos ler o corpo da resposta.</p>
+<p>Se o código de status for 404, isso significa que o recurso solicitado não foi encontrado.</p>
+<p>Se o código de status for entre 500 e 599, isso significa que houve um erro no servidor.</p>
+<p>Lembre-se de substituir “http://exemplo.com” pelo URL do seu destino.</p>
+<p>Além disso, este é um exemplo simples e não inclui o tratamento de erros adequado que você deve incluir no código de produção.</p>
+<p>Por exemplo, você pode querer adicionar um bloco try-catch para lidar com possíveis exceções. Além disso, você pode querer lidar com outros códigos de status HTTP conforme necessário para a sua aplicação. Em alguns servidores podem retornar um código de status 401 para solicitações não autenticadas. Nesse caso, você pode querer adicionar um caso para lidar com o código de status 401.Ao receber uma resposta HTTP, você pode processar a resposta de várias maneiras.</p>
+<p>Se a resposta for bem-sucedida (código de status HTTP 200), você pode extrair informações do corpo da resposta. O corpo da resposta pode ser um JSON, XML ou outro formato de dados. Para extrair informações, você pode usar bibliotecas como Jackson ou Gson para converter a resposta em objetos Java. Por exemplo, se a resposta for um JSON, você pode converter o JSON em um Map<String, Object> ou em uma classe de modelo Java que corresponda à estrutura do JSON. Isso permite que você acesse facilmente as informações na resposta.</p>
+<p>Trabalhando com Headers:</p>
+<p>Vamos mostrar aqui como adicionar, modificar e ler cabeçalhos HTTP em solicitações e respostas. Um exemplo de como você pode adicionar, modificar e ler cabeçalhos HTTP usando o HttpClient do Java.</p>
+<p><img alt="Imagem do artigo" src="img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image47.png" /></p>
+<p>Exemplo de código de requisição com Java HTTP Client com modificação do cabeçalho HTTP.</p>
+<p>Neste exemplo, primeiro criamos um HttpClient e uma HttpRequest. Adicionamos um cabeçalho personalizado à solicitação com o método .header(). Em seguida, enviamos a solicitação e obtemos a resposta. Para ler os cabeçalhos da resposta, usamos o método .headers() na resposta, que retorna um HttpHeaders. Em seguida, imprimimos todos os cabeçalhos. Para modificar um cabeçalho, criamos uma nova solicitação com o mesmo URI que a solicitação original, mas com um valor de cabeçalho diferente. Em seguida, enviamos a nova solicitação e lemos os cabeçalhos da nova resposta da mesma maneira.</p>
+<p>Tratamento de Erros e Exceções:</p>
+<p>Para o tratamento de erros e exceções, poderia explicar como tratar exceções relacionadas a conexões, timeouts e erros de servidor. Aqui está um exemplo de como você pode tratar exceções usando o HttpClient do Java.</p>
+<p>![Uma imagem contendo Tabela</p>
+<p>Descrição gerada automaticamente](img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image48.png)</p>
+<p>Exemplo de código de requisição com Java HTTP Client tratamento de erro try-catch.</p>
+<p>Neste exemplo, primeiro criamos um HttpClient e uma HttpRequest. Em seguida, enviamos a solicitação dentro de um bloco try-catch.</p>
+<p>Se a solicitação for bem-sucedida, verificamos o código de status da resposta. Se o código de status for entre 200 e 299, a solicitação foi bem-sucedida. Se o código de status for 300 ou superior, houve um erro no servidor.</p>
+<p>Se ocorrer uma exceção durante o envio da solicitação, ela será capturada e tratada no bloco catch. Tratamos três tipos de exceções neste exemplo:</p>
+<ul>
+<li>HttpTimeoutException: Esta exceção é lançada quando a solicitação excede o tempo limite.</li>
+<li>IOException: Esta exceção é lançada quando ocorre um erro de conexão.</li>
+<li>InterruptedException: Esta exceção é lançada quando a solicitação é interrompida.</li>
+</ul>
+<p>Cada tipo de exceção é tratado de maneira diferente, imprimindo uma mensagem de erro apropriada. Você pode personalizar o tratamento de exceções para atender às suas necessidades específicas. Por exemplo, você pode tentar enviar a solicitação novamente se ela exceder o tempo limite, ou você pode registrar o erro de conexão para análise posterior.</p>
+<p>AsyncHttpClient e Chamadas Assíncronas:</p>
+<p>O Java HTTP Client suporta tanto chamadas síncronas quanto assíncronas. As chamadas síncronas são bloqueantes, o que significa que o thread que faz a chamada é bloqueado até que a resposta seja recebida. As chamadas assíncronas, por outro lado, são não bloqueantes. Elas retornam imediatamente com um CompletableFuture, que pode ser usado para processar a resposta quando ela estiver disponível.</p>
+<p>Aqui está um exemplo de como você pode fazer uma chamada assíncrona com o HttpClient:</p>
+<p>![Uma imagem contendo Linha do tempo</p>
+<p>Descrição gerada automaticamente](img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image49.png)</p>
+<p>Exemplo de código de requisição com Java HTTP Client com chamada assíncrona.</p>
+<p>Neste exemplo, usamos o método sendAsync() para enviar a solicitação, que retorna um CompletableFuture. Usamos o método thenAccept() no CompletableFuture para processar a resposta quando ela estiver disponível.</p>
+<p>Se ocorrer um erro ao enviar a solicitação, ele será tratado no bloco exceptionally().</p>
+<p>Os benefícios das chamadas assíncronas incluem:</p>
+<ul>
+<li>Não bloqueantes: As chamadas assíncronas são não bloqueantes, o que significa que seu aplicativo pode continuar fazendo outras coisas enquanto espera pela resposta.</li>
+<li>Eficiência de recursos: As chamadas assíncronas podem ser mais eficientes em termos de recursos, especialmente se seu aplicativo precisa fazer muitas solicitações de rede, pois elas podem ser feitas em paralelo.</li>
+<li>Melhor desempenho: Em muitos casos, as chamadas assíncronas podem melhorar o desempenho do seu aplicativo, pois elas permitem que seu aplicativo faça um melhor uso dos recursos do sistema.</li>
+</ul>
+<p>No entanto, as chamadas assíncronas também podem ser mais complexas de implementar e depurar do que as chamadas síncronas, pois você precisa lidar com chamadas assíncronas "futures" e possivelmente com concorrência. Portanto, é importante entender bem esses conceitos antes de decidir usar chamadas assíncronas.</p>
+<p>Testes Unitários para Clientes HTTP:</p>
+<p>Vamos abordar como testar suas chamadas HTTP usando bibliotecas como JUnit e Mockito. Aqui está um exemplo de como você pode testar suas chamadas HTTP usando JUnit e Mockito.</p>
+<p>Primeiro, você precisará adicionar as dependências do JUnit e Mockito ao seu arquivo pom.xml se estiver usando Maven:</p>
+<p>![Texto, Linha do tempo</p>
+<p>Descrição gerada automaticamente](img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image50.png)</p>
+<p>Dependências do JUnit e Mockito no Maven.</p>
+<p>Aqui está um exemplo de teste unitário para uma classe que faz uma chamada HTTP:</p>
+<p>![Uma imagem contendo Tabela</p>
+<p>Descrição gerada automaticamente](img/2024_07_21_Explorando o Java HTTP Client Uma Ferramenta Moderna para Chamadas HTTP_image51.png)</p>
+<p>Exemplo de teste unitário com código aplicando a biblioteca Java HTTP Client.</p>
+<p>Neste exemplo, criamos um HttpClient e HttpResponse falsos usando Mockito.mock(). Em seguida, definimos o comportamento do HttpClient falso para retornar a HttpResponse falsa quando o método send() é chamado. Definimos o comportamento da HttpResponse falsa para retornar uma string fixa quando o método body() é chamado.</p>
+<p>Em seguida, criamos uma HttpRequest e usamos o HttpClient falso para enviá-la. Verificamos se a resposta é a esperada usando assertEquals().</p>
+<p>Este é um exemplo simples, mas você pode criar testes mais complexos dependendo das suas necessidades. Por exemplo, você pode verificar se o método send() foi chamado com os parâmetros corretos, ou você pode testar como seu código lida com diferentes códigos de status de resposta.</p>
+<p>Comparação com Outras Bibliotecas:</p>
+<p>Em comparação do Java HTTP Client com outras bibliotecas populares como Apache HttpClient, OkHttp e Retrofit:</p>
+<ul>
+<li>Java HTTP Client: A partir do Java 11, o Java HTTP Client tornou-se parte da biblioteca padrão do Java (java.net.http). Ele suporta HTTP/1.1 e HTTP/2, bem como comunicação WebSocket. Ele também suporta chamadas síncronas e assíncronas, o que é uma grande vantagem. Além disso, por ser parte da biblioteca padrão do Java, não requer dependências adicionais, o que pode simplificar o gerenciamento de dependências.</li>
+<li>Apache HttpClient: O Apache HttpClient existe há muito tempo e é uma biblioteca madura e rica em recursos. Ele suporta HTTP/1.1, mas não suporta HTTP/2 ou WebSocket. Ele também não suporta chamadas assíncronas fora da caixa, embora exista uma biblioteca separada (HttpAsyncClient) que adiciona esse suporte. Uma vantagem do Apache HttpClient é que ele oferece um controle muito granular sobre a configuração da conexão e do protocolo.</li>
+<li>OkHttp: O OkHttp é uma biblioteca moderna que suporta HTTP/2 e WebSocket, além de HTTP/1.1. Ele também suporta chamadas síncronas e assíncronas. Uma característica notável do OkHttp é que ele possui uma API muito limpa e fácil de usar. Ele também tem um bom suporte para interceptadores, que podem ser usados para adicionar comportamentos personalizados às solicitações e respostas.</li>
+<li>Retrofit: O Retrofit é na verdade um tipo diferente de biblioteca em comparação com as outras mencionadas aqui. Em vez de ser uma biblioteca de cliente HTTP de baixo nível, o Retrofit é um “conversor de tipo seguro para HTTP”. Ele usa anotações em interfaces para gerar um cliente HTTP. Isso pode tornar o código muito mais limpo e fácil de entender, especialmente para APIs REST grandes e complexas. No entanto, o Retrofit não é uma biblioteca de cliente HTTP completa por si só - ele precisa ser emparelhado com uma biblioteca de cliente HTTP de baixo nível, como OkHttp.</li>
+</ul>
+<p>Em resumo, o Java HTTP Client é uma escolha sólida para muitos casos de uso, especialmente se você estiver usando o Java 11 ou posterior e quiser manter suas dependências ao mínimo. Ele pode não ter todos os recursos avançados de bibliotecas como Apache HttpClient ou OkHttp, mas para muitos casos de uso, os recursos que ele oferece serão mais do que suficientes. Além disso, o suporte para HTTP/2 e WebSocket, bem como chamadas assíncronas, são vantajosas.</p>
+<p>Conclusão</p>
+<p>Neste artigo, exploramos o poder e a versatilidade do Java HTTP Client, uma adição bem-vinda ao Java 11 que supera as limitações da antiga HttpURLConnection. Com suporte para HTTP/2 e WebSocket, além de uma variedade de opções de configuração, o Java HTTP Client é uma ferramenta indispensável para qualquer desenvolvedor Java que trabalhe com chamadas HTTP.</p>
+<p>Aprendemos como fazer solicitações GET e POST, configurar várias opções e analisar respostas. Também discutimos como testar suas chamadas HTTP e comparamos o Java HTTP Client com outras bibliotecas populares.</p>
+<p>Esperamos que este artigo tenha sido útil para você entender melhor o Java HTTP Client e como ele pode ser usado para melhorar suas aplicações. Lembre-se, a prática leva à perfeição. Portanto, incentive-se a experimentar o Java HTTP Client em seus projetos e descubra por si mesmo o quão poderoso ele pode ser.</p>
+<p>Obrigado por ler e feliz codificação!</p>
+        </div>
+    </article>
+
+    <footer class="article-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <!-- Copy code functionality -->
+    <script>
+        // Adicionar botões de copiar código
+        document.querySelectorAll('pre code').forEach((block) => {
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copiar';
+            button.onclick = () => {
+                navigator.clipboard.writeText(block.textContent);
+                button.textContent = 'Copiado!';
+                setTimeout(() => button.textContent = 'Copiar', 2000);
+            };
+            block.parentNode.appendChild(button);
+        });
+    </script>
+</body>
+</html>

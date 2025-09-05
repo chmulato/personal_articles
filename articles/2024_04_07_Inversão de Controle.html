@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre inversão de controle (ioc)">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Desenvolvimento, Tecnologia, Programação">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Inversão de Controle (IoC)">
+    <meta property="og:description" content="Artigo técnico sobre inversão de controle (ioc)">
+    <meta property="og:type" content="article">
+    <meta property="og:author" content="Christian Mulato">
+    <meta property="og:article:published_time" content="07/04/2024">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Inversão de Controle (IoC)">
+    <meta name="twitter:description" content="Artigo técnico sobre inversão de controle (ioc)">
+    
+    <title>Inversão de Controle (IoC) | Christian Mulato Dev Blog</title>
+    
+    <!-- Fonts e Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    
+    <!-- Prism.js para syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Inversão de Controle (IoC)",
+        "description": "Artigo técnico sobre inversão de controle (ioc)",
+        "author": {
+            "@type": "Person",
+            "name": "Christian Mulato"
+        },
+        "datePublished": "07/04/2024",
+        "category": "Desenvolvimento"
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">← Voltar ao Blog</a>
+            <div class="nav-links">
+                <a href="../index.html">Artigos</a>
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category">Desenvolvimento</span>
+                <time class="date" datetime="07/04/2024">07/04/2024</time>
+            </div>
+            <h1 class="article-title">Inversão de Controle (IoC)</h1>
+            <div class="author-info">
+                <span>Por <a href="https://www.linkedin.com/in/chmulato/" target="_blank">Christian Mulato</a></span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">Desenvolvimento</span> <span class="tag">Tecnologia</span> <span class="tag">Programação</span>
+            </div>
+        </header>
+        
+        <div class="article-content">
+            <p><img alt="O conceito da inversão de controle." src="img/2024_04_07_Inversão de Controle_image7.png" /></p>
+<p>O conceito da inversão de controle.</p>
+<p>Inversão de Controle (IoC)</p>
+<p><img alt="Christian Mulato" src="img/2024_04_07_Inversão de Controle_image8.jpg" /></p>
+<p>Christian Mulato</p>
+<p>Desenvolvedor Java Sênior na Develcode</p>
+<p>7 de abril de 2024</p>
+<p>A ideia de Inversão de Controle (IoC, do inglês Inversion of Control) é utilizada para aumentar a modularidade dos sistemas, criar extensibilidade e usufruir melhor da Programação Orientada a Objetos (OOP). O termo inicial foi utilizado por Michael Mattson, mas ficou popular em 2004 após ser citado por Martin Fowler e Robert C. Martin (Uncle Bob). A Inversão de Controle é implementada através da Injeção de Dependência, segundo a qual as dependências de um objeto não devem ser definidas diretamente dentro dele no momento de sua criação, mas devem ser inseridas (injetadas) dinamicamente, de acordo com alguma configuração mutável.</p>
+<p>E a primeira ideia da Arquitetura Hexagonal foi proposta por Alistair Cockburn em meados dos anos 90. Esta arquitetura é também conhecida como "ports and adapters" e foi criada com o objetivo de separar as preocupações em um sistema de software. Ela se baseia na ideia de que um sistema pode ser dividido em três partes principais: o núcleo da aplicação, as interfaces do usuário e as interfaces externas.</p>
+<p>A ideia central da Arquitetura Hexagonal é que o núcleo do sistema, que contém a lógica de negócio, deve ser independente das tecnologias externas, como bancos de dados, frameworks e interfaces de usuário. Para isso, a Arquitetura Hexagonal propõe a utilização de portas (ports) e adaptadores (adapters).</p>
+<p>Essa abordagem é particularmente crucial para programas projetados para ter longa durabilidade, assegurando que as mudanças nos métodos de consumo não exijam alterações extensivas no núcleo do software.</p>
+<p>Existe uma relação entre a Inversão de Controle (IoC) e a Arquitetura Hexagonal.</p>
+<p>Inversão de Controle (IoC)</p>
+<p>A Inversão de Controle (IoC) é um princípio fundamental no desenvolvimento de software. Ele propõe uma mudança significativa na maneira como organizamos e estruturamos nosso código. Vamos explorar os conceitos-chave:</p>
+<ol>
+<li>
+<p>Controle do Fluxo:</p>
+</li>
+<li>
+<p>Tradicionalmente, o fluxo de controle em um programa era determinado pelo próprio código. O desenvolvedor especificava a ordem das operações, como em uma receita de bolo.</p>
+</li>
+<li>
+<p>Com o avanço das interfaces gráficas e a necessidade de interações mais flexíveis, essa abordagem tornou-se limitada. Os usuários passaram a controlar o fluxo, clicando em botões, preenchendo campos e tomando decisões.</p>
+</li>
+<li>
+<p>A IoC inverte esse controle: agora, quem determina o fluxo não é o código, mas entidades externas, como usuários, outras aplicações ou frameworks.</p>
+</li>
+<li>
+<p>Benefícios da IoC:</p>
+</li>
+<li>
+<p>Desacoplamento: A IoC reduz o acoplamento entre componentes, tornando o código mais flexível e fácil de manter.</p>
+</li>
+<li>
+<p>Reusabilidade: Ao delegar responsabilidades, podemos reutilizar componentes em diferentes contextos.</p>
+</li>
+<li>
+<p>Testabilidade: A IoC facilita a criação de testes unitários e mocks.</p>
+</li>
+<li>
+<p>Implementação:</p>
+</li>
+<li>
+<p>Na prática, a IoC é alcançada por meio da dependência de abstrações (interfaces) em vez de implementações concretas.</p>
+</li>
+<li>
+<p>Em vez de criar objetos dentro de uma classe, recebemos esses objetos como parâmetros (por exemplo, por meio de construtores).</p>
+</li>
+</ol>
+<p><img alt="Imagem do artigo" src="img/2024_04_07_Inversão de Controle_image9.jpg" /></p>
+<p>Arquitetura Hexagonal aplicada com a IoC.</p>
+<p>Arquitetura Hexagonal (Ports and Adapters)</p>
+<p>A Arquitetura Hexagonal, também conhecida como Ports and Adapters, é um padrão arquitetural que visa isolar a lógica de negócios da aplicação do mundo externo. Vejamos os principais pontos:</p>
+<ol>
+<li>
+<p>Camadas e Responsabilidades:</p>
+</li>
+<li>
+<p>A Arquitetura Hexagonal organiza o código em camadas, cada uma com uma responsabilidade específica.</p>
+</li>
+<li>
+<p>As camadas incluem a lógica de negócios, interfaces de usuário, bancos de dados e outros sistemas externos.</p>
+</li>
+<li>
+<p>Portas e Adaptadores:</p>
+</li>
+<li>
+<p>As Portas são interfaces que as camadas de baixo nível expõem. Elas definem como a aplicação se comunica com o mundo externo.</p>
+</li>
+<li>
+<p>Os Adaptadores são as implementações dessas interfaces. Eles conectam as Portas às tecnologias específicas (como bancos de dados, APIs, etc.).</p>
+</li>
+<li>
+<p>Relação com a IoC:</p>
+</li>
+<li>
+<p>A Arquitetura Hexagonal e a IoC estão relacionadas porque ambas buscam o desacoplamento e a dependência de abstrações.</p>
+</li>
+<li>
+<p>Na Arquitetura Hexagonal, as Portas representam abstrações, e os Adaptadores são as implementações concretas.</p>
+</li>
+<li>
+<p>Essa abordagem permite que o código seja mais flexível e adaptável a diferentes contextos.</p>
+</li>
+</ol>
+<p>Em resumo, a IoC e a Arquitetura Hexagonal compartilham o objetivo de promover o desacoplamento e a dependência de abstrações, tornando o código mais modular e fácil de evoluir.</p>
+        </div>
+    </article>
+
+    <footer class="article-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <!-- Copy code functionality -->
+    <script>
+        // Adicionar botões de copiar código
+        document.querySelectorAll('pre code').forEach((block) => {
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copiar';
+            button.onclick = () => {
+                navigator.clipboard.writeText(block.textContent);
+                button.textContent = 'Copiado!';
+                setTimeout(() => button.textContent = 'Copiar', 2000);
+            };
+            block.parentNode.appendChild(button);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre criando endpoints get e post em java com openapi e autenticação via token">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, APIs, REST, IA, Inteligência Artificial">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token">
+    <meta property="og:description" content="Artigo técnico sobre criando endpoints get e post em java com openapi e autenticação via token">
+    <meta property="og:type" content="article">
+    <meta property="og:author" content="Christian Mulato">
+    <meta property="og:article:published_time" content="18/08/2024">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token">
+    <meta name="twitter:description" content="Artigo técnico sobre criando endpoints get e post em java com openapi e autenticação via token">
+    
+    <title>Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token | Christian Mulato Dev Blog</title>
+    
+    <!-- Fonts e Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    
+    <!-- Prism.js para syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token",
+        "description": "Artigo técnico sobre criando endpoints get e post em java com openapi e autenticação via token",
+        "author": {
+            "@type": "Person",
+            "name": "Christian Mulato"
+        },
+        "datePublished": "18/08/2024",
+        "category": "Java & Spring"
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">← Voltar ao Blog</a>
+            <div class="nav-links">
+                <a href="../index.html">Artigos</a>
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category">Java & Spring</span>
+                <time class="date" datetime="18/08/2024">18/08/2024</time>
+            </div>
+            <h1 class="article-title">Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token</h1>
+            <div class="author-info">
+                <span>Por <a href="https://www.linkedin.com/in/chmulato/" target="_blank">Christian Mulato</a></span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">REST</span> <span class="tag">IA</span> <span class="tag">Inteligência Artificial</span>
+            </div>
+        </header>
+        
+        <div class="article-content">
+            <p><img alt="Endpoint com Framework Spring Boot utilizando linguagem Java." src="img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image17.png" /></p>
+<p>Endpoint com Framework Spring Boot utilizando linguagem Java.</p>
+<p>Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token</p>
+<p><img alt="Christian Mulato" src="img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image18.jpg" /></p>
+<p>Christian Mulato</p>
+<p>Desenvolvedor Java Sênior na Develcode</p>
+<p>18 de agosto de 2024</p>
+<ol>
+<li>Introdução</li>
+</ol>
+<p>Neste artigo, vamos aprender a criar endpoints GET e em uma aplicação Java utilizando Spring Boot e OpenAPI. Além disso, vamos configurar a autenticação via token JWT para proteger nossos endpoints.</p>
+<ol>
+<li>Configuração do Projeto</li>
+</ol>
+<p>Primeiro, vamos configurar nosso projeto Spring Boot *[vide rodapé]. No pom.xml, adicione as seguintes dependências:</p>
+<p><img alt="Imagem do artigo" src="img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image19.png" /></p>
+<p>Importando as dependências das bibliotecas necessárias para o Spring Boot.</p>
+<ol>
+<li>Criando o Endpoint GET</li>
+</ol>
+<p>Vamos criar um endpoint GET que retorna uma lista de itens. Primeiro, crie um controlador:</p>
+<p><img alt="Imagem do artigo" src="img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image20.png" /></p>
+<p>Classe Java para a criação do endpoint GET</p>
+<ol>
+<li>Criando o Endpoint POST</li>
+</ol>
+<p>Agora, vamos criar um endpoint POST que adiciona um novo item:</p>
+<p><img alt="Imagem do artigo" src="img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image21.png" /></p>
+<p>Classe Java para a criação do endpoint POST</p>
+<ol>
+<li>Configurando a Autenticação via Token JWT</li>
+</ol>
+<p>Para proteger nossos endpoints, vamos configurar a autenticação via token JWT. Primeiro, crie uma classe para gerar e validar tokens JWT:</p>
+<p><img alt="Imagem do artigo" src="img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image22.png" /></p>
+<p>Classe Java para a criação do Token de autenticação.</p>
+<ol>
+<li>Configurando o Spring Security</li>
+</ol>
+<p>Agora, configure o Spring Security para usar o JWT:</p>
+<p><img alt="Imagem do artigo" src="img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image23.png" /></p>
+<p>Classe Java para o controle de acesso ao endpoint.</p>
+<ol>
+<li>Documentando com OpenAPI</li>
+</ol>
+<p>Finalmente, vamos documentar nossos endpoints com OpenAPI. Adicione as anotações no controlador:</p>
+<p><img alt="Imagem do artigo" src="img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image24.png" /></p>
+<p>Classe Java com os endpoint GET e POST.</p>
+<ol>
+<li>Conclusão</li>
+</ol>
+<p>Neste artigo, aprendemos a criar endpoints GET e POST em Java utilizando Spring Boot e OpenAPI, além de configurar a autenticação via token JWT para proteger nossos endpoints. Com essas ferramentas, podemos criar APIs seguras e bem documentadas.</p>
+<p>Nota:</p>
+<ul>
+<li>Spring Boot é um framework baseado no Spring que simplifica o desenvolvimento de aplicações Java, eliminando a necessidade de configurações extensas. Ele oferece uma abordagem opinativa para a configuração, permitindo que os desenvolvedores criem rapidamente aplicações robustas e prontas para produção com configurações padrão sensatas. Com recursos como inicializadores automáticos, servidores embutidos e uma vasta gama de bibliotecas integradas, o Spring Boot facilita a criação de micros serviços e aplicações web escaláveis e de alta performance.</li>
+</ul>
+        </div>
+    </article>
+
+    <footer class="article-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <!-- Copy code functionality -->
+    <script>
+        // Adicionar botões de copiar código
+        document.querySelectorAll('pre code').forEach((block) => {
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copiar';
+            button.onclick = () => {
+                navigator.clipboard.writeText(block.textContent);
+                button.textContent = 'Copiado!';
+                setTimeout(() => button.textContent = 'Copiar', 2000);
+            };
+            block.parentNode.appendChild(button);
+        });
+    </script>
+</body>
+</html>

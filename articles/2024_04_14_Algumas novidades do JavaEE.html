@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre algumas novidades do javaee">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Algumas novidades do JavaEE">
+    <meta property="og:description" content="Artigo técnico sobre algumas novidades do javaee">
+    <meta property="og:type" content="article">
+    <meta property="og:author" content="Christian Mulato">
+    <meta property="og:article:published_time" content="14/04/2024">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Algumas novidades do JavaEE">
+    <meta name="twitter:description" content="Artigo técnico sobre algumas novidades do javaee">
+    
+    <title>Algumas novidades do JavaEE | Christian Mulato Dev Blog</title>
+    
+    <!-- Fonts e Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    
+    <!-- Prism.js para syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Algumas novidades do JavaEE",
+        "description": "Artigo técnico sobre algumas novidades do javaee",
+        "author": {
+            "@type": "Person",
+            "name": "Christian Mulato"
+        },
+        "datePublished": "14/04/2024",
+        "category": "Java & Spring"
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">← Voltar ao Blog</a>
+            <div class="nav-links">
+                <a href="../index.html">Artigos</a>
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category">Java & Spring</span>
+                <time class="date" datetime="14/04/2024">14/04/2024</time>
+            </div>
+            <h1 class="article-title">Algumas novidades do JavaEE</h1>
+            <div class="author-info">
+                <span>Por <a href="https://www.linkedin.com/in/chmulato/" target="_blank">Christian Mulato</a></span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">Java</span>
+            </div>
+        </header>
+        
+        <div class="article-content">
+            <p><img alt="Novidades do Java Enterprise Edition (Atualmente chamado de Jakarta EE)" src="img/2024_04_14_Algumas novidades do JavaEE_image9.png" /></p>
+<p>Novidades do Java Enterprise Edition (Atualmente chamado de Jakarta EE)</p>
+<p>Algumas novidades do JavaEE</p>
+<p><img alt="Christian Mulato" src="img/2024_04_14_Algumas novidades do JavaEE_image10.jpg" /></p>
+<p>Christian Mulato</p>
+<p>Desenvolvedor Java Sênior na Develcode</p>
+<p>14 de abril de 2024</p>
+<p>A tecnologia JavaEE oferece suporte robusto para HTML5 e WebSockets, o que é uma grande vantagem para desenvolvedores que desejam construir aplicações web modernas e interativas. Vou explicar um pouco mais sobre cada um:</p>
+<p>HTML5 em JavaEE:</p>
+<p>O HTML5 trouxe uma série de melhorias para a marcação de páginas web, permitindo mais interatividade e compatibilidade com dispositivos móveis. Em JavaEE, o suporte ao HTML5 permite que os desenvolvedores utilizem novos tipos de formulários, elementos de áudio e vídeo, canvas para desenho, além de outras APIs para aplicações web ricas.</p>
+<p>WebSockets em JavaEE:</p>
+<p>WebSockets é uma tecnologia que permite comunicações bidirecionais e em tempo real entre clientes e servidores. Em Java EE, isso é implementado através da API de WebSocket, que faz parte da especificação desde o JavaEE 7. Com WebSockets, é possível estabelecer uma conexão persistente e de baixa latência que é ideal para aplicações que necessitam de atualizações em tempo real, como jogos online, chat, aplicações financeiras, entre outros.</p>
+<p>Aqui está um exemplo simplificado de como um servidor WebSocket pode ser implementado em Java EE:</p>
+<p><img alt="Imagem do artigo" src="img/2024_04_14_Algumas novidades do JavaEE_image11.png" /></p>
+<p>Exemplo de implementação do WebSocket para o JavaEE.</p>
+<p>Neste código, @ServerEndpoint define a classe como um endpoint de WebSocket que escuta na rota "/websocket". Os métodos anotados com @OnOpen, @OnMessage e @OnClose são chamados respectivamente quando uma nova conexão é estabelecida, uma mensagem é recebida e uma conexão é fechada.</p>
+<p>Essas funcionalidades permitem que os desenvolvedores criem aplicações web mais dinâmicas e responsivas, aproveitando as vantagens do protocolo WebSocket e as novas características do HTML5.</p>
+<p>Um exemplo de como o Java EE pode ser utilizado com HTML5 é através da criação de uma aplicação web que utiliza JSF (JavaServer Faces) para construir interfaces de usuário ricas e interativas. JSF é um framework MVC que simplifica a construção de interfaces de usuário para aplicações Java EE na web.</p>
+<p>Aqui está um exemplo simplificado de um formulário web utilizando JSF com elementos HTML5:</p>
+<p><img alt="Imagem do artigo" src="img/2024_04_14_Algumas novidades do JavaEE_image12.png" /></p>
+<p>Um exemplo de código JSF para atender páginas HTML5</p>
+<p>Neste exemplo, utilizamos o elemento h:inputText com o atributo type definido como email, que é um tipo de entrada específico do HTML5 para endereços de e-mail. Isso permite que o navegador valide automaticamente o formato do e-mail antes de enviar o formulário. Além disso, o atributo type range cria um controle deslizante para selecionar um número dentro de um intervalo especificado.</p>
+<p>Este é apenas um exemplo básico, mas o Java EE com HTML5 permite a criação de interfaces de usuário muito mais complexas e interativas, aproveitando as diversas funcionalidades que o HTML5 oferece.</p>
+<p>Curiosamente, houve uma mudança do Java EE para Jakarta EE onde representa uma transição para a plataforma de desenvolvimento empresarial Java. Aqui estão alguns postos-chaves sobre essa mudança:</p>
+<ul>
+<li>
+<p>Transferência para a Eclipse Foundation: Em 2017, a Oracle transferiu a responsabilidade do desenvolvimento e evolução do Java EE para a Eclipse Foundation.</p>
+</li>
+<li>
+<p>Renomeação: Com a transferência, o Java EE foi renomeado para Jakarta EE para refletir a nova governança e direção da plataforma.</p>
+</li>
+<li>
+<p>Objetivos da Transição: A mudança visa promover uma maior evolução da plataforma através de um modelo de governança aberto e colaborativo, envolvendo a comunidade e outras partes interessadas no processo de desenvolvimento.</p>
+</li>
+<li>
+<p>Impacto no Desenvolvimento: A transição para Jakarta EE é vista como um passo positivo para o futuro do desenvolvimento Java na web, com a expectativa de que a plataforma continue a crescer e a se adaptar às necessidades modernas de desenvolvimento de aplicações empresariais.</p>
+</li>
+</ul>
+<p>A Eclipse Foundation é conhecida por seu trabalho com a IDE Eclipse e tem uma longa história de apoio ao desenvolvimento de software aberto. A transição para Jakarta EE abre novas oportunidades para inovação e colaboração na comunidade Java.</p>
+<p>O Jakarta EE passou então a ser uma plataforma de desenvolvimento de software para aplicações empresariais. Ela fornece um conjunto de especificações e extensões para a linguagem Java padrão (Java SE), que facilitam a criação de aplicações robustas, escaláveis e seguras. Assim, Jakarta EE é o novo nome da plataforma sob a governança da Eclipse Foundation, após a transferência dos direitos do Java EE pela Oracle.</p>
+<p>Para as técnicos e desenvolvedores que desejam dominar o Jakarta EE são vastas os materiais e cursos existentes. Vamos enumerar algumas opções:</p>
+<ol>
+<li>
+<p>Guias de Início Rápido: A Eclipse Foundation oferece guias de início rápido para ajudar a começar com projetos simples de micro-serviços Jakarta EE.</p>
+</li>
+<li>
+<p>Cursos Online: Existem vários cursos online que cobrem os fundamentos do Jakarta EE e como construir serviços web RESTful com a plataforma.</p>
+</li>
+<li>
+<p>Workshops e Treinamentos: Workshops práticos e cursos de treinamento são oferecidos por várias organizações, incluindo a própria Eclipse Foundation, para ensinar as especificações e implementações do Jakarta EE.</p>
+</li>
+<li>
+<p>Documentação e Tutoriais: A documentação oficial e tutoriais detalhados estão disponíveis para auto-estudo e referência.</p>
+</li>
+<li>
+<p>Comunidade e Fóruns: Participar da comunidade Jakarta EE e fóruns de discussão pode ser uma ótima maneira de aprender com outros desenvolvedores e acompanhar as últimas novidades.</p>
+</li>
+</ol>
+<p>Esses recursos são projetados para atender a diferentes estilos de aprendizado e níveis de experiência, facilitando o domínio do Jakarta EE para desenvolvimento de aplicações empresariais modernas e escaláveis. Fica aqui a dica.</p>
+        </div>
+    </article>
+
+    <footer class="article-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <!-- Copy code functionality -->
+    <script>
+        // Adicionar botões de copiar código
+        document.querySelectorAll('pre code').forEach((block) => {
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copiar';
+            button.onclick = () => {
+                navigator.clipboard.writeText(block.textContent);
+                button.textContent = 'Copiado!';
+                setTimeout(() => button.textContent = 'Copiar', 2000);
+            };
+            block.parentNode.appendChild(button);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre csonline – parte iii: segurança jwt, autorização por papéis e testes 100% verdes">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Testes, TDD">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="CSOnline – Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes">
+    <meta property="og:description" content="Artigo técnico sobre csonline – parte iii: segurança jwt, autorização por papéis e testes 100% verdes">
+    <meta property="og:type" content="article">
+    <meta property="og:author" content="Christian Mulato">
+    <meta property="og:article:published_time" content="09/08/2025">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CSOnline – Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes">
+    <meta name="twitter:description" content="Artigo técnico sobre csonline – parte iii: segurança jwt, autorização por papéis e testes 100% verdes">
+    
+    <title>CSOnline – Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes | Christian Mulato Dev Blog</title>
+    
+    <!-- Fonts e Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    
+    <!-- Prism.js para syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "CSOnline – Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes",
+        "description": "Artigo técnico sobre csonline – parte iii: segurança jwt, autorização por papéis e testes 100% verdes",
+        "author": {
+            "@type": "Person",
+            "name": "Christian Mulato"
+        },
+        "datePublished": "09/08/2025",
+        "category": "Testes & Qualidade"
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">← Voltar ao Blog</a>
+            <div class="nav-links">
+                <a href="../index.html">Artigos</a>
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category">Testes & Qualidade</span>
+                <time class="date" datetime="09/08/2025">09/08/2025</time>
+            </div>
+            <h1 class="article-title">CSOnline – Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes</h1>
+            <div class="author-info">
+                <span>Por <a href="https://www.linkedin.com/in/chmulato/" target="_blank">Christian Mulato</a></span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">Testes</span> <span class="tag">TDD</span>
+            </div>
+        </header>
+        
+        <div class="article-content">
+            <p><img alt="Evolução da aplicação CSOnline - Gestão de Centro de Distribuição (CDs)" src="img/2025_08_09_CSOnline – Parte III - Segurança JWT Autorização por Papéis e Testes 100 Verdes_image5.png" /></p>
+<p>Evolução da aplicação CSOnline - Gestão de Centro de Distribuição (CDs)</p>
+<p>CSOnline – Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes</p>
+<p><img alt="Christian Mulato, #OPEN_TO_WORK" src="img/2025_08_09_CSOnline – Parte III - Segurança JWT Autorização por Papéis e Testes 100 Verdes_image6.jpg" /></p>
+<p>Christian Mulato</p>
+<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
+<p>9 de agosto de 2025</p>
+<p>O que evoluiu nesta fase</p>
+<p>Nesta terceira etapa avançamos em segurança, qualidade e preparo para a integração total do frontend Vue com o backend Jakarta EE. O sistema agora possui autenticação JWT robusta, autorização por papéis coerente nos endpoints, suíte de testes completa e scripts de desenvolvimento mais amigáveis.</p>
+<p>Principais destaques:</p>
+<ul>
+<li>Segurança ponta a ponta com JWT (autenticação) e autorização por papéis (@RolesAllowed)</li>
+<li>Matriz de permissões alinhada aos casos de uso reais (ADMIN, BUSINESS, COURIER, CUSTOMER)</li>
+<li>Testes de controladores, serviços e repositórios estabilizados (191 testes passando)</li>
+<li>Ambiente de testes isolado (test.mode), base limpa por execução e Jackson registrado</li>
+<li>Endpoint de envio de SMS dedicado e ajustes finos em regras de acesso</li>
+<li>Prontos para integrar o SPA em Vue com os endpoints REST e tokens JWT</li>
+</ul>
+<p>Segurança: autenticação e autorização</p>
+<ul>
+<li>Implementamos um filtro de autenticação JWT (JwtAuthenticationFilter) que valida o token do header Authorization e propaga para o contexto os dados do usuário (login, role, id).</li>
+<li>Criamos um filtro de autorização (AuthorizationFilter) que lê as anotações @RolesAllowed nos recursos e aplica a decisão com base no papel do usuário autenticado.</li>
+<li>
+<p>Ajustamos as anotações de segurança nos controladores para refletir a regra de negócio:</p>
+</li>
+<li>
+<p>Users: criação, atualização e exclusão restritas a ADMIN</p>
+</li>
+<li>Teams: atualização e exclusão restritas a ADMIN</li>
+<li>Prices: listagem por business permitida a ADMIN e BUSINESS</li>
+<li>SMS: deleção e busca por entrega restritas a ADMIN e BUSINESS; novo POST /sms/{id}/send</li>
+</ul>
+<p>Resultado: respostas 401 e 403 passaram a refletir corretamente a ausência de token ou falta de permissão, e as operações válidas retornam 2xx como esperado.</p>
+<p>Testes: cobertura confiável do backend</p>
+<ul>
+<li>BaseControllerJerseyTest ativa o modo de teste (test.mode) e garante limpeza da base entre cenários, evitando interferência entre casos.</li>
+<li>Reescrevemos e ampliamos os testes dos módulos Price (repository/service/controller), além de padronizar os de Courier, Customer, Delivery, SMS, Team e User para sempre enviar os headers de autorização corretos.</li>
+<li>Resolvemos falhas pontuais (401/403/415/400/500) com ajustes em headers, content-type e alinhamento de payloads.</li>
+<li>Estado atual: 191 testes, todos passando, garantindo estabilidade para a próxima fase.</li>
+</ul>
+<p>DX e automação</p>
+<ul>
+<li>Scripts PowerShell simplificam o ciclo de desenvolvimento (build, deploy no WildFly 31, testes e verificação de saúde).</li>
+<li>Logs mais claros com Log4j2 ajudam no diagnóstico durante os testes.</li>
+<li>Documentação atualizada para orientar a configuração de ambiente e execução.</li>
+</ul>
+<p>Integração Frontend (Vue) ↔ Backend (Jakarta)</p>
+<p>Com a segurança e os contratos estabilizados, o próximo passo é ligar o SPA em Vue aos endpoints REST com JWT:</p>
+<ul>
+<li>Cliente HTTP com injeção automática do token JWT</li>
+<li>Tratamento padronizado de erros 401/403 no frontend (ex.: redireciono ao login/avisos de permissão)</li>
+<li>Guards de rota por papel (ADMIN, BUSINESS, COURIER, CUSTOMER)</li>
+<li>Habilitar CORS conforme necessário e mapear escopos de cada módulo (Users, Teams, Deliveries, SMS, Prices)</li>
+</ul>
+<p>Como contribuir</p>
+<ul>
+<li>Frontend: integrar telas ao backend, melhorar UX/UI, criar guards por papel, estados vazios e feedbacks.</li>
+<li>Backend: refinar validações, paginação/ordenação de listagens, monitoramento e métricas.</li>
+<li>QA: cenários E2E (Cypress/Playwright) para fluxos críticos de autenticação e autorização.</li>
+<li>DevOps: pipelines de CI/CD e empacotamento para ambientes (dev/homolog/prod).</li>
+</ul>
+<p>Faça um fork do repositório em https://github.com/chmulato/csonline e confira a documentação em doc/INDEX.md. Pull Requests são bem-vindos!</p>
+        </div>
+    </article>
+
+    <footer class="article-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <!-- Copy code functionality -->
+    <script>
+        // Adicionar botões de copiar código
+        document.querySelectorAll('pre code').forEach((block) => {
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copiar';
+            button.onclick = () => {
+                navigator.clipboard.writeText(block.textContent);
+                button.textContent = 'Copiado!';
+                setTimeout(() => button.textContent = 'Copiar', 2000);
+            };
+            block.parentNode.appendChild(button);
+        });
+    </script>
+</body>
+</html>

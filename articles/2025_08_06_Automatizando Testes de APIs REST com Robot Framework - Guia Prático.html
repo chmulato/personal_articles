@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre automatizando testes de apis rest com robot framework: guia prático">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="APIs, REST, Testes, TDD, IA, Inteligência Artificial">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Automatizando Testes de APIs REST com Robot Framework: Guia Prático">
+    <meta property="og:description" content="Artigo técnico sobre automatizando testes de apis rest com robot framework: guia prático">
+    <meta property="og:type" content="article">
+    <meta property="og:author" content="Christian Mulato">
+    <meta property="og:article:published_time" content="06/08/2025">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Automatizando Testes de APIs REST com Robot Framework: Guia Prático">
+    <meta name="twitter:description" content="Artigo técnico sobre automatizando testes de apis rest com robot framework: guia prático">
+    
+    <title>Automatizando Testes de APIs REST com Robot Framework: Guia Prático | Christian Mulato Dev Blog</title>
+    
+    <!-- Fonts e Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    
+    <!-- Prism.js para syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Automatizando Testes de APIs REST com Robot Framework: Guia Prático",
+        "description": "Artigo técnico sobre automatizando testes de apis rest com robot framework: guia prático",
+        "author": {
+            "@type": "Person",
+            "name": "Christian Mulato"
+        },
+        "datePublished": "06/08/2025",
+        "category": "APIs & Microserviços"
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">← Voltar ao Blog</a>
+            <div class="nav-links">
+                <a href="../index.html">Artigos</a>
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category">APIs & Microserviços</span>
+                <time class="date" datetime="06/08/2025">06/08/2025</time>
+            </div>
+            <h1 class="article-title">Automatizando Testes de APIs REST com Robot Framework: Guia Prático</h1>
+            <div class="author-info">
+                <span>Por <a href="https://www.linkedin.com/in/chmulato/" target="_blank">Christian Mulato</a></span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">APIs</span> <span class="tag">REST</span> <span class="tag">Testes</span> <span class="tag">TDD</span> <span class="tag">IA</span> <span class="tag">Inteligência Artificial</span>
+            </div>
+        </header>
+        
+        <div class="article-content">
+            <p><img alt="QA automatizando testes de API com Robot Framework" src="img/2025_08_06_Automatizando Testes de APIs REST com Robot Framework - Guia Prático_image5.png" /></p>
+<p>QA automatizando testes de API com Robot Framework</p>
+<p>Automatizando Testes de APIs REST com Robot Framework: Guia Prático</p>
+<p><img alt="Christian Mulato, #OPEN_TO_WORK" src="img/2025_08_06_Automatizando Testes de APIs REST com Robot Framework - Guia Prático_image6.jpg" /></p>
+<p>Christian Mulato</p>
+<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
+<p>6 de agosto de 2025</p>
+<p>A Rotina de Ana, a QA que Mudou Tudo</p>
+<p>Ana era QA sênior numa startup de fintech em crescimento acelerado. Todos os dias, ela chegava no escritório às 8h e já sabia o que a esperava: uma lista interminável de endpoints para testar manualmente.</p>
+<p>“GET /users/123”,</p>
+<p>“POST /transactions”,</p>
+<p>“PUT /accounts/456”</p>
+<p>… Ana abria o Postman, configurava headers, montava payloads JSON, executava requests e anotava resultados numa planilha. Eram mais de 50 endpoints, e cada deploy significava testar tudo novamente.</p>
+<p>O pior? Sexta-feira às 18h, deploy em produção. Ana ficava até tarde validando cada endpoint crítico, um por um, enquanto o time de desenvolvimento já havia ido embora. Se algo falhasse, rollback e fim de semana trabalhando.</p>
+<p>Um dia, após mais um deploy tardio que se estendeu pela madrugada, Ana decidiu: “Tem que ter um jeito melhor.”</p>
+<p>Foi então que ela descobriu o Robot Framework. Em duas semanas, Ana automatizou todos os testes de API. O que antes levava 4 horas, agora executava em 15 minutos. Deploys de sexta viraram rotina tranquila, e Ana recuperou seus fins de semana.</p>
+<p>Hoje, Ana é referência em automação na empresa. E tudo começou com uma simples keyword:</p>
+<p>“GET Deve Retornar 200”</p>
+<p>O Robot Framework oferece uma abordagem baseada em palavras-chave para automação de testes de APIs RESTful, combinando simplicidade de sintaxe com funcionalidades robustas. Este guia demonstra como implementar testes automatizados legíveis e extensíveis.</p>
+<p>Requisitos Técnicos</p>
+<p>Ambiente necessário:</p>
+<ul>
+<li>Python 3.8 ou superior</li>
+<li>pip (gerenciador de pacotes Python)</li>
+<li>Robot Framework</li>
+<li>Requests Library</li>
+</ul>
+<p>Configuração do Ambiente</p>
+<p>pip install robotframework</p>
+<p>pip install robotframework-requests</p>
+<p>Arquitetura do Projeto</p>
+<p>tests/</p>
+<p>├── resources/</p>
+<p>│   └── keywords.robot</p>
+<p>├── suites/</p>
+<p>│   └── api_tests.robot</p>
+<p>└── variables/</p>
+<p>└── config.robot</p>
+<p>Configuração de Variáveis</p>
+<p>Arquivo: variables/config.robot</p>
+<p>*** Variables ***</p>
+<p>${BASE_URL}</p>
+<p>https://api.seuprojeto.com/v1</p>
+<p>Implementação de Keywords Reutilizáveis</p>
+<p>Arquivo: resources/keywords.robot</p>
+<p>*** Settings</p>
+<p>*** Library    RequestsLibrary</p>
+<p>*** Keywords</p>
+<p>*** Iniciar Sessão na API     Create Session    api    ${BASE_URL}</p>
+<p>GET Deve Retornar 200     [Arguments]    ${endpoint}     ${response}=</p>
+<p>GET On Session    api    ${endpoint}     Should Be Equal As Integers</p>
+<p>${response.status_code}    200</p>
+<p>Casos de Teste</p>
+<p>Arquivo: suites/api_tests.robot</p>
+<p>*** Settings ***</p>
+<p>Resource    ../variables/config.robot</p>
+<p>Resource    ../resources/keywords.robot</p>
+<p>Suite Setup    Iniciar Sessão na API</p>
+<p>*** Test Cases ***</p>
+<p>Testar Endpoint de Status</p>
+<p>GET Deve Retornar 200    /status</p>
+<p>Testar Endpoint de Usuário</p>
+<p>GET Deve Retornar 200    /users/1</p>
+<p>Execução dos Testes</p>
+<p>robot -d results tests/suites/api_tests.robot</p>
+<p>O comando gera um relatório HTML detalhado em results/report.html com status de execução e métricas de performance.</p>
+<p>Vantagens da Implementação</p>
+<ul>
+<li>Legibilidade: Sintaxe próxima à linguagem natural, facilitando compreensão por equipes não técnicas</li>
+<li>Modularidade: Keywords reutilizáveis reduzem duplicação de código</li>
+<li>Integração: Compatibilidade nativa com pipelines CI/CD</li>
+<li>Relatórios: Documentação automática de resultados</li>
+</ul>
+<p>Integração com CI/CD</p>
+<p>Exemplo de GitHub Actions:</p>
+<p>name: API Tests</p>
+<p>on: [push]</p>
+<p>jobs:</p>
+<p>test:</p>
+<p>runs-on: ubuntu-latest</p>
+<p>steps:</p>
+<ul>
+<li>
+<p>uses: actions/checkout@v2</p>
+</li>
+<li>
+<p>name: Set up Python</p>
+</li>
+</ul>
+<p>uses: actions/setup-python@v2</p>
+<p>with:</p>
+<p>python-version: 3.11</p>
+<ul>
+<li>name: Install dependencies</li>
+</ul>
+<p>run: |</p>
+<p>pip install robotframework robotframework-requests</p>
+<ul>
+<li>name: Run tests</li>
+</ul>
+<p>run: robot tests/suites/api_tests.robot</p>
+<p>Conclusão</p>
+<p>O Robot Framework oferece uma solução robusta para automação de testes de APIs REST, combinando sintaxe acessível com funcionalidades empresariais. A implementação de testes automatizados resulta em maior confiabilidade, redução de tempo de validação e melhoria contínua da qualidade do software.</p>
+<p>Principais benefícios alcançados:</p>
+<ul>
+<li>Redução significativa no tempo de execução de testes</li>
+<li>Padronização de processos de validação</li>
+<li>Documentação automática de cenários de teste</li>
+<li>Integração seamless com ferramentas de desenvolvimento</li>
+</ul>
+<p>Recursos Adicionais:</p>
+<ul>
+<li>Documentação oficial: Robot Framework</li>
+<li>Biblioteca de requisições: Requests Library</li>
+</ul>
+        </div>
+    </article>
+
+    <footer class="article-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <!-- Copy code functionality -->
+    <script>
+        // Adicionar botões de copiar código
+        document.querySelectorAll('pre code').forEach((block) => {
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copiar';
+            button.onclick = () => {
+                navigator.clipboard.writeText(block.textContent);
+                button.textContent = 'Copiado!';
+                setTimeout(() => button.textContent = 'Copiar', 2000);
+            };
+            block.parentNode.appendChild(button);
+        });
+    </script>
+</body>
+</html>

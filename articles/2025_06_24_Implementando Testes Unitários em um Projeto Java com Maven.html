@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo técnico sobre implementando testes unitários em um projeto java com maven">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, Testes, TDD">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Implementando Testes Unitários em um Projeto Java com Maven">
+    <meta property="og:description" content="Artigo técnico sobre implementando testes unitários em um projeto java com maven">
+    <meta property="og:type" content="article">
+    <meta property="og:author" content="Christian Mulato">
+    <meta property="og:article:published_time" content="24/06/2025">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Implementando Testes Unitários em um Projeto Java com Maven">
+    <meta name="twitter:description" content="Artigo técnico sobre implementando testes unitários em um projeto java com maven">
+    
+    <title>Implementando Testes Unitários em um Projeto Java com Maven | Christian Mulato Dev Blog</title>
+    
+    <!-- Fonts e Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    
+    <!-- Prism.js para syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Implementando Testes Unitários em um Projeto Java com Maven",
+        "description": "Artigo técnico sobre implementando testes unitários em um projeto java com maven",
+        "author": {
+            "@type": "Person",
+            "name": "Christian Mulato"
+        },
+        "datePublished": "24/06/2025",
+        "category": "Java & Spring"
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">← Voltar ao Blog</a>
+            <div class="nav-links">
+                <a href="../index.html">Artigos</a>
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="category">Java & Spring</span>
+                <time class="date" datetime="24/06/2025">24/06/2025</time>
+            </div>
+            <h1 class="article-title">Implementando Testes Unitários em um Projeto Java com Maven</h1>
+            <div class="author-info">
+                <span>Por <a href="https://www.linkedin.com/in/chmulato/" target="_blank">Christian Mulato</a></span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">Java</span> <span class="tag">Testes</span> <span class="tag">TDD</span>
+            </div>
+        </header>
+        
+        <div class="article-content">
+            <p><img alt="Implementando Testes Unitários com JaCoCo" src="img/2025_06_24_Implementando Testes Unitários em um Projeto Java com Maven_image7.png" /></p>
+<p>Implementando Testes Unitários com JaCoCo</p>
+<p>Implementando Testes Unitários em um Projeto Java com Maven</p>
+<p><img alt="Christian Mulato, #OPEN_TO_WORK" src="img/2025_06_24_Implementando Testes Unitários em um Projeto Java com Maven_image8.jpg" /></p>
+<p>Christian Mulato</p>
+<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
+<p>24 de junho de 2025</p>
+<p>Este artigo aborda a implementação de testes unitários em um projeto Java utilizando Maven, com foco na classe FileBackup e na geração de relatórios de cobertura de código com JaCoCo. Vamos explorar como estruturar o projeto, escrever testes eficazes e garantir a qualidade do código.</p>
+<p>Por que Escrever Testes Unitários?</p>
+<p>Testes unitários garantem que cada parte do seu código funciona como esperado, facilitando a manutenção, refatoração e evolução do projeto. Eles ajudam a identificar rapidamente bugs e reduzem o custo de correção de erros.</p>
+<p>Estrutura de Pastas Padrão</p>
+<p>Para projetos Java seguindo o padrão Maven, a estrutura recomendada é:</p>
+<p>project-root/</p>
+<p>│</p>
+<p>├── src/</p>
+<p>│   ├── main/</p>
+<p>│   │   └── java/</p>
+<p>│   │       └── com/</p>
+<p>│   │           └── mulato/</p>
+<p>│   │               └── FileBackup.java</p>
+<p>│   └── test/</p>
+<p>│       └── java/</p>
+<p>│           └── com/</p>
+<p>│               └── mulato/</p>
+<p>│                   └── FileBackupTest.java</p>
+<p>Boas Práticas para Testes Unitários</p>
+<ul>
+<li>Nomeie os métodos de teste de forma clara: O nome deve indicar o que está sendo testado e o resultado esperado.</li>
+<li>Teste apenas uma lógica por método: Cada teste deve validar um único comportamento.</li>
+<li>Evite dependências externas: Use mocks para simular recursos externos (banco de dados, arquivos, etc).</li>
+<li>Garanta independência dos testes: Os testes devem poder ser executados em qualquer ordem.</li>
+<li>Mantenha os testes rápidos: Testes lentos dificultam a integração contínua.</li>
+</ul>
+<p>Configurando Dependências no Maven</p>
+<p>No arquivo pom.xml, adicione as dependências do JUnit 5 para testes e do JaCoCo para cobertura de código:</p>
+<p><dependency></p>
+<p><groupId>org.junit.jupiter</groupId></p>
+<p><artifactId>junit-jupiter</artifactId></p>
+<p><version>5.10.2</version></p>
+<p><scope>test</scope></p>
+<p></dependency></p>
+<p>E o plugin do JaCoCo dentro da seção <build>:</p>
+<p><plugin></p>
+<p><groupId>org.jacoco</groupId></p>
+<p><artifactId>jacoco-maven-plugin</artifactId></p>
+<p><version>0.8.11</version></p>
+<p><executions></p>
+<p><execution></p>
+<p><goals></p>
+<p><goal>prepare-agent</goal></p>
+<p></goals></p>
+<p></execution></p>
+<p><execution></p>
+<p><id>report</id></p>
+<p><phase>test</phase></p>
+<p><goals></p>
+<p><goal>report</goal></p>
+<p></goals></p>
+<p></execution></p>
+<p></executions></p>
+<p></plugin></p>
+<p>Tornando Métodos Testáveis</p>
+<p>Para que os métodos possam ser testados, eles não devem ser private. Altere para static (sem modificador) ou public:</p>
+<p>// Antes</p>
+<p>private static void copyDirectory(...);</p>
+<p>private static int countFiles(...);</p>
+<p>// Depois</p>
+<p>static void copyDirectory(...);</p>
+<p>static int countFiles(...);</p>
+<p>Exemplos de Asserts no JUnit</p>
+<p>Além do assertEquals e assertTrue, o JUnit oferece outros métodos úteis:</p>
+<p>assertFalse(condition);</p>
+<p>assertNull(object);</p>
+<p>assertNotNull(object);</p>
+<p>assertThrows(Exception.class, () -&gt; { /<em> código </em>/ });</p>
+<p>Utilizando Mocks em Testes</p>
+<p>Para testar métodos que dependem de recursos externos, utilize bibliotecas como Mockito:</p>
+<p><dependency></p>
+<p><groupId>org.mockito</groupId></p>
+<p><artifactId>mockito-core</artifactId></p>
+<p><version>5.2.0</version></p>
+<p><scope>test</scope></p>
+<p></dependency></p>
+<p>Exemplo de uso:</p>
+<p>import static org.mockito.Mockito.*;</p>
+<p>MyService service = mock(MyService.class);</p>
+<p>when(service.doSomething()).thenReturn("resultado");</p>
+<p>Integração Contínua e Testes Automatizados</p>
+<p>Configure pipelines de CI (como GitHub Actions, GitLab CI, Jenkins) para rodar os testes automaticamente a cada push. Isso garante que novas alterações não quebrem funcionalidades existentes.</p>
+<p>Exemplo de pipeline com GitHub Actions</p>
+<p>name: Java CI</p>
+<p>on: [push, pull_request]</p>
+<p>jobs:</p>
+<p>build:</p>
+<p>runs-on: ubuntu-latest</p>
+<p>steps:</p>
+<ul>
+<li>
+<p>uses: actions/checkout@v4</p>
+</li>
+<li>
+<p>name: Set up JDK 21</p>
+</li>
+</ul>
+<p>uses: actions/setup-java@v4</p>
+<p>with:</p>
+<p>distribution: 'temurin'</p>
+<p>java-version: '21'</p>
+<ul>
+<li>name: Build with Maven</li>
+</ul>
+<p>run: mvn clean test</p>
+<p>Testes Parametrizados com JUnit 5</p>
+<p>import org.junit.jupiter.params.ParameterizedTest;</p>
+<p>import org.junit.jupiter.params.provider.ValueSource;</p>
+<p>@ParameterizedTest</p>
+<p>@ValueSource(strings = {"file1.txt", "file2.txt"})</p>
+<p>void testFileNames(String fileName) {</p>
+<p>assertTrue(fileName.startsWith("file"));</p>
+<p>}</p>
+<p>Exemplo de Classe de Teste Unitário</p>
+<p>package com.mulato;</p>
+<p>import org.junit.jupiter.api.Test;</p>
+<p>import java.io.*;</p>
+<p>import java.util.concurrent.atomic.AtomicInteger;</p>
+<p>import static org.junit.jupiter.api.Assertions.*;</p>
+<p>class FileBackupTest {</p>
+<p>@Test</p>
+<p>void testCountFilesEmptyFolder() throws IOException {</p>
+<p>File tempDir = new File("testDirEmpty");</p>
+<p>tempDir.mkdir();</p>
+<p>try {</p>
+<p>int count = FileBackup.countFiles(tempDir);</p>
+<p>assertEquals(0, count);</p>
+<p>} finally {</p>
+<p>tempDir.delete();</p>
+<p>}</p>
+<p>}</p>
+<p>@Test</p>
+<p>void testCopyDirectory() throws IOException {</p>
+<p>File sourceDir = new File("sourceDir");</p>
+<p>File destDir = new File("destDir");</p>
+<p>sourceDir.mkdir();</p>
+<p>destDir.mkdir();</p>
+<p>File file = new File(sourceDir, "file.txt");</p>
+<p>try (FileWriter fw = new FileWriter(file)) {</p>
+<p>fw.write("test");</p>
+<p>}</p>
+<p>AtomicInteger filesProcessed = new AtomicInteger(0);</p>
+<p>try {</p>
+<p>FileBackup.copyDirectory(sourceDir, destDir, filesProcessed);</p>
+<p>File copiedFile = new File(destDir, "file.txt");</p>
+<p>assertTrue(copiedFile.exists());</p>
+<p>assertEquals(1, filesProcessed.get());</p>
+<p>} finally {</p>
+<p>file.delete();</p>
+<p>sourceDir.delete();</p>
+<p>for (File f : destDir.listFiles()) f.delete();</p>
+<p>destDir.delete();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>Testando o Método Main</p>
+<p>Para garantir que o método main executa sem lançar exceções:</p>
+<p>package com.mulato;</p>
+<p>import org.junit.jupiter.api.Test;</p>
+<p>import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;</p>
+<p>public class MainTest {</p>
+<p>@Test</p>
+<p>void testMainRunsWithoutException() {</p>
+<p>assertDoesNotThrow(() -&gt; Main.main(new String[]{}));</p>
+<p>}</p>
+<p>}</p>
+<p>Gerando Relatórios de Cobertura com JaCoCo</p>
+<p>Após configurar o plugin, execute:</p>
+<p>mvn clean test</p>
+<p>O relatório será gerado em: target/site/jacoco/index.html</p>
+<p>Abra esse arquivo no navegador para visualizar a cobertura dos testes.</p>
+<p><img alt="Conteúdo do artigo" src="img/2025_06_24_Implementando Testes Unitários em um Projeto Java com Maven_image9.png" /></p>
+<p>Exemplo de relatório JaCoCo</p>
+<p>Recursos e Leituras Complementares</p>
+<ul>
+<li>Documentação Oficial do JUnit 5</li>
+<li>Mockito - Site Oficial</li>
+<li>Guia de Cobertura de Código com JaCoCo</li>
+<li>Boas Práticas de Testes Unitários (Martin Fowler)</li>
+</ul>
+<p>Resumo:</p>
+<ul>
+<li>Estruture seu projeto conforme o padrão Maven.</li>
+<li>Adicione JUnit e JaCoCo ao pom.xml.</li>
+<li>Torne métodos utilitários testáveis (não privados).</li>
+<li>Escreva testes unitários para métodos de lógica.</li>
+<li>Gere e consulte o relatório de cobertura com JaCoCo.</li>
+<li>Considere automatizar seus testes com pipelines de CI modernos.</li>
+<li>Compartilhe suas experiências e dúvidas nos comentários!</li>
+</ul>
+<p>Adendo: Hospedando o Código no GitHub e Publicando em Ambiente Produtivo</p>
+<p>Além de implementar e testar seu projeto localmente, você pode hospedar o código no GitHub e publicar em ambientes produtivos. Veja como:</p>
+<ol>
+<li>
+<p>Hospedando no GitHub</p>
+</li>
+<li>
+<p>Crie um repositório no GitHub.</p>
+</li>
+<li>Faça o commit do seu projeto local e envie para o repositório remoto:</li>
+</ol>
+<p>git init</p>
+<p>git add .</p>
+<p>git commit -m "Primeiro commit"</p>
+<p>git remote add origin https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git</p>
+<p>git push -u origin main</p>
+<ol>
+<li>Publicando em Ambiente Produtivo</li>
+</ol>
+<p>O método de publicação depende do tipo de aplicação:</p>
+<ul>
+<li>Aplicação Desktop Java</li>
+<li>Gere um JAR executável com Maven:</li>
+</ul>
+<p>mvn clean package</p>
+<ul>
+<li>Transfira o arquivo .jar para o servidor ou máquina onde será executado.</li>
+<li>Execute com:</li>
+</ul>
+<p>java -jar nome-do-arquivo.jar</p>
+<ul>
+<li>Aplicação Web Java</li>
+<li>Gere um arquivo .war ou .jar e faça o deploy em um servidor de aplicação (Tomcat, WildFly, etc.) ou em serviços de nuvem (Azure, AWS, Heroku, etc.).</li>
+<li>Automação com CI/CD</li>
+<li>Use GitHub Actions para automatizar testes, builds e até deploys para ambientes de produção.</li>
+</ul>
+<p>Resumo:</p>
+<ul>
+<li>GitHub serve para versionamento, colaboração e integração contínua.</li>
+<li>O deploy em produção depende do tipo de aplicação e do ambiente escolhido.</li>
+<li>Você pode automatizar o processo de build e deploy usando pipelines de CI/CD.</li>
+</ul>
+<p>Se quiser um exemplo de workflow de deploy ou dicas para um ambiente específico, deixe sua dúvida nos comentários!</p>
+<p>Código-fonte no GitHub: chmulato/backup_files</p>
+        </div>
+    </article>
+
+    <footer class="article-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <!-- Copy code functionality -->
+    <script>
+        // Adicionar botões de copiar código
+        document.querySelectorAll('pre code').forEach((block) => {
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copiar';
+            button.onclick = () => {
+                navigator.clipboard.writeText(block.textContent);
+                button.textContent = 'Copiado!';
+                setTimeout(() => button.textContent = 'Copiar', 2000);
+            };
+            block.parentNode.appendChild(button);
+        });
+    </script>
+</body>
+</html>
