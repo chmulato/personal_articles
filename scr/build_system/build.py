@@ -51,20 +51,29 @@ class BuildManager:
         self.md_converter = MarkdownToHtmlConverter()
         self.site_builder = SiteBuilder()
     
-    def run_full_build(self, new_only=False):
+    def run_full_build(self, new_only=False, rebuild=False):
         """
         Executa build completo do site.
         
         Args:
             new_only (bool): Se True, processa apenas artigos novos
+            rebuild (bool): Se True, reconstrói tudo do zero
         """
         logger.info("=" * 50)
-        logger.info("INICIANDO BUILD DO SITE")
+        if rebuild:
+            logger.info("RECONSTRUINDO SITE COMPLETO DO ZERO")
+        else:
+            logger.info("INICIANDO BUILD DO SITE")
         logger.info("=" * 50)
         
         try:
+            # Se rebuild, limpa tudo primeiro
+            if rebuild:
+                logger.info("--- LIMPEZA COMPLETA ---")
+                self._clean_all_generated_files()
+            
             # 1. Coleta arquivos DOCX
-            docx_files = self.file_manager.get_docx_files(new_only=new_only)
+            docx_files = self.file_manager.get_docx_files(new_only=new_only and not rebuild)
             
             if not docx_files:
                 if new_only:
@@ -138,6 +147,35 @@ class BuildManager:
             logger.error(f"Erro no build: {e}")
             return False
     
+    def _clean_all_generated_files(self):
+        """Limpa todos os arquivos gerados (MD, HTML, imagens)."""
+        import shutil
+        
+        logger.info("Limpando arquivos Markdown...")
+        if MD_DIR.exists():
+            shutil.rmtree(MD_DIR)
+        MD_DIR.mkdir(parents=True, exist_ok=True)
+        
+        logger.info("Limpando arquivos HTML...")
+        if ARTICLES_DIR.exists():
+            for html_file in ARTICLES_DIR.glob("*.html"):
+                html_file.unlink()
+        
+        logger.info("Limpando imagens...")
+        if IMG_DIR.exists():
+            for img_file in IMG_DIR.glob("*"):
+                if img_file.is_file() and img_file.name not in ['placeholder.png', 'foto_chri.jpg']:
+                    img_file.unlink()
+        
+        logger.info("Limpando lista de processados...")
+        if PROCESSED_LIST.exists():
+            PROCESSED_LIST.unlink()
+        
+        # Recria arquivo vazio
+        PROCESSED_LIST.touch()
+        
+        logger.info("Limpeza completa concluída!")
+    
     def show_status(self):
         """Mostra status atual do sistema."""
         logger.info("=" * 50)
@@ -204,6 +242,12 @@ def main():
     )
     
     parser.add_argument(
+        '--rebuild', 
+        action='store_true',
+        help='Reconstrói todo o site do zero (limpa tudo antes)'
+    )
+    
+    parser.add_argument(
         '--status',
         action='store_true',
         help='Mostra status atual do sistema'
@@ -226,7 +270,7 @@ def main():
     elif args.validate:
         build_manager.validate_structure()
     else:
-        success = build_manager.run_full_build(new_only=args.new_only)
+        success = build_manager.run_full_build(new_only=args.new_only, rebuild=args.rebuild)
         sys.exit(0 if success else 1)
 
 if __name__ == '__main__':

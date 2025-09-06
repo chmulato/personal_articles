@@ -1,19 +1,3 @@
-# Lista de Controle de Artigos Processados
-# ==========================================
-# Este arquivo controla quais artigos DOCX já foram processados completamente
-# através da cadeia: DOCX -> MD -> HTML
-#
-# IMPORTANTE: 
-# - Apenas artigos DOCX que NÃO estão nesta lista serão processados
-# - Cada linha representa um artigo já processado (formato normalizado)
-# - Para reprocessar um artigo, remova-o desta lista
-#
-# Formato: nome_normalizado_do_arquivo (sem extensão)
-# Data de criação: 2025-09-06
-#
-# ==========================================
-
-# Artigos de 2024 - processados anteriormente
 2024_03_06_aplicacao_web_java
 2024_03_17_solucao_de_aplicacao_nas_nuvens
 2024_03_20_produtividade_versus_renda
@@ -45,8 +29,6 @@
 2024_09_15_organizacao_de_uma_biblioteca_comum_em_java_um_estudo_de_caso_com_apache_commons
 2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java
 2024_10_01_aplicacao_graphql_com_java
-
-# Artigos de 2025 - processados anteriormente
 2025_05_05_renda_basica_universal_liberdade_ocio_e_o_futuro_humano
 2025_05_08_a_persistencia_do_analfabetismo_funcional_no_brasil_um_entrave_ao_desenvolvimento_social
 2025_05_11_entre_numeros_e_maquinas_o_misterio_que_alimenta_a_inteligencia_artificial
