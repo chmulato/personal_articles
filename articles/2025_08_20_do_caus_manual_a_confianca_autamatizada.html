@@ -37,21 +37,18 @@
                 </header>
                 
                 <div class="post-content">
-                    <p><img alt="Automação de testes de API no CSOnline" src="assets/img/2025_08_20_IMAGE_001.png" />{width="5.905555555555556in" height="3.3243055555555556in"}</p>
+                    <p><img alt="Automação de testes de API no CSOnline" src="assets/img/2025_08_20_IMAGE_001.png" /></p>
 <p>Automação de testes de API no CSOnline</p>
 <p><strong>Da Necessidade ao Sistema: Como Construímos uma Suite de Testes Automatizados para APIs REST</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato, #OPEN_TO_WORK" src="assets/img/2025_08_20_IMAGE_002.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
-<p><a href="https://www.linkedin.com/in/chmulato/">**Christian Mulato **</a></p>
-<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
-<p>20 de agosto de 2025</p>
 <p><strong>1.1     O Desafio Inicial</strong></p>
 <p>Durante o desenvolvimento do <strong>CSOnline</strong>, um sistema de gestão de entregas enterprise, nos deparamos com um problema comum mas crítico: como garantir que nossas APIs REST funcionassem consistentemente durante o desenvolvimento iterativo?</p>
 <p>Com 7 módulos (Usuários, Entregadores, Clientes, Entregas, Equipes, SMS e Preços) e múltiplos endpoints CRUD, testar manualmente cada funcionalidade a cada deploy tornou-se insustentável.</p>
 <p><strong>1.2     A Primeira Abordagem</strong></p>
 <p>Tudo começou com um script simples: <strong>test-couriers.ps1</strong>. Era interativo, testava apenas um endpoint e requeria input manual. Funcionava, mas não escalava.</p>
-<p># Primeira versão - manual e limitada</p>
-<p>Write-Host \"Testando endpoint de couriers...\"</p>
-<p>\$response = Invoke-RestMethod -Uri \"http://localhost:8080/csonline/api/couriers\"</p>
+<pre><code># Primeira versão - manual e limitada
+Write-Host "Testando endpoint de couriers..."
+$response = Invoke-RestMethod -Uri "http://localhost:8080/csonline/api/couriers"
+</code></pre>
 <p><strong>1.3     A Virada: Pensamento Sistemático</strong></p>
 <p>Em agosto de 2025, decidimos abordar o problema de forma estruturada. A ideia foi simples: se temos padrões na API, podemos ter padrões nos testes.</p>
 <p><strong>Decisões arquiteturais tomadas:</strong></p>
@@ -95,22 +92,23 @@
 </li>
 </ul>
 <p>Cada script seguia o mesmo padrão:</p>
-<p>function Test-EntityCRUD {</p>
-<p>param([string]\$BaseUrl, [string]\$Entity)</p>
-<p>try {</p>
-<p># GET - Lista</p>
-<p>\$list = Invoke-RestMethod -Uri \"\$BaseUrl/\$Entity\"</p>
-<p>Write-Host \"GET /\$Entity : SUCESSO (\$(\$list.Count) registros)\" -ForegroundColor Green</p>
-<p># GET - Individual (se lista não estiver vazia)</p>
-<p>if (\$list.Count -gt 0) {</p>
-<p>\$individual = Invoke-RestMethod -Uri \"\$BaseUrl/\$Entity/\$(\$list[0].id)\"</p>
-<p>Write-Host \"GET /\$Entity/{id} : SUCESSO\" -ForegroundColor Green</p>
-<p>}</p>
-<p># POST, PUT, DELETE...</p>
-<p>} catch {</p>
-<p>Write-Host \"ERRO em \$Entity : \$(\$_.Exception.Message)\" -ForegroundColor Red</p>
-<p>}</p>
-<p>}</p>
+<pre><code>function Test-EntityCRUD {
+    param([string]$BaseUrl, [string]$Entity)
+    try {
+        # GET - Lista
+        $list = Invoke-RestMethod -Uri "$BaseUrl/$Entity"
+        Write-Host "GET /$Entity : SUCESSO ($($list.Count) registros)" -ForegroundColor Green
+        # GET - Individual (se lista não estiver vazia)
+        if ($list.Count -gt 0) {
+            $individual = Invoke-RestMethod -Uri "$BaseUrl/$Entity/$($list[0].id)"
+            Write-Host "GET /$Entity/{id} : SUCESSO" -ForegroundColor Green
+        }
+        # POST, PUT, DELETE...
+    } catch {
+        Write-Host "ERRO em $Entity : $($_.Exception.Message)" -ForegroundColor Red
+    }
+}
+</code></pre>
 <p><strong>1.5     As Ferramentas de Orquestração</strong></p>
 <p>Não bastava ter scripts individuais. Precisávamos de ferramentas para executá-los de forma inteligente:</p>
 <ul>
@@ -179,10 +177,12 @@
 </ul>
 <p><strong>1.9     O Resultado</strong></p>
 <p>Hoje, qualquer mudança no <strong>CSOnline</strong> pode ser validada em minutos:</p>
-<p># Um comando para testar tudo</p>
-<p>.\run-tests.ps1</p>
-<p># Ou verificação rápida de saúde</p>
-<p>.\run-tests.ps1 -HealthCheck</p>
+<pre><code># Um comando para testar tudo
+./run-tests.ps1
+
+# Ou verificação rápida de saúde
+./run-tests.ps1 -HealthCheck
+</code></pre>
 <p><strong>1.10  Próximos Passos</strong></p>
 <p>A jornada não para aqui. Estamos expandindo para:</p>
 <ul>
@@ -211,7 +211,7 @@
                 
                 <footer class="post-footer">
                     <div class="author-info">
-                        <img src="assets/img/2025_08_20_do_caus_manual_a_confianca_autamatizada_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <img src="assets/img/foto_chri.jpg" alt="Christian Mulato" class="author-avatar">
                         <div class="author-details">
                             <strong>Christian Mulato</strong>
                             <p>Desenvolvedor Java e Arquiteto de Software</p>

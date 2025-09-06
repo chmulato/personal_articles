@@ -1,0 +1,32 @@
+PROMPT PRINCIPAL (1290x1080)
+Ilustração flat semi-isométrica mostrando um HUB LOCAL de integração (núcleo circular ou hexagonal com símbolo </>, engrenagem estilizada ou { }) conectado por linhas de dados a ícones minimalistas de: fornecedores (caixas/pallet), API, lojistas (fachada simples), logística (caminhão/rota), estoque (prateleiras) e analytics (gráfico). Tema: fortalecimento do pequeno varejo em pequenas cidades brasileiras. Paleta profissional: azul petróleo (#0F3556), azul médio (#1F5F8C), cinzas neutros e acentos laranja (#FF7A29). Fundo claro com padrão sutil de rede difusa. Luz suave, equilíbrio visual, sem poluição. Inserir no rodapé texto curto legível: "Hub Local de Integração – Varejo Regional Inteligente" (tipografia sem serifa limpa). Sem marcas reais, sem pessoas, sem logotipos proprietários.
+
+PROMPT FUTURISTA
+Nó central luminoso (HUB) emitindo fluxos/raios de dados em arco para ícones circulares dispostos em anel (fornecedores, lojistas, logística, estoque, analytics, APIs). Gradiente azul profundo → ciano com toques âmbar. Estética tecnológica minimalista, leve névoa digital, brilho controlado (sem exageros). Profundidade suave, sensação de orquestração inteligente. Texto discreto inferior: "Integração Local • Eficiência • Escala". Sem figuras humanas, sem marcas, sem excesso de elementos.
+
+PROMPT MINIMALISTA
+Fundo branco ou cinza muito claro. Círculo central com símbolo </> ou { } e cinco/seis círculos menores alinhados em semicírculo ou coroa conectados por linhas finas uniformes. Ícones ultrassimplificados (caixa, etiqueta, caminhão, prateleira, gráfico, API) traço limpo. Cores: azul marinho dominante (#0F3556) + acentos laranja (#FF7A29) suaves + cinza neutro (#E6E9EC). Sombra leve (material light), foco em clareza. Título curto no rodapé: "Hub Local para Pequenas Cidades". Nenhum texto extra.
+
+PROMPT DARK ELEGANTE
+Fundo azul quase preto (#0A121A). Centro: cubo ou poliedro translúcido com circuitos internos brilhando em ciano e âmbar simbolizando HUB. Conexões em traços de luz até ícones outline (fornecedor, lojista, logística, estoque, analytics, API). Glow contido, neblina tecnológica sutil, sem ruído. Inserir texto em tipografia fina e de alto contraste: "Retail API Hub Local" ou "Hub Local de Integração" na base. Visual premium, sofisticado, limpo.
+
+PROMPT VARIAÇÃO ILUSTRAÇÃO DE CIDADE
+Mapa estilizado de uma pequena cidade (quadras simples, poucos prédios baixos, mercado local) com um ponto central (HUB) destacando conexões até pequenos estabelecimentos e um caminhão de entrega saindo. Paleta: azul + laranja + neutros. Estilo flat clean. Texto curto: "Integração que fortalece o varejo local". Sem marcas, sem pessoas, sem excesso de detalhes.
+
+NEGATIVE PROMPT (usar se a ferramenta aceitar)
+logos reais, marcas registradas, pessoas, mãos, rostos, excesso de texto, watermark, assinatura, arte glitch, baixa resolução, ruído forte, distorções, reflexos exagerados, glitter, bordas grossas, sombras duras, clutter, propaganda, mockups de tela complexos
+
+ALT TEXT SUGERIDO
+Ilustração de um hub local de integração conectando fornecedores, lojistas, logística, estoque e analytics para fortalecer o pequeno varejo em pequenas cidades brasileiras.
+
+NOTAS DE USO
+1. Proporção alvo 1290x1080 (quase quadrado) — manter foco central sem cortar ícones-chave.
+2. Caso a IA gere muito texto, manter apenas a linha principal ou remover e adicionar manualmente depois.
+3. Evitar saturação: espaço em branco melhora legibilidade no LinkedIn.
+4. Se houver dificuldade em equilíbrio de cores, reduzir a paleta para azul petróleo + acento laranja.
+5. Exportar preferencialmente em PNG sem compressão agressiva.
+
+VERSÃO CURTA (para modelos que exigem menos tokens)
+HUB local de integração em estilo flat semi-isométrico; centro com símbolo </> conectado a ícones de fornecedor, lojista, logística, estoque e analytics; paleta azul petróleo e laranja (#0F3556 / #FF7A29); fundo claro sutil; sem pessoas; texto curto no rodapé: "Hub Local de Integração".
+
+-- Fim --

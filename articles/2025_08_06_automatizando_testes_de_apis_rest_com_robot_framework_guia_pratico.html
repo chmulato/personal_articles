@@ -37,13 +37,9 @@
                 </header>
                 
                 <div class="post-content">
-                    <p><img alt="QA automatizando testes de API com Robot Framework" src="assets/img/2025_08_06_IMAGE_001.png" />{width="5.905555555555556in" height="3.3222222222222224in"}</p>
+                    <p><img alt="QA automatizando testes de API com Robot Framework" src="assets/img/2025_08_06_IMAGE_001.png" /></p>
 <p>QA automatizando testes de API com Robot Framework</p>
 <p><strong>Automatizando Testes de APIs REST com Robot Framework: Guia Prático</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato, #OPEN_TO_WORK" src="assets/img/2025_08_06_IMAGE_002.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
-<p><a href="https://www.linkedin.com/in/chmulato/">**Christian Mulato **</a></p>
-<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
-<p>6 de agosto de 2025</p>
 <p><strong>A Rotina de Ana, a QA que Mudou Tudo</strong></p>
 <p>Ana era QA sênior numa startup de <strong><em>fintech</em></strong> em crescimento acelerado. Todos os dias, ela chegava no escritório às 8h e já sabia o que a esperava: uma lista interminável de endpoints para testar manualmente.</p>
 <p>"GET /users/123",</p>
@@ -74,43 +70,54 @@
 </li>
 </ul>
 <p><strong>Configuração do Ambiente</strong></p>
-<p>pip install robotframework</p>
-<p>pip install robotframework-requests</p>
+<pre><code>pip install robotframework
+pip install robotframework-requests
+</code></pre>
 <p><strong>Arquitetura do Projeto</strong></p>
-<p>tests/</p>
-<p>├── resources/</p>
-<p>│ └── keywords.robot</p>
-<p>├── suites/</p>
-<p>│ └── api_tests.robot</p>
-<p>└── variables/</p>
-<p>└── config.robot</p>
+<pre><code>tests/
+├── resources/
+│   └── keywords.robot
+├── suites/
+│   └── api_tests.robot
+└── variables/
+    └── config.robot
+</code></pre>
 <p><strong>Configuração de Variáveis</strong></p>
 <p><strong>Arquivo: variables/config.robot</strong></p>
-<p>*** Variables ***</p>
-<p>\${BASE_URL}</p>
-<p>https://api.seuprojeto.com/v1</p>
+<pre><code>*** Variables ***
+${BASE_URL}    https://api.seuprojeto.com/v1
+</code></pre>
 <p><strong>Implementação de Keywords Reutilizáveis</strong></p>
 <p><strong>Arquivo: resources/keywords.robot</strong></p>
-<p>*** Settings</p>
-<p>*** Library    RequestsLibrary</p>
-<p>*** Keywords</p>
-<p>*** Iniciar Sessão na API     Create Session    api    \${BASE_URL}</p>
-<p>GET Deve Retornar 200     [Arguments]    \${endpoint}     \${response}=   </p>
-<p>GET On Session    api    \${endpoint}     Should Be Equal As Integers   </p>
-<p>\${response.status_code}    200</p>
+<pre><code>*** Settings ***
+Library    RequestsLibrary
+
+*** Keywords ***
+Iniciar Sessão na API
+    Create Session    api    ${BASE_URL}
+
+GET Deve Retornar 200
+    [Arguments]    ${endpoint}
+    ${response}=    GET On Session    api    ${endpoint}
+    Should Be Equal As Integers    ${response.status_code}    200
+</code></pre>
 <p><strong>Casos de Teste</strong></p>
 <p><strong>Arquivo: suites/api_tests.robot</strong></p>
-<p>*** Settings ***</p>
-<p>Resource    ../variables/config.robot</p>
-<p>Resource    ../resources/keywords.robot</p>
-<p>Suite Setup    Iniciar Sessão na API</p>
-<p>*** Test Cases ***</p>
-<p>Testar Endpoint de Status</p>
-<p>GET Deve Retornar 200    /status</p>
-<p>Testar Endpoint de Usuário</p>
-<p>GET Deve Retornar 200    /users/1</p>
+<pre><code>*** Settings ***
+Resource    ../variables/config.robot
+Resource    ../resources/keywords.robot
+Suite Setup    Iniciar Sessão na API
+
+*** Test Cases ***
+Testar Endpoint de Status
+    GET Deve Retornar 200    /status
+
+Testar Endpoint de Usuário
+    GET Deve Retornar 200    /users/1
+</code></pre>
 <p><strong>Execução dos Testes</strong></p>
-<p>robot -d results tests/suites/api_tests.robot</p>
+<pre><code>robot -d results tests/suites/api_tests.robot
+</code></pre>
 <p>O comando gera um relatório HTML detalhado em results/report.html com status de execução e métricas de performance.</p>
 <p><strong>Vantagens da Implementação</strong></p>
 <ul>
@@ -129,22 +136,24 @@
 </ul>
 <p><strong>Integração com CI/CD</strong></p>
 <p><strong>Exemplo de GitHub Actions:</strong></p>
-<p>name: API Tests</p>
-<p>on: [push]</p>
-<p>jobs:</p>
-<p>test:</p>
-<p>runs-on: ubuntu-latest</p>
-<p>steps:</p>
-<p>- uses: actions/checkout@v2</p>
-<p>- name: Set up Python</p>
-<p>uses: actions/setup-python@v2</p>
-<p>with:</p>
-<p>python-version: 3.11</p>
-<p>- name: Install dependencies</p>
-<p>run: |</p>
-<p>pip install robotframework robotframework-requests</p>
-<p>- name: Run tests</p>
-<p>run: robot tests/suites/api_tests.robot</p>
+<pre><code>name: API Tests
+on: [push]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Set up Python
+                uses: actions/setup-python@v2
+                with:
+                    python-version: '3.11'
+            - name: Install dependencies
+                run: |
+                    pip install robotframework robotframework-requests
+            - name: Run tests
+                run: robot tests/suites/api_tests.robot
+</code></pre>
 <p><strong>Conclusão</strong></p>
 <p>O <strong>Robot Framework</strong> oferece uma solução robusta para automação de testes de APIs REST, combinando sintaxe acessível com funcionalidades empresariais. A implementação de testes automatizados resulta em maior confiabilidade, redução de tempo de validação e melhoria contínua da qualidade do software.</p>
 <p><strong>Principais benefícios alcançados:</strong></p>
@@ -176,7 +185,7 @@
                 
                 <footer class="post-footer">
                     <div class="author-info">
-                        <img src="assets/img/2025_08_06_automatizando_testes_de_apis_rest_com_robot_framework_guia_pratico_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <img src="assets/img/foto_chri.jpg" alt="Christian Mulato" class="author-avatar">
                         <div class="author-details">
                             <strong>Christian Mulato</strong>
                             <p>Desenvolvedor Java e Arquiteto de Software</p>

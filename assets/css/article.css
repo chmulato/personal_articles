@@ -1,0 +1,12 @@
+/* Imagens responsivas nos artigos */
+.post-content img, .post-content .hero-image {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto 1rem auto;
+}
+
+/* Hero image pode ter um espaçamento extra inferior */
+.post-content .hero-image {
+	border-radius: 4px;
+}

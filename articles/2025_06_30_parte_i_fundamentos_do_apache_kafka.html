@@ -37,13 +37,9 @@
                 </header>
                 
                 <div class="post-content">
-                    <p><img alt="Apache Kafka com Java - Gerenciamento de Filas." src="assets/img/2025_06_30_IMAGE_001.png" />{width="5.905555555555556in" height="3.3222222222222224in"}</p>
-<p>Apache Kafka com Java - Gerenciamento de Filas.</p>
+                    <p><img class="hero-image" alt="Apache Kafka com Java - Gerenciamento de Filas." src="assets/img/2025_06_30_IMAGE_001.png" /></p>
+<p><em>Apache Kafka com Java - Gerenciamento de Filas.</em></p>
 <p><strong>Parte I: Fundamentos do Apache Kafka</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato, #OPEN_TO_WORK" src="assets/img/2025_06_30_IMAGE_002.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
-<p><a href="https://www.linkedin.com/in/chmulato/">**Christian Mulato **</a></p>
-<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
-<p>30 de junho de 2025</p>
 <p><strong>Introdução</strong></p>
 <p>Esta parte apresenta os conceitos essenciais do Apache Kafka, sua arquitetura, principais componentes e comandos básicos para quem está começando.</p>
 <p><strong>O que é Apache Kafka?</strong></p>
@@ -88,20 +84,24 @@
 </li>
 </ol>
 <p><strong>Instalação Rápida com Docker</strong></p>
-<p>docker-compose up -d</p>
+<pre><code>docker-compose up -d
+</code></pre>
 <p><strong>Comandos Essenciais</strong></p>
 <ul>
 <li>Criar um tópico:</li>
 </ul>
-<p>kafka-topics --create --topic meu-topico --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1</p>
+<pre><code>kafka-topics --create --topic meu-topico --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
+</code></pre>
 <ul>
 <li>Produzir mensagens:</li>
 </ul>
-<p>kafka-console-producer --topic meu-topico --bootstrap-server localhost:9092</p>
+<pre><code>kafka-console-producer --topic meu-topico --bootstrap-server localhost:9092
+</code></pre>
 <ul>
 <li>Consumir mensagens:</li>
 </ul>
-<p>kafka-console-consumer --topic meu-topico --from-beginning --bootstrap-server localhost:9092</p>
+<pre><code>kafka-console-consumer --topic meu-topico --from-beginning --bootstrap-server localhost:9092
+</code></pre>
 <p><strong>Exercícios Práticos</strong></p>
 <ol>
 <li>
@@ -144,47 +144,48 @@
 <p>mvn compile</p>
 <p>mvn exec:java -Dexec.mainClass=SimpleProducer</p>
 <p>mvn exec:java -Dexec.mainClass=SimpleConsumer</p>
-<p>O <strong>SimpleProducer</strong> envia uma mensagem de exemplo para o tópico, e o <strong>SimpleConsumer</strong> consome e imprime as mensagens recebidas.</p>
-<p><strong>Producer Java --- Enviando uma mensagem</strong></p>
-<p>O Producer é responsável por publicar mensagens em um tópico Kafka. Veja um exemplo básico:</p>
-<p>import org.apache.kafka.clients.producer.KafkaProducer;</p>
-<p>import org.apache.kafka.clients.producer.ProducerRecord;</p>
-<p>import java.util.Properties;</p>
-<p>public class SimpleProducer {</p>
-<p>public static void main(String[] args) {</p>
-<p>Properties props = new Properties();</p>
-<p>props.put(\"bootstrap.servers\", \"localhost:9092\");</p>
-<p>props.put(\"key.serializer\", \"org.apache.kafka.common.serialization.StringSerializer\");</p>
-<p>props.put(\"value.serializer\", \"org.apache.kafka.common.serialization.StringSerializer\");</p>
-<p>try (KafkaProducer\&lt;String, String&gt; producer = new KafkaProducer\&lt;&gt;(props)) {</p>
-<p>producer.send(new ProducerRecord\&lt;&gt;(\"meu-topico\", \"mensagem de exemplo\"));</p>
-<p>System.out.println(\"Mensagem enviada!\");</p>
+<pre><code>import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import java.util.Properties;
+
+public class SimpleProducer {
+    public static void main(String[] args) {
+        Properties props = new Properties();
+        props.put("bootstrap.servers", "localhost:9092");
+        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        try (KafkaProducer<String, String> producer = new KafkaProducer<>(props)) {
+            producer.send(new ProducerRecord<>("meu-topico", "mensagem de exemplo"));
+            System.out.println("Mensagem enviada!");
+        }
+    }
+}
+</code></pre>
 <p>}</p>
 <p>}</p>
-<p>}</p>
-<p><strong>Consumer Java --- Lendo mensagens do tópico</strong></p>
-<p>O Consumer é responsável por ler as mensagens publicadas em um tópico. Veja um exemplo básico:</p>
-<p>import org.apache.kafka.clients.consumer.ConsumerRecords;</p>
-<p>import org.apache.kafka.clients.consumer.KafkaConsumer;</p>
-<p>import org.apache.kafka.clients.consumer.ConsumerRecord;</p>
-<p>import java.util.Collections;</p>
-<p>import java.util.Properties;</p>
-<p>public class SimpleConsumer {</p>
-<p>public static void main(String[] args) {</p>
-<p>Properties props = new Properties();</p>
-<p>props.put(\"bootstrap.servers\", \"localhost:9092\");</p>
-<p>props.put(\"group.id\", \"grupo-exemplo\");</p>
-<p>props.put(\"key.deserializer\", \"org.apache.kafka.common.serialization.StringDeserializer\");</p>
-<p>props.put(\"value.deserializer\", \"org.apache.kafka.common.serialization.StringDeserializer\");</p>
-<p>try (KafkaConsumer\&lt;String, String&gt; consumer = new KafkaConsumer\&lt;&gt;(props)) {</p>
-<p>consumer.subscribe(Collections.singletonList(\"meu-topico\"));</p>
-<p>ConsumerRecords\&lt;String, String&gt; records = consumer.poll(java.time.Duration.ofSeconds(5));</p>
-<p>for (ConsumerRecord\&lt;String, String&gt; record : records) {</p>
-<p>System.out.printf(\"Recebido: %s%n\", record.value());</p>
-<p>}</p>
-<p>}</p>
-<p>}</p>
-<p>}</p>
+<pre><code>import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import java.util.Collections;
+import java.util.Properties;
+
+public class SimpleConsumer {
+    public static void main(String[] args) {
+        Properties props = new Properties();
+        props.put("bootstrap.servers", "localhost:9092");
+        props.put("group.id", "grupo-exemplo");
+        props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        try (KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props)) {
+            consumer.subscribe(Collections.singletonList("meu-topico"));
+            ConsumerRecords<String, String> records = consumer.poll(java.time.Duration.ofSeconds(5));
+            for (ConsumerRecord<String, String> record : records) {
+                System.out.printf("Recebido: %s%n", record.value());
+            }
+        }
+    }
+}
+</code></pre>
 <p><strong>Dica:</strong> Você pode modificar os exemplos para enviar e consumir múltiplas mensagens, testar diferentes tópicos ou experimentar com múltiplos consumidores para entender o funcionamento dos consumer groups.</p>
 <p>Esses exemplos são apenas para fins didáticos e funcionam em ambientes locais com o Kafka rodando no padrão (localhost:9092).</p>
 <hr />
@@ -199,10 +200,9 @@
 <p><a href="https://github.com/chmulato/kafka-java-mastery"><strong>🔗</strong></a> <a href="http://github.com/chmulato/kafka-java-mastery"><strong>github.com/chmulato/kafka-java-mastery</strong></a></p>
 <p><strong>Acesse, explore e contribua!</strong></p>
                 </div>
-                
                 <footer class="post-footer">
                     <div class="author-info">
-                        <img src="assets/img/2025_06_30_parte_i_fundamentos_do_apache_kafka_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <img src="assets/img/foto_chri.jpg" alt="Christian Mulato" class="author-avatar">
                         <div class="author-details">
                             <strong>Christian Mulato</strong>
                             <p>Desenvolvedor Java e Arquiteto de Software</p>

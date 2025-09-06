@@ -1,0 +1,22 @@
+PROMPT PRINCIPAL (1290x1080)
+Ilustração moderna estilo flat com leve semi-isométrico mostrando um HUB central de Integração de APIs em Java (núcleo com ícone abstrato de engrenagem + chaves { } ou circuito) conectado por linhas de dados a ícones genéricos de: pedidos, catálogo (etiqueta / tag), estoque (caixas), logística (caminhão / rota), analytics (gráfico). Paleta: azul petróleo (#0F3556), azul médio (#1F5F8C), cinzas neutros, acentos laranja (#FF7A29). Luz suave, fundo claro com padrão sutil de rede ou nós difusos. Sensação de confiabilidade, escalabilidade e organização. Incluir texto curto e legível no rodapé: "Hub de Integração de APIs — Varejo & Delivery em Java" (tipografia sem serifa limpa). Sem logos reais, sem marcas registradas.
+
+PROMPT ALTERNATIVO FUTURISTA
+Visual futurista com um nó luminoso central (API HUB) emitindo raios/streams de dados para ícones minimalistas de pedidos, estoque, catálogo, logística e analytics dispostos em anel. Partículas leves, gradientes azul profundo → ciano com toques âmbar. Estética tech minimal high-contrast, profundidade suave, brilho controlado. Inserir discretamente símbolo alusivo a Java (xícara estilizada simplificada sem infringir marca) próximo ao núcleo. Texto pequeno: "Integração Unificada em Java" sobre uma faixa translúcida discreta. Sem poluição visual.
+
+PROMPT MINIMALISTA
+Fundo branco ou cinza muito claro. Diagrama simples: círculo central com </> e cinco círculos menores rotulados por ícones (pedido, catálogo, estoque, logística, métricas) ligados por linhas finas uniformes. Cores: azul marinho dominante, acentos laranja, sombras suaves (material light). Layout equilibrado, foco em clareza. Título curto no topo ou rodapé: "Hub de APIs para Varejo & Delivery (Java)". Sem figuras humanas, sem marcas.
+
+PROMPT (VERSÃO DARK ELEGANTE)
+Fundo dark azul quase preto (#0A121A). Centro: cubo translúcido brilhante com circuitos internos simbolizando HUB de APIs. Conexões em neon ciano e âmbar até ícones contornados (pedido, catálogo, estoque, logística, analytics) com leve glow. Neblina tecnológica sutil, granulação mínima. Inserir texto em tipografia fina: "Retail & Delivery API Hub em Java" na parte inferior, contraste alto. Visual premium, sofisticado.
+
+NEGATIVE PROMPT (para usar se a ferramenta aceitar)
+logos reais, marcas registradas, pessoas, mãos, rostos, excesso de texto, arte glitch, baixa resolução, ruído, distorções, reflexos exagerados, watermark, assinatura, bordas grossas, sombras duras, clutter.
+
+ALT TEXT SUGERIDO
+Ilustração de um hub central de APIs em Java conectado a ícones de pedidos, catálogo, estoque, logística e analytics representando integração unificada para varejo e delivery.
+
+NOTAS
+- Manter proporção (próximo de 1:1) adaptada a 1290x1080 recortando sem perder o núcleo.
+- Garantir contraste adequado para leitura do texto curto.
+- Se a IA gerar muito texto, reduzir para apenas a linha principal ou remover e adicionar manualmente depois.
