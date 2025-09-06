@@ -48,7 +48,7 @@
        </span>
       </div>
       <div class="featured-image">
-       <img alt="Arquitetura Hexagonal Vs Clean Architecture" class="img-responsive" src="assets/img/2025_09_14_arquitetura_hexagonal_vs_clean_architecture_image1.png"/>
+       <img alt="Arquitetura Hexagonal Vs Clean Architecture" class="img-responsive" src="assets/img/2025_09_14_Arquitetura_Hexagonal_vs_Clean_Architecture_image1.png"/>
       </div>
      </header>
      <div class="post-content">
@@ -56,9 +56,7 @@
        Arquitetura Hexagonal vs. Arquitetura Limpa: Comparação Prática em Java
       </h1>
       <p>
-       <img alt="Comparação entre Arquitetura Hexagonal e Arquitetura Limpa" src="assets/img/image1.png">
-        {width="5.833333333333333in" height="3.1818175853018373in"}
-       </img>
+       <img alt="Comparação entre Arquitetura Hexagonal e Arquitetura Limpa" class="img-responsive" src="assets/img/2025_09_14_Arquitetura_Hexagonal_vs_Clean_Architecture_image1.png"/>
       </p>
       <p>
        <em>
@@ -146,44 +144,44 @@
       </p>
       <div class="codehilite">
        <pre class="highlight language-java"><span></span><code><span class="c1">// Domínio: Entidade</span>
-<span class="nx">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">Appointment</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">Long</span><span class="w"> </span><span class="nx">id</span><span class="p">;</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">LocalDateTime</span><span class="w"> </span><span class="nx">dateTime</span><span class="p">;</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">String</span><span class="w"> </span><span class="nx">patientId</span><span class="p">;</span>
-<span class="w">    </span><span class="c1">// getters, setters, business logic</span>
-<span class="p">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Appointment</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">LocalDateTime</span> <span class="n">dateTime</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">patientId</span><span class="o">;</span>
+    <span class="c1">// getters, setters, business logic</span>
+<span class="o">}</span>
 
 <span class="c1">// Domínio: Caso de Uso</span>
-<span class="nx">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">ScheduleAppointmentUseCase</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="nx">AppointmentRepositoryPort</span><span class="w"> </span><span class="nx">repository</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ScheduleAppointmentUseCase</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">AppointmentRepositoryPort</span> <span class="n">repository</span><span class="o">;</span>
 
-<span class="w">    </span><span class="nx">public</span><span class="w"> </span><span class="nx">ScheduleAppointmentUseCase</span><span class="p">(</span><span class="nx">AppointmentRepositoryPort</span><span class="w"> </span><span class="nx">repository</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">this</span><span class="p">.</span><span class="nx">repository</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">repository</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+    <span class="kd">public</span> <span class="nf">ScheduleAppointmentUseCase</span><span class="o">(</span><span class="n">AppointmentRepositoryPort</span> <span class="n">repository</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">repository</span> <span class="o">=</span> <span class="n">repository</span><span class="o">;</span>
+    <span class="o">}</span>
 
-<span class="w">    </span><span class="nx">public</span><span class="w"> </span><span class="nx">void</span><span class="w"> </span><span class="nx">execute</span><span class="p">(</span><span class="nx">ScheduleAppointmentCommand</span><span class="w"> </span><span class="nx">command</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Lógica de negócio: validar disponibilidade, etc.</span>
-<span class="w">        </span><span class="nx">Appointment</span><span class="w"> </span><span class="nx">appointment</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">new</span><span class="w"> </span><span class="nx">Appointment</span><span class="p">(</span><span class="cm">/*...*/</span><span class="p">);</span>
-<span class="w">        </span><span class="nx">repository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">appointment</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="n">ScheduleAppointmentCommand</span> <span class="n">command</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Lógica de negócio: validar disponibilidade, etc.</span>
+        <span class="n">Appointment</span> <span class="n">appointment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Appointment</span><span class="o">(</span><span class="cm">/*...*/</span><span class="o">);</span>
+        <span class="n">repository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">appointment</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 <span class="c1">// Porta de Saída</span>
-<span class="nx">public</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">AppointmentRepositoryPort</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">void</span><span class="w"> </span><span class="nx">save</span><span class="p">(</span><span class="nx">Appointment</span><span class="w"> </span><span class="nx">appointment</span><span class="p">);</span>
-<span class="w">    </span><span class="nx">List</span><span class="p">&lt;</span><span class="nx">Appointment</span><span class="p">&gt;</span><span class="w"> </span><span class="nx">findByPatient</span><span class="p">(</span><span class="nx">String</span><span class="w"> </span><span class="nx">patientId</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AppointmentRepositoryPort</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">Appointment</span> <span class="n">appointment</span><span class="o">);</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Appointment</span><span class="o">&gt;</span> <span class="nf">findByPatient</span><span class="o">(</span><span class="n">String</span> <span class="n">patientId</span><span class="o">);</span>
+<span class="o">}</span>
 
 <span class="c1">// Adaptador de Saída (JPA)</span>
-<span class="err">@</span><span class="nx">Repository</span>
-<span class="nx">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">JpaAppointmentRepositoryAdapter</span><span class="w"> </span><span class="nx">implements</span><span class="w"> </span><span class="nx">AppointmentRepositoryPort</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="nx">JpaAppointmentRepository</span><span class="w"> </span><span class="nx">jpaRepo</span><span class="p">;</span>
+<span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JpaAppointmentRepositoryAdapter</span> <span class="kd">implements</span> <span class="n">AppointmentRepositoryPort</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">JpaAppointmentRepository</span> <span class="n">jpaRepo</span><span class="o">;</span>
 
-<span class="w">    </span><span class="err">@</span><span class="nx">Override</span>
-<span class="w">    </span><span class="nx">public</span><span class="w"> </span><span class="nx">void</span><span class="w"> </span><span class="nx">save</span><span class="p">(</span><span class="nx">Appointment</span><span class="w"> </span><span class="nx">appointment</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Conversão e salvamento</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">Appointment</span> <span class="n">appointment</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Conversão e salvamento</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre>
       </div>
       <p>
@@ -243,28 +241,28 @@
       </p>
       <div class="codehilite">
        <pre class="highlight language-java"><span></span><code><span class="c1">// Camada de Aplicação: Caso de Uso</span>
-<span class="nx">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">ScheduleAppointmentUseCase</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="nx">AppointmentRepository</span><span class="w"> </span><span class="nx">repository</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ScheduleAppointmentUseCase</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">AppointmentRepository</span> <span class="n">repository</span><span class="o">;</span>
 
-<span class="w">    </span><span class="nx">public</span><span class="w"> </span><span class="nx">ScheduleAppointmentUseCase</span><span class="p">(</span><span class="nx">AppointmentRepository</span><span class="w"> </span><span class="nx">repository</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">this</span><span class="p">.</span><span class="nx">repository</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">repository</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+    <span class="kd">public</span> <span class="nf">ScheduleAppointmentUseCase</span><span class="o">(</span><span class="n">AppointmentRepository</span> <span class="n">repository</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">repository</span> <span class="o">=</span> <span class="n">repository</span><span class="o">;</span>
+    <span class="o">}</span>
 
-<span class="w">    </span><span class="nx">public</span><span class="w"> </span><span class="nx">void</span><span class="w"> </span><span class="nx">execute</span><span class="p">(</span><span class="nx">ScheduleAppointmentCommand</span><span class="w"> </span><span class="nx">command</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Mesmo lógica</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="n">ScheduleAppointmentCommand</span> <span class="n">command</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Mesmo lógica</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 <span class="c1">// Interface na Camada de Aplicação</span>
-<span class="nx">public</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">AppointmentRepository</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">void</span><span class="w"> </span><span class="nx">save</span><span class="p">(</span><span class="nx">Appointment</span><span class="w"> </span><span class="nx">appointment</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AppointmentRepository</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">Appointment</span> <span class="n">appointment</span><span class="o">);</span>
+<span class="o">}</span>
 
 <span class="c1">// Camada de Infraestrutura: Implementação</span>
-<span class="err">@</span><span class="nx">Repository</span>
-<span class="nx">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">JpaAppointmentRepository</span><span class="w"> </span><span class="nx">implements</span><span class="w"> </span><span class="nx">AppointmentRepository</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Implementação</span>
-<span class="p">}</span>
+<span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JpaAppointmentRepository</span> <span class="kd">implements</span> <span class="n">AppointmentRepository</span> <span class="o">{</span>
+    <span class="c1">// Implementação</span>
+<span class="o">}</span>
 </code></pre>
       </div>
       <h2 id="comparacao-pratica-hexagonal-vs-arquitetura-limpa">
@@ -334,12 +332,10 @@
        <em>
         Christian Mulato
        </em>
-       \
        <br/>
        <em>
         Desenvolvedor Java Sênior
        </em>
-       \
        <br/>
        <em>
         14 de setembro de 2025
