@@ -35,12 +35,10 @@
                 </header>
                 
                 <div class="post-content">
-                    <p><img alt="Extraia dados da web com eficiência: veja como uma API moderna com Java e Docker resolve esse desafio." src="assets/img/2025_07_19_IMAGE_001.jpeg" class="hero-image" width="590" height="331" /></p>
-<p>Extraia dados da web com eficiência: veja como uma API moderna com Java e Docker resolve esse desafio.</p>
+                    <p><img alt="Extraia dados da web com eficiência: veja como uma API moderna com Java e Docker resolve esse desafio." src="assets/img/2025_07_19_IMAGE_001.jpeg" class="hero-image" /></p>
+
 <p><strong>Arquitetura Escalável para Web Crawling com Java e Docker: Um Caso Real</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
-<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
-<p>19 de julho de 2025</p>
+
 <p>Como projetar um sistema de crawling moderno, assíncrono e escalável com Spring Boot, RabbitMQ e Docker</p>
 <p><strong>Introdução</strong></p>
 <p>Neste artigo, apresento a arquitetura por trás da <strong>Web Crawler API</strong>, um projeto open source construído em Java que realiza buscas inteligentes e paralelas na web. Ele foi desenvolvido para ser confiável, observável e facilmente escalável, aproveitando o melhor do ecossistema Spring, mensageria com RabbitMQ e infraestrutura com Docker/Kubernetes.</p>
@@ -68,17 +66,18 @@
 </li>
 </ul>
 <p><strong>Visão Geral da Arquitetura</strong></p>
-<pre><code>┌───────────────┐   ┌───────────────┐   ┌───────────────┐
-│  Controller   │→ │    Service     │→ │    RabbitMQ    │
-│   (API REST)  │   │   (Negócio)    │   │ (Fila Tarefas)│
+<pre><code>
+┌───────────────┐   ┌───────────────┐   ┌───────────────┐
+│  Controller   │→  │    Service    │→  │    RabbitMQ   │
+│   (API REST)  │   │   (Negócio)   │   │ (Fila Tarefas)│
 └───────────────┘   └───────────────┘   └───────────────┘
-          │
-          ▼
-      ┌───────────┐
-      │  Worker   │ (Crawling)
-      └───────────┘
-          │
-          ▼
+         │
+         ▼
+     ┌───────────┐
+     │  Worker   │ (Crawling)
+     └───────────┘
+         │
+         ▼
     Banco de Dados (H2)
 </code></pre>
 <p><strong>Componentes Principais</strong></p>
