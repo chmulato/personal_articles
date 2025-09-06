@@ -1,7 +1,5 @@
 # Personal Articles Build System
 
-# Personal Articles Build System
-
 ## Overview
 
 This project provides an automated build system that converts DOCX technical articles into a complete HTML website. The system features comprehensive processing control to prevent reprocessing and ensure efficient builds.
