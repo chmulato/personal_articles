@@ -58,6 +58,7 @@ scr/json/*report*.json
 *.tmp
 *.temp
 .cache/
+temp
 
 # Backup files
 *.backup
@@ -74,3 +75,6 @@ yarn-error.log
 # Build artifacts
 .build/
 .dist/
+
+# Temporary Markdown files (local only)
+md/
