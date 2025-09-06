@@ -79,3 +79,4 @@ yarn-error.log
 # Temporary Markdown files (local only)
 md/
 backup_removed_scripts/
+temp_media/
