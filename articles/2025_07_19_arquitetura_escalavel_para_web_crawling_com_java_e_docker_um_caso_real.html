@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<hea<p><p>Artigo por <a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a>.</p>a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato, #OPEN_TO_WORK" src="assets/img/2025_07_19_IMAGE_002.jpeg" width="104" height="104" /></a></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
-<p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arquitetura Escalável Para Web Crawling Com Java E Docker - Um Caso Real - Christian Mulato Dev Blog</title>
     <meta name="description" content="Artigo sobre Arquitetura Escalável Para Web Crawling Com Java E Docker - Um Caso Real">
     <meta name="author" content="Christian Mulato">
     <meta name="keywords" content="Java, Desenvolvimento, Tecnologia">
-    
-    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/article.css">
     <link rel="stylesheet" href="assets/css/highlight.css">
@@ -33,7 +29,7 @@
                     <h1 class="post-title">Arquitetura Escalável Para Web Crawling Com Java E Docker - Um Caso Real</h1>
                     <div class="post-meta">
                         <time datetime="2025-07-19">19/07/2025</time>
-                        <span class="post-author">Por Christian Mulato</span>
+                        <span class="post-author">Por <a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></span>
                     </div>
                     
                 </header>
@@ -42,8 +38,8 @@
                     <p><img alt="Extraia dados da web com eficiência: veja como uma API moderna com Java e Docker resolve esse desafio." src="assets/img/2025_07_19_IMAGE_001.jpeg" width="590" height="331" /></p>
 <p>Extraia dados da web com eficiência: veja como uma API moderna com Java e Docker resolve esse desafio.</p>
 <p><strong>Arquitetura Escalável para Web Crawling com Java e Docker: Um Caso Real</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato, #OPEN_TO_WORK" src="assets/img/2025_07_19_IMAGE_002.jpeg" width="104" height="104" /></a></p>
-<p><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato </a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2025_07_19_IMAGE_002.jpeg" width="104" height="104" /></a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
 <p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
 <p>19 de julho de 2025</p>
 <p>Como projetar um sistema de crawling moderno, assíncrono e escalável com Spring Boot, RabbitMQ e Docker</p>
@@ -73,17 +69,19 @@
 </li>
 </ul>
 <p><strong>Visão Geral da Arquitetura</strong></p>
-<p>┌───────────────┐ ┌───────────────┐ ┌───────────────┐</p>
-<p>│ Controller │ ─▶ │ Service │ ─▶ │ RabbitMQ │</p>
-<p>│ (API REST) │ │ (Negócio) │ │ (Fila de Tarefas)</p>
-<p>└───────────────┘ └───────────────┘ └───────────────┘</p>
-<p>▼</p>
-<p>┌──────────────┐</p>
-<p>│ Worker │</p>
-<p>│ (Crawling) │</p>
-<p>└──────────────┘</p>
-<p>▼</p>
-<p>Banco de Dados H2</p>
+<pre><code>┌───────────────┐   ┌───────────────┐   ┌───────────────┐
+│  Controller   │→ │    Service     │→ │    RabbitMQ    │
+│   (API REST)  │   │   (Negócio)    │   │ (Fila Tarefas)│
+└───────────────┘   └───────────────┘   └───────────────┘
+          │
+          ▼
+      ┌───────────┐
+      │  Worker   │ (Crawling)
+      └───────────┘
+          │
+          ▼
+    Banco de Dados (H2)
+</code></pre>
 <p><strong>Componentes Principais</strong></p>
 <p><strong>Spring Boot 3.x</strong></p>
 <p>Framework principal da aplicação, usando:</p>
@@ -126,7 +124,7 @@
 <p>Execução de todos os serviços com um comando</p>
 </li>
 </ul>
-<p>docker-compose up --build -d</p>
+<pre><code>docker-compose up --build -d</code></pre>
 <p><strong>Fluxo de Execução</strong></p>
 <ol>
 <li>
@@ -184,8 +182,8 @@
 <p><strong>Execução:</strong></p>
 </li>
 </ul>
-<p>mvn test</p>
-<p>mvn jacoco:report</p>
+<pre><code>mvn test
+mvn jacoco:report</code></pre>
 <p><strong>Deploy</strong></p>
 <ul>
 <li>
@@ -195,7 +193,7 @@
 <p><strong>Produção:</strong> Kubernetes com Helm</p>
 </li>
 </ul>
-<p>helm install crawler-api ./helm/web-crawler-api</p>
+<pre><code>helm install crawler-api ./helm/web-crawler-api</code></pre>
 <p><strong>Conclusão</strong></p>
 <p>A arquitetura escalável e desacoplada da Web Crawler API mostra como é possível construir sistemas robustos com tecnologias modernas do ecossistema Java. O uso de mensageria e containers garante performance e manutenibilidade, enquanto a separação de responsabilidades facilita testes, observação e evolução contínua.</p>
 <p>➡️ Projeto completo no GitHub: <a href="https://github.com/chmulato/Spring_Web_Crawler"><strong>github.com/chmulato/web-crawler-api</strong></a></p>
