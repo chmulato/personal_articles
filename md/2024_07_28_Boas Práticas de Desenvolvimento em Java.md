@@ -1,10 +1,10 @@
-![Boas Práticas com codificação em linguagem Java.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Boas Práticas com codificação em linguagem Java.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Boas Práticas com codificação em linguagem Java.
 
 **Boas Práticas de Desenvolvimento em Java**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -98,7 +98,7 @@ A reutilização de código é fundamental no desenvolvimento Java. Aqui estão 
 
 Vamos considerar um exemplo de herança em Java. Suponhamos que temos uma superclasse chamada *Pessoa*, e três subclasses: *Aluno*, *Funcionario* e *Professor*. A classe *Pessoa* possui atributos como nome, CPF e data de nascimento. As subclasses herdam esses atributos da superclasse e podem adicionar características específicas. Veja como implementar essas classes:
 
-![](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="8.625694444444445in"}
+![](temp_media/media/image3.png){width="5.905555555555556in" height="8.625694444444445in"}
 
 Exemplo de código Java aplicando a herança de classes.
 
@@ -110,7 +110,7 @@ A composição em Java é o ato de passar um objeto para outro, permitindo que e
 
 Aqui está um exemplo simplificado:
 
-![Texto Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image4.png){width="5.905555555555556in" height="5.1409722222222225in"}
+![Texto Descrição gerada automaticamente](temp_media/media/image4.png){width="5.905555555555556in" height="5.1409722222222225in"}
 
 Exemplo de código Java aplicando a composição de classes.
 
@@ -122,7 +122,7 @@ As interfaces em Java são semelhantes a classes, mas com uma diferença importa
 
 Vejamos um exemplo:
 
-![Interface gráfica do usuário, Texto, Email Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image5.png){width="5.905555555555556in" height="3.620833333333333in"}
+![Interface gráfica do usuário, Texto, Email Descrição gerada automaticamente](temp_media/media/image5.png){width="5.905555555555556in" height="3.620833333333333in"}
 
 Exemplo de código Java aplicando a implementação de interfaces.
 
@@ -140,7 +140,7 @@ Adicione a dependência do *Apache Commons Lang* ao seu projeto (por meio do *Ma
 
 Vamos ver como incluir a dependência em *Maven* no arquivo *pom.xml* do seu projeto (geralmente localizado na raiz do projeto). Dentro da seção \<*dependencies*\>, adicione a seguinte dependência para o Apache Commons Lang:
 
-![Texto Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image6.png){width="5.40625in" height="2.4375in"}
+![Texto Descrição gerada automaticamente](temp_media/media/image6.png){width="5.40625in" height="2.4375in"}
 
 Dependência Maven para a biblioteca Java Apache Commons Lang.
 
@@ -148,7 +148,7 @@ O *Maven* baixará automaticamente a biblioteca *Apache Commons Lang* e a inclui
 
 Exemplo de Uso:
 
-![Interface gráfica do usuário, Texto, Aplicativo, Carta, Email Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image7.png){width="5.905555555555556in" height="3.829861111111111in"}
+![Interface gráfica do usuário, Texto, Aplicativo, Carta, Email Descrição gerada automaticamente](temp_media/media/image7.png){width="5.905555555555556in" height="3.829861111111111in"}
 
 Exemplo do código Java utilizando bibliotecas existentes.
 
@@ -196,7 +196,7 @@ Para aplicar encapsulamento em Java, siga estas práticas:
 
 - **Métodos públicos:** Exponha apenas os métodos essenciais como public. Esses métodos devem fornecer uma interface clara para interagir com os atributos da classe. Por exemplo:
 
-![Interface gráfica do usuário, Texto, chat ou mensagem de texto Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image8.png){width="5.905555555555556in" height="3.553472222222222in"}
+![Interface gráfica do usuário, Texto, chat ou mensagem de texto Descrição gerada automaticamente](temp_media/media/image8.png){width="5.905555555555556in" height="3.553472222222222in"}
 
 Exemplo de encapsulamento de comportamento de uma classe em Java.
 
@@ -242,7 +242,7 @@ Vamos criar e lançar uma exceção personalizada em Java, siga estas etapas:
 
 Por exemplo:
 
-![](c:\dev\personal_articles\md\media/media/image9.png){width="5.905555555555556in" height="2.0965277777777778in"}
+![](temp_media/media/image9.png){width="5.905555555555556in" height="2.0965277777777778in"}
 
 Exemplo de uma classe para criação de um exceção específica.
 
@@ -250,7 +250,7 @@ Lance a exceção e dentro do código, use a palavra-chave throw para lançar su
 
 Por exemplo:
 
-![Interface gráfica do usuário, Texto, Aplicativo Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image10.png){width="5.905555555555556in" height="1.6368055555555556in"}
+![Interface gráfica do usuário, Texto, Aplicativo Descrição gerada automaticamente](temp_media/media/image10.png){width="5.905555555555556in" height="1.6368055555555556in"}
 
 Exemplo de código Java para lançamento de uma exceção de erro específica.
 
@@ -258,7 +258,7 @@ Trate a exceção e em outro lugar do código, onde você chama o método *verif
 
 Por exemplo:
 
-![Uma imagem contendo Linha do tempo Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image11.png){width="5.905555555555556in" height="1.6368055555555556in"}
+![Uma imagem contendo Linha do tempo Descrição gerada automaticamente](temp_media/media/image11.png){width="5.905555555555556in" height="1.6368055555555556in"}
 
 Exemplo de código Java para captura de uma exceção de erro.
 
@@ -266,7 +266,7 @@ Ao criar exceções personalizadas ajuda a identificar e tratar erros específic
 
 Exemplo completo:
 
-![Interface gráfica do usuário, Texto, Aplicativo, Email Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image12.png){width="5.905555555555556in" height="4.409722222222222in"}
+![Interface gráfica do usuário, Texto, Aplicativo, Email Descrição gerada automaticamente](temp_media/media/image12.png){width="5.905555555555556in" height="4.409722222222222in"}
 
 Exemplo completo de um código Java com tratamento de erro.
 

@@ -1,77 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre algumas novidades do javaee">
+    <title>Algumas Novidades Do Javaee - Christian Mulato Dev Blog</title>
+    <meta name="description" content="Artigo sobre Algumas Novidades Do Javaee">
     <meta name="author" content="Christian Mulato">
-    <meta name="keywords" content="Java, APIs, DevOps, IA">
+    <meta name="keywords" content="Java, Desenvolvimento, Tecnologia">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="articles/2024_04_14_algumas_novidades_do_javaee.html">
-    <meta property="og:title" content="Algumas Novidades Do Javaee">
-    <meta property="og:description" content="Artigo técnico sobre algumas novidades do javaee">
-    <meta property="og:image" content="assets/img/2024_04_14_algumas_novidades_do_javaee_featured.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="articles/2024_04_14_algumas_novidades_do_javaee.html">
-    <meta property="twitter:title" content="Algumas Novidades Do Javaee">
-    <meta property="twitter:description" content="Artigo técnico sobre algumas novidades do javaee">
-    <meta property="twitter:image" content="assets/img/2024_04_14_algumas_novidades_do_javaee_featured.jpg">
-    
-    <title>Algumas Novidades Do Javaee | Christian Mulato Dev Blog</title>
-    
-    <!-- Styles -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/article.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="assets/js/article.js" defer></script>
+    <link rel="stylesheet" href="assets/css/highlight.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-text">Christian Mulato</span>
-                    <span class="logo-subtitle">Dev Blog</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Artigos</a>
-                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html">Christian Mulato Dev Blog</a></h1>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="main">
-        <article class="article">
-            <header class="article-header">
-                <div class="article-meta">
-                    <span class="article-category">Java & Spring</span>
-                    <time class="article-date" datetime="14/04/2024">14/04/2024</time>
-                </div>
+    <main class="main-content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">Algumas Novidades Do Javaee</h1>
+                    <div class="post-meta">
+                        <time datetime="2024-04-14">14/04/2024</time>
+                        <span class="post-author">Por Christian Mulato</span>
+                    </div>
+                    
+                </header>
                 
-                <h1 class="article-title">Algumas Novidades Do Javaee</h1>
-                
-                <div class="article-info">
-                    <span class="article-author">Por Christian Mulato</span>
-                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">DevOps</span> <span class="tag">IA</span></div>
-                </div>
-            </header>
-            
-            <div class="article-content">
-                
-<p><img alt="Novidades do Java Enterprise Edition (Atualmente chamado de Jakarta EE)" src="assets/img/2024_04_14_Algumas novidades do JavaEE_image1.png" /></p>
+                <div class="post-content">
+                    <p><img alt="Novidades do Java Enterprise Edition (Atualmente chamado de Jakarta EE)" src="temp_media/media/image1.png" />{width="5.905555555555556in" height="3.3222222222222224in"}</p>
 <p>Novidades do Java Enterprise Edition (Atualmente chamado de Jakarta EE)</p>
 <p><strong>Algumas novidades do JavaEE</strong></p>
-
-<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="temp_media/media/image2.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>14 de abril de 2024</p>
 <p>A tecnologia JavaEE oferece suporte robusto para HTML5 e WebSockets, o que é uma grande vantagem para desenvolvedores que desejam construir aplicações web modernas e interativas. Vou explicar um pouco mais sobre cada um:</p>
@@ -80,12 +50,13 @@
 <p><strong><em>WebSockets em JavaEE:</em></strong></p>
 <p>WebSockets é uma tecnologia que permite comunicações bidirecionais e em tempo real entre clientes e servidores. Em Java EE, isso é implementado através da API de WebSocket, que faz parte da especificação desde o JavaEE 7. Com WebSockets, é possível estabelecer uma conexão persistente e de baixa latência que é ideal para aplicações que necessitam de atualizações em tempo real, como jogos online, chat, aplicações financeiras, entre outros.</p>
 <p>Aqui está um exemplo simplificado de como um servidor WebSocket pode ser implementado em Java EE:</p>
-<p><img alt="Exemplo de implementação do WebSocket para o JavaEE" src="assets/img/2024_04_14_Algumas novidades do JavaEE_image12.png" /></p>
-<p>Neste código, @ServerEndpoint define a classe como um endpoint de WebSocket que escuta na rota "/websocket". Os métodos anotados com @OnOpen, @OnMessage e @OnClose são chamados respectivamente quando uma nova conexão é estabelecida, uma mensagem é recebida e uma conexão é fechada.</p>
+<p><img alt="" src="temp_media/media/image3.png" />{width="5.905555555555556in" height="3.647222222222222in"}</p>
+<p>Exemplo de implementação do WebSocket para o JavaEE.</p>
+<p>Neste código, \@ServerEndpoint define a classe como um endpoint de WebSocket que escuta na rota \"/websocket\". Os métodos anotados com \@OnOpen, \@OnMessage e \@OnClose são chamados respectivamente quando uma nova conexão é estabelecida, uma mensagem é recebida e uma conexão é fechada.</p>
 <p>Essas funcionalidades permitem que os desenvolvedores criem aplicações web mais dinâmicas e responsivas, aproveitando as vantagens do protocolo WebSocket e as novas características do HTML5.</p>
 <p>Um exemplo de como o Java EE pode ser utilizado com HTML5 é através da criação de uma aplicação web que utiliza JSF (JavaServer Faces) para construir interfaces de usuário ricas e interativas. JSF é um framework MVC que simplifica a construção de interfaces de usuário para aplicações Java EE na web.</p>
 <p>Aqui está um exemplo simplificado de um formulário web utilizando JSF com elementos HTML5:</p>
-<p><img alt="" src="assets/img/2024_04_14_Algumas novidades do JavaEE_image11.png" /></p>
+<p><img alt="" src="temp_media/media/image4.png" />{width="5.905555555555556in" height="3.2354166666666666in"}</p>
 <p>Um exemplo de código JSF para atender páginas HTML5</p>
 <p>Neste exemplo, utilizamos o elemento <em>h:inputText</em> com o atributo type definido como email, que é um tipo de entrada específico do HTML5 para endereços de e-mail. Isso permite que o navegador valide automaticamente o formato do e-mail antes de enviar o formulário. Além disso, o atributo type range cria um controle deslizante para selecionar um número dentro de um intervalo especificado.</p>
 <p>Este é apenas um exemplo básico, mas o Java EE com HTML5 permite a criação de interfaces de usuário muito mais complexas e interativas, aproveitando as diversas funcionalidades que o HTML5 oferece.</p>
@@ -103,98 +74,28 @@
 <p>4. <em>Documentação e Tutoriais</em>: A documentação oficial e tutoriais detalhados estão disponíveis para auto-estudo e referência.</p>
 <p>5. <em>Comunidade e Fóruns</em>: Participar da comunidade Jakarta EE e fóruns de discussão pode ser uma ótima maneira de aprender com outros desenvolvedores e acompanhar as últimas novidades.</p>
 <p>Esses recursos são projetados para atender a diferentes estilos de aprendizado e níveis de experiência, facilitando o domínio do Jakarta EE para desenvolvimento de aplicações empresariais modernas e escaláveis. Fica aqui a dica.</p>
-            </div>
-            
-            <footer class="article-footer">
-                <div class="article-author-bio">
-                    <h3>Sobre o Autor</h3>
-                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
-                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
-                        Conecte-se no LinkedIn
-                    </a>
                 </div>
                 
-                <div class="article-navigation">
-                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
-                </div>
-            </footer>
-        </article>
+                <footer class="post-footer">
+                    <div class="author-info">
+                        <img src="assets/img/2024_04_14_algumas_novidades_do_javaee_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <div class="author-details">
+                            <strong>Christian Mulato</strong>
+                            <p>Desenvolvedor Java e Arquiteto de Software</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
     </main>
-    
+
     <footer class="site-footer">
-        <div class="footer-container">
+        <div class="container">
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Christian Mulato</h3>
-                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
-                <a href="../index.html">Artigos</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    
-    <!-- Theme Toggle Button -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-        <span id="themeIcon">🌙</span>
-    </button>
-    
-    <script>
-        // Tema manager
-        class ThemeManager {
-            constructor() {
-                this.themeToggle = document.getElementById('themeToggle');
-                this.themeIcon = document.getElementById('themeIcon');
-                this.init();
-            }
-            
-            init() {
-                const savedTheme = localStorage.getItem('theme');
-                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                const currentTheme = savedTheme || systemTheme;
-                
-                this.setTheme(currentTheme);
-                this.updateIcon(currentTheme);
-                
-                this.themeToggle.addEventListener('click', () => this.toggleTheme());
-            }
-            
-            toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                this.setTheme(newTheme);
-                this.updateIcon(newTheme);
-                localStorage.setItem('theme', newTheme);
-            }
-            
-            setTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-            
-            updateIcon(theme) {
-                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-                this.themeToggle.setAttribute('aria-label', 
-                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
-            }
-        }
-        
-        // Inicializar quando DOM carregar
-        document.addEventListener('DOMContentLoaded', () => {
-            new ThemeManager();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-

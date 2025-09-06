@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decisoes Tecnicas Que A Ia Nao Pode Tomar Licoes De Desenvolvimento Em Visao Computacional - Christian Mulato Dev Blog</title>
+    <meta name="description" content="Artigo sobre Decisoes Tecnicas Que A Ia Nao Pode Tomar Licoes De Desenvolvimento Em Visao Computacional">
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, Desenvolvimento, Tecnologia">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/article.css">
+    <link rel="stylesheet" href="assets/css/highlight.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html">Christian Mulato Dev Blog</a></h1>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">Decisoes Tecnicas Que A Ia Nao Pode Tomar Licoes De Desenvolvimento Em Visao Computacional</h1>
+                    <div class="post-meta">
+                        <time datetime="2025-09-07">07/09/2025</time>
+                        <span class="post-author">Por Christian Mulato</span>
+                    </div>
+                    
+                </header>
+                
+                <div class="post-content">
+                    <p><img alt="Decisões Técnicas que a IA Não Pode Tomar" src="temp_media/media/rId9.png" />{width="5.833333333333333in" height="3.1818175853018373in"}</p>
+<p><em>Ilustração representando a colaboração entre engenheiros humanos e inteligência artificial em sistemas de visão computacional. A imagem destaca o papel estratégico do profissional na tomada de decisões técnicas.</em></p>
+<h1 id="decisoes-tecnicas-que-a-ia-nao-pode-tomar-licoes-de-desenvolvimento-em-visao-computacional">Decisões Técnicas que a IA Não Pode Tomar: Lições de Desenvolvimento em Visão Computacional</h1>
+<p>Vivemos em um momento em que a inteligência artificial (IA) tem mostrado resultados impressionantes. Sistemas de visão computacional conseguem identificar padrões complexos em imagens, detectar objetos em tempo real e até interpretar comportamentos com uma precisão surpreendente. No entanto, enquanto a IA automatiza tarefas repetitivas e analisa volumes massivos de dados, existem decisões críticas que apenas a mente humana pode tomar.</p>
+<p>Recentemente, me vi estudando para um teste técnico em uma empresa especializada em visão computacional. Essa experiência me fez refletir profundamente: mesmo com ferramentas de IA altamente sofisticadas, o desenvolvimento de um sistema completo ainda depende da capacidade do engenheiro de software em tomar decisões estratégicas sobre arquitetura, integração e escalabilidade.</p>
+<hr />
+<h2 id="o-que-a-ia-faz-bem">O que a IA faz bem</h2>
+<p>A IA é excelente para automatizar tarefas que seguem padrões previsíveis. Em visão computacional, por exemplo, redes neurais podem:</p>
+<ul>
+<li>
+<p><strong>Classificar imagens</strong> em categorias complexas, como identificar defeitos em peças industriais.</p>
+</li>
+<li>
+<p><strong>Detectar objetos ou movimentos</strong> em vídeos em tempo real, como em drones de monitoramento.</p>
+</li>
+<li>
+<p><strong>Auxiliar na extração de informações</strong> relevantes a partir de grandes volumes de dados visuais.</p>
+</li>
+</ul>
+<p>Essas tarefas são repetitivas, consomem muito processamento humano e requerem análise de grandes quantidades de dados. Nesses casos, a IA se torna indispensável, reduzindo tempo e custo.</p>
+<p>No entanto, a IA não é autônoma quando se trata de decisões de engenharia. Ela não decide como os sistemas devem ser estruturados, como os dados devem fluir entre serviços ou como garantir que um sistema suporte milhares de requisições simultâneas sem falhar.</p>
+<hr />
+<h2 id="decisoes-tecnicas-humanas">Decisões técnicas humanas</h2>
+<p>Mesmo que uma IA seja capaz de processar imagens com precisão, cabe aos engenheiros decidir como o sistema será construído. Algumas decisões críticas incluem:</p>
+<ul>
+<li>
+<p><strong>Estruturas de dados e algoritmos:</strong> escolher a estrutura correta (arrays, listas, filas, filas de prioridade, árvores) impacta diretamente o desempenho do sistema. Uma decisão inadequada pode tornar o processamento lento ou consumir memória excessiva.</p>
+</li>
+<li>
+<p><strong>Integração entre serviços:</strong> em sistemas complexos, diferentes módulos precisam se comunicar de forma eficiente. APIs REST, mensageria assíncrona com RabbitMQ ou Kafka, e bancos de dados relacionais ou NoSQL são escolhas que afetam diretamente a confiabilidade e a escalabilidade.</p>
+</li>
+<li>
+<p><strong>Escalabilidade e resiliência:</strong> o volume de imagens e eventos pode crescer rapidamente. Decidir se o sistema deve escalar verticalmente (aumentando recursos de uma máquina) ou horizontalmente (adicionando instâncias) é crucial. Além disso, é necessário planejar caching, balanceamento de carga e padrões de resiliência, como circuit breakers, para garantir que o sistema não falhe sob pressão.</p>
+</li>
+<li>
+<p><strong>Arquitetura do sistema:</strong> optar por microsserviços, eventos ou arquitetura monolítica depende do objetivo do projeto, da equipe disponível e da necessidade de manutenção futura. A escolha errada pode gerar gargalos de performance e dificuldades de manutenção.</p>
+</li>
+</ul>
+<hr />
+<h2 id="um-exemplo-pratico">Um exemplo prático</h2>
+<p>Imagine um sistema que processa imagens capturadas por drones em tempo real para detectar anomalias em plantações. A arquitetura precisa considerar vários pontos:</p>
+<ul>
+<li>
+<p><strong>Coleta das imagens:</strong> os drones enviam fotos periodicamente. Um simples upload síncrono poderia sobrecarregar o sistema. A decisão técnica foi usar fila de mensagens assíncronas, garantindo que cada imagem seja processada quando houver capacidade disponível.</p>
+</li>
+<li>
+<p><strong>Processamento das imagens:</strong> múltiplos workers Python ou Java processam as imagens, rodando redes neurais treinadas. A distribuição do trabalho entre instâncias garante alta disponibilidade e escalabilidade.</p>
+</li>
+<li>
+<p><strong>Armazenamento e consulta:</strong> os resultados precisam ser persistidos em um banco de dados eficiente para consulta e histórico. A escolha entre SQL ou NoSQL impacta diretamente a rapidez na recuperação de informações e no armazenamento de grandes volumes de dados.</p>
+</li>
+<li>
+<p><strong>Dashboard e integração:</strong> os resultados devem ser apresentados em tempo real para os usuários, integrando o backend com APIs REST e front-end. Cada decisão sobre tecnologia, protocolo e framework influencia a experiência final do usuário.</p>
+</li>
+</ul>
+<p>Percebe-se que, apesar de a IA realizar o processamento, cada camada do sistema exige decisões humanas que impactam diretamente na eficiência, confiabilidade e escalabilidade.</p>
+<hr />
+<h2 id="conclusao">Conclusão</h2>
+<p>O avanço da inteligência artificial é inegável e transformador, mas não elimina a necessidade do pensamento estratégico humano. Em sistemas complexos de visão computacional, a IA atua como uma ferramenta poderosa, mas não pode substituir o engenheiro de software na escolha de arquiteturas, integrações e padrões de escalabilidade.</p>
+<p>Para quem atua no desenvolvimento de sistemas inteligentes, essa reflexão é essencial: dominar IA é importante, mas compreender profundamente como estruturar sistemas, escolher tecnologias e tomar decisões críticas continua sendo o diferencial que separa projetos robustos de soluções frágeis.</p>
+<p><strong>A lição é clara:</strong> enquanto a IA otimiza processos, o engenheiro permanece como o decisor estratégico. Mesmo com algoritmos avançados, é a combinação de inteligência humana e artificial que garante que um sistema de visão computacional seja eficiente, escalável e confiável.</p>
+                </div>
+                
+                <footer class="post-footer">
+                    <div class="author-info">
+                        <img src="assets/img/2025_09_07_decisoes_tecnicas_que_a_ia_nao_pode_tomar_licoes_de_desenvolvimento_em_visao_computacional_image2.jpg" alt="Christian Mulato" class="author-avatar">
+                        <div class="author-details">
+                            <strong>Christian Mulato</strong>
+                            <p>Desenvolvedor Java e Arquiteto de Software</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

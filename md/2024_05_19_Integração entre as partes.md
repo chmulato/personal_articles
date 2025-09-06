@@ -1,10 +1,10 @@
-![Front-end e back-end durante o desenvolvimento da aplicação.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3270833333333334in"}
+![Front-end e back-end durante o desenvolvimento da aplicação.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3270833333333334in"}
 
 Front-end e back-end durante o desenvolvimento da aplicação.
 
 **Integração entre as partes**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 

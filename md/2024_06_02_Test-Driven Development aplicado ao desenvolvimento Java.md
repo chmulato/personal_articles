@@ -1,10 +1,10 @@
-![TDD (Test-Driven Development) aplicado ao desenvolvimento Java](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![TDD (Test-Driven Development) aplicado ao desenvolvimento Java](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 TDD (Test-Driven Development) aplicado ao desenvolvimento Java
 
 **TDD (Test-Driven Development) aplicado ao desenvolvimento Java**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -34,13 +34,13 @@ Vamos considerar um exemplo simples de uma classe Calculator em Java que tem um 
 
 Primeiro, você escreveria um teste unitário que falha. Usando o JUnit, isso pode parecer algo assim:
 
-![Interface gráfica do usuário, Texto, Aplicativo, Email Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="3.071527777777778in"}
+![Interface gráfica do usuário, Texto, Aplicativo, Email Descrição gerada automaticamente](temp_media/media/image3.png){width="5.905555555555556in" height="3.071527777777778in"}
 
 Código de teste para a classe CalculatorTest.java
 
 Neste ponto, o teste falhará porque a classe Calculator e o método *add()* ainda não foram implementados. Agora você escreveria o código mínimo necessário para passar no teste:
 
-![Interface gráfica do usuário, Texto, Aplicativo, Word Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image4.png){width="4.25in" height="2.1458333333333335in"}
+![Interface gráfica do usuário, Texto, Aplicativo, Word Descrição gerada automaticamente](temp_media/media/image4.png){width="4.25in" height="2.1458333333333335in"}
 
 Código da classe de Calculator.java.
 

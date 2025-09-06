@@ -1,10 +1,10 @@
-![Implementando Testes Unitários com JaCoCo](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Implementando Testes Unitários com JaCoCo](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Implementando Testes Unitários com JaCoCo
 
 **Implementando Testes Unitários em um Projeto Java com Maven**
 
-[![Christian Mulato, #OPEN_TO_WORK](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato, #OPEN_TO_WORK](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato **](https://www.linkedin.com/in/chmulato/)
 
@@ -334,7 +334,7 @@ O relatório será gerado em: target/site/jacoco/index.html
 
 Abra esse arquivo no navegador para visualizar a cobertura dos testes.
 
-![Conteúdo do artigo](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="1.4965277777777777in"}
+![Conteúdo do artigo](temp_media/media/image3.png){width="5.905555555555556in" height="1.4965277777777777in"}
 
 Exemplo de relatório JaCoCo
 

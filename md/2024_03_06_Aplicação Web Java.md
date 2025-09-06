@@ -1,10 +1,10 @@
-![Aplicação Web Java](c:\dev\personal_articles\md\media/media/image1.jpeg){width="5.905555555555556in" height="5.905555555555556in"}
+![Aplicação Web Java](temp_media/media/image1.jpeg){width="5.905555555555556in" height="5.905555555555556in"}
 
 Aplicação Web Java
 
 **Aplicação Web Java**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 

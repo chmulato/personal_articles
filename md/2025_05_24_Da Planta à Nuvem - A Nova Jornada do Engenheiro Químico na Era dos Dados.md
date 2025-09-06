@@ -1,10 +1,10 @@
-![O engenheiro químico do século XXI analisa dados em tempo real com apoio de inteligência artificial.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![O engenheiro químico do século XXI analisa dados em tempo real com apoio de inteligência artificial.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 O engenheiro químico do século XXI analisa dados em tempo real com apoio de inteligência artificial.
 
 **Da Planta à Nuvem: A Nova Jornada do Engenheiro Químico na Era dos Dados**
 
-[![Christian Mulato, #OPEN_TO_WORK](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato, #OPEN_TO_WORK](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato **](https://www.linkedin.com/in/chmulato/)
 

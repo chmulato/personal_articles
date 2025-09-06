@@ -1,10 +1,10 @@
-![Arquitetura Serverless](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3270833333333334in"}
+![Arquitetura Serverless](temp_media/media/image1.png){width="5.905555555555556in" height="3.3270833333333334in"}
 
 Arquitetura Serverless
 
 **Arquitetura Serverless: Como Simplificar o Desenvolvimento e Escalar Aplicações.**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -70,7 +70,7 @@ Essas práticas ajudam a garantir que suas aplicações *serverless* sejam efici
 
 Um exemplo popular de código e tutorial para começar com *serverless* é a criação de uma função simples usando o **Serverless Framework**. Aqui está um exemplo básico em Node.js:
 
-![](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="3.316666666666667in"}
+![](temp_media/media/image3.png){width="5.905555555555556in" height="3.316666666666667in"}
 
 Exemplo de código node.js dentro de um serviço serverless.
 

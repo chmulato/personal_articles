@@ -1,10 +1,10 @@
-![Entreprise JavaBeans - EJB do JavaEE](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Entreprise JavaBeans - EJB do JavaEE](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Entreprise JavaBeans - EJB do JavaEE
 
 **O desaparecimento do EJB**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 

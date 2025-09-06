@@ -1,10 +1,10 @@
-![Tratamento de erros em linguagem de programação Java.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Tratamento de erros em linguagem de programação Java.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Tratamento de erros em linguagem de programação Java.
 
 **Tratamento de erros**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -44,7 +44,7 @@ Curiosamente, para a linguagem de programação Java, o tratamento de exceções
 
 \- A sintaxe básica é a seguinte:
 
-![](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="1.4708333333333334in"}
+![](temp_media/media/image3.png){width="5.905555555555556in" height="1.4708333333333334in"}
 
 Exemplo de trecho para o tratamento de erro em linguagem de programação Java.
 
@@ -60,7 +60,7 @@ Exemplo de trecho para o tratamento de erro em linguagem de programação Java.
 
 \- Vejamos como ficaria o código com e sem o uso do try-catch:
 
-![](c:\dev\personal_articles\md\media/media/image4.png){width="5.905555555555556in" height="2.2819444444444446in"}
+![](temp_media/media/image4.png){width="5.905555555555556in" height="2.2819444444444446in"}
 
 Um exemplo de classe Java para o tratamento de erro.
 

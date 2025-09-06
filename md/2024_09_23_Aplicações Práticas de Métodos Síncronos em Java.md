@@ -1,10 +1,10 @@
-![Métodos Síncronos em Java](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Métodos Síncronos em Java](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Métodos Síncronos em Java
 
 **Aplicações Práticas de Métodos Síncronos em Java**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -30,7 +30,7 @@ Em um sistema de e-commerce, ao realizar um pedido, várias operações precisam
 
 Cada uma dessas operações pode ser implementada como um método síncrono, garantindo que uma etapa só comece após a conclusão da anterior.
 
-![Texto Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="5.247916666666667in"}
+![Texto Descrição gerada automaticamente](temp_media/media/image3.png){width="5.905555555555556in" height="5.247916666666667in"}
 
 Exemplo de classe Java com controle síncrono de métodos.
 
@@ -38,7 +38,7 @@ Exemplo de classe Java com controle síncrono de métodos.
 
 Em uma aplicação de gerenciamento de clientes, métodos síncronos podem realizar operações de ***CRUD*** (***Create, Read, Update, Delete***). Por exemplo, ao buscar informações de um cliente, a conexão com o banco de dados e a consulta são realizadas de forma sequencial para garantir a integridade dos dados.
 
-![Interface gráfica do usuário, Texto, Aplicativo, Email Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image4.png){width="5.905555555555556in" height="1.4916666666666667in"}
+![Interface gráfica do usuário, Texto, Aplicativo, Email Descrição gerada automaticamente](temp_media/media/image4.png){width="5.905555555555556in" height="1.4916666666666667in"}
 
 Exemplo de classe de serviço Java para u controle síncrono de acesso ao banco de dados.
 
@@ -46,7 +46,7 @@ Exemplo de classe de serviço Java para u controle síncrono de acesso ao banco 
 
 Para processar arquivos de forma sequencial, como a leitura de um arquivo *CSV* e a inserção dos dados em um banco de dados, métodos síncronos garantem que cada linha do arquivo seja processada antes de passar para a próxima.
 
-![Interface gráfica do usuário, Texto Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image5.png){width="5.905555555555556in" height="2.386111111111111in"}
+![Interface gráfica do usuário, Texto Descrição gerada automaticamente](temp_media/media/image5.png){width="5.905555555555556in" height="2.386111111111111in"}
 
 Exemplo de classe Java para acesso a leitura de um arquivo
 
@@ -54,7 +54,7 @@ Exemplo de classe Java para acesso a leitura de um arquivo
 
 Em aplicações ***multithread**\* \[ vide rodapé\]*, a sincronização é vital para evitar inconsistências nos dados. Por exemplo, em um sistema bancário, várias threads podem tentar atualizar o saldo de uma conta simultaneamente. Métodos sincronizados garantem que apenas uma ***thread**\* \[vide rodapé\]* possa modificar o saldo por vez.
 
-![Interface gráfica do usuário, Texto, Aplicativo Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image6.png){width="5.489583333333333in" height="2.0520833333333335in"}
+![Interface gráfica do usuário, Texto, Aplicativo Descrição gerada automaticamente](temp_media/media/image6.png){width="5.489583333333333in" height="2.0520833333333335in"}
 
 Exemplo de classe Java com controle sincronizado de saldo bancário.
 
@@ -62,7 +62,7 @@ Exemplo de classe Java com controle sincronizado de saldo bancário.
 
 Estruturas de dados como filas e pilhas precisam ser sincronizadas em ambientes *multithread* para evitar condições de corrida, garantindo que apenas uma *thread* possa modificar a estrutura de dados por vez.
 
-![Interface gráfica do usuário, Texto, Aplicativo Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image7.png){width="5.489583333333333in" height="2.0520833333333335in"}
+![Interface gráfica do usuário, Texto, Aplicativo Descrição gerada automaticamente](temp_media/media/image7.png){width="5.489583333333333in" height="2.0520833333333335in"}
 
 Exemplo de classe Java com controle de pilha com acesso sincronizado.
 
@@ -70,7 +70,7 @@ Exemplo de classe Java com controle de pilha com acesso sincronizado.
 
 Além de métodos, blocos de código também podem ser sincronizados para proteger seções críticas, melhorando a eficiência ao sincronizar apenas a parte necessária do método.
 
-![Texto Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image8.png){width="4.510416666666667in" height="1.4166666666666667in"}
+![Texto Descrição gerada automaticamente](temp_media/media/image8.png){width="4.510416666666667in" height="1.4166666666666667in"}
 
 Método Java não sincronizado.
 

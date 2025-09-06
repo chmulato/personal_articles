@@ -1,77 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre containers no desenvolvimento de aplicações">
+    <title>Containers No Desenvolvimento De Aplicações - Christian Mulato Dev Blog</title>
+    <meta name="description" content="Artigo sobre Containers No Desenvolvimento De Aplicações">
     <meta name="author" content="Christian Mulato">
-    <meta name="keywords" content="Java, Spring, Docker, Kubernetes, Testes, DevOps">
+    <meta name="keywords" content="Java, Desenvolvimento, Tecnologia">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="articles/2024_06_30_containers_no_desenvolvimento_de_aplicacoes.html">
-    <meta property="og:title" content="Containers No Desenvolvimento De Aplicações">
-    <meta property="og:description" content="Artigo técnico sobre containers no desenvolvimento de aplicações">
-    <meta property="og:image" content="img/2024_06_30_containers_no_desenvolvimento_de_aplicacoes_featured.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="articles/2024_06_30_containers_no_desenvolvimento_de_aplicacoes.html">
-    <meta property="twitter:title" content="Containers No Desenvolvimento De Aplicações">
-    <meta property="twitter:description" content="Artigo técnico sobre containers no desenvolvimento de aplicações">
-    <meta property="twitter:image" content="img/2024_06_30_containers_no_desenvolvimento_de_aplicacoes_featured.jpg">
-    
-    <title>Containers No Desenvolvimento De Aplicações | Christian Mulato Dev Blog</title>
-    
-    <!-- Styles -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/article.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="assets/js/article.js" defer></script>
+    <link rel="stylesheet" href="assets/css/highlight.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-text">Christian Mulato</span>
-                    <span class="logo-subtitle">Dev Blog</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Artigos</a>
-                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html">Christian Mulato Dev Blog</a></h1>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="main">
-        <article class="article">
-            <header class="article-header">
-                <div class="article-meta">
-                    <span class="article-category">Java & Spring</span>
-                    <time class="article-date" datetime="30/06/2024">30/06/2024</time>
-                </div>
+    <main class="main-content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">Containers No Desenvolvimento De Aplicações</h1>
+                    <div class="post-meta">
+                        <time datetime="2024-06-30">30/06/2024</time>
+                        <span class="post-author">Por Christian Mulato</span>
+                    </div>
+                    
+                </header>
                 
-                <h1 class="article-title">Containers No Desenvolvimento De Aplicações</h1>
-                
-                <div class="article-info">
-                    <span class="article-author">Por Christian Mulato</span>
-                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Docker</span> <span class="tag">Kubernetes</span> <span class="tag">Testes</span> <span class="tag">DevOps</span></div>
-                </div>
-            </header>
-            
-            <div class="article-content">
-                
-<p><img alt="Desenvolvimento de aplicações Java com Containers" src="assets/img/2024_06_30_Containers no Desenvolvimento de Aplicações_image1.png" /></p>
+                <div class="post-content">
+                    <p><img alt="Desenvolvimento de aplicações Java com Containers" src="temp_media/media/image1.png" />{width="5.905555555555556in" height="3.3222222222222224in"}</p>
 <p>Desenvolvimento de aplicações Java com Containers</p>
 <p><strong>Containers no Desenvolvimento de Aplicações</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_06_30_Containers no Desenvolvimento de Aplicações_image11.png" /></a></p>
-<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="temp_media/media/image2.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>30 de junho de 2024</p>
 <p>Os containers têm se tornado uma parte essencial do desenvolvimento de aplicações modernas. Eles oferecem isolamento, portabilidade e escalabilidade, permitindo que as aplicações sejam executadas de maneira consistente em diferentes ambientes. Neste artigo, exploraremos os conceitos-chave relacionados a containers e como eles podem ser aplicados no contexto do desenvolvimento de software.</p>
@@ -79,7 +49,7 @@
 <p><strong>O que são Containers?</strong></p>
 <p><strong>Definição:</strong> Containers são unidades de software que empacotam uma aplicação e suas dependências em um único pacote.</p>
 <p><strong>Isolamento:</strong> Cada container executa em um ambiente isolado, garantindo que não haja conflitos com outras aplicações.</p>
-<p>__Eficiência: __Os containers compartilham o mesmo kernel do sistema operacional, tornando-os mais leves que máquinas virtuais tradicionais.</p>
+<p><strong>Eficiência:</strong> Os containers compartilham o mesmo kernel do sistema operacional, tornando-os mais leves que máquinas virtuais tradicionais.</p>
 <p><strong>Benefícios dos Containers</strong></p>
 <p><strong>Portabilidade:</strong></p>
 <p>Os containers podem ser movidos facilmente entre diferentes <em>hosts</em> (servidores) e ambientes (desenvolvimento, teste, produção). Para os desenvolvedores Java é possível criar imagens de containers com suas aplicações e distribuí-las consistentemente.</p>
@@ -92,23 +62,17 @@
 <p>Vamos começar com a instalação de uma ferramenta para a criação de containers, no caso aqui o <strong>Docker</strong>.</p>
 <p>A maneira de encontrar o Docker para instalar no seu sistema operacional depende do sistema operacional que você está usando:</p>
 <p><strong>- Windows:</strong></p>
-<p>- Acesse o site oficial do <a href="https://www.docker.com/">Docker</a> e clique em "Getting Started" para baixar o instalador do <strong>Docker Desktop</strong>. </p>
+<p>- Acesse o site oficial do <a href="https://www.docker.com/">Docker</a> e clique em \"Getting Started\" para baixar o instalador do <strong>Docker Desktop</strong>.</p>
 <p>- Execute o instalador baixado e siga as instruções de instalação.</p>
 <p><strong>- Ubuntu (Linux):</strong></p>
 <p>- Abra o terminal e execute os seguintes comandos:</p>
-<ul>
-<li>
-<p>sudo apt update*</p>
-</li>
-<li>
-<p>sudo apt install docker* </p>
-</li>
-</ul>
+<p><em>sudo apt update</em></p>
+<p><em>sudo apt install docker</em></p>
 <p>- O Docker estará disponível após a instalação.</p>
 <p>Para um exemplo prático, suponha que você esteja criando uma aplicação Spring Boot que se conecta a um banco de dados PostgreSQL. Aqui estão os passos:</p>
 <p><strong>Dockerfile:</strong></p>
 <p>Crie um arquivo chamado <em>Dockerfile</em> na raiz do seu projeto Java.</p>
-<p><img alt="" src="assets/img/2024_06_30_Containers no Desenvolvimento de Aplicações_image12.png" /></p>
+<p><img alt="" src="temp_media/media/image3.png" />{width="5.905555555555556in" height="2.75in"}</p>
 <p>Exemplo de um dockerfile para um ambiente Java 11 OpenJDK</p>
 <p>Este <em>Dockerfile</em> começa com a imagem base <em>openjdk:11-jdk-slim</em>, que é uma imagem Docker oficial do OpenJDK que inclui os seguintes ambientes Java na imagem padrão: o <strong>JRE</strong> (Java Runtime Environment) e o <strong>JDK</strong> (Java Development Kit).</p>
 <p>Em seguida, copia o arquivo JAR do seu aplicativo (neste caso de exemplo o aquivo, <em>meu-aplicativo.jar</em>) para o contêiner.</p>
@@ -121,114 +85,44 @@
 <p>Execute o comando <em>docker build -t minha-aplicacao .</em> para criar a imagem do container.</p>
 <p><strong>Docker Compose:</strong></p>
 <p>Crie um arquivo YAML <em>docker-compose.yml</em>.</p>
-<p><img alt="" src="assets/img/2024_06_30_Containers no Desenvolvimento de Aplicações_image1.png" /></p>
+<p><img alt="" src="temp_media/media/image4.png" />{width="5.905555555555556in" height="4.79375in"}</p>
 <p>Exemplo de um arquivo YAML docker-compose.yml</p>
 <p>Neste exemplo, o serviço db é o banco de dados PostgreSQL e o serviço app é a aplicação Java. As variáveis de ambiente necessárias para a conexão com o banco de dados são definidas no serviço app.</p>
 <p>Para o seu exemplo, substitua exemplo_senha, exemplo_usuario, exemplo_db, exemplo_imagem_java:tag pelos valores reais que você deseja usar.</p>
 <p>Lembre-se de que você precisa construir sua imagem Docker para a aplicação Java e referenciá-la corretamente no serviço app (no campo image). A tag da imagem (neste exemplo, tag) deve corresponder à versão da sua aplicação.</p>
 <p><strong>Execução:</strong></p>
 <p>Execute <em>docker-compose up</em> para iniciar os containers.</p>
-<p>Sua aplicação Java estará disponível em [http://localhost:8080] </p>
+<p>Sua aplicação Java estará disponível em [http://localhost:8080]</p>
 <p>Agora você tem uma aplicação Java empacotada em um container, com o banco de dados também em um container.</p>
 <p>Isso facilita a configuração do ambiente local e a implantação consistente em outros ambientes.</p>
 <p><strong>Curiosidades</strong></p>
 <p>Os containers oferecem diversos benefícios no desenvolvimento de aplicações. Eles proporcionam isolamento, permitindo que cada aplicação execute em seu próprio ambiente sem conflitos. Além disso, os containers são portáteis, facilitando a implantação em diferentes ambientes e a migração entre servidores. Sua eficiência e escalabilidade também são vantagens, tornando-os ideais para ambientes de nuvem e orquestração, como o <strong>Kubernetes (K8s)</strong>.</p>
-<p>A orquestração de containers é o processo de automação de grande parte do esforço operacional para executar serviços e fluxos de trabalho organizados em containers. O Kubernetes, uma plataforma de código aberto, portável e extensível, é uma ferramenta popular para essa tarefa. Ele permite agrupar contêineres em unidades lógicas chamadas "pods", escalonando-os automaticamente com base na carga de trabalho ou substituindo-os se falharem. Além disso, o k8s oferece recursos como descoberta de serviço, balanceamento de carga, orquestração de armazenamento e gerenciamento de configurações e segredos, revolucionando a maneira como as aplicações são implantadas e mantidas.</p>
-<p>Um __pod __do Kubernetes é um conjunto de um ou mais containers Linux, sendo a menor unidade de uma aplicação Kubernetes. Os pods são compostos por um container nos casos de uso mais comuns ou por vários containers fortemente acoplados em cenários mais avançados. Esses containers compartilham os mesmos recursos de computação, agrupados na forma de clusters, resultando em um sistema distribuído mais inteligente e eficiente para a execução de aplicações. Os pods permitem que os containers se comuniquem como se compartilhassem o mesmo hardware físico, enquanto mantêm um certo nível de isolamento. Essa organização é a base para funcionalidades como replicação e escalabilidade no Kubernetes.</p>
+<p>A orquestração de containers é o processo de automação de grande parte do esforço operacional para executar serviços e fluxos de trabalho organizados em containers. O Kubernetes, uma plataforma de código aberto, portável e extensível, é uma ferramenta popular para essa tarefa. Ele permite agrupar contêineres em unidades lógicas chamadas \"pods\", escalonando-os automaticamente com base na carga de trabalho ou substituindo-os se falharem. Além disso, o k8s oferece recursos como descoberta de serviço, balanceamento de carga, orquestração de armazenamento e gerenciamento de configurações e segredos, revolucionando a maneira como as aplicações são implantadas e mantidas.</p>
+<p>Um <strong>pod</strong> do Kubernetes é um conjunto de um ou mais containers Linux, sendo a menor unidade de uma aplicação Kubernetes. Os pods são compostos por um container nos casos de uso mais comuns ou por vários containers fortemente acoplados em cenários mais avançados. Esses containers compartilham os mesmos recursos de computação, agrupados na forma de clusters, resultando em um sistema distribuído mais inteligente e eficiente para a execução de aplicações. Os pods permitem que os containers se comuniquem como se compartilhassem o mesmo hardware físico, enquanto mantêm um certo nível de isolamento. Essa organização é a base para funcionalidades como replicação e escalabilidade no Kubernetes.</p>
 <p>Uma das implementações mais comuns para o uso de containers no desenvolvimento de aplicações é a implantação de micro-serviços. Nesse modelo, cada micro-serviço é empacotado em um container independente. Isso permite que os desenvolvedores criem, testem e implantem serviços de forma modular e escalável. Além disso, os containers facilitam a orquestração desses micro-serviços usando ferramentas como o Kubernetes (k8s), garantindo alta disponibilidade e flexibilidade.</p>
 <p>Resumidamente, os containers são uma ferramenta poderosa para simplificar o desenvolvimento, implantação e escalabilidade de aplicações. No mundo do desenvolvimento Java podemos aproveitar esses benefícios para criar soluções mais eficientes e flexíveis.</p>
-            </div>
-            
-            <footer class="article-footer">
-                <div class="article-author-bio">
-                    <h3>Sobre o Autor</h3>
-                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
-                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
-                        Conecte-se no LinkedIn
-                    </a>
                 </div>
                 
-                <div class="article-navigation">
-                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
-                </div>
-            </footer>
-        </article>
+                <footer class="post-footer">
+                    <div class="author-info">
+                        <img src="assets/img/2024_06_30_containers_no_desenvolvimento_de_aplicacoes_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <div class="author-details">
+                            <strong>Christian Mulato</strong>
+                            <p>Desenvolvedor Java e Arquiteto de Software</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
     </main>
-    
+
     <footer class="site-footer">
-        <div class="footer-container">
+        <div class="container">
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Christian Mulato</h3>
-                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
-                <a href="../index.html">Artigos</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    
-    <!-- Theme Toggle Button -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-        <span id="themeIcon">🌙</span>
-    </button>
-    
-    <script>
-        // Tema manager
-        class ThemeManager {
-            constructor() {
-                this.themeToggle = document.getElementById('themeToggle');
-                this.themeIcon = document.getElementById('themeIcon');
-                this.init();
-            }
-            
-            init() {
-                const savedTheme = localStorage.getItem('theme');
-                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                const currentTheme = savedTheme || systemTheme;
-                
-                this.setTheme(currentTheme);
-                this.updateIcon(currentTheme);
-                
-                this.themeToggle.addEventListener('click', () => this.toggleTheme());
-            }
-            
-            toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                this.setTheme(newTheme);
-                this.updateIcon(newTheme);
-                localStorage.setItem('theme', newTheme);
-            }
-            
-            setTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-            
-            updateIcon(theme) {
-                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-                this.themeToggle.setAttribute('aria-label', 
-                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
-            }
-        }
-        
-        // Inicializar quando DOM carregar
-        document.addEventListener('DOMContentLoaded', () => {
-            new ThemeManager();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-

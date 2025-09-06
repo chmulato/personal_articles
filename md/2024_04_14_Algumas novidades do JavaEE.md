@@ -1,10 +1,10 @@
-![Novidades do Java Enterprise Edition (Atualmente chamado de Jakarta EE)](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Novidades do Java Enterprise Edition (Atualmente chamado de Jakarta EE)](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Novidades do Java Enterprise Edition (Atualmente chamado de Jakarta EE)
 
 **Algumas novidades do JavaEE**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -24,7 +24,7 @@ WebSockets é uma tecnologia que permite comunicações bidirecionais e em tempo
 
 Aqui está um exemplo simplificado de como um servidor WebSocket pode ser implementado em Java EE:
 
-![](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="3.647222222222222in"}
+![](temp_media/media/image3.png){width="5.905555555555556in" height="3.647222222222222in"}
 
 Exemplo de implementação do WebSocket para o JavaEE.
 
@@ -36,7 +36,7 @@ Um exemplo de como o Java EE pode ser utilizado com HTML5 é através da criaç�
 
 Aqui está um exemplo simplificado de um formulário web utilizando JSF com elementos HTML5:
 
-![](c:\dev\personal_articles\md\media/media/image4.png){width="5.905555555555556in" height="3.2354166666666666in"}
+![](temp_media/media/image4.png){width="5.905555555555556in" height="3.2354166666666666in"}
 
 Um exemplo de código JSF para atender páginas HTML5
 

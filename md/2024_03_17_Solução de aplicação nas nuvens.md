@@ -1,8 +1,8 @@
-![](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3243055555555556in"}
+![](temp_media/media/image1.png){width="5.905555555555556in" height="3.3243055555555556in"}
 
 **Solução de aplicação nas nuvens**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -134,7 +134,7 @@ Lembre-se de que essa é uma configuração básica para uso local.
 
 Implantar uma ação do **Apache OpenWhisk** em um ambiente de produção envolve algumas etapas importantes. Vou fornecer uma visão geral, mas lembre-se de que os detalhes específicos podem variar com base na sua infraestrutura e requisitos.
 
-![](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="1.976388888888889in"}
+![](temp_media/media/image3.png){width="5.905555555555556in" height="1.976388888888889in"}
 
 Um exemplo esquemático das tecnologias envolvidas.
 

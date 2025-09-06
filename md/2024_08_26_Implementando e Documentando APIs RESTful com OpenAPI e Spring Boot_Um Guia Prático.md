@@ -1,10 +1,10 @@
-![OPenAPI Rest](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![OPenAPI Rest](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 OPenAPI Rest
 
 **Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot: Um Guia Prático**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -26,7 +26,7 @@ Vamos começar com uma visão geral de como definir operações GET e POST usand
 
 Um arquivo ***OpenAPI*** geralmente começa com algumas informações básicas sobre a API, como título, descrição e versão. Aqui está um exemplo básico:
 
-![](c:\dev\personal_articles\md\media/media/image3.png){width="5.71875in" height="1.1875in"}
+![](temp_media/media/image3.png){width="5.71875in" height="1.1875in"}
 
 Exemplo básico de um arquivo OpenAPI.
 
@@ -34,7 +34,7 @@ Exemplo básico de um arquivo OpenAPI.
 
 A operação GET é usada para recuperar dados de um servidor. Aqui está um exemplo de como definir uma operação GET para obter uma lista de usuários:
 
-![](c:\dev\personal_articles\md\media/media/image4.png){width="5.71875in" height="3.625in"}
+![](temp_media/media/image4.png){width="5.71875in" height="3.625in"}
 
 Arquivo de configuração YAML para o endpoint de GET.
 
@@ -42,7 +42,7 @@ Arquivo de configuração YAML para o endpoint de GET.
 
 A operação POST é usada para enviar dados ao servidor, geralmente para criar um novo recurso. Aqui está um exemplo de como definir uma operação POST para adicionar um novo usuário:
 
-![](c:\dev\personal_articles\md\media/media/image5.png){width="5.905555555555556in" height="3.6166666666666667in"}
+![](temp_media/media/image5.png){width="5.905555555555556in" height="3.6166666666666667in"}
 
 Arquivo de configuração YAML para o endpoint de POST.
 
@@ -66,7 +66,7 @@ Aqui no tópico 7 estão as principais classes e anotações que você precisar�
 
 A classe principal da sua aplicação Spring Boot deve ser anotada com \@SpringBootApplication. Aqui você também pode configurar o ***OpenAPI***.
 
-![](c:\dev\personal_articles\md\media/media/image6.png){width="5.905555555555556in" height="2.759027777777778in"}
+![](temp_media/media/image6.png){width="5.905555555555556in" height="2.759027777777778in"}
 
 Exemplo de classe Java com Spring Boot.
 
@@ -74,7 +74,7 @@ Exemplo de classe Java com Spring Boot.
 
 Os controladores são responsáveis por lidar com as requisições HTTP. Aqui está um exemplo de um controlador com operações GET e POST.
 
-![](c:\dev\personal_articles\md\media/media/image7.png){width="5.905555555555556in" height="3.1777777777777776in"}
+![](temp_media/media/image7.png){width="5.905555555555556in" height="3.1777777777777776in"}
 
 Exemplo de classe Java do tipo Controller com o Spring Boot.
 
@@ -82,7 +82,7 @@ Exemplo de classe Java do tipo Controller com o Spring Boot.
 
 A classe modelo representa os dados que serão manipulados pela API.
 
-![](c:\dev\personal_articles\md\media/media/image8.png){width="3.7395833333333335in" height="1.3958333333333333in"}
+![](temp_media/media/image8.png){width="3.7395833333333335in" height="1.3958333333333333in"}
 
 Exemplo de classe Java bean.
 
@@ -90,7 +90,7 @@ Exemplo de classe Java bean.
 
 Para habilitar o suporte ao OpenAPI e Swagger, você precisa adicionar as seguintes dependências ao seu arquivo ***pom.xml***:
 
-![](c:\dev\personal_articles\md\media/media/image9.png){width="5.905555555555556in" height="1.148611111111111in"}
+![](temp_media/media/image9.png){width="5.905555555555556in" height="1.148611111111111in"}
 
 Exemplo de notação para a dependência Maven do OpenAPI.
 
@@ -116,7 +116,7 @@ Esta é a localização padrão para arquivos de configuração e recursos está
 
 Aqui está um exemplo de como a estrutura do seu projeto pode ficar:
 
-![](c:\dev\personal_articles\md\media/media/image10.png){width="5.905555555555556in" height="2.9833333333333334in"}
+![](temp_media/media/image10.png){width="5.905555555555556in" height="2.9833333333333334in"}
 
 Estrutura de pastas dentro do código Java.
 
@@ -124,7 +124,7 @@ Estrutura de pastas dentro do código Java.
 
 Para que o Spring Boot reconheça e utilize o arquivo YAML do OpenAPI, você pode configurar o caminho no seu arquivo ***application.yml***:
 
-![](c:\dev\personal_articles\md\media/media/image11.png){width="3.8020833333333335in" height="1.125in"}
+![](temp_media/media/image11.png){width="3.8020833333333335in" height="1.125in"}
 
 Arquivo de configuração YAML chamado.
 

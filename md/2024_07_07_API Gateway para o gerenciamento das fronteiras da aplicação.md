@@ -1,10 +1,10 @@
-![Ferramentas de gerenciamento de rotas de aplicação na Internet.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3270833333333334in"}
+![Ferramentas de gerenciamento de rotas de aplicação na Internet.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3270833333333334in"}
 
 Ferramentas de gerenciamento de rotas de aplicação na Internet.
 
 **API Gateway para o gerenciamento das fronteiras da aplicação.**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 

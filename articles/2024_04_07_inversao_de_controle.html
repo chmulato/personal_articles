@@ -1,83 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre inversão de controle">
+    <title>Inversão De Controle - Christian Mulato Dev Blog</title>
+    <meta name="description" content="Artigo sobre Inversão De Controle">
     <meta name="author" content="Christian Mulato">
-    <meta name="keywords" content="Java, APIs, Testes, Arquitetura, DevOps, IA">
+    <meta name="keywords" content="Java, Desenvolvimento, Tecnologia">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="articles/2024_04_07_inversao_de_controle.html">
-    <meta property="og:title" content="Inversão De Controle">
-    <meta property="og:description" content="Artigo técnico sobre inversão de controle">
-    <meta property="og:image" content="img/2024_04_07_inversao_de_controle_featured.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="articles/2024_04_07_inversao_de_controle.html">
-    <meta property="twitter:title" content="Inversão De Controle">
-    <meta property="twitter:description" content="Artigo técnico sobre inversão de controle">
-    <meta property="twitter:image" content="img/2024_04_07_inversao_de_controle_featured.jpg">
-    
-    <title>Inversão De Controle | Christian Mulato Dev Blog</title>
-    
-    <!-- Styles -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/article.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="assets/js/article.js" defer></script>
+    <link rel="stylesheet" href="assets/css/highlight.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-text">Christian Mulato</span>
-                    <span class="logo-subtitle">Dev Blog</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Artigos</a>
-                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html">Christian Mulato Dev Blog</a></h1>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="main">
-        <article class="article">
-            <header class="article-header">
-                <div class="article-meta">
-                    <span class="article-category">Java & Spring</span>
-                    <time class="article-date" datetime="07/04/2024">07/04/2024</time>
-                </div>
+    <main class="main-content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">Inversão De Controle</h1>
+                    <div class="post-meta">
+                        <time datetime="2024-04-07">07/04/2024</time>
+                        <span class="post-author">Por Christian Mulato</span>
+                    </div>
+                    
+                </header>
                 
-                <h1 class="article-title">Inversão De Controle</h1>
-                
-                <div class="article-info">
-                    <span class="article-author">Por Christian Mulato</span>
-                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">Testes</span> <span class="tag">Arquitetura</span> <span class="tag">DevOps</span> <span class="tag">IA</span></div>
-                </div>
-            </header>
-            
-            <div class="article-content">
-                
-<p><img alt="O conceito da inversão de controle." src="assets/img/2024_04_07_Inversão de Controle_image1.png" /></p>
+                <div class="post-content">
+                    <p><img alt="O conceito da inversão de controle." src="temp_media/media/image1.png" />{width="5.905555555555556in" height="3.3222222222222224in"}</p>
 <p>O conceito da inversão de controle.</p>
 <p><strong>Inversão de Controle (IoC)</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_04_07_Inversão de Controle_image3.jpeg" /></a></p>
-<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="temp_media/media/image2.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>7 de abril de 2024</p>
 <p>A ideia de Inversão de Controle (IoC, do inglês Inversion of Control) é utilizada para aumentar a modularidade dos sistemas, criar extensibilidade e usufruir melhor da Programação Orientada a Objetos (OOP). O termo inicial foi utilizado por Michael Mattson, mas ficou popular em 2004 após ser citado por Martin Fowler e Robert C. Martin (Uncle Bob). A Inversão de Controle é implementada através da Injeção de Dependência, segundo a qual as dependências de um objeto não devem ser definidas diretamente dentro dele no momento de sua criação, mas devem ser inseridas (injetadas) dinamicamente, de acordo com alguma configuração mutável.</p>
-<p>E a primeira ideia da Arquitetura Hexagonal foi proposta por Alistair Cockburn em meados dos anos 90. Esta arquitetura é também conhecida como "ports and adapters" e foi criada com o objetivo de separar as preocupações em um sistema de software. Ela se baseia na ideia de que um sistema pode ser dividido em três partes principais: o núcleo da aplicação, as interfaces do usuário e as interfaces externas.</p>
-<p>A ideia central da Arquitetura Hexagonal é que o núcleo do sistema, que contém a lógica de negócio, deve ser independente das tecnologias externas, como bancos de dados, frameworks e interfaces de usuário. Para isso, a Arquitetura Hexagonal propõe a utilização de portas (ports) e adaptadores (adapters). </p>
+<p>E a primeira ideia da Arquitetura Hexagonal foi proposta por Alistair Cockburn em meados dos anos 90. Esta arquitetura é também conhecida como \"ports and adapters\" e foi criada com o objetivo de separar as preocupações em um sistema de software. Ela se baseia na ideia de que um sistema pode ser dividido em três partes principais: o núcleo da aplicação, as interfaces do usuário e as interfaces externas.</p>
+<p>A ideia central da Arquitetura Hexagonal é que o núcleo do sistema, que contém a lógica de negócio, deve ser independente das tecnologias externas, como bancos de dados, frameworks e interfaces de usuário. Para isso, a Arquitetura Hexagonal propõe a utilização de portas (ports) e adaptadores (adapters).</p>
 <p>Essa abordagem é particularmente crucial para programas projetados para ter longa durabilidade, assegurando que as mudanças nos métodos de consumo não exijam alterações extensivas no núcleo do software.</p>
+<hr />
 <p>Existe uma relação entre a Inversão de Controle (IoC) e a Arquitetura Hexagonal.</p>
 <p><strong>Inversão de Controle (IoC)</strong></p>
 <p>A Inversão de Controle (IoC) é um princípio fundamental no desenvolvimento de software. Ele propõe uma mudança significativa na maneira como organizamos e estruturamos nosso código. Vamos explorar os conceitos-chave:</p>
@@ -92,7 +63,7 @@
 <p><strong>3. Implementação:</strong></p>
 <p>- Na prática, a IoC é alcançada por meio da dependência de abstrações (interfaces) em vez de implementações concretas.</p>
 <p>- Em vez de criar objetos dentro de uma classe, recebemos esses objetos como parâmetros (por exemplo, por meio de construtores).</p>
-<p><img alt="" src="assets/img/2024_04_07_Inversão de Controle_image3.jpeg" /></p>
+<p><img alt="" src="temp_media/media/image3.jpeg" />{width="5.905555555555556in" height="5.905555555555556in"}</p>
 <p>Arquitetura Hexagonal aplicada com a IoC.</p>
 <p><strong>Arquitetura Hexagonal</strong> (Ports and Adapters)</p>
 <p>A Arquitetura Hexagonal, também conhecida como Ports and Adapters, é um padrão arquitetural que visa isolar a lógica de negócios da aplicação do mundo externo. Vejamos os principais pontos:</p>
@@ -107,98 +78,28 @@
 <p>- Na Arquitetura Hexagonal, as Portas representam abstrações, e os Adaptadores são as implementações concretas.</p>
 <p>- Essa abordagem permite que o código seja mais flexível e adaptável a diferentes contextos.</p>
 <p>Em resumo, a IoC e a Arquitetura Hexagonal compartilham o objetivo de promover o desacoplamento e a dependência de abstrações, tornando o código mais modular e fácil de evoluir.</p>
-            </div>
-            
-            <footer class="article-footer">
-                <div class="article-author-bio">
-                    <h3>Sobre o Autor</h3>
-                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
-                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
-                        Conecte-se no LinkedIn
-                    </a>
                 </div>
                 
-                <div class="article-navigation">
-                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
-                </div>
-            </footer>
-        </article>
+                <footer class="post-footer">
+                    <div class="author-info">
+                        <img src="assets/img/2024_04_07_inversao_de_controle_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <div class="author-details">
+                            <strong>Christian Mulato</strong>
+                            <p>Desenvolvedor Java e Arquiteto de Software</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
     </main>
-    
+
     <footer class="site-footer">
-        <div class="footer-container">
+        <div class="container">
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Christian Mulato</h3>
-                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
-                <a href="../index.html">Artigos</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    
-    <!-- Theme Toggle Button -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-        <span id="themeIcon">🌙</span>
-    </button>
-    
-    <script>
-        // Tema manager
-        class ThemeManager {
-            constructor() {
-                this.themeToggle = document.getElementById('themeToggle');
-                this.themeIcon = document.getElementById('themeIcon');
-                this.init();
-            }
-            
-            init() {
-                const savedTheme = localStorage.getItem('theme');
-                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                const currentTheme = savedTheme || systemTheme;
-                
-                this.setTheme(currentTheme);
-                this.updateIcon(currentTheme);
-                
-                this.themeToggle.addEventListener('click', () => this.toggleTheme());
-            }
-            
-            toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                this.setTheme(newTheme);
-                this.updateIcon(newTheme);
-                localStorage.setItem('theme', newTheme);
-            }
-            
-            setTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-            
-            updateIcon(theme) {
-                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-                this.themeToggle.setAttribute('aria-label', 
-                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
-            }
-        }
-        
-        // Inicializar quando DOM carregar
-        document.addEventListener('DOMContentLoaded', () => {
-            new ThemeManager();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-

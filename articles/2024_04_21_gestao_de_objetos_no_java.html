@@ -1,92 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre gestão de objetos no java">
+    <title>Gestão De Objetos No Java - Christian Mulato Dev Blog</title>
+    <meta name="description" content="Artigo sobre Gestão De Objetos No Java">
     <meta name="author" content="Christian Mulato">
-    <meta name="keywords" content="Java, Spring, Arquitetura, DevOps, IA">
+    <meta name="keywords" content="Java, Desenvolvimento, Tecnologia">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="articles/2024_04_21_gestao_de_objetos_no_java.html">
-    <meta property="og:title" content="Gestão De Objetos No Java">
-    <meta property="og:description" content="Artigo técnico sobre gestão de objetos no java">
-    <meta property="og:image" content="assets/img/2024_04_21_gestao_de_objetos_no_java_featured.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="articles/2024_04_21_gestao_de_objetos_no_java.html">
-    <meta property="twitter:title" content="Gestão De Objetos No Java">
-    <meta property="twitter:description" content="Artigo técnico sobre gestão de objetos no java">
-    <meta property="twitter:image" content="assets/img/2024_04_21_gestao_de_objetos_no_java_featured.jpg">
-    
-    <title>Gestão De Objetos No Java | Christian Mulato Dev Blog</title>
-    
-    <!-- Styles -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/article.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="assets/js/article.js" defer></script>
+    <link rel="stylesheet" href="assets/css/highlight.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-text">Christian Mulato</span>
-                    <span class="logo-subtitle">Dev Blog</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Artigos</a>
-                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html">Christian Mulato Dev Blog</a></h1>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="main">
-        <article class="article">
-            <header class="article-header">
-                <div class="article-meta">
-                    <span class="article-category">Java & Spring</span>
-                    <time class="article-date" datetime="21/04/2024">21/04/2024</time>
-                </div>
+    <main class="main-content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">Gestão De Objetos No Java</h1>
+                    <div class="post-meta">
+                        <time datetime="2024-04-21">21/04/2024</time>
+                        <span class="post-author">Por Christian Mulato</span>
+                    </div>
+                    
+                </header>
                 
-                <h1 class="article-title">Gestão De Objetos No Java</h1>
-                
-                <div class="article-info">
-                    <span class="article-author">Por Christian Mulato</span>
-                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Arquitetura</span> <span class="tag">DevOps</span> <span class="tag">IA</span></div>
-                </div>
-            </header>
-            
-            <div class="article-content">
-                
-<p><img alt="Gerenciamento de Objetos em Java, os famosos Beans." src="assets/img/2024_04_21_Gestão de objetos no Java_image1.png" /></p>
+                <div class="post-content">
+                    <p><img alt="Gerenciamento de Objetos em Java, os famosos Beans." src="temp_media/media/image1.png" />{width="5.905555555555556in" height="3.329861111111111in"}</p>
 <p>Gerenciamento de Objetos em Java, os famosos Beans.</p>
 <p><strong>Gestão de objetos no Java</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_04_21_Gestão de objetos no Java_image3.png" /></a></p>
-<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="temp_media/media/image2.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>21 de abril de 2024</p>
 <p>A importância de gerenciar objetos em Java e a gestão de recursos dentro do sistema ou infraestrutura é fundamental para garantir a eficiência e a estabilidade das aplicações. No Java, o gerenciamento de objetos é feito principalmente através do <em>Garbage Collector</em> (Coletor de Lixo), que automatiza o processo de liberação de memória ocupada por objetos que não são mais necessários.</p>
 <p>O <em>heap</em> da JVM é dividido em gerações para organizar os objetos de acordo com o tempo que eles têm referências válidas. Isso ajuda a otimizar o uso de memória e evitar gargalos, separando objetos de vida curta dos de vida longa. Além disso, o uso de algoritmos de coleta de lixo, como o <em>Mark-Compact</em>, ajuda a evitar a fragmentação do heap e a manter a eficiência na alocação de novos objetos.</p>
 <p>Já a gestão de recursos dentro do sistema ou infraestrutura envolve planejar e avaliar com precisão o que é necessário para a conclusão de um projeto. Isso inclui a alocação eficiente de recursos, como memória, processamento e armazenamento, para evitar desperdícios e maximizar a performance.</p>
 <p>Um bom gerenciamento de objetos e recursos é crucial para o desenvolvimento de aplicações robustas, escaláveis e de alto desempenho em Java.</p>
-<p>Dentro do mundo Java podemos encontrar o <strong>Framework Spring</strong> representa uma opção para gerenciar a criação de objetos principalmente através do padrão de projeto__ <em>Inversão de Controle </em>(IoC)<strong> e </strong><em>Injeção de Dependência</em> (DI)<strong>. Durante a execução de uma sequência de passos, o Spring utiliza um contêiner __IoC</strong> para criar e gerenciar objetos automaticamente. Isso é feito com base na configuração definida pelo desenvolvedor, seja através de anotações, XML ou configuração baseada em Java.</p>
+<p>Dentro do mundo Java podemos encontrar o <strong>Framework Spring</strong> representa uma opção para gerenciar a criação de objetos principalmente através do padrão de projeto <strong><em>Inversão de Controle</em> (IoC)</strong> e <strong><em>Injeção de Dependência</em> (DI)</strong>. Durante a execução de uma sequência de passos, o Spring utiliza um contêiner <strong>IoC</strong> para criar e gerenciar objetos automaticamente. Isso é feito com base na configuração definida pelo desenvolvedor, seja através de anotações, XML ou configuração baseada em Java.</p>
 <p>Aqui está um resumo de como o Spring lida com a criação de objetos:</p>
 <p><strong>1. <em>Definição de Beans</em>:</strong> Os objetos gerenciados pelo Spring são definidos como beans no contêiner IoC.</p>
-<p>__2. <em>Configuração de Beans</em>: __A configuração específica como e quando os beans são criados, incluindo escopo, ciclo de vida e dependências.</p>
+<p><strong>2. <em>Configuração de Beans</em>:</strong> A configuração específica como e quando os beans são criados, incluindo escopo, ciclo de vida e dependências.</p>
 <p><strong>3. <em>Injeção de Dependência</em>:</strong> O Spring injeta as dependências necessárias nos beans automaticamente, seja por meio de construtores, métodos setter ou campos.</p>
 <p><strong>4. <em>Gerenciamento de Ciclo de Vida</em>:</strong> O contêiner IoC gerencia o ciclo de vida dos beans, incluindo a inicialização e a destruição.</p>
 <p>Além disso, o Spring oferece suporte a programação assíncrona e manipulação de threads, o que pode ser relevante durante a execução de sequências de passos que envolvem processamento paralelo ou assíncrono.</p>
 <p>Abaixo podemos ver um exemplo de código simples de como um bean, um objeto em Java, pode ser configurado e gerenciado no Spring:</p>
-<p><img alt="" src="assets/img/2024_04_21_Gestão de objetos no Java_image3.png" /></p>
+<p><img alt="" src="temp_media/media/image3.png" />{width="5.905555555555556in" height="3.5388888888888888in"}</p>
 <p>Exemplo de código Java utilizando o Framework Spring.</p>
 <p>Neste exemplo, AppConfig é uma classe de configuração que define um método meuServico anotado com Bean, indicando ao Spring que ele deve gerenciar a criação e a instância desse objeto. A classe MeuServico é anotada com o arroba.</p>
 <p>A gestão de recursos em uma aplicação robusta é crucial para assegurar que o software funcione de maneira eficiente e confiável. Ela envolve o planejamento cuidadoso e a alocação de recursos como memória, processamento e armazenamento, além do monitoramento e otimização do uso desses recursos ao longo do tempo. Saiba que a gestão eficaz de recursos permite:</p>
@@ -96,98 +66,28 @@
 <p>- <em>Disponibilidade</em>: Recursos bem gerenciados garantem que a aplicação esteja disponível quando necessário, sem interrupções inesperadas.</p>
 <p>- <em>Manutenção</em>: Facilita a identificação e correção de problemas, contribuindo para uma manutenção mais eficiente.</p>
 <p>Em resumo, a gestão de recursos é um pilar para a construção de aplicações robustas, pois impacta diretamente na qualidade, estabilidade e escalabilidade do software. Fica aqui a importância para o planejamento e a utilização de uma arquitetura condizente durante o desenvolvimento de sua aplicação.</p>
-            </div>
-            
-            <footer class="article-footer">
-                <div class="article-author-bio">
-                    <h3>Sobre o Autor</h3>
-                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
-                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
-                        Conecte-se no LinkedIn
-                    </a>
                 </div>
                 
-                <div class="article-navigation">
-                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
-                </div>
-            </footer>
-        </article>
+                <footer class="post-footer">
+                    <div class="author-info">
+                        <img src="assets/img/2024_04_21_gestao_de_objetos_no_java_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <div class="author-details">
+                            <strong>Christian Mulato</strong>
+                            <p>Desenvolvedor Java e Arquiteto de Software</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
     </main>
-    
+
     <footer class="site-footer">
-        <div class="footer-container">
+        <div class="container">
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Christian Mulato</h3>
-                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
-                <a href="../index.html">Artigos</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    
-    <!-- Theme Toggle Button -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-        <span id="themeIcon">🌙</span>
-    </button>
-    
-    <script>
-        // Tema manager
-        class ThemeManager {
-            constructor() {
-                this.themeToggle = document.getElementById('themeToggle');
-                this.themeIcon = document.getElementById('themeIcon');
-                this.init();
-            }
-            
-            init() {
-                const savedTheme = localStorage.getItem('theme');
-                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                const currentTheme = savedTheme || systemTheme;
-                
-                this.setTheme(currentTheme);
-                this.updateIcon(currentTheme);
-                
-                this.themeToggle.addEventListener('click', () => this.toggleTheme());
-            }
-            
-            toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                this.setTheme(newTheme);
-                this.updateIcon(newTheme);
-                localStorage.setItem('theme', newTheme);
-            }
-            
-            setTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-            
-            updateIcon(theme) {
-                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-                this.themeToggle.setAttribute('aria-label', 
-                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
-            }
-        }
-        
-        // Inicializar quando DOM carregar
-        document.addEventListener('DOMContentLoaded', () => {
-            new ThemeManager();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-

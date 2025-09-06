@@ -1,191 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre integração entre as partes">
+    <title>Integração Entre As Partes - Christian Mulato Dev Blog</title>
+    <meta name="description" content="Artigo sobre Integração Entre As Partes">
     <meta name="author" content="Christian Mulato">
-    <meta name="keywords" content="Java, APIs, Testes, Arquitetura, DevOps, IA">
+    <meta name="keywords" content="Java, Desenvolvimento, Tecnologia">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="articles/2024_05_19_integracao_entre_as_partes.html">
-    <meta property="og:title" content="Integração Entre As Partes">
-    <meta property="og:description" content="Artigo técnico sobre integração entre as partes">
-    <meta property="og:image" content="img/2024_05_19_integracao_entre_as_partes_featured.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="articles/2024_05_19_integracao_entre_as_partes.html">
-    <meta property="twitter:title" content="Integração Entre As Partes">
-    <meta property="twitter:description" content="Artigo técnico sobre integração entre as partes">
-    <meta property="twitter:image" content="img/2024_05_19_integracao_entre_as_partes_featured.jpg">
-    
-    <title>Integração Entre As Partes | Christian Mulato Dev Blog</title>
-    
-    <!-- Styles -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/article.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="assets/js/article.js" defer></script>
+    <link rel="stylesheet" href="assets/css/highlight.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-text">Christian Mulato</span>
-                    <span class="logo-subtitle">Dev Blog</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Artigos</a>
-                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html">Christian Mulato Dev Blog</a></h1>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="main">
-        <article class="article">
-            <header class="article-header">
-                <div class="article-meta">
-                    <span class="article-category">Java & Spring</span>
-                    <time class="article-date" datetime="19/05/2024">19/05/2024</time>
-                </div>
+    <main class="main-content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">Integração Entre As Partes</h1>
+                    <div class="post-meta">
+                        <time datetime="2024-05-19">19/05/2024</time>
+                        <span class="post-author">Por Christian Mulato</span>
+                    </div>
+                    
+                </header>
                 
-                <h1 class="article-title">Integração Entre As Partes</h1>
-                
-                <div class="article-info">
-                    <span class="article-author">Por Christian Mulato</span>
-                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">Testes</span> <span class="tag">Arquitetura</span> <span class="tag">DevOps</span> <span class="tag">IA</span></div>
-                </div>
-            </header>
-            
-            <div class="article-content">
-                
-<p><img alt="Front-end e back-end durante o desenvolvimento da aplicação." src="assets/img/2024_05_19_Integração entre as partes_image1.png" /></p>
+                <div class="post-content">
+                    <p><img alt="Front-end e back-end durante o desenvolvimento da aplicação." src="temp_media/media/image1.png" />{width="5.905555555555556in" height="3.3270833333333334in"}</p>
 <p>Front-end e back-end durante o desenvolvimento da aplicação.</p>
 <p><strong>Integração entre as partes</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_05_19_Integração entre as partes_image1.png" /></a></p>
-<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="temp_media/media/image2.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>19 de maio de 2024</p>
-<p>Ao integrar o front-end e o back-end de uma aplicação, é essencial garantir que ambos os lados estejam bem definidos e que as interfaces de comunicação sejam claras e consistentes. No front-end, deve-se considerar a segurança, evitando a exposição de dados sensíveis e implementando validações de entrada para proteger contra-ataques como <em>SQL Injection e Cross-Site Scripting </em>(XSS). No back-end, é importante garantir a escalabilidade e a manutenção do código, além de utilizar APIs bem documentadas para a troca de dados. A autenticação e autorização robustas são cruciais, assim como o uso de HTTPS para criptografar dados em trânsito. Testes automatizados e monitoramento contínuo ajudam a manter a integridade do sistema ao longo do tempo.</p>
+<p>Ao integrar o front-end e o back-end de uma aplicação, é essencial garantir que ambos os lados estejam bem definidos e que as interfaces de comunicação sejam claras e consistentes. No front-end, deve-se considerar a segurança, evitando a exposição de dados sensíveis e implementando validações de entrada para proteger contra-ataques como <em>SQL Injection e Cross-Site Scripting</em> (XSS). No back-end, é importante garantir a escalabilidade e a manutenção do código, além de utilizar APIs bem documentadas para a troca de dados. A autenticação e autorização robustas são cruciais, assim como o uso de HTTPS para criptografar dados em trânsito. Testes automatizados e monitoramento contínuo ajudam a manter a integridade do sistema ao longo do tempo.</p>
 <p>O acoplamento do front-end com o back-end de uma aplicação em desenvolvimento apresenta vários desafios técnicos e oportunidades. Aqui estão alguns dos principais pontos a considerar:</p>
 <p><strong>Desafios Técnicos:</strong></p>
 <p><strong>1. Compatibilidade entre Navegadores e Dispositivos:</strong> Garantir que a aplicação funcione corretamente em diferentes navegadores e dispositivos é um desafio constante. Isso envolve testes extensivos e a utilização de frameworks e ferramentas que ajudam a criar designs responsivos.</p>
-<p>__2. Desempenho e Otimização: __À medida que as aplicações se tornam mais complexas, é crucial manter o tempo de carregamento rápido e a experiência do usuário fluida. Isso pode ser alcançado otimizando o código, minimizando requisições e utilizando técnicas de cache.</p>
-<p>__3. Segurança: __Proteger a aplicação contra ataques cibernéticos e garantir a segurança dos dados dos usuários é essencial. Implementar práticas de segurança robustas, como validação de entrada de dados e proteção contra injeções de código, é fundamental.</p>
+<p><strong>2. Desempenho e Otimização:</strong> À medida que as aplicações se tornam mais complexas, é crucial manter o tempo de carregamento rápido e a experiência do usuário fluida. Isso pode ser alcançado otimizando o código, minimizando requisições e utilizando técnicas de cache.</p>
+<p><strong>3. Segurança:</strong> Proteger a aplicação contra ataques cibernéticos e garantir a segurança dos dados dos usuários é essencial. Implementar práticas de segurança robustas, como validação de entrada de dados e proteção contra injeções de código, é fundamental.</p>
 <p><strong>Oportunidades:</strong></p>
-<p>__1. Melhoria Contínua: __A integração front-end e back-end oferece a oportunidade de iterar e melhorar continuamente a aplicação, respondendo rapidamente às necessidades dos usuários e às mudanças do mercado.</p>
+<p><strong>1. Melhoria Contínua:</strong> A integração front-end e back-end oferece a oportunidade de iterar e melhorar continuamente a aplicação, respondendo rapidamente às necessidades dos usuários e às mudanças do mercado.</p>
 <p><strong>2. Experiência do Usuário Aprimorada:</strong> Uma integração bem-sucedida pode levar a uma experiência de usuário mais rica e interativa, o que pode aumentar a satisfação e a retenção do usuário.</p>
-<p><strong>3. Inovação Tecnológica: __A integração permite explorar novas tecnologias e abordagens, como a utilização de APIs modernas e arquiteturas </strong><em>serverless</em>__, que podem trazer vantagens competitivas.</p>
+<p><strong>3. Inovação Tecnológica:</strong> A integração permite explorar novas tecnologias e abordagens, como a utilização de APIs modernas e arquiteturas <strong><em>serverless</em></strong>, que podem trazer vantagens competitivas.</p>
 <p>Além desses pontos, é importante considerar a acessibilidade, garantindo que a aplicação seja utilizável por todos os usuários, incluindo aqueles com deficiências. Também é essencial ter uma boa comunicação entre as equipes de front-end e back-end para garantir que a integração seja feita de maneira eficaz.</p>
 <p>Para garantir a segurança na integração entre o front-end e o back-end é fundamental proteger os dados e manter a confiabilidade do sistema. Aqui estão algumas práticas essenciais:</p>
 <p><strong>1. Utilize HTTPS:</strong> Certifique-se de que a comunicação entre o front-end e o back-end ocorra por meio de HTTPS. Isso criptografa os dados em trânsito, protegendo contra interceptações maliciosas.</p>
 <p><strong>2. Validação de Dados:</strong> Implemente validações rigorosas nos dados de entrada. Isso ajuda a prevenir ataques como <em>SQL Injection e Cross-Site Scripting</em> (XSS). Valide e sanitize os dados antes de processá-los no back-end.</p>
 <p><strong>3. Autenticação e Autorização:</strong> Utilize métodos robustos de autenticação e autorização. Tokens JWT (<em>JSON Web Tokens</em>) são amplamente usados para autenticar usuários e controlar o acesso a recursos no back-end.</p>
-<p>__4. Proteção contra Ataques: __Esteja ciente dos principais ataques, como <em>Cross-Site Request Forgery</em> (CSRF) e <em>Cross-Site Script Inclusion</em> (XSSI). Implemente medidas de segurança para mitigar esses riscos.</p>
+<p><strong>4. Proteção contra Ataques:</strong> Esteja ciente dos principais ataques, como <em>Cross-Site Request Forgery</em> (CSRF) e <em>Cross-Site Script Inclusion</em> (XSSI). Implemente medidas de segurança para mitigar esses riscos.</p>
 <p><strong>5. Limite de Acesso:</strong> Restrinja o acesso aos endpoints do back-end. Defina permissões adequadas para cada tipo de usuário e evite expor funcionalidades sensíveis.</p>
 <p><strong>6. Monitoramento e Logs:</strong> Monitore as atividades no sistema e registre logs detalhados. Isso ajuda a identificar comportamentos suspeitos e a responder rapidamente a possíveis ameaças.</p>
-<p>Lembre-se de que a segurança é um processo contínuo. Mantenha-se atualizado sobre as melhores práticas e considere realizar testes de penetração para avaliar a robustez do seu sistema. </p>
+<p>Lembre-se de que a segurança é um processo contínuo. Mantenha-se atualizado sobre as melhores práticas e considere realizar testes de penetração para avaliar a robustez do seu sistema.</p>
 <p>O trabalho de integração do front-end e back-end exige um cuidado acurado com os testes integrados simulando o comportamento real da aplicação pondo a construção da aplicação em prova.</p>
-            </div>
-            
-            <footer class="article-footer">
-                <div class="article-author-bio">
-                    <h3>Sobre o Autor</h3>
-                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
-                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
-                        Conecte-se no LinkedIn
-                    </a>
                 </div>
                 
-                <div class="article-navigation">
-                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
-                </div>
-            </footer>
-        </article>
+                <footer class="post-footer">
+                    <div class="author-info">
+                        <img src="assets/img/2024_05_19_integracao_entre_as_partes_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <div class="author-details">
+                            <strong>Christian Mulato</strong>
+                            <p>Desenvolvedor Java e Arquiteto de Software</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
     </main>
-    
+
     <footer class="site-footer">
-        <div class="footer-container">
+        <div class="container">
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Christian Mulato</h3>
-                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
-                <a href="../index.html">Artigos</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    
-    <!-- Theme Toggle Button -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-        <span id="themeIcon">🌙</span>
-    </button>
-    
-    <script>
-        // Tema manager
-        class ThemeManager {
-            constructor() {
-                this.themeToggle = document.getElementById('themeToggle');
-                this.themeIcon = document.getElementById('themeIcon');
-                this.init();
-            }
-            
-            init() {
-                const savedTheme = localStorage.getItem('theme');
-                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                const currentTheme = savedTheme || systemTheme;
-                
-                this.setTheme(currentTheme);
-                this.updateIcon(currentTheme);
-                
-                this.themeToggle.addEventListener('click', () => this.toggleTheme());
-            }
-            
-            toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                this.setTheme(newTheme);
-                this.updateIcon(newTheme);
-                localStorage.setItem('theme', newTheme);
-            }
-            
-            setTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-            
-            updateIcon(theme) {
-                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-                this.themeToggle.setAttribute('aria-label', 
-                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
-            }
-        }
-        
-        // Inicializar quando DOM carregar
-        document.addEventListener('DOMContentLoaded', () => {
-            new ThemeManager();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-

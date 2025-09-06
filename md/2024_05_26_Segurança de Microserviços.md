@@ -1,10 +1,10 @@
-![Seguranças de Microserviços com JWT](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3270833333333334in"}
+![Seguranças de Microserviços com JWT](temp_media/media/image1.png){width="5.905555555555556in" height="3.3270833333333334in"}
 
 Seguranças de Microserviços com JWT
 
 **Segurança de Microserviços**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -72,7 +72,7 @@ Na visão geral de como você pode implementar a autenticação JWT em um micros
 
 Vamos ver um exemplo de código simplificado para ilustrar esses passos:
 
-![](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="3.222916666666667in"}
+![](temp_media/media/image3.png){width="5.905555555555556in" height="3.222916666666667in"}
 
 Exemplo de código e a dependência JJWT em Maven para autenticação com JWT.
 
@@ -80,7 +80,7 @@ A Autenticação JWT oferece escalabilidade ao permitir que sistemas distribuíd
 
 Agora vamos ver um exemplo simplificado de como você pode implementar a autenticação JWT em um microserviço usando Java e Spring Boot:
 
-![](c:\dev\personal_articles\md\media/media/image4.png){width="5.905555555555556in" height="6.5472222222222225in"}
+![](temp_media/media/image4.png){width="5.905555555555556in" height="6.5472222222222225in"}
 
 Exemplo de autenticação com a biblioteca JJWT do Spring Boot.
 

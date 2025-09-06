@@ -1,77 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre gerenciamento de filas em sistemas distribuídos com java">
+    <title>Gerenciamento De Filas Em Sistemas Distribuídos Com Java - Christian Mulato Dev Blog</title>
+    <meta name="description" content="Artigo sobre Gerenciamento De Filas Em Sistemas Distribuídos Com Java">
     <meta name="author" content="Christian Mulato">
-    <meta name="keywords" content="Java, APIs, Kafka, DevOps, IA">
+    <meta name="keywords" content="Java, Desenvolvimento, Tecnologia">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="articles/2024_06_09_gerenciamento_de_filas_em_sistemas_distribuidos_com_java.html">
-    <meta property="og:title" content="Gerenciamento De Filas Em Sistemas Distribuídos Com Java">
-    <meta property="og:description" content="Artigo técnico sobre gerenciamento de filas em sistemas distribuídos com java">
-    <meta property="og:image" content="img/2024_06_09_gerenciamento_de_filas_em_sistemas_distribuidos_com_java_featured.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="articles/2024_06_09_gerenciamento_de_filas_em_sistemas_distribuidos_com_java.html">
-    <meta property="twitter:title" content="Gerenciamento De Filas Em Sistemas Distribuídos Com Java">
-    <meta property="twitter:description" content="Artigo técnico sobre gerenciamento de filas em sistemas distribuídos com java">
-    <meta property="twitter:image" content="img/2024_06_09_gerenciamento_de_filas_em_sistemas_distribuidos_com_java_featured.jpg">
-    
-    <title>Gerenciamento De Filas Em Sistemas Distribuídos Com Java | Christian Mulato Dev Blog</title>
-    
-    <!-- Styles -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/article.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="assets/js/article.js" defer></script>
+    <link rel="stylesheet" href="assets/css/highlight.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-text">Christian Mulato</span>
-                    <span class="logo-subtitle">Dev Blog</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Artigos</a>
-                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html">Christian Mulato Dev Blog</a></h1>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="main">
-        <article class="article">
-            <header class="article-header">
-                <div class="article-meta">
-                    <span class="article-category">Java & Spring</span>
-                    <time class="article-date" datetime="09/06/2024">09/06/2024</time>
-                </div>
+    <main class="main-content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">Gerenciamento De Filas Em Sistemas Distribuídos Com Java</h1>
+                    <div class="post-meta">
+                        <time datetime="2024-06-09">09/06/2024</time>
+                        <span class="post-author">Por Christian Mulato</span>
+                    </div>
+                    
+                </header>
                 
-                <h1 class="article-title">Gerenciamento De Filas Em Sistemas Distribuídos Com Java</h1>
-                
-                <div class="article-info">
-                    <span class="article-author">Por Christian Mulato</span>
-                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">APIs</span> <span class="tag">Kafka</span> <span class="tag">DevOps</span> <span class="tag">IA</span></div>
-                </div>
-            </header>
-            
-            <div class="article-content">
-                
-<p><img alt="Gerenciamento de filas com ferramentas e soluções consolidadas." src="assets/img/2024_06_09_Gerenciamento de Filas em Sistemas Distribuídos com Java_image1.png" /></p>
+                <div class="post-content">
+                    <p><img alt="Gerenciamento de filas com ferramentas e soluções consolidadas." src="temp_media/media/image1.png" />{width="5.905555555555556in" height="3.3222222222222224in"}</p>
 <p>Gerenciamento de filas com ferramentas e soluções consolidadas.</p>
 <p><strong>Gerenciamento de Filas em Sistemas Distribuídos com Java</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_06_09_Gerenciamento de Filas em Sistemas Distribuídos com Java_image3.png" /></a></p>
-<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="temp_media/media/image2.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>9 de junho de 2024</p>
 <p><strong>Introdução à Teoria das Filas</strong></p>
@@ -80,51 +50,87 @@
 <p><strong>Implementações de Filas em Java</strong></p>
 <p>Em Java, temos duas principais implementações de filas:</p>
 <ol>
-<li><strong>Queue</strong>: A interface Queue representa uma fila comum, seguindo o modelo FIFO. Ela oferece métodos como <em>add</em>, <em>remove</em>, <em>peek</em> e <em>isEmpty</em>. Você pode usar <em>LinkedList</em> ou <em>ArrayDeque</em> para criar uma fila em Java.</li>
-<li><strong>PriorityQueue</strong>: Essa implementação representa uma fila de prioridade, onde os elementos são organizados com base em uma ordem específica (por exemplo, valores numéricos ou objetos comparáveis). A <em>PriorityQueue</em> permite acesso rápido ao elemento com maior prioridade.</li>
+<li>
+<p><strong>Queue</strong>: A interface Queue representa uma fila comum, seguindo o modelo FIFO. Ela oferece métodos como <em>add</em>, <em>remove</em>, <em>peek</em> e <em>isEmpty</em>. Você pode usar <em>LinkedList</em> ou <em>ArrayDeque</em> para criar uma fila em Java.</p>
+</li>
+<li>
+<p><strong>PriorityQueue</strong>: Essa implementação representa uma fila de prioridade, onde os elementos são organizados com base em uma ordem específica (por exemplo, valores numéricos ou objetos comparáveis). A <em>PriorityQueue</em> permite acesso rápido ao elemento com maior prioridade.</p>
+</li>
 </ol>
 <p>Em aplicações distribuídas, essas estruturas de dados são úteis para gerenciar tarefas assíncronas, eventos de rede, mensagens em sistemas de mensagens e muito mais. Por exemplo, em sistemas de processamento distribuído, você pode usar filas para coordenar tarefas entre diferentes nós ou processos.</p>
 <p>Abaixo está um exemplo simples de como criar e usar uma fila em Java, utilizando a implementação padrão da interface Queue:</p>
-<p><img alt="" src="assets/img/2024_06_09_Gerenciamento de Filas em Sistemas Distribuídos com Java_image1.png" /></p>
+<p><img alt="" src="temp_media/media/image3.png" />{width="5.905555555555556in" height="4.415972222222222in"}</p>
 <p>Exemplo básico em código Java para gerenciamento de fila.</p>
 <p>Neste exemplo, uma fila é criada utilizando a implementação <em>LinkedList</em> da interface <em>Queue</em>. Em seguida, alguns elementos são adicionados à fila usando o método add(). Depois, o método poll() é utilizado para acessar e remover o elemento da frente da fila, e o método peek() é usado para acessar o elemento da frente sem removê-lo. Por fim, os elementos restantes na fila são exibidos.</p>
 <p>Este é apenas um exemplo básico de como trabalhar com filas em Java, e existem outras implementações e métodos disponíveis para manipulação de filas, dependendo das necessidades específicas do sistema.</p>
 <p><strong>Modelos de Filas</strong></p>
 <p>Vamos explorar diferentes modelos de filas:</p>
 <ol>
-<li><strong>Filas Simples (Single-Server Queue)</strong>: Nesse modelo, há apenas um servidor que atende os clientes em ordem de chegada (FIFO). É comum em cenários como caixas de supermercado ou atendimento telefônico. A taxa de chegada dos clientes e o tempo de serviço são geralmente modelados como processos estocásticos. A métrica importante é o tempo médio de espera dos clientes na fila.</li>
-<li><strong>Filas com Prioridade (Priority Queue)</strong>: Nesse modelo, os clientes têm prioridades diferentes. O servidor atende primeiro os clientes com maior prioridade. Pode ser usado em sistemas de saúde, onde pacientes em estado crítico têm prioridade sobre outros. A métrica relevante é a taxa de atendimento dos clientes prioritários.</li>
-<li><strong>Filas de Múltiplos Servidores (Multi-Server Queue)</strong>: Aqui, vários servidores atendem os clientes simultaneamente. Pode ser uma fila única com vários caixas em um supermercado ou vários servidores em um data center. A métrica importante é a taxa de atendimento global (quantos clientes são atendidos por unidade de tempo).</li>
+<li>
+<p><strong>Filas Simples (Single-Server Queue)</strong>: Nesse modelo, há apenas um servidor que atende os clientes em ordem de chegada (FIFO). É comum em cenários como caixas de supermercado ou atendimento telefônico. A taxa de chegada dos clientes e o tempo de serviço são geralmente modelados como processos estocásticos. A métrica importante é o tempo médio de espera dos clientes na fila.</p>
+</li>
+<li>
+<p><strong>Filas com Prioridade (Priority Queue)</strong>: Nesse modelo, os clientes têm prioridades diferentes. O servidor atende primeiro os clientes com maior prioridade. Pode ser usado em sistemas de saúde, onde pacientes em estado crítico têm prioridade sobre outros. A métrica relevante é a taxa de atendimento dos clientes prioritários.</p>
+</li>
+<li>
+<p><strong>Filas de Múltiplos Servidores (Multi-Server Queue)</strong>: Aqui, vários servidores atendem os clientes simultaneamente. Pode ser uma fila única com vários caixas em um supermercado ou vários servidores em um data center. A métrica importante é a taxa de atendimento global (quantos clientes são atendidos por unidade de tempo).</p>
+</li>
 </ol>
 <p>Em sistemas distribuídos, esses modelos ajudam a otimizar recursos, minimizar o tempo de espera e melhorar a eficiência.</p>
 <p><strong>Gerenciamento de Acesso Concorrente às Filas</strong></p>
 <p>Gerenciar o acesso concorrente às filas em sistemas distribuídos é crucial para garantir eficiência e evitar gargalos. Aqui estão algumas estratégias:</p>
 <ol>
-<li><strong>Bloqueio (Locking)</strong>: Use bloqueios (locks) para controlar o acesso a recursos compartilhados, como a fila. Por exemplo, em Java, você pode usar <em>synchronized</em> ou <em>ReentrantLock</em> para proteger operações de enfileiramento e desenfileiramento. O <em>ReentrantLock</em> é uma classe em Java que implementa a interface Lock e fornece sincronização para métodos que acessam recursos compartilhados.</li>
-<li><strong>Fila Distribuída</strong>: Divida a fila em várias partições ou shards, cada uma gerenciada por um servidor diferente. Isso permite que vários servidores processem solicitações simultaneamente, reduzindo gargalos.</li>
-<li><strong>Fila com Múltiplas Réplicas</strong>: Mantenha várias réplicas da fila em diferentes nós. Use algoritmos de consistência, como o quórum, para garantir que as réplicas estejam sincronizadas.</li>
-<li><strong>Fila com Mensagem Assíncrona</strong>: Utilize sistemas de mensagens, como RabbitMQ ou Kafka* (vide nota rodapé) . Eles permitem que os produtores enfileirem mensagens sem bloquear os consumidores imediatamente.</li>
-<li><strong>Escalonamento Horizontal</strong>: Adicione mais servidores à medida que a carga aumenta. Isso distribui a carga e melhora a capacidade de processamento.</li>
-<li><strong>Controle de Concorrência</strong>: Use semáforos, monitores ou outras estruturas para controlar o acesso concorrente. Evite condições de corrida e deadlocks.</li>
+<li>
+<p><strong>Bloqueio (Locking)</strong>: Use bloqueios (locks) para controlar o acesso a recursos compartilhados, como a fila. Por exemplo, em Java, você pode usar <em>synchronized</em> ou <em>ReentrantLock</em> para proteger operações de enfileiramento e desenfileiramento. O <em>ReentrantLock</em> é uma classe em Java que implementa a interface Lock e fornece sincronização para métodos que acessam recursos compartilhados.</p>
+</li>
+<li>
+<p><strong>Fila Distribuída</strong>: Divida a fila em várias partições ou shards, cada uma gerenciada por um servidor diferente. Isso permite que vários servidores processem solicitações simultaneamente, reduzindo gargalos.</p>
+</li>
+<li>
+<p><strong>Fila com Múltiplas Réplicas</strong>: Mantenha várias réplicas da fila em diferentes nós. Use algoritmos de consistência, como o quórum, para garantir que as réplicas estejam sincronizadas.</p>
+</li>
+<li>
+<p><strong>Fila com Mensagem Assíncrona</strong>: Utilize sistemas de mensagens, como RabbitMQ ou Kafka* (vide nota rodapé) . Eles permitem que os produtores enfileirem mensagens sem bloquear os consumidores imediatamente.</p>
+</li>
+<li>
+<p><strong>Escalonamento Horizontal</strong>: Adicione mais servidores à medida que a carga aumenta. Isso distribui a carga e melhora a capacidade de processamento.</p>
+</li>
+<li>
+<p><strong>Controle de Concorrência</strong>: Use semáforos, monitores ou outras estruturas para controlar o acesso concorrente. Evite condições de corrida e deadlocks.</p>
+</li>
 </ol>
 <p><strong>Escalabilidade e Otimização do Gerenciamento de Filas</strong></p>
 <p>Vamos explorar como o gerenciamento de filas pode ser escalado e otimizado para melhorar a performance das aplicações em sistemas distribuídos:</p>
 <ol>
-<li><strong>Escalonamento Horizontal</strong>: Adicione mais servidores (nós) à medida que a carga aumenta. Distribua a carga entre os servidores para evitar gargalos. Isso melhora a capacidade de processamento e a escalabilidade.</li>
-<li><strong>Particionamento de Filas</strong>: Divida a fila em várias partições (shards). Cada partição é gerenciada por um servidor diferente. Isso permite que vários servidores processem solicitações simultaneamente.</li>
-<li><strong>Fila com Múltiplas Réplicas</strong>: Mantenha várias réplicas da fila em diferentes nós. Use algoritmos de consistência (como quórum) para sincronizar as réplicas. Isso melhora a disponibilidade e a tolerância a falhas.</li>
-<li><strong>Cache de Filas</strong>: Armazene parte da fila em memória cache. Isso reduz a latência para operações frequentes.</li>
-<li><strong>Priorização Inteligente</strong>: Priorize tarefas com base em critérios específicos. Por exemplo, priorize tarefas críticas ou de alto valor.</li>
-<li><strong>Mensageria Assíncrona</strong>: Use sistemas de mensagens (como <em>RabbitMQ</em> ou <em>Kafka</em>). Produtores enfileiram mensagens sem bloquear os consumidores imediatamente.</li>
-<li><strong>Monitoramento e Otimização Contínua</strong>: Monitore o desempenho da fila e ajuste conforme necessário. Identifique gargalos e otimize recursos.</li>
+<li>
+<p><strong>Escalonamento Horizontal</strong>: Adicione mais servidores (nós) à medida que a carga aumenta. Distribua a carga entre os servidores para evitar gargalos. Isso melhora a capacidade de processamento e a escalabilidade.</p>
+</li>
+<li>
+<p><strong>Particionamento de Filas</strong>: Divida a fila em várias partições (shards). Cada partição é gerenciada por um servidor diferente. Isso permite que vários servidores processem solicitações simultaneamente.</p>
+</li>
+<li>
+<p><strong>Fila com Múltiplas Réplicas</strong>: Mantenha várias réplicas da fila em diferentes nós. Use algoritmos de consistência (como quórum) para sincronizar as réplicas. Isso melhora a disponibilidade e a tolerância a falhas.</p>
+</li>
+<li>
+<p><strong>Cache de Filas</strong>: Armazene parte da fila em memória cache. Isso reduz a latência para operações frequentes.</p>
+</li>
+<li>
+<p><strong>Priorização Inteligente</strong>: Priorize tarefas com base em critérios específicos. Por exemplo, priorize tarefas críticas ou de alto valor.</p>
+</li>
+<li>
+<p><strong>Mensageria Assíncrona</strong>: Use sistemas de mensagens (como <em>RabbitMQ</em> ou <em>Kafka</em>). Produtores enfileiram mensagens sem bloquear os consumidores imediatamente.</p>
+</li>
+<li>
+<p><strong>Monitoramento e Otimização Contínua</strong>: Monitore o desempenho da fila e ajuste conforme necessário. Identifique gargalos e otimize recursos.</p>
+</li>
 </ol>
 <p><strong>Padrão de Design Produtor-Consumidor</strong></p>
 <p>O padrão de design produtor-consumidor é amplamente utilizado em sistemas que utilizam filas para gerenciar tarefas assíncronas. Produtores (ou escritores) são responsáveis por enfileirar mensagens ou tarefas na fila. Consumidores (ou leitores) retiram as mensagens da fila e as processam. Esse padrão é útil quando há uma separação clara entre a produção e o consumo de dados.</p>
 <p>Exemplos de uso do padrão produtor-consumidor incluem sistemas de mensagens, onde produtores publicam mensagens em tópicos ou filas, e consumidores as processam, e processamento assíncrono, onde produtores geram eventos (por exemplo, cliques de usuário), e consumidores os processam em segundo plano.</p>
 <p>Um outro conceito utilizado para o gerenciamento de filas é a publicação e assinatura (<strong>Pub/Sub</strong>), trata-se de um padrão de troca de mensagens entre serviços em sistemas distribuídos. Com o Pub/Sub, os serviços podem se comunicar de forma assíncrona e independente. Vamos entender como ele funciona:</p>
 <p><strong>- Publicação (Publisher):</strong> É o serviço que envia mensagens para um tópico (ou canal).</p>
-<p>__- Assinatura (Subscriber): __É o serviço que recebe as mensagens de um tópico.</p>
-<p>__- Corretores de Pub/Sub: __Controlam as interações entre publicadores e assinantes.</p>
+<p><strong>- Assinatura (Subscriber):</strong> É o serviço que recebe as mensagens de um tópico.</p>
+<p><strong>- Corretores de Pub/Sub:</strong> Controlam as interações entre publicadores e assinantes.</p>
 <p>O Pub/Sub resolve problemas como acoplamento entre serviços e maior latência nas respostas, tornando a comunicação mais eficiente e escalável.</p>
 <p><strong>Uma ferramenta popular para gerenciamento de filas:</strong></p>
 <p><strong>RabbitMQ</strong> é um sistema de mensagens de código aberto amplamente utilizado em sistemas distribuídos. Ele se encaixa no contexto de gerenciamento de filas, permitindo a comunicação assíncrona entre componentes de software. Aqui estão os pontos-chave:</p>
@@ -145,101 +151,32 @@
 <p>O RabbitMQ é uma solução robusta para gerenciar filas e coordenar a comunicação assíncrona em sistemas distribuídos.</p>
 <p><strong>Conclusão</strong></p>
 <p>Gerenciar filas em sistemas distribuídos pode apresentar desafios, mas existem ferramentas e soluções para superá-los.</p>
-<p>Notas: </p>
+<hr />
+<p>Notas:</p>
 <p>O processo estocástico pode ser definido como uma seqüência de variáveis aleatórias indexadas ao tempo e também a eventos. É uma variável que se desenvolve no tempo de maneira parcialmente aleatória e imprevisível.</p>
 <p>Kafka: O Apache Kafka é uma plataforma open-source de processamento de streams, desenvolvida pela Apache Software Foundation, escrita em Scala e Java. Seu objetivo é fornecer uma plataforma unificada, de alta capacidade e baixa latência para o tratamento de dados em tempo real. Basicamente, o Kafka permite a transmissão assíncrona de dados e é usado para lidar com eventos em tempo real, como mensagens, logs e métricas. Ele é amplamente utilizado para construir sistemas distribuídos e escaláveis, onde há produtores (que enviam dados) e consumidores (que recebem esses dados) conectados a tópicos específicos.</p>
-            </div>
-            
-            <footer class="article-footer">
-                <div class="article-author-bio">
-                    <h3>Sobre o Autor</h3>
-                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
-                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
-                        Conecte-se no LinkedIn
-                    </a>
                 </div>
                 
-                <div class="article-navigation">
-                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
-                </div>
-            </footer>
-        </article>
+                <footer class="post-footer">
+                    <div class="author-info">
+                        <img src="assets/img/2024_06_09_gerenciamento_de_filas_em_sistemas_distribuidos_com_java_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <div class="author-details">
+                            <strong>Christian Mulato</strong>
+                            <p>Desenvolvedor Java e Arquiteto de Software</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
     </main>
-    
+
     <footer class="site-footer">
-        <div class="footer-container">
+        <div class="container">
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Christian Mulato</h3>
-                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
-                <a href="../index.html">Artigos</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    
-    <!-- Theme Toggle Button -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-        <span id="themeIcon">🌙</span>
-    </button>
-    
-    <script>
-        // Tema manager
-        class ThemeManager {
-            constructor() {
-                this.themeToggle = document.getElementById('themeToggle');
-                this.themeIcon = document.getElementById('themeIcon');
-                this.init();
-            }
-            
-            init() {
-                const savedTheme = localStorage.getItem('theme');
-                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                const currentTheme = savedTheme || systemTheme;
-                
-                this.setTheme(currentTheme);
-                this.updateIcon(currentTheme);
-                
-                this.themeToggle.addEventListener('click', () => this.toggleTheme());
-            }
-            
-            toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                this.setTheme(newTheme);
-                this.updateIcon(newTheme);
-                localStorage.setItem('theme', newTheme);
-            }
-            
-            setTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-            
-            updateIcon(theme) {
-                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-                this.themeToggle.setAttribute('aria-label', 
-                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
-            }
-        }
-        
-        // Inicializar quando DOM carregar
-        document.addEventListener('DOMContentLoaded', () => {
-            new ThemeManager();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-

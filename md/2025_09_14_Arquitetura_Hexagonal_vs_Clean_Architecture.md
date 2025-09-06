@@ -1,6 +1,6 @@
 # Arquitetura Hexagonal vs. Arquitetura Limpa: Comparação Prática em Java
 
-![Comparação entre Arquitetura Hexagonal e Arquitetura Limpa](c:\dev\personal_articles\md\media/media/image1.png){width="5.833333333333333in" height="3.1818175853018373in"}
+![Comparação entre Arquitetura Hexagonal e Arquitetura Limpa](temp_media/media/image1.png){width="5.833333333333333in" height="3.1818175853018373in"}
 
 *Legenda: Imagem gerada por IA representando a comparação entre Arquitetura Hexagonal e Arquitetura Limpa, com elementos visuais de portas, adaptadores e camadas concêntricas.*
 

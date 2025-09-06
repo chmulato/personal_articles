@@ -1,10 +1,10 @@
-![Algumas novidades do Java 8 (e versões superiores)](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="5.905555555555556in"}
+![Algumas novidades do Java 8 (e versões superiores)](temp_media/media/image1.png){width="5.905555555555556in" height="5.905555555555556in"}
 
 Algumas novidades do Java 8 (e versões superiores)
 
 **Java 8+: Transformando a Programação com Expressões Lambda e java.time.**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -50,19 +50,19 @@ Para usar expressões lambda em Java, siga estas etapas:
 
 - **Runnable:**
 
-![](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="0.6326388888888889in"}
+![](temp_media/media/image3.png){width="5.905555555555556in" height="0.6326388888888889in"}
 
 Exemplo de código Java aplicando o Lambda.
 
 - **Consumer** (recebe um argumento, não retorna valor):
 
-![](c:\dev\personal_articles\md\media/media/image4.png){width="5.905555555555556in" height="0.6326388888888889in"}
+![](temp_media/media/image4.png){width="5.905555555555556in" height="0.6326388888888889in"}
 
 Exemplo de código Java aplicando o Lambda.
 
 - **Predicate** (avalia uma condição):
 
-![](c:\dev\personal_articles\md\media/media/image5.png){width="5.905555555555556in" height="0.5930555555555556in"}
+![](temp_media/media/image5.png){width="5.905555555555556in" height="0.5930555555555556in"}
 
 Exemplo de código Java aplicando o Lambda.
 
@@ -96,7 +96,7 @@ Alguns exemplos práticos:
 
 Vamos considerar um exemplo usando a API de Streams para processar uma lista de números inteiros. Suponha que temos a seguinte lista:
 
-![](c:\dev\personal_articles\md\media/media/image6.png){width="5.905555555555556in" height="0.5930555555555556in"}
+![](temp_media/media/image6.png){width="5.905555555555556in" height="0.5930555555555556in"}
 
 Exemplo de código Java aplicando a API de Streams.
 
@@ -104,25 +104,25 @@ Aqui estão alguns exemplos de operações que podemos realizar:
 
 **1. Filtrar números pares:**
 
-![](c:\dev\personal_articles\md\media/media/image7.png){width="5.905555555555556in" height="0.8368055555555556in"}
+![](temp_media/media/image7.png){width="5.905555555555556in" height="0.8368055555555556in"}
 
 Exemplo de código Java com a API de Streams aplicando filtro.
 
 **2. Calcular a soma dos números:**
 
-![](c:\dev\personal_articles\md\media/media/image8.png){width="5.905555555555556in" height="0.8368055555555556in"}
+![](temp_media/media/image8.png){width="5.905555555555556in" height="0.8368055555555556in"}
 
 Exemplo de código Java com a API de Streams utilizando cálculo.
 
 **3. Encontrar o maior número:**
 
-![](c:\dev\personal_articles\md\media/media/image9.png){width="5.905555555555556in" height="0.8368055555555556in"}
+![](temp_media/media/image9.png){width="5.905555555555556in" height="0.8368055555555556in"}
 
 Exemplo de código Java com a API de Streams utilizando fórmula.
 
 **4. Verificar se há algum número maior que 5:**
 
-![](c:\dev\personal_articles\md\media/media/image10.png){width="5.905555555555556in" height="0.8368055555555556in"}
+![](temp_media/media/image10.png){width="5.905555555555556in" height="0.8368055555555556in"}
 
 Exemplo de código Java com a API de Streams utilizando regra de negócio.
 
@@ -190,13 +190,13 @@ Aqui está um exemplo prático de como você pode usar a API de Streams do Java 
 
 Vamos supor que temos uma lista de nomes e queremos encontrar os nomes que começam com a letra \"A\" e imprimi-los:
 
-![](c:\dev\personal_articles\md\media/media/image11.png){width="5.905555555555556in" height="1.7673611111111112in"}
+![](temp_media/media/image11.png){width="5.905555555555556in" height="1.7673611111111112in"}
 
 Exemplo de código Java para utilizar a API de Streams do Java 8.
 
 Quando você executa este código, ele imprimirá:
 
-![](c:\dev\personal_articles\md\media/media/image12.png){width="5.905555555555556in" height="0.75625in"}
+![](temp_media/media/image12.png){width="5.905555555555556in" height="0.75625in"}
 
 Resultado do código Java acima.
 
@@ -232,7 +232,7 @@ Essas classes fornecem uma API abrangente para lidar com datas, horas e fusos ho
 
 Aqui está um exemplo simples de como você pode usar a classe **LocalDate** do pacote java.time:
 
-![](c:\dev\personal_articles\md\media/media/image13.png){width="5.905555555555556in" height="3.01875in"}
+![](temp_media/media/image13.png){width="5.905555555555556in" height="3.01875in"}
 
 Exemplo de código Java com aplicação da biblioteca Local.Date.
 
@@ -242,7 +242,7 @@ A classe **LocalDate** fornece muitos outros métodos úteis para manipular data
 
 Aqui está um exemplo simples de como você pode usar a classe **LocalTime** do pacote java.time:
 
-![](c:\dev\personal_articles\md\media/media/image14.png){width="5.905555555555556in" height="3.01875in"}
+![](temp_media/media/image14.png){width="5.905555555555556in" height="3.01875in"}
 
 Exemplo de código Java com aplicação da biblioteca Local.Time.
 
@@ -254,7 +254,7 @@ A classe **LocalTime** fornece muitos outros métodos úteis para manipular hora
 
 Você pode usar a classe **LocalTime** do pacote java.time para converter uma hora para o formato ISO-8601. Aqui está um exemplo:
 
-![](c:\dev\personal_articles\md\media/media/image15.png){width="5.905555555555556in" height="2.178472222222222in"}
+![](temp_media/media/image15.png){width="5.905555555555556in" height="2.178472222222222in"}
 
 Exemplo de código Java com aplicação da biblioteca Local.Time no formato (ISO-8601)
 

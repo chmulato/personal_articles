@@ -1,203 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre criando endpoints get e post em java com openapi e autenticação via token">
+    <title>Criando Endpoints Get E Post Em Java Com Openapi E Autenticação Via Token - Christian Mulato Dev Blog</title>
+    <meta name="description" content="Artigo sobre Criando Endpoints Get E Post Em Java Com Openapi E Autenticação Via Token">
     <meta name="author" content="Christian Mulato">
-    <meta name="keywords" content="Java, Spring, APIs, DevOps, IA">
+    <meta name="keywords" content="Java, Desenvolvimento, Tecnologia">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="articles/2024_08_18_criando_endpoints_get_e_post_em_java_com_openapi_e_autenticacao_via_token.html">
-    <meta property="og:title" content="Criando Endpoints Get E Post Em Java Com Openapi E Autenticação Via Token">
-    <meta property="og:description" content="Artigo técnico sobre criando endpoints get e post em java com openapi e autenticação via token">
-    <meta property="og:image" content="img/2024_08_18_criando_endpoints_get_e_post_em_java_com_openapi_e_autenticacao_via_token_featured.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="articles/2024_08_18_criando_endpoints_get_e_post_em_java_com_openapi_e_autenticacao_via_token.html">
-    <meta property="twitter:title" content="Criando Endpoints Get E Post Em Java Com Openapi E Autenticação Via Token">
-    <meta property="twitter:description" content="Artigo técnico sobre criando endpoints get e post em java com openapi e autenticação via token">
-    <meta property="twitter:image" content="img/2024_08_18_criando_endpoints_get_e_post_em_java_com_openapi_e_autenticacao_via_token_featured.jpg">
-    
-    <title>Criando Endpoints Get E Post Em Java Com Openapi E Autenticação Via Token | Christian Mulato Dev Blog</title>
-    
-    <!-- Styles -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/article.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="assets/js/article.js" defer></script>
+    <link rel="stylesheet" href="assets/css/highlight.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-text">Christian Mulato</span>
-                    <span class="logo-subtitle">Dev Blog</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Artigos</a>
-                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html">Christian Mulato Dev Blog</a></h1>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="main">
-        <article class="article">
-            <header class="article-header">
-                <div class="article-meta">
-                    <span class="article-category">Java & Spring</span>
-                    <time class="article-date" datetime="18/08/2024">18/08/2024</time>
-                </div>
+    <main class="main-content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">Criando Endpoints Get E Post Em Java Com Openapi E Autenticação Via Token</h1>
+                    <div class="post-meta">
+                        <time datetime="2024-08-18">18/08/2024</time>
+                        <span class="post-author">Por Christian Mulato</span>
+                    </div>
+                    
+                </header>
                 
-                <h1 class="article-title">Criando Endpoints Get E Post Em Java Com Openapi E Autenticação Via Token</h1>
-                
-                <div class="article-info">
-                    <span class="article-author">Por Christian Mulato</span>
-                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">APIs</span> <span class="tag">DevOps</span> <span class="tag">IA</span></div>
-                </div>
-            </header>
-            
-            <div class="article-content">
-                
-<p><img alt="Endpoint com Framework Spring Boot utilizando linguagem Java." src="assets/img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image1.png" /></p>
+                <div class="post-content">
+                    <p><img alt="Endpoint com Framework Spring Boot utilizando linguagem Java." src="temp_media/media/image1.png" />{width="5.905555555555556in" height="3.3270833333333334in"}</p>
 <p>Endpoint com Framework Spring Boot utilizando linguagem Java.</p>
 <p><strong>Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image11.png" /></a></p>
-<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="temp_media/media/image2.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>18 de agosto de 2024</p>
 <p><strong>1. Introdução</strong></p>
 <p>Neste artigo, vamos aprender a criar <strong><em>endpoints</em></strong> <strong>GET</strong> e em uma aplicação Java utilizando Spring Boot e OpenAPI. Além disso, vamos configurar a autenticação via <strong>token JWT</strong> para proteger nossos <strong><em>endpoints</em></strong>.</p>
 <p><strong>2. Configuração do Projeto</strong></p>
-<p>Primeiro, vamos configurar nosso projeto <strong><em>Spring Boot </em></strong>*[vide rodapé]. No pom.xml, adicione as seguintes dependências:</p>
-<p><img alt="" src="assets/img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image12.png" /></p>
+<p>Primeiro, vamos configurar nosso projeto <strong><em>Spring Boot</em></strong> *[vide rodapé]. No pom.xml, adicione as seguintes dependências:</p>
+<p><img alt="" src="temp_media/media/image3.png" />{width="5.905555555555556in" height="2.4375in"}</p>
 <p>Importando as dependências das bibliotecas necessárias para o Spring Boot.</p>
 <p><strong>3. Criando o Endpoint GET</strong></p>
 <p>Vamos criar um <strong><em>endpoint</em></strong> <strong>GET</strong> que retorna uma lista de itens. Primeiro, crie um controlador:</p>
-<p><img alt="" src="assets/img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image13.png" /></p>
+<p><img alt="" src="temp_media/media/image4.png" />{width="5.905555555555556in" height="1.5in"}</p>
 <p>Classe Java para a criação do endpoint GET</p>
 <p><strong>4. Criando o Endpoint POST</strong></p>
 <p>Agora, vamos criar um <strong><em>endpoint</em></strong> <strong>POST</strong> que adiciona um novo item:</p>
-<p><img alt="" src="assets/img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image14.png" /></p>
+<p><img alt="" src="temp_media/media/image5.png" />{width="5.905555555555556in" height="1.4118055555555555in"}</p>
 <p>Classe Java para a criação do endpoint POST</p>
 <p><strong>5. Configurando a Autenticação via Token JWT</strong></p>
-<p>Para proteger nossos <strong><em>endpoints</em></strong>, vamos configurar a autenticação via__ token JWT__. Primeiro, crie uma classe para gerar e validar tokens JWT:</p>
-<p><img alt="" src="assets/img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image15.png" /></p>
+<p>Para proteger nossos <strong><em>endpoints</em></strong>, vamos configurar a autenticação via <strong>token JWT</strong>. Primeiro, crie uma classe para gerar e validar tokens JWT:</p>
+<p><img alt="" src="temp_media/media/image6.png" />{width="5.905555555555556in" height="2.532638888888889in"}</p>
 <p>Classe Java para a criação do Token de autenticação.</p>
 <p><strong>6. Configurando o Spring Security</strong></p>
 <p>Agora, configure o <strong>Spring Security</strong> para usar o JWT:</p>
-<p><img alt="" src="assets/img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image16.png" /></p>
+<p><img alt="" src="temp_media/media/image7.png" />{width="5.905555555555556in" height="1.6583333333333334in"}</p>
 <p>Classe Java para o controle de acesso ao endpoint.</p>
 <p><strong>7. Documentando com OpenAPI</strong></p>
 <p>Finalmente, vamos documentar nossos <strong><em>endpoints</em></strong> com <strong>OpenAPI</strong>. Adicione as anotações no controlador:</p>
-<p><img alt="" src="assets/img/2024_08_18_Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token_image1.png" /></p>
+<p><img alt="" src="temp_media/media/image8.png" />{width="5.905555555555556in" height="2.3673611111111112in"}</p>
 <p>Classe Java com os endpoint GET e POST.</p>
 <p><strong>8. Conclusão</strong></p>
 <p>Neste artigo, aprendemos a criar <strong><em>endpoints</em></strong> <strong>GET</strong> e <strong>POST</strong> em Java utilizando <strong>Spring Boot</strong> e <strong>OpenAPI</strong>, além de configurar a autenticação via <strong>token JWT</strong> para proteger nossos <strong><em>endpoints</em></strong>. Com essas ferramentas, podemos criar APIs seguras e bem documentadas.</p>
-<p>Nota: </p>
+<hr />
+<p>Nota:</p>
 <ul>
 <li><strong><em>Spring Boot</em></strong> é um <em>framework</em> baseado no <a href="https://spring.io/"><em>Spring</em></a> que simplifica o desenvolvimento de aplicações Java, eliminando a necessidade de configurações extensas. Ele oferece uma abordagem opinativa para a configuração, permitindo que os desenvolvedores criem rapidamente aplicações robustas e prontas para produção com configurações padrão sensatas. Com recursos como inicializadores automáticos, servidores embutidos e uma vasta gama de bibliotecas integradas, o Spring Boot facilita a criação de micros serviços e aplicações web escaláveis e de alta performance.</li>
 </ul>
-            </div>
-            
-            <footer class="article-footer">
-                <div class="article-author-bio">
-                    <h3>Sobre o Autor</h3>
-                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
-                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
-                        Conecte-se no LinkedIn
-                    </a>
                 </div>
                 
-                <div class="article-navigation">
-                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
-                </div>
-            </footer>
-        </article>
+                <footer class="post-footer">
+                    <div class="author-info">
+                        <img src="assets/img/2024_08_18_criando_endpoints_get_e_post_em_java_com_openapi_e_autenticacao_via_token_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <div class="author-details">
+                            <strong>Christian Mulato</strong>
+                            <p>Desenvolvedor Java e Arquiteto de Software</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
     </main>
-    
+
     <footer class="site-footer">
-        <div class="footer-container">
+        <div class="container">
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Christian Mulato</h3>
-                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
-                <a href="../index.html">Artigos</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    
-    <!-- Theme Toggle Button -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-        <span id="themeIcon">🌙</span>
-    </button>
-    
-    <script>
-        // Tema manager
-        class ThemeManager {
-            constructor() {
-                this.themeToggle = document.getElementById('themeToggle');
-                this.themeIcon = document.getElementById('themeIcon');
-                this.init();
-            }
-            
-            init() {
-                const savedTheme = localStorage.getItem('theme');
-                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                const currentTheme = savedTheme || systemTheme;
-                
-                this.setTheme(currentTheme);
-                this.updateIcon(currentTheme);
-                
-                this.themeToggle.addEventListener('click', () => this.toggleTheme());
-            }
-            
-            toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                this.setTheme(newTheme);
-                this.updateIcon(newTheme);
-                localStorage.setItem('theme', newTheme);
-            }
-            
-            setTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-            
-            updateIcon(theme) {
-                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-                this.themeToggle.setAttribute('aria-label', 
-                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
-            }
-        }
-        
-        // Inicializar quando DOM carregar
-        document.addEventListener('DOMContentLoaded', () => {
-            new ThemeManager();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-

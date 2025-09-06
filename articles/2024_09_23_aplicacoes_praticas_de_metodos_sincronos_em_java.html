@@ -1,81 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre aplicações práticas de métodos síncronos em java">
+    <title>Aplicações Práticas De Métodos Síncronos Em Java - Christian Mulato Dev Blog</title>
+    <meta name="description" content="Artigo sobre Aplicações Práticas De Métodos Síncronos Em Java">
     <meta name="author" content="Christian Mulato">
-    <meta name="keywords" content="Java, DevOps, IA">
+    <meta name="keywords" content="Java, Desenvolvimento, Tecnologia">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="articles/2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java.html">
-    <meta property="og:title" content="Aplicações Práticas De Métodos Síncronos Em Java">
-    <meta property="og:description" content="Artigo técnico sobre aplicações práticas de métodos síncronos em java">
-    <meta property="og:image" content="img/2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java_featured.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="articles/2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java.html">
-    <meta property="twitter:title" content="Aplicações Práticas De Métodos Síncronos Em Java">
-    <meta property="twitter:description" content="Artigo técnico sobre aplicações práticas de métodos síncronos em java">
-    <meta property="twitter:image" content="img/2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java_featured.jpg">
-    
-    <title>Aplicações Práticas De Métodos Síncronos Em Java | Christian Mulato Dev Blog</title>
-    
-    <!-- Styles -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/article.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="assets/js/article.js" defer></script>
+    <link rel="stylesheet" href="assets/css/highlight.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-text">Christian Mulato</span>
-                    <span class="logo-subtitle">Dev Blog</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Artigos</a>
-                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html">Christian Mulato Dev Blog</a></h1>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="main">
-        <article class="article">
-            <header class="article-header">
-                <div class="article-meta">
-                    <span class="article-category">Java & Spring</span>
-                    <time class="article-date" datetime="23/09/2024">23/09/2024</time>
-                </div>
+    <main class="main-content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">Aplicações Práticas De Métodos Síncronos Em Java</h1>
+                    <div class="post-meta">
+                        <time datetime="2024-09-23">23/09/2024</time>
+                        <span class="post-author">Por Christian Mulato</span>
+                    </div>
+                    
+                </header>
                 
-                <h1 class="article-title">Aplicações Práticas De Métodos Síncronos Em Java</h1>
-                
-                <div class="article-info">
-                    <span class="article-author">Por Christian Mulato</span>
-                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">DevOps</span> <span class="tag">IA</span></div>
-                </div>
-            </header>
-            
-            <div class="article-content">
-                
-<p><img alt="Métodos Síncronos em Java" src="assets/img/2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java/image1.png" /></p>
+                <div class="post-content">
+                    <p><img alt="Métodos Síncronos em Java" src="temp_media/media/image1.png" />{width="5.905555555555556in" height="3.3222222222222224in"}</p>
 <p>Métodos Síncronos em Java</p>
 <p><strong>Aplicações Práticas de Métodos Síncronos em Java</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java/image11.png" /></a></p>
-<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="temp_media/media/image2.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>23 de setembro de 2024</p>
 <p>Os métodos síncronos são essenciais para garantir a execução sequencial de operações críticas em aplicações Java. Vamos explorar alguns exemplos práticos de sua aplicação.</p>
-<p><strong>Definição:</strong> Métodos síncronos são aqueles que, ao serem chamados, bloqueiam a execução do programa até que a operação seja concluída. Isso significa que o programa espera o término do método antes de continuar com a próxima instrução. Esse comportamento é útil quando a ordem de execução é crucial, como em operações de leitura e escrita de arquivos, onde é necessário garantir que uma tarefa seja concluída antes de iniciar outra. No entanto, pode levar a problemas de desempenho se o método demorar muito para ser executado, pois o programa ficará “parado” até que a operação termine.</p>
+<p><strong>Definição:</strong> Métodos síncronos são aqueles que, ao serem chamados, bloqueiam a execução do programa até que a operação seja concluída. Isso significa que o programa espera o término do método antes de continuar com a próxima instrução. Esse comportamento é útil quando a ordem de execução é crucial, como em operações de leitura e escrita de arquivos, onde é necessário garantir que uma tarefa seja concluída antes de iniciar outra. No entanto, pode levar a problemas de desempenho se o método demorar muito para ser executado, pois o programa ficará "parado" até que a operação termine.</p>
 <p><strong>1. Processamento de Pedidos em E-commerce</strong></p>
 <p>Em um sistema de e-commerce, ao realizar um pedido, várias operações precisam ser executadas em sequência:</p>
 <p><strong>Validação do Pedido:</strong> Verificar a disponibilidade dos itens em estoque.</p>
@@ -83,132 +53,57 @@
 <p><strong>Atualização do Estoque:</strong> Reduzir a quantidade dos itens comprados.</p>
 <p><strong>Envio de Confirmação:</strong> Enviar um e-mail de confirmação ao cliente.</p>
 <p>Cada uma dessas operações pode ser implementada como um método síncrono, garantindo que uma etapa só comece após a conclusão da anterior.</p>
-<p>![Texto</p>
-<p>Descrição gerada automaticamente](img/2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java/image13.png)</p>
+<p><img alt="Texto Descrição gerada automaticamente" src="temp_media/media/image3.png" />{width="5.905555555555556in" height="5.247916666666667in"}</p>
 <p>Exemplo de classe Java com controle síncrono de métodos.</p>
 <p><strong>2. Consulta a Banco de Dados</strong></p>
 <p>Em uma aplicação de gerenciamento de clientes, métodos síncronos podem realizar operações de <strong><em>CRUD</em></strong> (<strong><em>Create, Read, Update, Delete</em></strong>). Por exemplo, ao buscar informações de um cliente, a conexão com o banco de dados e a consulta são realizadas de forma sequencial para garantir a integridade dos dados.</p>
-<p>![Interface gráfica do usuário, Texto, Aplicativo, Email</p>
-<p>Descrição gerada automaticamente](img/2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java/image14.png)</p>
+<p><img alt="Interface gráfica do usuário, Texto, Aplicativo, Email Descrição gerada automaticamente" src="temp_media/media/image4.png" />{width="5.905555555555556in" height="1.4916666666666667in"}</p>
 <p>Exemplo de classe de serviço Java para u controle síncrono de acesso ao banco de dados.</p>
 <p><strong>3. Processamento de Arquivos</strong></p>
-<p>Para processar arquivos de forma sequencial, como a leitura de um arquivo <em>CSV</em> e a inserção dos dados em um banco de dados, métodos síncronos garantem que cada linha do arquivo seja processada antes de passar para a próxima. </p>
-<p>![Interface gráfica do usuário, Texto</p>
-<p>Descrição gerada automaticamente](img/2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java/image15.png)</p>
-<p>Exemplo de classe Java para acesso a leitura de um arquivo </p>
+<p>Para processar arquivos de forma sequencial, como a leitura de um arquivo <em>CSV</em> e a inserção dos dados em um banco de dados, métodos síncronos garantem que cada linha do arquivo seja processada antes de passar para a próxima.</p>
+<p><img alt="Interface gráfica do usuário, Texto Descrição gerada automaticamente" src="temp_media/media/image5.png" />{width="5.905555555555556in" height="2.386111111111111in"}</p>
+<p>Exemplo de classe Java para acesso a leitura de um arquivo</p>
 <p><strong>4. Controle de Acesso a Recursos Compartilhados</strong></p>
-<p>Em aplicações <strong><em>multithread</em></strong><em>* [ vide rodapé]</em>, a sincronização é vital para evitar inconsistências nos dados. Por exemplo, em um sistema bancário, várias threads podem tentar atualizar o saldo de uma conta simultaneamente. Métodos sincronizados garantem que apenas uma <strong><em>thread</em></strong><em>* [vide rodapé]</em> possa modificar o saldo por vez. </p>
-<p>![Interface gráfica do usuário, Texto, Aplicativo</p>
-<p>Descrição gerada automaticamente](img/2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java/image16.png)</p>
+<p>Em aplicações <strong><em>multithread</em><em>* [ vide rodapé]</em>, a sincronização é vital para evitar inconsistências nos dados. Por exemplo, em um sistema bancário, várias threads podem tentar atualizar o saldo de uma conta simultaneamente. Métodos sincronizados garantem que apenas uma </strong><em>thread</em><em>* [vide rodapé]</em> possa modificar o saldo por vez.</p>
+<p><img alt="Interface gráfica do usuário, Texto, Aplicativo Descrição gerada automaticamente" src="temp_media/media/image6.png" />{width="5.489583333333333in" height="2.0520833333333335in"}</p>
 <p>Exemplo de classe Java com controle sincronizado de saldo bancário.</p>
 <p><strong>5. Implementação de Filas e Pilhas Seguras</strong></p>
-<p>Estruturas de dados como filas e pilhas precisam ser sincronizadas em ambientes <em>multithread</em> para evitar condições de corrida, garantindo que apenas uma <em>thread</em> possa modificar a estrutura de dados por vez. </p>
-<p>![Interface gráfica do usuário, Texto, Aplicativo</p>
-<p>Descrição gerada automaticamente](img/2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java/image11.png)</p>
+<p>Estruturas de dados como filas e pilhas precisam ser sincronizadas em ambientes <em>multithread</em> para evitar condições de corrida, garantindo que apenas uma <em>thread</em> possa modificar a estrutura de dados por vez.</p>
+<p><img alt="Interface gráfica do usuário, Texto, Aplicativo Descrição gerada automaticamente" src="temp_media/media/image7.png" />{width="5.489583333333333in" height="2.0520833333333335in"}</p>
 <p>Exemplo de classe Java com controle de pilha com acesso sincronizado.</p>
 <p><strong>6. Sincronização de Blocos de Código</strong></p>
-<p>Além de métodos, blocos de código também podem ser sincronizados para proteger seções críticas, melhorando a eficiência ao sincronizar apenas a parte necessária do método. </p>
-<p>![Texto</p>
-<p>Descrição gerada automaticamente](img/2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java/image12.png)</p>
+<p>Além de métodos, blocos de código também podem ser sincronizados para proteger seções críticas, melhorando a eficiência ao sincronizar apenas a parte necessária do método.</p>
+<p><img alt="Texto Descrição gerada automaticamente" src="temp_media/media/image8.png" />{width="4.510416666666667in" height="1.4166666666666667in"}</p>
 <p>Método Java não sincronizado.</p>
 <p><strong>Conclusão</strong></p>
 <p>A sincronização de métodos em Java é crucial para o desenvolvimento de aplicações robustas e seguras em ambientes <em>multithread</em>. Ela garante que os recursos compartilhados sejam acessados de maneira controlada, evitando inconsistências e condições de corrida.</p>
+<hr />
 <p>Nota:</p>
-<p><strong><em>Multithreading</em></strong> é uma técnica de programação que permite a execução simultânea de múltiplos <em>threads</em> (ou “fios”) dentro de um único processo. Cada <em>thread</em> pode executar uma tarefa diferente ao mesmo tempo, compartilhando os mesmos recursos do processo principal, como memória e arquivos. Isso pode melhorar significativamente o desempenho de um programa, especialmente em sistemas com múltiplos núcleos de processamento, pois permite a execução paralela de tarefas, reduzindo o tempo de espera e aumentando a eficiência. No entanto, a programação <em>multithread</em> também pode ser complexa, exigindo cuidados especiais para evitar problemas como condições de corrida e <em>deadlocks</em>. </p>
-<p><strong><em>Thread</em></strong> é a menor unidade de processamento que pode ser executada de forma independente dentro de um programa. Threads permitem que um programa realize múltiplas tarefas simultaneamente, compartilhando o mesmo espaço de memória e recursos do processo principal. Isso é especialmente útil para melhorar a eficiência e o desempenho de aplicações, permitindo a execução paralela de operações, como processamento de dados e interação com o usuário. No entanto, a programação com <em>threads </em>requer cuidado para evitar problemas como condições de corrida e Em linguagem de programação, uma <em>thread</em> é a menor unidade de processamento que pode ser executada de forma independente dentro de um programa. Threads permitem que um programa realize múltiplas tarefas simultaneamente, compartilhando o mesmo espaço de memória e recursos do processo principal. Isso é especialmente útil para melhorar a eficiência e o desempenho de aplicações, permitindo a execução paralela de operações, como processamento de dados e interação com o usuário. No entanto, a programação com threads requer cuidado para evitar problemas como condições de corrida e <em>deadlocks</em>, que podem ocorrer quando múltiplas threads tentam acessar os mesmos recursos ao mesmo tempo., que podem ocorrer quando múltiplas threads tentam acessar os mesmos recursos ao mesmo tempo.</p>
+<p><strong><em>Multithreading</em></strong> é uma técnica de programação que permite a execução simultânea de múltiplos <em>threads</em> (ou "fios") dentro de um único processo. Cada <em>thread</em> pode executar uma tarefa diferente ao mesmo tempo, compartilhando os mesmos recursos do processo principal, como memória e arquivos. Isso pode melhorar significativamente o desempenho de um programa, especialmente em sistemas com múltiplos núcleos de processamento, pois permite a execução paralela de tarefas, reduzindo o tempo de espera e aumentando a eficiência. No entanto, a programação <em>multithread</em> também pode ser complexa, exigindo cuidados especiais para evitar problemas como condições de corrida e <em>deadlocks</em>.</p>
+<p><strong><em>Thread</em></strong> é a menor unidade de processamento que pode ser executada de forma independente dentro de um programa. Threads permitem que um programa realize múltiplas tarefas simultaneamente, compartilhando o mesmo espaço de memória e recursos do processo principal. Isso é especialmente útil para melhorar a eficiência e o desempenho de aplicações, permitindo a execução paralela de operações, como processamento de dados e interação com o usuário. No entanto, a programação com <em>threads</em> requer cuidado para evitar problemas como condições de corrida e Em linguagem de programação, uma <em>thread</em> é a menor unidade de processamento que pode ser executada de forma independente dentro de um programa. Threads permitem que um programa realize múltiplas tarefas simultaneamente, compartilhando o mesmo espaço de memória e recursos do processo principal. Isso é especialmente útil para melhorar a eficiência e o desempenho de aplicações, permitindo a execução paralela de operações, como processamento de dados e interação com o usuário. No entanto, a programação com threads requer cuidado para evitar problemas como condições de corrida e <em>deadlocks</em>, que podem ocorrer quando múltiplas threads tentam acessar os mesmos recursos ao mesmo tempo., que podem ocorrer quando múltiplas threads tentam acessar os mesmos recursos ao mesmo tempo.</p>
 <p><strong><em>Deadlock</em></strong> ocorre quando duas ou mais <em>threads</em> ficam permanentemente bloqueadas, esperando por recursos que estão sendo ocupados umas pelas outras, criando um ciclo de dependência que impede a continuação da execução. Isso geralmente acontece em sistemas <em>multithreaded</em> quando não há uma gestão adequada dos recursos compartilhados, como memória ou arquivos. Para evitar deadlocks, é importante implementar estratégias como a prevenção, a detecção e a recuperação, além de seguir boas práticas de programação, como a aquisição ordenada de recursos e o uso de <em>timeouts</em>.</p>
-            </div>
-            
-            <footer class="article-footer">
-                <div class="article-author-bio">
-                    <h3>Sobre o Autor</h3>
-                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
-                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
-                        Conecte-se no LinkedIn
-                    </a>
                 </div>
                 
-                <div class="article-navigation">
-                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
-                </div>
-            </footer>
-        </article>
+                <footer class="post-footer">
+                    <div class="author-info">
+                        <img src="assets/img/2024_09_23_aplicacoes_praticas_de_metodos_sincronos_em_java_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <div class="author-details">
+                            <strong>Christian Mulato</strong>
+                            <p>Desenvolvedor Java e Arquiteto de Software</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
     </main>
-    
+
     <footer class="site-footer">
-        <div class="footer-container">
+        <div class="container">
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Christian Mulato</h3>
-                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
-                <a href="../index.html">Artigos</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    
-    <!-- Theme Toggle Button -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-        <span id="themeIcon">🌙</span>
-    </button>
-    
-    <script>
-        // Tema manager
-        class ThemeManager {
-            constructor() {
-                this.themeToggle = document.getElementById('themeToggle');
-                this.themeIcon = document.getElementById('themeIcon');
-                this.init();
-            }
-            
-            init() {
-                const savedTheme = localStorage.getItem('theme');
-                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                const currentTheme = savedTheme || systemTheme;
-                
-                this.setTheme(currentTheme);
-                this.updateIcon(currentTheme);
-                
-                this.themeToggle.addEventListener('click', () => this.toggleTheme());
-            }
-            
-            toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                this.setTheme(newTheme);
-                this.updateIcon(newTheme);
-                localStorage.setItem('theme', newTheme);
-            }
-            
-            setTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-            
-            updateIcon(theme) {
-                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-                this.themeToggle.setAttribute('aria-label', 
-                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
-            }
-        }
-        
-        // Inicializar quando DOM carregar
-        document.addEventListener('DOMContentLoaded', () => {
-            new ThemeManager();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-

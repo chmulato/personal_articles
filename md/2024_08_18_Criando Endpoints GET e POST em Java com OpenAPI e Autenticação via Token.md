@@ -1,10 +1,10 @@
-![Endpoint com Framework Spring Boot utilizando linguagem Java.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3270833333333334in"}
+![Endpoint com Framework Spring Boot utilizando linguagem Java.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3270833333333334in"}
 
 Endpoint com Framework Spring Boot utilizando linguagem Java.
 
 **Criando Endpoints GET e POST em Java com OpenAPI e Autenticação via Token**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -20,7 +20,7 @@ Neste artigo, vamos aprender a criar ***endpoints*** **GET** e em uma aplicaçã
 
 Primeiro, vamos configurar nosso projeto ***Spring Boot*** \*\[vide rodapé\]. No pom.xml, adicione as seguintes dependências:
 
-![](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="2.4375in"}
+![](temp_media/media/image3.png){width="5.905555555555556in" height="2.4375in"}
 
 Importando as dependências das bibliotecas necessárias para o Spring Boot.
 
@@ -28,7 +28,7 @@ Importando as dependências das bibliotecas necessárias para o Spring Boot.
 
 Vamos criar um ***endpoint*** **GET** que retorna uma lista de itens. Primeiro, crie um controlador:
 
-![](c:\dev\personal_articles\md\media/media/image4.png){width="5.905555555555556in" height="1.5in"}
+![](temp_media/media/image4.png){width="5.905555555555556in" height="1.5in"}
 
 Classe Java para a criação do endpoint GET
 
@@ -36,7 +36,7 @@ Classe Java para a criação do endpoint GET
 
 Agora, vamos criar um ***endpoint*** **POST** que adiciona um novo item:
 
-![](c:\dev\personal_articles\md\media/media/image5.png){width="5.905555555555556in" height="1.4118055555555555in"}
+![](temp_media/media/image5.png){width="5.905555555555556in" height="1.4118055555555555in"}
 
 Classe Java para a criação do endpoint POST
 
@@ -44,7 +44,7 @@ Classe Java para a criação do endpoint POST
 
 Para proteger nossos ***endpoints***, vamos configurar a autenticação via **token JWT**. Primeiro, crie uma classe para gerar e validar tokens JWT:
 
-![](c:\dev\personal_articles\md\media/media/image6.png){width="5.905555555555556in" height="2.532638888888889in"}
+![](temp_media/media/image6.png){width="5.905555555555556in" height="2.532638888888889in"}
 
 Classe Java para a criação do Token de autenticação.
 
@@ -52,7 +52,7 @@ Classe Java para a criação do Token de autenticação.
 
 Agora, configure o **Spring Security** para usar o JWT:
 
-![](c:\dev\personal_articles\md\media/media/image7.png){width="5.905555555555556in" height="1.6583333333333334in"}
+![](temp_media/media/image7.png){width="5.905555555555556in" height="1.6583333333333334in"}
 
 Classe Java para o controle de acesso ao endpoint.
 
@@ -60,7 +60,7 @@ Classe Java para o controle de acesso ao endpoint.
 
 Finalmente, vamos documentar nossos ***endpoints*** com **OpenAPI**. Adicione as anotações no controlador:
 
-![](c:\dev\personal_articles\md\media/media/image8.png){width="5.905555555555556in" height="2.3673611111111112in"}
+![](temp_media/media/image8.png){width="5.905555555555556in" height="2.3673611111111112in"}
 
 Classe Java com os endpoint GET e POST.
 

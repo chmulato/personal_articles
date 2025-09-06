@@ -1,10 +1,10 @@
-![Evolução da linguagem Java.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Evolução da linguagem Java.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Evolução da linguagem Java.
 
 **Evolução da Linguagem Java**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -14,7 +14,7 @@ Desenvolvedor Java Sênior na Develcode
 
 Java é uma das linguagens de programação mais populares e amplamente utilizadas no mundo. Criada pela *Sun Microsystems\* \[vide rodapé\]* em 1995, ela se destaca por sua portabilidade, robustez e segurança.
 
-![Evolução da linguagem Java.](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="3.236111111111111in"}
+![Evolução da linguagem Java.](temp_media/media/image3.png){width="5.905555555555556in" height="3.236111111111111in"}
 
 Evolução da linguagem Java do ano de 1996 até 2023.
 

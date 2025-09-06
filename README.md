@@ -1,294 +1,275 @@
-# 🚀 Christian Mulato Dev Blog
+# Personal Articles Build System
 
-[![Site Status](https://img.shields.io/badge/status-active-brightgreen.svg)](https://chmulato.dev)
-[![Articles](https://img.shields.io/badge/articles-60-blue.svg)](#estatísticas)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Last Updated](https://img.shields.io/badge/updated-September%202025-informational.svg)](#)
+# Personal Articles Build System
 
-> **Site de artigos técnicos sobre desenvolvimento Java, arquitetura de software e tecnologia moderna.**
+## Overview
 
-Bem-vindo ao repositório do blog técnico do Christian Mulato! Este é um site estático gerado automaticamente a partir de artigos em Markdown, focado em desenvolvimento Java, Spring Boot, arquitetura de microsserviços e tecnologias emergentes.
+This project provides an automated build system that converts DOCX technical articles into a complete HTML website. The system features comprehensive processing control to prevent reprocessing and ensure efficient builds.
 
-## 📚 Sobre o Blog
+**Author:** Christian Mulato  
+**Purpose:** Technical blog with articles on Java development, software architecture, and modern technology  
+**Status:** Production ready with 59 processed articles
 
-Este blog contém uma coleção curada de artigos técnicos cobrindo:
+## System Architecture
 
-- **☕ Java & Spring**: Desenvolvimento avançado, Spring Boot, Jakarta EE
-- **🏗️ Arquitetura**: Microsserviços, Clean Architecture, Design Patterns  
-- **🐳 DevOps**: Docker, Kubernetes, CI/CD, Automação
-- **🔧 APIs**: REST, GraphQL, OpenAPI, Documentação
-- **🧪 Testes**: TDD, Testes Unitários, Integração
-- **🤖 IA & Tecnologia**: Inteligência Artificial aplicada ao desenvolvimento
+### Core Components
 
-## � Sistema de Temas Dark/Light
-
-O site possui um sistema completo de alternância entre temas claro e escuro para melhor experiência de leitura:
-
-### ✨ Funcionalidades Principais
-- **🔄 Alternância Intuitiva**: Botão flutuante no canto superior direito
-- **💾 Persistência**: Tema escolhido é salvo automaticamente entre sessões
-- **📱 Responsivo**: Funciona perfeitamente em desktop e mobile
-- **⚡ Transições Suaves**: Animações de 0.3s para mudança fluida
-- **🔍 Auto-detecção**: Respeita preferência do sistema operacional
-
-### 🎯 Benefícios para Usuários
-- **👁️ Melhor Legibilidade**: Especialmente em ambientes com pouca luz
-- **🔋 Economia de Bateria**: Tema escuro consome menos energia em telas OLED
-- **😌 Redução de Fadiga Visual**: Menos strain ocular durante leitura prolongada
-- **♿ Acessibilidade**: Contrastes otimizados seguindo diretrizes WCAG
-
-### 🛠️ Implementação Técnica
-- **CSS Variables**: Sistema baseado em variáveis para fácil manutenção
-- **LocalStorage**: Persistência de preferência do usuário
-- **Media Queries**: Detecção automática de preferência do sistema
-- **ARIA Labels**: Botões acessíveis com descrições apropriadas
-
-### 🎨 Paleta de Cores
-
-| Elemento | Tema Claro | Tema Escuro |
-|----------|------------|-------------|
-| **Fundo Principal** | `#ffffff` | `#111827` |
-| **Fundo Secundário** | `#f9fafb` | `#1f2937` |
-| **Texto Principal** | `#1f2937` | `#f9fafb` |
-| **Texto Secundário** | `#6b7280` | `#d1d5db` |
-| **Accent Color** | `#2563eb` | `#3b82f6` |
-
-**Status: ✅ Implementado em todos os 57+ artigos e página principal**
-
-## �🏗️ Estrutura do Projeto
+The build system is organized in a modular structure under `scr/build_system/`:
 
 ```
-site_artiches/
-├── 📄 index.html                    # Página principal do site
-├── 📖 README.md                     # Este arquivo
-├── 📁 docx/                         # 📜 Artigos originais (176 arquivos DOCX)
-├── 📁 articles/                     # Artigos publicados
-│   ├── ⚙️ assets/                  # Recursos estáticos
-│   │   ├── 🎨 css/                 # Estilos CSS
-│   │   │   ├── main.css            # Estilo principal
-│   │   │   └── article.css         # Estilo dos artigos
-│   │   └── 🔧 js/                  # JavaScript
-│   │       ├── main.js             # Funcionalidades principais
-│   │       └── search.js           # Sistema de busca
-│   │   └── � img/                 # Recursos dos artigos (165 imagens)
-│   ├── 📄 *.html                   # 57 artigos em HTML
-│       ├── 🖼️ *.png, *.jpeg        # 216 imagens dos artigos
-│       └── 📝 *.md                 # 60 arquivos Markdown originais
-└── 🛠️ scr/                         # Scripts de gerenciamento
-    ├── 📁 json/                    # Configurações e relatórios JSON
-    │   └── ⚙️ config.json          # Configurações do site
-    ├── 📁 log/                     # Logs centralizados
-    ├── 🎛️ site_manager.py          # Gerenciador principal do site
-    ├── 🏗️ build_site.py            # Build completo do site
-    ├── 🔄 convert_md_to_html.py    # Conversão Markdown → HTML
-    ├── ✅ validate_articles.py     # Validação de artigos e links
-    └── 🔧 fix_articles.py          # Correção automática de problemas
+build_system/
+├── core/                           # Core processing modules
+│   ├── docx_converter.py          # DOCX to Markdown converter
+│   ├── md_to_html.py             # Markdown to HTML converter  
+│   └── site_builder.py           # Complete site builder
+├── utils/                          # Utility modules
+│   ├── file_manager.py           # File system operations
+│   ├── normalizer.py             # Name normalization
+│   └── processed_articles_manager.py  # Processing control
+├── config/
+│   └── settings.py               # Centralized configuration
+├── build.py                      # Main build script
+├── processed_articles.txt        # Processing control list
+└── build.log                     # Build operation logs
 ```
 
-## 🛠️ Scripts de Gerenciamento
+### Processing Pipeline
 
-### 🎛️ Site Manager
-Ferramenta principal para gerenciar o site:
+1. **DOCX Conversion**: Extracts content and media from DOCX files using Pandoc
+2. **Markdown Processing**: Converts DOCX to clean Markdown with proper formatting
+3. **HTML Generation**: Transforms Markdown to HTML with syntax highlighting
+4. **Site Building**: Generates complete website with responsive CSS and navigation
+5. **Asset Management**: Handles images, stylesheets, and other media files
+
+## Article Processing Control System
+
+### Control Mechanism
+
+The system implements rigorous control to prevent article reprocessing:
+
+- **processed_articles.txt**: Contains 59 processed articles in normalized format
+- **Incremental Builds**: Only processes articles NOT in the control list
+- **Automatic Updates**: Adds articles to list after successful processing
+
+### Key Features
+
+**Complete Overlap Prevention**
+- Articles in the control list are never reprocessed
+- 100% protection against file conflicts
+- Granular control per individual article
+
+**Maximum Efficiency**  
+- Incremental builds process only new articles
+- Optimized processing time
+- Preserved computational resources
+
+**Total Flexibility**
+- Selective reprocessing when needed  
+- Synchronization with actual file state
+- Simple management commands
+
+**Operational Robustness**
+- Persistent list across executions
+- Detailed operation logging
+- Automatic integrity validation
+
+### Management Commands
+
+The `processed_articles_manager.py` utility provides complete list management:
 
 ```bash
-# Converter um artigo específico
-python scr/site_manager.py convert "2024_03_06_aplicacao_web_java.md"
+# View detailed status
+python -m utils.processed_articles_manager status
 
-# Gerar página index
-python scr/site_manager.py index
+# Remove article for reprocessing
+python -m utils.processed_articles_manager remove article_name
 
-# Atualizar metadados
-python scr/site_manager.py update-metadata
+# Synchronize with existing HTML files
+python -m utils.processed_articles_manager sync
+
+# List all processed articles
+python -m utils.processed_articles_manager list
+
+# Manually add article
+python -m utils.processed_articles_manager add article_name
 ```
 
-### 🏗️ Build Completo
-Executa o build completo do site com validação e correção automática:
+## Usage
 
+### Daily Operations
+
+**Check System Status**
 ```bash
-python scr/build_site.py
+cd c:\dev\personal_articles\scr\build_system
+python build.py --status
 ```
 
-**Funcionalidades do build:**
-- ✅ Converte todos os arquivos Markdown para HTML
-- ✅ Aplica templates responsivos com metadados SEO
-- ✅ Processa código com syntax highlighting
-- ✅ Gera estrutura de navegação
-- ✅ Valida artigos e corrige problemas automaticamente
-- ✅ Otimiza imagens e recursos
-
-### 🔄 Conversão MD → HTML
-Converte arquivos Markdown individuais para HTML:
-
+**Process Only New Articles (Recommended)**
 ```bash
-python scr/convert_md_to_html.py
+python build.py --new-only
 ```
 
-### ✅ Validação de Artigos
-Verifica integridade dos artigos:
-
+**Full Build (All Articles)**
 ```bash
-python scr/validate_articles.py
+python build.py
 ```
 
-**Verificações realizadas:**
-- 🔍 Detecção de artigos duplicados
-- 📝 Validação de estrutura HTML
-- 🔗 Verificação de links quebrados
-- 🎨 Consistência de formatação CSS
-- 📊 Geração de relatórios detalhados
+### Reprocessing Specific Articles
 
-### 🔧 Correção Automática
-Corrige problemas encontrados na validação:
-
+1. Remove from control list:
 ```bash
-python scr/fix_articles.py
+python -m utils.processed_articles_manager remove article_name
 ```
 
-## 🚀 Como Executar Localmente
-
-### Pré-requisitos
+2. Run incremental build:
 ```bash
-pip install markdown
-pip install pygments  # Para syntax highlighting
+python build.py --new-only
 ```
 
-### Passos de Instalação
+The system automatically:
+- Detects article not in list
+- Processes: DOCX → MD → HTML
+- Adds back to list after success
 
-1. **Clone o repositório:**
-```bash
-git clone https://github.com/chmulato/personal_articles.git
-cd personal_articles/md/site_artiches
+## Dependencies
+
+### Required Software
+- Python 3.x
+- Pandoc (for DOCX conversion)
+
+### Python Packages
+- markdown
+- pygments  
+- python-docx
+- beautifulsoup4
+
+## Installation and Setup
+
+1. Ensure Pandoc is installed on your system
+2. Install Python dependencies: `pip install -r requirements.txt`
+3. Navigate to build system: `cd scr/build_system`
+4. Run initial build: `python build.py`
+
+The system will automatically validate dependencies and directory structure on first run.
+
+## Project Structure
+
+```
+personal_articles/
+├── articles/                       # Generated HTML articles
+├── assets/css/                     # Site stylesheets
+├── docx/                          # Source DOCX files (59 files)
+├── md/                            # Generated Markdown files
+├── scr/build_system/              # Build system (current)
+├── old_scripts/                   # Legacy scripts (backup)
+└── index.html                     # Site homepage
 ```
 
-2. **Execute o build:**
-```bash
-python scr/build_site.py
-```
+## System Migration and Cleanup
 
-3. **Abra o site:**
-```bash
-# Windows
-start index.html
+### Legacy Script Management
 
-# macOS
-open index.html
+21 previous build scripts were systematically organized:
+- **Relocated**: Moved to `old_scripts/` directory as backup
+- **Documented**: Each script's purpose catalogued
+- **Preserved**: All functionality maintained for reference
 
-# Linux
-xdg-open index.html
-```
+### Modular Benefits
 
-## 📊 Estatísticas
+- **Maintainability**: Clean separation of concerns
+- **Extensibility**: Easy to add new features
+- **Reliability**: Centralized error handling and logging
+- **Performance**: Optimized processing pipeline
 
-| Métrica | Valor |
-|---------|-------|
-| **📰 Artigos Publicados** | 60 |
-| **🖼️ Imagens** | 216 |
-| **📝 Arquivos Markdown** | 60 |
-| **🌐 Páginas HTML** | 60 |
-| **🎨 Suporte a Temas** | Dark/Light Mode ✅ |
-| **📱 Responsividade** | 100% Mobile-First |
-| **📅 Período** | Março 2024 - Setembro 2025 |
-| **🔄 Última Atualização** | 04/09/2025 |
+## Current Status
 
-### 📈 Distribuição de Conteúdo
+### Processing Statistics
+- Total DOCX files: 59
+- Articles processed: 59
+- Awaiting processing: 0
 
-- **Java & Spring**: 35 artigos (58%)
-- **Arquitetura de Software**: 12 artigos (20%)
-- **DevOps & Containers**: 8 artigos (13%)
-- **IA & Tecnologia**: 5 artigos (9%)
+**System State**: All articles currently processed and up to date
 
-## 🔧 Tecnologias Utilizadas
+## Content Overview
+
+This blog contains technical articles covering:
+
+- **Java & Spring**: Advanced development, Spring Boot, Jakarta EE
+- **Software Architecture**: Microservices, Clean Architecture, Design Patterns
+- **DevOps**: Docker, Kubernetes, CI/CD, Automation
+- **APIs**: REST, GraphQL, OpenAPI, Documentation
+- **Testing**: TDD, Unit Testing, Integration
+- **AI & Technology**: Artificial Intelligence applied to development
+
+### Content Distribution
+
+- Java & Spring: 35 articles (58%)
+- Software Architecture: 12 articles (20%)
+- DevOps & Containers: 8 articles (13%)
+- AI & Technology: 5 articles (9%)
+
+## Features
+
+### Dark/Light Theme System
+
+The site includes a complete theme switching system:
+
+**Main Features**
+- Intuitive toggle button in upper right corner
+- Automatic persistence between sessions
+- Responsive design for desktop and mobile
+- Smooth transitions with 0.3s animations
+- System preference auto-detection
+
+**Technical Implementation**
+- CSS Variables for easy maintenance
+- LocalStorage for user preference persistence
+- Media Queries for system preference detection
+- ARIA Labels for accessible buttons
+
+**Color Palette**
+
+| Element | Light Theme | Dark Theme |
+|---------|-------------|------------|
+| Primary Background | `#ffffff` | `#111827` |
+| Secondary Background | `#f9fafb` | `#1f2937` |
+| Primary Text | `#1f2937` | `#f9fafb` |
+| Secondary Text | `#6b7280` | `#d1d5db` |
+| Accent Color | `#2563eb` | `#3b82f6` |
+
+## Technologies Used
 
 ### Frontend
-- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+- HTML5
+- CSS3
+- JavaScript
 
 ### Build & Processing
-- ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-- ![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat&logo=markdown&logoColor=white)
-- **Pygments** para syntax highlighting
-- **Python Markdown** para processamento
+- Python
+- Markdown
+- Pygments for syntax highlighting
+- Python Markdown for processing
 
-### Ferramentas
-- **Mammoth**: Conversão DOCX → Markdown
-- **Highlight.js**: Syntax highlighting no frontend
-- **Inter Font**: Tipografia moderna
+### Tools
+- Mammoth: DOCX → Markdown conversion
+- Highlight.js: Frontend syntax highlighting
+- Inter Font: Modern typography
 
-## 📋 Roadmap
+## License
 
-### ✅ Implementado
-- [x] Conversão automática DOCX → Markdown → HTML
-- [x] Sistema de build automatizado
-- [x] Templates responsivos com SEO
-- [x] Syntax highlighting para código
-- [x] Organização automática de imagens
-- [x] Metadados e frontmatter padronizados
-- [x] **Sistema de temas Dark/Light mode**
-- [x] **Persistência de preferências do usuário**
-- [x] **Auto-detecção de tema do sistema**
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### 🚧 Em Desenvolvimento
-- [ ] Sistema de busca avançada
-- [ ] Geração automática de índice
-- [ ] Filtros por categoria e tags
-- [ ] RSS feed
-- [ ] Sitemap.xml automático
-- [ ] Validação de links e imagens
-
-### 🔮 Planejado
-- [ ] Sistema de comentários
-- [ ] Newsletter integration
-- [ ] Analytics dashboard
-- [ ] PWA support
-- [ ] Internacionalização (EN/PT)
-
-## 🤝 Contribuindo
-
-Este é um projeto pessoal, mas sugestões são bem-vindas!
-
-1. **Fork** o projeto
-2. **Clone** sua fork
-3. **Crie** uma branch para sua feature
-4. **Commit** suas mudanças
-5. **Push** para a branch
-6. **Abra** um Pull Request
-
-## 📄 Licença
-
-Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-## 👨‍💻 Sobre o Autor
-
-<div align="center">
-
-![Christian Mulato](https://github.com/chmulato.png?size=150)
+## About the Author
 
 **Christian Mulato**  
-*Senior Java Developer & Software Architect*
+Senior Java Developer & Software Architect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chmulato/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/chmulato)
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:christian.mulato@example.com)
+**Specialties:**
+- Java/Spring Boot: Enterprise application development
+- Microservices: Distributed and scalable architecture
+- DevOps: Docker, Kubernetes, CI/CD
+- REST APIs: Design and documentation with OpenAPI
+- Testing: TDD, integration and unit testing
+- AI: Artificial Intelligence applied to software development
 
-</div>
-
-**Especialidades:**
-- ☕ **Java/Spring Boot**: Desenvolvimento de aplicações enterprise
-- 🏗️ **Microserviços**: Arquitetura distribuída e escalável  
-- 🐳 **DevOps**: Docker, Kubernetes, CI/CD
-- 🔧 **APIs REST**: Design e documentação com OpenAPI
-- 🧪 **Testes**: TDD, testes de integração e unitários
-- 🤖 **IA**: Aplicação de IA no desenvolvimento de software
-
----
-
-<div align="center">
-
-**🌟 Se este conteúdo foi útil, considere dar uma estrela no repositório!**
-
-*Construído com ❤️ usando Python, Markdown e muito ☕*
-
-**[🚀 Visite o Site](https://chmulato.dev)** | **[📧 Entre em Contato](https://www.linkedin.com/in/chmulato/)**
-
-</div>
+This build system provides reliable, efficient, and controlled processing of technical articles from DOCX source files into a complete responsive website.

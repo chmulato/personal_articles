@@ -1,10 +1,10 @@
-![O custo da inteligência artificial e o mercado de desenvolvimento de software.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![O custo da inteligência artificial e o mercado de desenvolvimento de software.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 O custo da inteligência artificial e o mercado de desenvolvimento de software.
 
 **O custo da inteligência artificial e a manipulação dos mercados de trabalho na era digital**
 
-[![Christian Mulato, #OPEN_TO_WORK](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato, #OPEN_TO_WORK](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato **](https://www.linkedin.com/in/chmulato/)
 

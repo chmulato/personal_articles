@@ -1,10 +1,10 @@
-![Explorando o Java HTTP Client do Java 11+.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Explorando o Java HTTP Client do Java 11+.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Explorando o Java HTTP Client do Java 11+.
 
 **Explorando o Java HTTP Client: Uma Ferramenta Moderna para Chamadas HTTP**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -52,7 +52,7 @@ O **Java HTTP Client** é uma API moderna e versátil introduzida no **Java 11**
 
 Para usar o Java HTTP Client, você precisa seguir alguns passos. Aqui está um exemplo simples de como fazer uma requisição GET:
 
-![Texto Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="2.8472222222222223in"}
+![Texto Descrição gerada automaticamente](temp_media/media/image3.png){width="5.905555555555556in" height="2.8472222222222223in"}
 
 Exemplo simples de como fazer uma requisição GET com Java HTTP Client.
 
@@ -68,7 +68,7 @@ Este é um exemplo básico. O Java HTTP Client é muito mais poderoso e flexíve
 
 Vamos abordar aqui um exemplo de como você pode criar uma instância de **HttpClient** e configurá-la com opções como **timeout**, **proxy** e **autenticação** em Java:
 
-![Texto Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image4.png){width="5.905555555555556in" height="4.995138888888889in"}
+![Texto Descrição gerada automaticamente](temp_media/media/image4.png){width="5.905555555555556in" height="4.995138888888889in"}
 
 Exemplo de como criar uma instância de HttpClient.
 
@@ -92,7 +92,7 @@ Você pode configurar o **timeout** de leitura usando o método **ofSeconds** da
 
 Aqui está um exemplo:
 
-![Texto Descrição gerada automaticamente com confiança baixa](c:\dev\personal_articles\md\media/media/image5.png){width="5.905555555555556in" height="2.064583333333333in"}
+![Texto Descrição gerada automaticamente com confiança baixa](temp_media/media/image5.png){width="5.905555555555556in" height="2.064583333333333in"}
 
 Exemplo de como criar uma instância de HttpClient com timeout.
 
@@ -110,7 +110,7 @@ Se você precisar de um controle mais granular sobre o timeout de leitura, pode 
 
 Como podemos fazer uma requisição HTTP GET usando o Java HTTP Client:
 
-![Interface gráfica do usuário, Texto, Aplicativo Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image6.png){width="5.905555555555556in" height="3.2506944444444446in"}
+![Interface gráfica do usuário, Texto, Aplicativo Descrição gerada automaticamente](temp_media/media/image6.png){width="5.905555555555556in" height="3.2506944444444446in"}
 
 Exemplo de requisição HTTP GET em código Java com a biblioteca Java HTTP Client.
 
@@ -126,7 +126,7 @@ Por exemplo, você pode querer adicionar um bloco try-catch para lidar com poss�
 
 Para analisar a resposta JSON e converter em objetos Java, você pode usar a biblioteca Jackson. Aqui está um exemplo de como você pode fazer isso:
 
-![Interface gráfica do usuário Descrição gerada automaticamente com confiança baixa](c:\dev\personal_articles\md\media/media/image7.png){width="5.905555555555556in" height="2.95625in"}
+![Interface gráfica do usuário Descrição gerada automaticamente com confiança baixa](temp_media/media/image7.png){width="5.905555555555556in" height="2.95625in"}
 
 Exemplo de uma requisição passando um objeto JSON com a bilbioteca Java HTTP Client.
 
@@ -148,7 +148,7 @@ Você pode usar a **biblioteca Java Gson**, do Google, para converter JSON em ob
 
 Aqui está um exemplo de como você pode fazer isso:
 
-![Texto Descrição gerada automaticamente com confiança média](c:\dev\personal_articles\md\media/media/image8.png){width="5.905555555555556in" height="2.95625in"}
+![Texto Descrição gerada automaticamente com confiança média](temp_media/media/image8.png){width="5.905555555555556in" height="2.95625in"}
 
 Exemplo de código Java para conversão de JSON para um objeto Java.
 
@@ -162,7 +162,7 @@ Além disso, este é um exemplo simples e não inclui o tratamento de erros adeq
 
 Vamos demostrar um outro exemplo de como você pode preparar e enviar uma solicitação HTTP POST usando o Java HTTP Client:
 
-![](c:\dev\personal_articles\md\media/media/image9.png){width="5.905555555555556in" height="3.9180555555555556in"}
+![](temp_media/media/image9.png){width="5.905555555555556in" height="3.9180555555555556in"}
 
 Exemplo de requisição HTTP POST em código Java com a biblioteca Java HTTP Client.
 
@@ -176,13 +176,13 @@ Aqui está um exemplo de como você pode enviar dados no corpo de uma solicitaç
 
 **Exemplo 1: Enviando dados JSON**
 
-![Linha do tempo Descrição gerada automaticamente com confiança média](c:\dev\personal_articles\md\media/media/image10.png){width="5.905555555555556in" height="3.911111111111111in"}
+![Linha do tempo Descrição gerada automaticamente com confiança média](temp_media/media/image10.png){width="5.905555555555556in" height="3.911111111111111in"}
 
 Exemplo de requisição HTTP POST em código Java com envio de dados JSON.
 
 **Exemplo 2: Enviando dados de formulário**
 
-![Interface gráfica do usuário, Texto, Aplicativo Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image11.png){width="5.905555555555556in" height="3.3805555555555555in"}
+![Interface gráfica do usuário, Texto, Aplicativo Descrição gerada automaticamente](temp_media/media/image11.png){width="5.905555555555556in" height="3.3805555555555555in"}
 
 Exemplo de requisição HTTP POST em código Java com envio de dados do formulário.
 
@@ -200,7 +200,7 @@ Por exemplo, você pode querer adicionar um bloco try-catch para lidar com poss�
 
 Aqui está um exemplo de como você pode lidar com diferentes códigos de status HTTP usando o Java HTTP Client:
 
-![Uma imagem contendo Texto Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image12.png){width="5.905555555555556in" height="3.9243055555555557in"}
+![Uma imagem contendo Texto Descrição gerada automaticamente](temp_media/media/image12.png){width="5.905555555555556in" height="3.9243055555555557in"}
 
 Exemplo de código de requisição com Java HTTP Client com tratamento do status de resposta.
 
@@ -224,7 +224,7 @@ Se a resposta for bem-sucedida (código de status HTTP 200), você pode extrair 
 
 Vamos mostrar aqui como adicionar, modificar e ler cabeçalhos HTTP em solicitações e respostas. Um exemplo de como você pode adicionar, modificar e ler cabeçalhos HTTP usando o HttpClient do Java.
 
-![](c:\dev\personal_articles\md\media/media/image13.png){width="5.905555555555556in" height="4.378472222222222in"}
+![](temp_media/media/image13.png){width="5.905555555555556in" height="4.378472222222222in"}
 
 Exemplo de código de requisição com Java HTTP Client com modificação do cabeçalho HTTP.
 
@@ -234,7 +234,7 @@ Neste exemplo, primeiro criamos um **HttpClient** e uma **HttpRequest**. Adicion
 
 Para o tratamento de erros e exceções, poderia explicar como tratar exceções relacionadas a conexões, timeouts e erros de servidor. Aqui está um exemplo de como você pode tratar exceções usando o HttpClient do Java.
 
-![Uma imagem contendo Tabela Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image14.png){width="5.905555555555556in" height="4.378472222222222in"}
+![Uma imagem contendo Tabela Descrição gerada automaticamente](temp_media/media/image14.png){width="5.905555555555556in" height="4.378472222222222in"}
 
 Exemplo de código de requisição com Java HTTP Client tratamento de erro try-catch.
 
@@ -258,7 +258,7 @@ O **Java HTTP Client** suporta tanto chamadas síncronas quanto assíncronas. As
 
 Aqui está um exemplo de como você pode fazer uma chamada assíncrona com o **HttpClient**:
 
-![Uma imagem contendo Linha do tempo Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image15.png){width="5.905555555555556in" height="3.2180555555555554in"}
+![Uma imagem contendo Linha do tempo Descrição gerada automaticamente](temp_media/media/image15.png){width="5.905555555555556in" height="3.2180555555555554in"}
 
 Exemplo de código de requisição com Java HTTP Client com chamada assíncrona.
 
@@ -282,13 +282,13 @@ Vamos abordar como testar suas chamadas HTTP usando bibliotecas como **JUnit** e
 
 Primeiro, você precisará adicionar as dependências do JUnit e Mockito ao seu arquivo pom.xml se estiver usando Maven:
 
-![Texto, Linha do tempo Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image16.png){width="4.541666666666667in" height="4.864583333333333in"}
+![Texto, Linha do tempo Descrição gerada automaticamente](temp_media/media/image16.png){width="4.541666666666667in" height="4.864583333333333in"}
 
 Dependências do JUnit e Mockito no Maven.
 
 Aqui está um exemplo de teste unitário para uma classe que faz uma chamada HTTP:
 
-![Uma imagem contendo Tabela Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image17.png){width="5.905555555555556in" height="4.554166666666666in"}
+![Uma imagem contendo Tabela Descrição gerada automaticamente](temp_media/media/image17.png){width="5.905555555555556in" height="4.554166666666666in"}
 
 Exemplo de teste unitário com código aplicando a biblioteca Java HTTP Client.
 

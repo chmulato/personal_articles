@@ -1,10 +1,10 @@
-![Gerenciamento de Objetos em Java, os famosos Beans.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.329861111111111in"}
+![Gerenciamento de Objetos em Java, os famosos Beans.](temp_media/media/image1.png){width="5.905555555555556in" height="3.329861111111111in"}
 
 Gerenciamento de Objetos em Java, os famosos Beans.
 
 **Gestão de objetos no Java**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -36,7 +36,7 @@ Além disso, o Spring oferece suporte a programação assíncrona e manipulaçã
 
 Abaixo podemos ver um exemplo de código simples de como um bean, um objeto em Java, pode ser configurado e gerenciado no Spring:
 
-![](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="3.5388888888888888in"}
+![](temp_media/media/image3.png){width="5.905555555555556in" height="3.5388888888888888in"}
 
 Exemplo de código Java utilizando o Framework Spring.
 

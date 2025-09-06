@@ -2,7 +2,7 @@
 
 ## Artigo Final para LinkedIn - Agosto 2025
 
-![CSOnline - Sistema Enterprise Completo](c:\dev\personal_articles\md\media/media/image1.png){width="5.833333333333333in" height="3.1818175853018373in"}
+![CSOnline - Sistema Enterprise Completo](temp_media/media/image1.png){width="5.833333333333333in" height="3.1818175853018373in"}
 
 ------------------------------------------------------------------------
 

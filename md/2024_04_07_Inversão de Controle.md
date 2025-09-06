@@ -1,10 +1,10 @@
-![O conceito da inversão de controle.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![O conceito da inversão de controle.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 O conceito da inversão de controle.
 
 **Inversão de Controle (IoC)**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -50,7 +50,7 @@ A Inversão de Controle (IoC) é um princípio fundamental no desenvolvimento de
 
 \- Em vez de criar objetos dentro de uma classe, recebemos esses objetos como parâmetros (por exemplo, por meio de construtores).
 
-![](c:\dev\personal_articles\md\media/media/image3.jpeg){width="5.905555555555556in" height="5.905555555555556in"}
+![](temp_media/media/image3.jpeg){width="5.905555555555556in" height="5.905555555555556in"}
 
 Arquitetura Hexagonal aplicada com a IoC.
 

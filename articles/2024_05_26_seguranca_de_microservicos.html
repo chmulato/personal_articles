@@ -1,77 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre segurança de microserviços">
+    <title>Segurança De Microserviços - Christian Mulato Dev Blog</title>
+    <meta name="description" content="Artigo sobre Segurança De Microserviços">
     <meta name="author" content="Christian Mulato">
-    <meta name="keywords" content="Java, Spring, Microserviços, Testes, Maven, Arquitetura">
+    <meta name="keywords" content="Java, Desenvolvimento, Tecnologia">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="articles/2024_05_26_seguranca_de_microservicos.html">
-    <meta property="og:title" content="Segurança De Microserviços">
-    <meta property="og:description" content="Artigo técnico sobre segurança de microserviços">
-    <meta property="og:image" content="img/2024_05_26_seguranca_de_microservicos_featured.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="articles/2024_05_26_seguranca_de_microservicos.html">
-    <meta property="twitter:title" content="Segurança De Microserviços">
-    <meta property="twitter:description" content="Artigo técnico sobre segurança de microserviços">
-    <meta property="twitter:image" content="img/2024_05_26_seguranca_de_microservicos_featured.jpg">
-    
-    <title>Segurança De Microserviços | Christian Mulato Dev Blog</title>
-    
-    <!-- Styles -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/article.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="assets/js/article.js" defer></script>
+    <link rel="stylesheet" href="assets/css/highlight.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-text">Christian Mulato</span>
-                    <span class="logo-subtitle">Dev Blog</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Artigos</a>
-                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html">Christian Mulato Dev Blog</a></h1>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="main">
-        <article class="article">
-            <header class="article-header">
-                <div class="article-meta">
-                    <span class="article-category">Java & Spring</span>
-                    <time class="article-date" datetime="26/05/2024">26/05/2024</time>
-                </div>
+    <main class="main-content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">Segurança De Microserviços</h1>
+                    <div class="post-meta">
+                        <time datetime="2024-05-26">26/05/2024</time>
+                        <span class="post-author">Por Christian Mulato</span>
+                    </div>
+                    
+                </header>
                 
-                <h1 class="article-title">Segurança De Microserviços</h1>
-                
-                <div class="article-info">
-                    <span class="article-author">Por Christian Mulato</span>
-                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">Microserviços</span> <span class="tag">Testes</span> <span class="tag">Maven</span> <span class="tag">Arquitetura</span></div>
-                </div>
-            </header>
-            
-            <div class="article-content">
-                
-<p><img alt="Seguranças de Microserviços com JWT" src="assets/img/2024_05_26_Segurança de Microserviços_image1.png" /></p>
+                <div class="post-content">
+                    <p><img alt="Seguranças de Microserviços com JWT" src="temp_media/media/image1.png" />{width="5.905555555555556in" height="3.3270833333333334in"}</p>
 <p>Seguranças de Microserviços com JWT</p>
 <p><strong>Segurança de Microserviços</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_05_26_Segurança de Microserviços_image11.png" /></a></p>
-<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="temp_media/media/image2.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>26 de maio de 2024</p>
 <p>A autenticação <strong>JWT</strong> (<strong>JSON Web Token</strong>) tem se destacado como uma solução popular para garantir a segurança e a integridade das comunicações em microserviços.</p>
@@ -79,15 +49,15 @@
 <p>A segurança em microserviços, ela é extremamente importante por várias razões:</p>
 <p><strong>1. Isolamento de falhas:</strong> Como cada microserviço é independente, uma falha em um serviço não afeta diretamente os outros. No entanto, se a segurança de um serviço for comprometida, pode haver um risco para os outros serviços. Portanto, cada serviço deve ser seguro para garantir o isolamento completo.</p>
 <p><strong>2. Proteção de dados:</strong> Cada microserviço pode ter acesso a diferentes tipos de dados. É crucial garantir que apenas serviços autorizados tenham acesso a dados sensíveis.</p>
-<p>__3. Autenticação e autorização: __Em uma arquitetura de microserviços, cada serviço pode precisar autenticar e autorizar as solicitações. Implementar a segurança em cada serviço garante que apenas solicitações legítimas sejam atendidas.</p>
+<p><strong>3. Autenticação e autorização:</strong> Em uma arquitetura de microserviços, cada serviço pode precisar autenticar e autorizar as solicitações. Implementar a segurança em cada serviço garante que apenas solicitações legítimas sejam atendidas.</p>
 <p><strong>4. Comunicação segura:</strong> Os microserviços geralmente se comunicam entre si através de redes, o que pode ser vulnerável a ataques. A implementação de protocolos de comunicação seguros, como HTTPS, é fundamental.</p>
 <p>Portanto, a segurança é uma consideração essencial ao projetar e implementar microserviços. Ela deve ser integrada em todas as fases do ciclo de vida do desenvolvimento de software para garantir a robustez e a confiabilidade do sistema como um todo.</p>
 <p>Vamos entender a diferença entre autenticação e autorização, especialmente em um ambiente de microserviços:</p>
-<p><strong>1. Autenticação:</strong> É o processo de verificar a identidade de um usuário, dispositivo ou sistema. Em outras palavras, é como o sistema responde à pergunta "Quem é você?". Em um ambiente de microserviços, a autenticação é crucial para garantir que cada solicitação venha de uma fonte legítima. Isso geralmente é feito através de tokens de autenticação, como JWT (JSON Web Tokens), que são gerados após o usuário fornecer credenciais válidas.</p>
-<p><strong>2. Autorização:</strong> Uma vez que a identidade é verificada (autenticação), a autorização é o processo de verificar o que o usuário, dispositivo ou sistema autenticado tem permissão para fazer. É como o sistema responde à pergunta "O que você tem permissão para fazer?". Em um ambiente de microserviços, a autorização é usada para garantir que um serviço só possa realizar ações que estão dentro de suas permissões designadas.</p>
+<p><strong>1. Autenticação:</strong> É o processo de verificar a identidade de um usuário, dispositivo ou sistema. Em outras palavras, é como o sistema responde à pergunta \"Quem é você?\". Em um ambiente de microserviços, a autenticação é crucial para garantir que cada solicitação venha de uma fonte legítima. Isso geralmente é feito através de tokens de autenticação, como JWT (JSON Web Tokens), que são gerados após o usuário fornecer credenciais válidas.</p>
+<p><strong>2. Autorização:</strong> Uma vez que a identidade é verificada (autenticação), a autorização é o processo de verificar o que o usuário, dispositivo ou sistema autenticado tem permissão para fazer. É como o sistema responde à pergunta \"O que você tem permissão para fazer?\". Em um ambiente de microserviços, a autorização é usada para garantir que um serviço só possa realizar ações que estão dentro de suas permissões designadas.</p>
 <p>Ambos, autenticação e autorização, são necessários em um ambiente distribuído como microserviços para garantir a segurança do sistema. A autenticação garante que os usuários são quem afirmam ser, enquanto a autorização garante que eles só podem fazer o que têm permissão para fazer. Isso ajuda a proteger os dados e funcionalidades do sistema contra acesso e uso indevidos.</p>
 <p><strong>JSON Web Token (JWT)</strong> é um padrão aberto (RFC 7519) que define uma maneira compacta e independente de transmitir informações entre partes como um objeto JSON. Essas informações podem ser verificadas e confiáveis porque são assinadas digitalmente.</p>
-<p>Um JWT é composto por três partes: <strong>Header</strong>, <strong>Payload</strong> e <strong>Signature</strong>. </p>
+<p>Um JWT é composto por três partes: <strong>Header</strong>, <strong>Payload</strong> e <strong>Signature</strong>.</p>
 <p><strong>1. Header:</strong> O cabeçalho geralmente consiste em dois componentes: o tipo do token, que é JWT, e o algoritmo de assinatura, como HMAC SHA256 ou RSA.</p>
 <p><strong>2. Payload:</strong> O payload contém as reivindicações, que são declarações sobre uma entidade (geralmente o usuário) e metadados adicionais. Existem três tipos de reivindicações: registradas, públicas e privadas.</p>
 <p><strong>3. Signature:</strong> A assinatura é usada para verificar que o remetente do JWT é quem diz ser e para garantir que o conteúdo não foi alterado.</p>
@@ -98,115 +68,45 @@
 <p><strong>- Segurança:</strong> Os JWTs podem ser assinados e criptografados para proteger as informações que eles carregam.</p>
 <p>O <strong>JWT</strong> oferece uma maneira eficaz e segura de lidar com a autenticação em um ambiente de microserviços.</p>
 <p>Na visão geral de como você pode implementar a autenticação JWT em um microserviço usando Java e Spring Boot:</p>
-<p>__Dependências: __Primeiro, você precisará adicionar as dependências relevantes ao seu arquivo <em>pom.xml </em>ou <em>build.gradle</em>. Isso incluirá o Spring Security e a biblioteca jjwt para trabalhar com JWTs.</p>
+<p><strong>Dependências:</strong> Primeiro, você precisará adicionar as dependências relevantes ao seu arquivo <em>pom.xml</em> ou <em>build.gradle</em>. Isso incluirá o Spring Security e a biblioteca jjwt para trabalhar com JWTs.</p>
 <p><strong>Configuração do Spring Security:</strong> Você precisará configurar o Spring Security para usar JWTs para autenticação. Isso geralmente é feito em uma classe de configuração que estende <em>WebSecurityConfigurerAdapter</em>. Aqui, você pode especificar que deseja usar a autenticação baseada em token e fornecer um <em>JwtAuthenticationFilter</em> personalizado.</p>
 <p><strong>JwtAuthenticationFilter:</strong> Este é um filtro personalizado que intercepta solicitações e extrai o token JWT do cabeçalho <em>Authorization</em> da solicitação. Em seguida, valida o token e configura o <em>SecurityContext</em> com um <em>Authentication</em> que é construído a partir do token.</p>
 <p><strong>Geração de Token:</strong> Quando um usuário faz login com sucesso, você precisará gerar um token JWT para eles. Isso pode ser feito usando a biblioteca jjwt. O token deve incluir detalhes do usuário e um carimbo de data/hora de expiração.</p>
 <p><strong>Validação de Token:</strong> Quando uma solicitação chega com um token JWT, você precisará validar o token. Isso inclui verificar a assinatura e a data de expiração do token, bem como quaisquer outras reivindicações que você possa ter incluído no token.</p>
 <p>Vamos ver um exemplo de código simplificado para ilustrar esses passos:</p>
-<p><img alt="" src="assets/img/2024_05_26_Segurança de Microserviços_image12.png" /></p>
+<p><img alt="" src="temp_media/media/image3.png" />{width="5.905555555555556in" height="3.222916666666667in"}</p>
 <p>Exemplo de código e a dependência JJWT em Maven para autenticação com JWT.</p>
 <p>A Autenticação JWT oferece escalabilidade ao permitir que sistemas distribuídos autentiquem usuários sem a necessidade de um estado de sessão centralizado, melhorando assim a capacidade de lidar com um grande número de solicitações. Além disso, os JWTs são compactos e podem ser transmitidos facilmente, o que melhora o desempenho ao reduzir a sobrecarga de rede. Finalmente, a natureza autocontida dos JWTs facilita a integração entre diferentes serviços em um ambiente de microserviços, pois cada serviço pode validar os tokens de forma independente.</p>
 <p>Agora vamos ver um exemplo simplificado de como você pode implementar a autenticação JWT em um microserviço usando Java e Spring Boot:</p>
-<p><img alt="" src="assets/img/2024_05_26_Segurança de Microserviços_image1.png" /></p>
+<p><img alt="" src="temp_media/media/image4.png" />{width="5.905555555555556in" height="6.5472222222222225in"}</p>
 <p>Exemplo de autenticação com a biblioteca JJWT do Spring Boot.</p>
-<p>Este código define uma classe__ __<em>JwtUtil</em> que tem dois métodos principais: addAuthentication e getAuthentication.</p>
+<p>Este código define uma classe <em>JwtUtil</em> que tem dois métodos principais: addAuthentication e getAuthentication.</p>
 <p>O método addAuthentication é chamado quando um usuário faz login com sucesso. Ele gera um token JWT e o adiciona ao cabeçalho Authorization da resposta HTTP.</p>
 <p>O método getAuthentication é chamado para cada solicitação autenticada. Ele extrai o token JWT do cabeçalho Authorization da solicitação, verifica o token e retorna um objeto Authentication se o token for válido.</p>
 <p>Note que este é um exemplo simplificado e não inclui muitos aspectos importantes de uma implementação real, como o tratamento de exceções e a segurança da chave secreta. Recomendo que você consulte a documentação oficial do Spring Security e JJWT para obter mais detalhes e melhores práticas. Além disso, sempre teste seu código cuidadosamente para garantir que a segurança esteja funcionando como esperado.</p>
-<p>Saiba que a autenticação JWT (<strong>JSON Web Token</strong>) é uma solução eficaz para garantir a segurança em microserviços, uma arquitetura de software que divide uma aplicação em serviços menores e independentes. A segurança é crucial em microserviços para o isolamento de falhas, proteção de dados, autenticação e autorização, e comunicação segura. A autenticação JWT, que é o processo de verificar a identidade de um usuário, e a autorização, que é o processo de verificar o que o usuário autenticado tem permissão para fazer, são essenciais para a segurança de um sistema. </p>
-            </div>
-            
-            <footer class="article-footer">
-                <div class="article-author-bio">
-                    <h3>Sobre o Autor</h3>
-                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
-                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
-                        Conecte-se no LinkedIn
-                    </a>
+<p>Saiba que a autenticação JWT (<strong>JSON Web Token</strong>) é uma solução eficaz para garantir a segurança em microserviços, uma arquitetura de software que divide uma aplicação em serviços menores e independentes. A segurança é crucial em microserviços para o isolamento de falhas, proteção de dados, autenticação e autorização, e comunicação segura. A autenticação JWT, que é o processo de verificar a identidade de um usuário, e a autorização, que é o processo de verificar o que o usuário autenticado tem permissão para fazer, são essenciais para a segurança de um sistema.</p>
                 </div>
                 
-                <div class="article-navigation">
-                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
-                </div>
-            </footer>
-        </article>
+                <footer class="post-footer">
+                    <div class="author-info">
+                        <img src="assets/img/2024_05_26_seguranca_de_microservicos_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <div class="author-details">
+                            <strong>Christian Mulato</strong>
+                            <p>Desenvolvedor Java e Arquiteto de Software</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
     </main>
-    
+
     <footer class="site-footer">
-        <div class="footer-container">
+        <div class="container">
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Christian Mulato</h3>
-                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
-                <a href="../index.html">Artigos</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    
-    <!-- Theme Toggle Button -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-        <span id="themeIcon">🌙</span>
-    </button>
-    
-    <script>
-        // Tema manager
-        class ThemeManager {
-            constructor() {
-                this.themeToggle = document.getElementById('themeToggle');
-                this.themeIcon = document.getElementById('themeIcon');
-                this.init();
-            }
-            
-            init() {
-                const savedTheme = localStorage.getItem('theme');
-                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                const currentTheme = savedTheme || systemTheme;
-                
-                this.setTheme(currentTheme);
-                this.updateIcon(currentTheme);
-                
-                this.themeToggle.addEventListener('click', () => this.toggleTheme());
-            }
-            
-            toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                this.setTheme(newTheme);
-                this.updateIcon(newTheme);
-                localStorage.setItem('theme', newTheme);
-            }
-            
-            setTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-            
-            updateIcon(theme) {
-                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-                this.themeToggle.setAttribute('aria-label', 
-                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
-            }
-        }
-        
-        // Inicializar quando DOM carregar
-        document.addEventListener('DOMContentLoaded', () => {
-            new ThemeManager();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-

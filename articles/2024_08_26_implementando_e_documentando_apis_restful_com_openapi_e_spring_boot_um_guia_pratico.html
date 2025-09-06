@@ -1,249 +1,173 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre implementando e documentando apis restful com openapi e spring boot um guia prático">
+    <title>Implementando E Documentando Apis Restful Com Openapi E Spring Boot Um Guia Prático - Christian Mulato Dev Blog</title>
+    <meta name="description" content="Artigo sobre Implementando E Documentando Apis Restful Com Openapi E Spring Boot Um Guia Prático">
     <meta name="author" content="Christian Mulato">
-    <meta name="keywords" content="Java, Spring, APIs, Testes, Maven, DevOps">
+    <meta name="keywords" content="Java, Desenvolvimento, Tecnologia">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="articles/2024_08_26_implementando_e_documentando_apis_restful_com_openapi_e_spring_boot_um_guia_pratico.html">
-    <meta property="og:title" content="Implementando E Documentando Apis Restful Com Openapi E Spring Boot Um Guia Prático">
-    <meta property="og:description" content="Artigo técnico sobre implementando e documentando apis restful com openapi e spring boot um guia prático">
-    <meta property="og:image" content="img/2024_08_26_implementando_e_documentando_apis_restful_com_openapi_e_spring_boot_um_guia_pratico_featured.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="articles/2024_08_26_implementando_e_documentando_apis_restful_com_openapi_e_spring_boot_um_guia_pratico.html">
-    <meta property="twitter:title" content="Implementando E Documentando Apis Restful Com Openapi E Spring Boot Um Guia Prático">
-    <meta property="twitter:description" content="Artigo técnico sobre implementando e documentando apis restful com openapi e spring boot um guia prático">
-    <meta property="twitter:image" content="img/2024_08_26_implementando_e_documentando_apis_restful_com_openapi_e_spring_boot_um_guia_pratico_featured.jpg">
-    
-    <title>Implementando E Documentando Apis Restful Com Openapi E Spring Boot Um Guia Prático | Christian Mulato Dev Blog</title>
-    
-    <!-- Styles -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/article.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="assets/js/article.js" defer></script>
+    <link rel="stylesheet" href="assets/css/highlight.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-text">Christian Mulato</span>
-                    <span class="logo-subtitle">Dev Blog</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Artigos</a>
-                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html">Christian Mulato Dev Blog</a></h1>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="main">
-        <article class="article">
-            <header class="article-header">
-                <div class="article-meta">
-                    <span class="article-category">Java & Spring</span>
-                    <time class="article-date" datetime="26/08/2024">26/08/2024</time>
-                </div>
+    <main class="main-content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">Implementando E Documentando Apis Restful Com Openapi E Spring Boot Um Guia Prático</h1>
+                    <div class="post-meta">
+                        <time datetime="2024-08-26">26/08/2024</time>
+                        <span class="post-author">Por Christian Mulato</span>
+                    </div>
+                    
+                </header>
                 
-                <h1 class="article-title">Implementando E Documentando Apis Restful Com Openapi E Spring Boot Um Guia Prático</h1>
-                
-                <div class="article-info">
-                    <span class="article-author">Por Christian Mulato</span>
-                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">APIs</span> <span class="tag">Testes</span> <span class="tag">Maven</span> <span class="tag">DevOps</span></div>
-                </div>
-            </header>
-            
-            <div class="article-content">
-                
-<p><img alt="OPenAPI Rest" src="assets/img/2024_08_26_Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot_Um Guia Prático_image1.png" /></p>
+                <div class="post-content">
+                    <p><img alt="OPenAPI Rest" src="temp_media/media/image1.png" />{width="5.905555555555556in" height="3.3222222222222224in"}</p>
 <p>OPenAPI Rest</p>
 <p><strong>Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot: Um Guia Prático</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_08_26_Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot_Um Guia Prático_image10.png" /></a></p>
-<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="temp_media/media/image2.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>26 de agosto de 2024</p>
 <p><strong>1. Introdução</strong></p>
 <p>No desenvolvimento de <strong><em>APIs RESTful</em></strong>, a padronização e a clareza na documentação são essenciais para garantir uma comunicação eficiente entre desenvolvedores e a integração de serviços. O <strong><em>OpenAPI</em></strong> surge como uma solução robusta para descrever APIs de forma padronizada e legível tanto por humanos quanto por máquinas. No ecossistema Java, especialmente com o uso do <strong>Spring Boot</strong>, o OpenAPI se destaca por facilitar a definição de <strong><em>endpoints</em></strong>, a geração automática de documentação e a validação de contratos. Este artigo explora como implementar operações <strong><em>GET</em></strong> e <strong><em>POST</em></strong> utilizando OpenAPI e <strong><em>YAML</em></strong>, destacando as principais classes e configurações necessárias em um projeto Spring Boot. Através de exemplos práticos, veremos como o OpenAPI pode simplificar o desenvolvimento e a manutenção de APIs, promovendo uma maior eficiência e colaboração no desenvolvimento de software.</p>
 <p><strong>2. Definição</strong></p>
 <p><strong>OpenAPI</strong> é uma especificação para descrever <strong><em>APIs RESTful</em></strong> de forma padronizada e legível tanto por humanos quanto por máquinas. No mundo Java, especialmente com frameworks como Spring Boot, o OpenAPI é utilizado para documentar e definir endpoints de APIs, facilitando a comunicação entre desenvolvedores e a integração de serviços. Ele permite a geração automática de documentação, validação de contratos e até mesmo a criação de clientes e servidores a partir das especificações definidas em arquivos YAML ou JSON.</p>
-<p>Vamos começar com uma visão geral de como definir operações GET e POST usando __<em>OpenAPI </em>__e YAML.</p>
+<p>Vamos começar com uma visão geral de como definir operações GET e POST usando <strong><em>OpenAPI</em></strong> e YAML.</p>
 <p><strong>3. Estrutura Básica do OpenAPI</strong></p>
-<p>Um arquivo __<em>OpenAPI </em>__geralmente começa com algumas informações básicas sobre a API, como título, descrição e versão. Aqui está um exemplo básico: </p>
-<p><img alt="" src="assets/img/2024_08_26_Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot_Um Guia Prático_image11.png" /></p>
+<p>Um arquivo <strong><em>OpenAPI</em></strong> geralmente começa com algumas informações básicas sobre a API, como título, descrição e versão. Aqui está um exemplo básico:</p>
+<p><img alt="" src="temp_media/media/image3.png" />{width="5.71875in" height="1.1875in"}</p>
 <p>Exemplo básico de um arquivo OpenAPI.</p>
 <p><strong>4. Definindo uma Operação GET</strong></p>
 <p>A operação GET é usada para recuperar dados de um servidor. Aqui está um exemplo de como definir uma operação GET para obter uma lista de usuários:</p>
-<p><img alt="" src="assets/img/2024_08_26_Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot_Um Guia Prático_image14.png" /></p>
+<p><img alt="" src="temp_media/media/image4.png" />{width="5.71875in" height="3.625in"}</p>
 <p>Arquivo de configuração YAML para o endpoint de GET.</p>
 <p><strong>5. Definindo uma Operação POST</strong></p>
 <p>A operação POST é usada para enviar dados ao servidor, geralmente para criar um novo recurso. Aqui está um exemplo de como definir uma operação POST para adicionar um novo usuário:</p>
-<p><img alt="" src="assets/img/2024_08_26_Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot_Um Guia Prático_image15.png" /></p>
+<p><img alt="" src="temp_media/media/image5.png" />{width="5.905555555555556in" height="3.6166666666666667in"}</p>
 <p>Arquivo de configuração YAML para o endpoint de POST.</p>
 <p><strong>6. Mapeamentos nos Arquivos YAML</strong></p>
 <p>No exemplo acima, usamos o campo paths para definir os <strong><em>endpoints</em></strong> /users e especificamos as operações GET e POST.</p>
 <p>Cada operação tem um resumo (summary), uma descrição do corpo da requisição (<strong><em>requestBody</em></strong>), e as respostas possíveis (<strong><em>responses</em></strong>).</p>
 <ul>
-<li><strong>GET:</strong> Não requer um corpo de requisição e retorna uma lista de usuários.</li>
-<li><strong>POST:</strong> Requer um corpo de requisição com os dados do novo usuário e retorna uma confirmação de criação.</li>
+<li>
+<p><strong>GET:</strong> Não requer um corpo de requisição e retorna uma lista de usuários.</p>
+</li>
+<li>
+<p><strong>POST:</strong> Requer um corpo de requisição com os dados do novo usuário e retorna uma confirmação de criação.</p>
+</li>
 </ul>
 <p>Esses exemplos cobrem o básico de como definir operações GET e POST em um arquivo OpenAPI usando YAML.</p>
 <p>Para implementar operações GET e POST em uma API Java usando OpenAPI, você pode usar o Spring Boot, que facilita bastante o processo.</p>
 <p>Aqui no tópico 7 estão as principais classes e anotações que você precisará:</p>
 <p><strong>7. Classe Principal da Aplicação</strong></p>
-<p>A classe principal da sua aplicação Spring Boot deve ser anotada com @SpringBootApplication. Aqui você também pode configurar o <strong><em>OpenAPI</em></strong>.</p>
-<p><img alt="" src="assets/img/2024_08_26_Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot_Um Guia Prático_image16.png" /></p>
+<p>A classe principal da sua aplicação Spring Boot deve ser anotada com \@SpringBootApplication. Aqui você também pode configurar o <strong><em>OpenAPI</em></strong>.</p>
+<p><img alt="" src="temp_media/media/image6.png" />{width="5.905555555555556in" height="2.759027777777778in"}</p>
 <p>Exemplo de classe Java com Spring Boot.</p>
 <p><strong>8. Controlador (Controller)</strong></p>
 <p>Os controladores são responsáveis por lidar com as requisições HTTP. Aqui está um exemplo de um controlador com operações GET e POST.</p>
-<p><img alt="" src="assets/img/2024_08_26_Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot_Um Guia Prático_image17.png" /></p>
+<p><img alt="" src="temp_media/media/image7.png" />{width="5.905555555555556in" height="3.1777777777777776in"}</p>
 <p>Exemplo de classe Java do tipo Controller com o Spring Boot.</p>
 <p><strong>9. Modelo (Model)</strong></p>
 <p>A classe modelo representa os dados que serão manipulados pela API.</p>
-<p><img alt="" src="assets/img/2024_08_26_Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot_Um Guia Prático_image18.png" /></p>
+<p><img alt="" src="temp_media/media/image8.png" />{width="3.7395833333333335in" height="1.3958333333333333in"}</p>
 <p>Exemplo de classe Java bean.</p>
 <p><strong>10. Dependências no pom.xml</strong></p>
 <p>Para habilitar o suporte ao OpenAPI e Swagger, você precisa adicionar as seguintes dependências ao seu arquivo <strong><em>pom.xml</em></strong>:</p>
-<p><img alt="" src="assets/img/2024_08_26_Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot_Um Guia Prático_image19.png" /></p>
+<p><img alt="" src="temp_media/media/image9.png" />{width="5.905555555555556in" height="1.148611111111111in"}</p>
 <p>Exemplo de notação para a dependência Maven do OpenAPI.</p>
 <p>Para criar uma API com operações GET e POST usando OpenAPI e Spring Boot, é essencial configurar a classe principal da aplicação, definir controladores para os endpoints, criar modelos para representar os dados e adicionar as dependências necessárias no arquivo <strong><em>pom.xml</em></strong>. Essas etapas garantem que a API seja bem estruturada, documentada e fácil de manter, promovendo uma integração eficiente e uma comunicação clara entre os desenvolvedores.</p>
 <p>Resumo:</p>
 <ul>
-<li><strong>Classe Principal:</strong> Configura o Spring Boot e o OpenAPI.</li>
-<li>__Controlador: __Define os endpoints GET e POST.</li>
-<li><strong>Modelo:</strong> Representa os dados manipulados pela API.</li>
-<li><strong>Dependências:</strong> Adiciona suporte ao OpenAPI e Swagger.</li>
+<li>
+<p><strong>Classe Principal:</strong> Configura o Spring Boot e o OpenAPI.</p>
+</li>
+<li>
+<p><strong>Controlador:</strong> Define os endpoints GET e POST.</p>
+</li>
+<li>
+<p><strong>Modelo:</strong> Representa os dados manipulados pela API.</p>
+</li>
+<li>
+<p><strong>Dependências:</strong> Adiciona suporte ao OpenAPI e Swagger.</p>
+</li>
 </ul>
 <p>Essas são as classes e configurações básicas necessárias para criar uma API com operações GET e POST usando OpenAPI e Spring Boot.</p>
 <p><strong>11. Estrutura de arquivos</strong></p>
 <p>Os arquivos YAML do OpenAPI geralmente são colocados na pasta <strong><em>src/main/resources</em></strong> do seu projeto <strong><em>Spring Boot</em></strong>.</p>
 <p>Esta é a localização padrão para arquivos de configuração e recursos estáticos em projetos Spring Boot.</p>
 <p>Aqui está um exemplo de como a estrutura do seu projeto pode ficar:</p>
-<p><img alt="" src="assets/img/2024_08_26_Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot_Um Guia Prático_image20.png" /></p>
+<p><img alt="" src="temp_media/media/image10.png" />{width="5.905555555555556in" height="2.9833333333333334in"}</p>
 <p>Estrutura de pastas dentro do código Java.</p>
 <p><strong>12. Configuração do Spring Boot para Usar o Arquivo YAML</strong></p>
 <p>Para que o Spring Boot reconheça e utilize o arquivo YAML do OpenAPI, você pode configurar o caminho no seu arquivo <strong><em>application.yml</em></strong>:</p>
-<p><img alt="" src="assets/img/2024_08_26_Implementando e Documentando APIs RESTful com OpenAPI e Spring Boot_Um Guia Prático_image1.png" /></p>
+<p><img alt="" src="temp_media/media/image11.png" />{width="3.8020833333333335in" height="1.125in"}</p>
 <p>Arquivo de configuração YAML chamado.</p>
 <p><strong>13. Acessando a Documentação</strong></p>
-<p>Depois de configurar, você pode acessar a documentação gerada pelo __OpenAPI __no seguinte caminho:</p>
+<p>Depois de configurar, você pode acessar a documentação gerada pelo <strong>OpenAPI</strong> no seguinte caminho:</p>
 <ul>
-<li><strong>JSON:</strong> http://localhost:8080/v3/api-docs</li>
-<li><strong>YAML:</strong> http://localhost:8080/v3/api-docs.yaml</li>
-<li><strong>Swagger UI:</strong> http://localhost:8080/swagger-ui.html</li>
+<li>
+<p><strong>JSON:</strong> http://localhost:8080/v3/api-docs</p>
+</li>
+<li>
+<p><strong>YAML:</strong> http://localhost:8080/v3/api-docs.yaml</p>
+</li>
+<li>
+<p><strong>Swagger UI:</strong> http://localhost:8080/swagger-ui.html</p>
+</li>
 </ul>
 <p>Após configurar o Spring Boot para reconhecer e utilizar o arquivo YAML do OpenAPI, a documentação gerada pode ser acessada em diferentes formatos, como JSON e YAML, além da interface <strong><em>Swagger UI</em></strong>. Isso facilita a visualização e o teste dos <em>endpoints</em> da API, garantindo que a documentação esteja sempre atualizada e acessível para todos os envolvidos no desenvolvimento e manutenção da API.</p>
 <p>Resumo:</p>
 <ul>
-<li><strong>Localização:</strong> Coloque o arquivo YAML do OpenAPI em__<em> src/main/resources/openapi/</em>__.</li>
-<li><strong>Configuração:</strong> Configure o caminho no <strong><em>application.yml</em></strong>.</li>
-<li><strong>Acesso:</strong> Acesse a documentação gerada nos caminhos especificados.</li>
+<li>
+<p><strong>Localização:</strong> Coloque o arquivo YAML do OpenAPI em <strong><em>src/main/resources/openapi/</em></strong>.</p>
+</li>
+<li>
+<p><strong>Configuração:</strong> Configure o caminho no <strong><em>application.yml</em></strong>.</p>
+</li>
+<li>
+<p><strong>Acesso:</strong> Acesse a documentação gerada nos caminhos especificados.</p>
+</li>
 </ul>
 <p><strong>14. Conclusão</strong></p>
-<p>O uso do <strong><em>OpenAPI</em></strong> no desenvolvimento de __<em>APIs RESTful </em>__com Java, especialmente em conjunto com o Spring Boot, oferece uma série de benefícios que vão desde a padronização e clareza na documentação até a facilitação da integração de serviços. Através da definição de operações GET e POST em arquivos YAML, desenvolvedores podem criar APIs robustas e bem documentadas, promovendo uma comunicação eficiente e uma melhor colaboração entre equipes. Além disso, a capacidade de gerar automaticamente documentação e validar contratos garante que as APIs sejam consistentes e confiáveis. Com o OpenAPI, o processo de desenvolvimento de APIs se torna mais ágil e organizado, permitindo que as equipes se concentrem em entregar valor e inovação. Ao adotar essa especificação, desenvolvedores Java podem garantir que suas APIs não apenas atendam aos requisitos técnicos, mas também ofereçam uma experiência de uso clara e intuitiva para todos os envolvidos.</p>
-            </div>
-            
-            <footer class="article-footer">
-                <div class="article-author-bio">
-                    <h3>Sobre o Autor</h3>
-                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
-                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
-                        Conecte-se no LinkedIn
-                    </a>
+<p>O uso do <strong><em>OpenAPI</em></strong> no desenvolvimento de <strong><em>APIs RESTful</em></strong> com Java, especialmente em conjunto com o Spring Boot, oferece uma série de benefícios que vão desde a padronização e clareza na documentação até a facilitação da integração de serviços. Através da definição de operações GET e POST em arquivos YAML, desenvolvedores podem criar APIs robustas e bem documentadas, promovendo uma comunicação eficiente e uma melhor colaboração entre equipes. Além disso, a capacidade de gerar automaticamente documentação e validar contratos garante que as APIs sejam consistentes e confiáveis. Com o OpenAPI, o processo de desenvolvimento de APIs se torna mais ágil e organizado, permitindo que as equipes se concentrem em entregar valor e inovação. Ao adotar essa especificação, desenvolvedores Java podem garantir que suas APIs não apenas atendam aos requisitos técnicos, mas também ofereçam uma experiência de uso clara e intuitiva para todos os envolvidos.</p>
                 </div>
                 
-                <div class="article-navigation">
-                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
-                </div>
-            </footer>
-        </article>
+                <footer class="post-footer">
+                    <div class="author-info">
+                        <img src="assets/img/2024_08_26_implementando_e_documentando_apis_restful_com_openapi_e_spring_boot_um_guia_pratico_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <div class="author-details">
+                            <strong>Christian Mulato</strong>
+                            <p>Desenvolvedor Java e Arquiteto de Software</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
     </main>
-    
+
     <footer class="site-footer">
-        <div class="footer-container">
+        <div class="container">
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Christian Mulato</h3>
-                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
-                <a href="../index.html">Artigos</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    
-    <!-- Theme Toggle Button -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-        <span id="themeIcon">🌙</span>
-    </button>
-    
-    <script>
-        // Tema manager
-        class ThemeManager {
-            constructor() {
-                this.themeToggle = document.getElementById('themeToggle');
-                this.themeIcon = document.getElementById('themeIcon');
-                this.init();
-            }
-            
-            init() {
-                const savedTheme = localStorage.getItem('theme');
-                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                const currentTheme = savedTheme || systemTheme;
-                
-                this.setTheme(currentTheme);
-                this.updateIcon(currentTheme);
-                
-                this.themeToggle.addEventListener('click', () => this.toggleTheme());
-            }
-            
-            toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                this.setTheme(newTheme);
-                this.updateIcon(newTheme);
-                localStorage.setItem('theme', newTheme);
-            }
-            
-            setTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-            
-            updateIcon(theme) {
-                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-                this.themeToggle.setAttribute('aria-label', 
-                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
-            }
-        }
-        
-        // Inicializar quando DOM carregar
-        document.addEventListener('DOMContentLoaded', () => {
-            new ThemeManager();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-

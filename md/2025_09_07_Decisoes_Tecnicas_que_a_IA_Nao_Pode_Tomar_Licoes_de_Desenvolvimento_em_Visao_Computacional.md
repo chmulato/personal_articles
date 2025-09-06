@@ -1,4 +1,4 @@
-![Decisões Técnicas que a IA Não Pode Tomar](c:\dev\personal_articles\md\media/media/rId9.png){width="5.833333333333333in" height="3.1818175853018373in"}
+![Decisões Técnicas que a IA Não Pode Tomar](temp_media/media/rId9.png){width="5.833333333333333in" height="3.1818175853018373in"}
 
 *Ilustração representando a colaboração entre engenheiros humanos e inteligência artificial em sistemas de visão computacional. A imagem destaca o papel estratégico do profissional na tomada de decisões técnicas.*
 

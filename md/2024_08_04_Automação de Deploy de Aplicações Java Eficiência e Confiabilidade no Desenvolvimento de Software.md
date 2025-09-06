@@ -1,10 +1,10 @@
-![Deploy para Aplicações Java.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Deploy para Aplicações Java.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Deploy para Aplicações Java.
 
 **Automação de Deploy de Aplicações Java: Eficiência e Confiabilidade no Desenvolvimento de Software**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -94,7 +94,7 @@ Para criar uma imagem **Docker** a partir de um **Dockerfile**, você pode usar 
 
 Um exemplo básico de um *Dockerfile* para uma aplicação Java:
 
-![Texto Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="4.957638888888889in"}
+![Texto Descrição gerada automaticamente](temp_media/media/image3.png){width="5.905555555555556in" height="4.957638888888889in"}
 
 Exemplo de arquivo Dockerfile.
 
@@ -130,7 +130,7 @@ Dentro do contexto de aplicações Java podemos configurar um pipeline de CI/CD 
 
 Aqui está um exemplo de um arquivo de fluxo de trabalho do **GitHub Actions** para uma aplicação Java:
 
-![Interface gráfica do usuário, Aplicativo Descrição gerada automaticamente com confiança média](c:\dev\personal_articles\md\media/media/image4.png){width="5.905555555555556in" height="6.29375in"}
+![Interface gráfica do usuário, Aplicativo Descrição gerada automaticamente com confiança média](temp_media/media/image4.png){width="5.905555555555556in" height="6.29375in"}
 
 Exemplo de um arquivo de fluxo de trabalho do GitHub Actions.
 

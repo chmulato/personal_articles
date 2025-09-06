@@ -1,12 +1,12 @@
 - [**Visualizar publicação**](https://www.linkedin.com/feed/update/urn:li:ugcPost:7346585502365429761/)
 
-![Um olhar sobre o futuro da programação com inteligência artificial.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Um olhar sobre o futuro da programação com inteligência artificial.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Um olhar sobre o futuro da programação com inteligência artificial.
 
 **Da Prancheta ao Prompt: O Futuro da Criação de Softwares com Inteligência Artificial**
 
-[![Christian Mulato, #OPEN_TO_WORK](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato, #OPEN_TO_WORK](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato **](https://www.linkedin.com/in/chmulato/)
 

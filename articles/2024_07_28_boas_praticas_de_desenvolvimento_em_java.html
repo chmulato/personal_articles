@@ -1,92 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigo técnico sobre boas práticas de desenvolvimento em java">
+    <title>Boas Práticas De Desenvolvimento Em Java - Christian Mulato Dev Blog</title>
+    <meta name="description" content="Artigo sobre Boas Práticas De Desenvolvimento Em Java">
     <meta name="author" content="Christian Mulato">
-    <meta name="keywords" content="Java, Spring, APIs, Testes, Maven, DevOps">
+    <meta name="keywords" content="Java, Desenvolvimento, Tecnologia">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="articles/2024_07_28_boas_praticas_de_desenvolvimento_em_java.html">
-    <meta property="og:title" content="Boas Práticas De Desenvolvimento Em Java">
-    <meta property="og:description" content="Artigo técnico sobre boas práticas de desenvolvimento em java">
-    <meta property="og:image" content="img/2024_07_28_boas_praticas_de_desenvolvimento_em_java_featured.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="articles/2024_07_28_boas_praticas_de_desenvolvimento_em_java.html">
-    <meta property="twitter:title" content="Boas Práticas De Desenvolvimento Em Java">
-    <meta property="twitter:description" content="Artigo técnico sobre boas práticas de desenvolvimento em java">
-    <meta property="twitter:image" content="img/2024_07_28_boas_praticas_de_desenvolvimento_em_java_featured.jpg">
-    
-    <title>Boas Práticas De Desenvolvimento Em Java | Christian Mulato Dev Blog</title>
-    
-    <!-- Styles -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/article.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="assets/js/article.js" defer></script>
+    <link rel="stylesheet" href="assets/css/highlight.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-text">Christian Mulato</span>
-                    <span class="logo-subtitle">Dev Blog</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Artigos</a>
-                    <a href="https://www.linkedin.com/in/chmulato/" class="nav-link" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html">Christian Mulato Dev Blog</a></h1>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="main">
-        <article class="article">
-            <header class="article-header">
-                <div class="article-meta">
-                    <span class="article-category">Java & Spring</span>
-                    <time class="article-date" datetime="28/07/2024">28/07/2024</time>
-                </div>
+    <main class="main-content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">Boas Práticas De Desenvolvimento Em Java</h1>
+                    <div class="post-meta">
+                        <time datetime="2024-07-28">28/07/2024</time>
+                        <span class="post-author">Por Christian Mulato</span>
+                    </div>
+                    
+                </header>
                 
-                <h1 class="article-title">Boas Práticas De Desenvolvimento Em Java</h1>
-                
-                <div class="article-info">
-                    <span class="article-author">Por Christian Mulato</span>
-                    <div class="article-tags"><span class="tag">Java</span> <span class="tag">Spring</span> <span class="tag">APIs</span> <span class="tag">Testes</span> <span class="tag">Maven</span> <span class="tag">DevOps</span></div>
-                </div>
-            </header>
-            
-            <div class="article-content">
-                
-<p><img alt="Boas Práticas com codificação em linguagem Java." src="assets/img/2024_07_28_Boas Práticas de Desenvolvimento em Java_image1.png" /></p>
+                <div class="post-content">
+                    <p><img alt="Boas Práticas com codificação em linguagem Java." src="temp_media/media/image1.png" />{width="5.905555555555556in" height="3.3222222222222224in"}</p>
 <p>Boas Práticas com codificação em linguagem Java.</p>
 <p><strong>Boas Práticas de Desenvolvimento em Java</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="assets/img/2024_07_28_Boas Práticas de Desenvolvimento em Java_image10.png" /></a></p>
-<p><strong><a href="https://www.linkedin.com/in/chmulato/">Christian Mulato</a></strong></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato" src="temp_media/media/image2.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
 <p>Desenvolvedor Java Sênior na Develcode</p>
 <p>28 de julho de 2024</p>
 <p><strong>1. Introdução:</strong></p>
 <p>Se você é um desenvolvedor Java em busca de melhores práticas e padrões para escrever código limpo, eficiente e sustentável, este artigo é para você. Aqui, exploraremos os princípios fundamentais que podem elevar a qualidade do seu código e tornar sua jornada de desenvolvimento mais produtiva.</p>
 <p>O que você encontrará neste artigo:</p>
 <ul>
-<li>__Herança, Polimorfismo e Composição: __Entenda como esses conceitos orientados a objetos podem melhorar a estrutura do seu código e facilitar a manutenção.</li>
-<li><strong>Documentação e Comentários:</strong> Descubra como escrever comentários claros e concisos para tornar seu código mais legível e colaborativo.</li>
-<li><strong>Refatoração Contínua:</strong> Aprenda por que revisar e melhorar constantemente seu código é essencial para evitar dívidas técnicas e manter a qualidade.</li>
-<li><strong>Tratamento de Erros:</strong> Explore boas práticas para lidar com exceções e erros de forma robusta e eficaz.</li>
-<li><strong>Testabilidade e Injeção de Dependência:</strong> Descubra como escrever código que seja fácil de testar e flexível para futuras mudanças.</li>
+<li>
+<p><strong>Herança, Polimorfismo e Composição:</strong> Entenda como esses conceitos orientados a objetos podem melhorar a estrutura do seu código e facilitar a manutenção.</p>
+</li>
+<li>
+<p><strong>Documentação e Comentários:</strong> Descubra como escrever comentários claros e concisos para tornar seu código mais legível e colaborativo.</p>
+</li>
+<li>
+<p><strong>Refatoração Contínua:</strong> Aprenda por que revisar e melhorar constantemente seu código é essencial para evitar dívidas técnicas e manter a qualidade.</p>
+</li>
+<li>
+<p><strong>Tratamento de Erros:</strong> Explore boas práticas para lidar com exceções e erros de forma robusta e eficaz.</p>
+</li>
+<li>
+<p><strong>Testabilidade e Injeção de Dependência:</strong> Descubra como escrever código que seja fácil de testar e flexível para futuras mudanças.</p>
+</li>
 </ul>
 <p>Vamos mergulhar nesses conceitos e aprimorar suas habilidades como desenvolvedor Java!</p>
 <p><strong>2. Legibilidade do Código:</strong></p>
-<p>Escrever código legível e compreensível é fundamental para a manutenção, colaboração e escalabilidade de projetos. Quando utilizamos nomes significativos para variáveis e métodos, facilitamos a compreensão do fluxo do programa e reduzimos a chance de erros. Além disso, um código claro permite que outros desenvolvedores se integrem mais rapidamente ao projeto e contribuam de forma eficiente. </p>
+<p>Escrever código legível e compreensível é fundamental para a manutenção, colaboração e escalabilidade de projetos. Quando utilizamos nomes significativos para variáveis e métodos, facilitamos a compreensão do fluxo do programa e reduzimos a chance de erros. Além disso, um código claro permite que outros desenvolvedores se integrem mais rapidamente ao projeto e contribuam de forma eficiente.</p>
 <p>Vamos ver alguns exemplos de nomes significativos para variáveis e métodos em código Java:</p>
 <ul>
 <li><strong>Variáveis:</strong></li>
@@ -99,7 +79,7 @@
 <p>- <em>calcularMedia</em>: em vez de calc para calcular a média de notas.</p>
 <p>- <em>buscarUsuarioPorId</em>: em vez de getUser para obter um usuário pelo ID.</p>
 <p>Os nomes significativos devem ser descritivos e refletir o propósito da variável ou método. Isso torna o código mais legível e facilita a manutenção.</p>
-<p>__3. Manutenibilidade: __</p>
+<p><strong>3. Manutenibilidade:</strong></p>
 <p>Escrever código que seja fácil de manter e atualizar envolve algumas práticas essenciais. Primeiro, divida seu código em componentes menores e modulares, cada um com uma única responsabilidade. Isso aumenta a legibilidade e a reutilização. Além disso, mantenha uma indentação e espaçamento consistentes para facilitar a leitura. Com essas abordagens, você terá um código organizado e escalável.</p>
 <p>Melhorar a legibilidade do código é essencial para facilitar a manutenção e colaboração. Vamos ver mais algumas dicas:</p>
 <ul>
@@ -113,9 +93,9 @@
 <p>- Adicione comentários explicativos para partes complexas do código.</p>
 <p>- Descreva o propósito de funções e blocos de código.</p>
 <ul>
-<li><strong>Formatação Consistente:</strong> </li>
+<li><strong>Formatação Consistente:</strong></li>
 </ul>
-<p>- Mantenha uma indentação uniforme. </p>
+<p>- Mantenha uma indentação uniforme.</p>
 <p>- Use espaços consistentemente (por exemplo, após vírgulas e operadores).</p>
 <ul>
 <li><strong>Evite Duplicação:</strong></li>
@@ -128,242 +108,225 @@
 <p>- Divida seu código em módulos com funções específicas.</p>
 <p>- Siga o princípio da responsabilidade única.</p>
 <p>Saibam que a legibilidade é subjetiva, mas seguir essas práticas ajuda a tornar seu código mais claro e compreensível.</p>
-<p>__4. Reutilização de Código: __</p>
+<p><strong>4. Reutilização de Código:</strong></p>
 <p>A reutilização de código é fundamental no desenvolvimento Java. Ao criar componentes reutilizáveis, você evita duplicações, melhora a organização e facilita a manutenção. Essa prática permite que partes do código sejam compartilhadas entre projetos ou dentro do mesmo projeto, economizando tempo e esforço. Além disso, componentes bem projetados promovem escalabilidade e consistência no sistema.</p>
 <p>A reutilização de código é fundamental no desenvolvimento Java. Aqui estão alguns exemplos práticos:</p>
 <ul>
 <li><strong>Herança:</strong> A herança permite que uma classe filha herde membros (atributos e métodos) da classe pai. Por exemplo, uma classe <em>Cachorro</em> pode herdar da classe <em>Animal</em>, obtendo acesso aos métodos definidos na classe pai.</li>
 </ul>
 <p>Vamos considerar um exemplo de herança em Java. Suponhamos que temos uma superclasse chamada <em>Pessoa</em>, e três subclasses: <em>Aluno</em>, <em>Funcionario</em> e <em>Professor</em>. A classe <em>Pessoa</em> possui atributos como nome, CPF e data de nascimento. As subclasses herdam esses atributos da superclasse e podem adicionar características específicas. Veja como implementar essas classes:</p>
-<p><img alt="" src="assets/img/2024_07_28_Boas Práticas de Desenvolvimento em Java_image11.png" /></p>
+<p><img alt="" src="temp_media/media/image3.png" />{width="5.905555555555556in" height="8.625694444444445in"}</p>
 <p>Exemplo de código Java aplicando a herança de classes.</p>
-<p>Nesse exemplo, a classe Pessoa é a superclasse, e as subclasses <em>Aluno</em>, <em>Funcionario</em> e <em>Professor</em> herdam seus atributos e métodos. Assim, podemos criar uma hierarquia de classes, tornando o código mais organizado e reutilizável. </p>
+<p>Nesse exemplo, a classe Pessoa é a superclasse, e as subclasses <em>Aluno</em>, <em>Funcionario</em> e <em>Professor</em> herdam seus atributos e métodos. Assim, podemos criar uma hierarquia de classes, tornando o código mais organizado e reutilizável.</p>
 <ul>
 <li><strong>Composição:</strong> A composição envolve criar objetos complexos combinando outros objetos mais simples. Por exemplo, uma classe Carro pode conter objetos de outras classes, como Motor, Rodas e Transmissão.</li>
 </ul>
-<p>A composição em Java é o ato de passar um objeto para outro, permitindo que eles se comuniquem e troquem informações. Imagine uma biblioteca que contém livros. Nesse exemplo, criamos uma classe Book com atributos como autor e título. Em seguida, criamos uma classe Library que tem uma referência para a lista de livros. A biblioteca usa a composição para reutilizar dados, sem duplicação de código. </p>
+<p>A composição em Java é o ato de passar um objeto para outro, permitindo que eles se comuniquem e troquem informações. Imagine uma biblioteca que contém livros. Nesse exemplo, criamos uma classe Book com atributos como autor e título. Em seguida, criamos uma classe Library que tem uma referência para a lista de livros. A biblioteca usa a composição para reutilizar dados, sem duplicação de código.</p>
 <p>Aqui está um exemplo simplificado:</p>
-<p>![Texto</p>
-<p>Descrição gerada automaticamente](img/2024_07_28_Boas Práticas de Desenvolvimento em Java_image12.png)</p>
+<p><img alt="Texto Descrição gerada automaticamente" src="temp_media/media/image4.png" />{width="5.905555555555556in" height="5.1409722222222225in"}</p>
 <p>Exemplo de código Java aplicando a composição de classes.</p>
-<p>Nesse caso, a classe Library compõe-se de objetos da classe Book, permitindo que a biblioteca gerencie sua lista de livros. </p>
+<p>Nesse caso, a classe Library compõe-se de objetos da classe Book, permitindo que a biblioteca gerencie sua lista de livros.</p>
 <ul>
-<li>__Interfaces: __Interfaces* [vide rodapé] definem contratos que as classes devem seguir. Elas permitem que diferentes classes implementem o mesmo conjunto de métodos. Por exemplo, várias classes podem implementar a interface <em>Serializable* </em>[vide rodapé] para suportar serialização.</li>
+<li><strong>Interfaces:</strong> Interfaces* [vide rodapé] definem contratos que as classes devem seguir. Elas permitem que diferentes classes implementem o mesmo conjunto de métodos. Por exemplo, várias classes podem implementar a interface <em>Serializable*</em> [vide rodapé] para suportar serialização.</li>
 </ul>
 <p>As interfaces em Java são semelhantes a classes, mas com uma diferença importante: elas contêm apenas assinaturas de métodos, campos e métodos padrão. Desde o Java 8, você também pode criar métodos padrão em interfaces.</p>
 <p>Vejamos um exemplo:</p>
-<p>![Interface gráfica do usuário, Texto, Email</p>
-<p>Descrição gerada automaticamente](img/2024_07_28_Boas Práticas de Desenvolvimento em Java_image15.png)</p>
+<p><img alt="Interface gráfica do usuário, Texto, Email Descrição gerada automaticamente" src="temp_media/media/image5.png" />{width="5.905555555555556in" height="3.620833333333333in"}</p>
 <p>Exemplo de código Java aplicando a implementação de interfaces.</p>
 <p>Neste exemplo, criamos a interface <em>ReprodutorMusical</em> com um método reproduzir. A classe <em>Smartphone</em> implementa essa interface e fornece uma implementação para o método reproduzir. Observe que chamamos o método estático comercial diretamente da interface, não da classe que a implementa.</p>
 <ul>
-<li>__Bibliotecas e Frameworks: __Reutilização de bibliotecas e <em>frameworks*</em> [vide rodapé]* * existentes. Por exemplo, use a biblioteca Apache Commons para operações comuns, como manipulação de strings e coleções.</li>
+<li><strong>Bibliotecas e Frameworks:</strong> Reutilização de bibliotecas e <em>frameworks*</em> [vide rodapé] existentes. Por exemplo, use a biblioteca Apache Commons para operações comuns, como manipulação de strings e coleções.</li>
 </ul>
-<p>A biblioteca <em>Apache Commons </em>é um projeto da <em>Apache Software Foundation</em> que oferece componentes Java reutilizáveis para diversas finalidades.</p>
+<p>A biblioteca <em>Apache Commons</em> é um projeto da <em>Apache Software Foundation</em> que oferece componentes Java reutilizáveis para diversas finalidades.</p>
 <p>Vamos mostrar um exemplo de como usar o <em>Apache Commons Lang</em>, uma parte dessa biblioteca, para manipulação de strings:</p>
 <p>Para a instalação da dependência no código Java:</p>
 <p>Adicione a dependência do <em>Apache Commons Lang</em> ao seu projeto (por meio do <em>Maven</em>, <em>Gradle</em> ou manualmente). Para incluir a biblioteca <em>Apache Commons Lang</em> em um projeto Java usando o <em>Maven</em>, siga estas etapas:</p>
-<p>Vamos ver como incluir a dependência em <em>Maven</em> no arquivo <em>pom.xml</em> do seu projeto (geralmente localizado na raiz do projeto). Dentro da seção &lt;<em>dependencies</em>&gt;, adicione a seguinte dependência para o Apache Commons Lang:</p>
-<p>![Texto</p>
-<p>Descrição gerada automaticamente](img/2024_07_28_Boas Práticas de Desenvolvimento em Java_image16.png)</p>
+<p>Vamos ver como incluir a dependência em <em>Maven</em> no arquivo <em>pom.xml</em> do seu projeto (geralmente localizado na raiz do projeto). Dentro da seção \&lt;<em>dependencies</em>&gt;, adicione a seguinte dependência para o Apache Commons Lang:</p>
+<p><img alt="Texto Descrição gerada automaticamente" src="temp_media/media/image6.png" />{width="5.40625in" height="2.4375in"}</p>
 <p>Dependência Maven para a biblioteca Java Apache Commons Lang.</p>
-<p>O <em>Maven</em> baixará automaticamente a biblioteca <em>Apache Commons Lang </em>e a incluirá em seu projeto. Certifique-se de que o Maven esteja configurado corretamente e que você tenha acesso à internet para que ele possa buscar as dependências.</p>
+<p>O <em>Maven</em> baixará automaticamente a biblioteca <em>Apache Commons Lang</em> e a incluirá em seu projeto. Certifique-se de que o Maven esteja configurado corretamente e que você tenha acesso à internet para que ele possa buscar as dependências.</p>
 <p>Exemplo de Uso:</p>
-<p>![Interface gráfica do usuário, Texto, Aplicativo, Carta, Email</p>
-<p>Descrição gerada automaticamente](img/2024_07_28_Boas Práticas de Desenvolvimento em Java_image17.png)</p>
+<p><img alt="Interface gráfica do usuário, Texto, Aplicativo, Carta, Email Descrição gerada automaticamente" src="temp_media/media/image7.png" />{width="5.905555555555556in" height="3.829861111111111in"}</p>
 <p>Exemplo do código Java utilizando bibliotecas existentes.</p>
-<p>Neste exemplo, usamos métodos do <em>Apache Commons Lang</em> para verificar se uma string está vazia, capitalizar a primeira letra e remover espaços em branco. A biblioteca do <em>Apache Common</em>s, como <em>Collections</em>, para reutilizar componentes úteis em seu projeto Java. </p>
+<p>Neste exemplo, usamos métodos do <em>Apache Commons Lang</em> para verificar se uma string está vazia, capitalizar a primeira letra e remover espaços em branco. A biblioteca do <em>Apache Common</em>s, como <em>Collections</em>, para reutilizar componentes úteis em seu projeto Java.</p>
 <p>A reutilização de código promove eficiência e organização, tornando o desenvolvimento mais ágil e mantendo a qualidade do software.</p>
-<p>__5. Testabilidade: __</p>
+<p><strong>5. Testabilidade:</strong></p>
 <p>A injeção de dependência é um padrão de projeto que reduz o acoplamento entre classes, tornando o código mais flexível e testável. Em vez de depender diretamente de classes concretas, as classes utilizam abstrações (interfaces) para suas dependências. Isso permite substituir facilmente implementações durante os testes e promove organização e modularidade. No Java, frameworks como o Spring facilitam a configuração e gerenciamento das dependências. Além disso, a injeção de dependência ajuda a realizar testes unitários, substituindo dependências por objetos de teste.</p>
 <p>Para aplicar injeção de dependência em um projeto Java, você pode seguir estas etapas:</p>
 <ul>
-<li><strong>Defina suas interfaces:</strong> Comece criando interfaces para as classes que precisam de dependências. Por exemplo, se você tem uma classe <em>ServicoEmail</em>, crie uma interface <em>EmailService</em> que defina os métodos necessários.</li>
-<li>__ Implemente as classes concretas:__ Agora, crie as implementações concretas das interfaces. Por exemplo, crie uma classe <em>EmailServiceImpl</em> que implementa <em>EmailService</em>.</li>
-<li><strong>Configure o contêiner de injeção de dependência:</strong> Use um framework de injeção de dependência, como o <strong>Spring</strong>, para configurar as dependências. No <strong>Spring</strong>, você pode usar anotações como <em>@Autowired</em> para injetar automaticamente as dependências nas classes.</li>
-<li><strong>Anote suas classes com as dependências:</strong> Nas classes que precisam de dependências, adicione anotações para indicar quais objetos devem ser injetados. Por exemplo:</li>
+<li>
+<p><strong>Defina suas interfaces:</strong> Comece criando interfaces para as classes que precisam de dependências. Por exemplo, se você tem uma classe <em>ServicoEmail</em>, crie uma interface <em>EmailService</em> que defina os métodos necessários.</p>
+</li>
+<li>
+<p><strong>Implemente as classes concretas:</strong> Agora, crie as implementações concretas das interfaces. Por exemplo, crie uma classe <em>EmailServiceImpl</em> que implementa <em>EmailService</em>.</p>
+</li>
+<li>
+<p><strong>Configure o contêiner de injeção de dependência:</strong> Use um framework de injeção de dependência, como o <strong>Spring</strong>, para configurar as dependências. No <strong>Spring</strong>, você pode usar anotações como <em>\@Autowired</em> para injetar automaticamente as dependências nas classes.</p>
+</li>
+<li>
+<p><strong>Anote suas classes com as dependências:</strong> Nas classes que precisam de dependências, adicione anotações para indicar quais objetos devem ser injetados. Por exemplo:</p>
+</li>
+</ul>
+<!-- -->
+
+<ul>
 <li><strong>Teste suas classes:</strong> Agora você pode facilmente substituir as implementações de dependência por <em>mocks</em> durante os testes. Isso torna seus testes mais isolados e confiáveis.</li>
 </ul>
 <p>A injeção de dependência ajuda a manter seu código organizado, flexível e fácil de testar.</p>
-<p>__6. Encapsulamento: __</p>
+<p><strong>6. Encapsulamento:</strong></p>
 <p>O encapsulamento é um princípio fundamental na programação orientada a objetos. Ele envolve esconder os detalhes internos de uma classe e expor apenas uma interface pública bem definida. Isso oferece vários benefícios:</p>
 <ul>
-<li><strong>Abstração de complexidade:</strong> Ao ocultar os detalhes de implementação, você permite que outros desenvolvedores usem sua classe sem se preocupar com os detalhes internos. Isso simplifica o uso e promove a reutilização.</li>
-<li><strong>Manutenção e evolução:</strong> Se você precisar alterar a implementação interna da classe (por exemplo, otimizar ou corrigir bugs), a interface pública permanece a mesma. Isso evita impactos em outros componentes que dependem dela.</li>
-<li><strong>Segurança e validação:</strong> Você pode aplicar validações e restrições na interface pública para garantir que os dados sejam usados corretamente. Isso ajuda a evitar erros e comportamentos inesperados.</li>
-<li>__ Flexibilidade:__ Ao expor apenas o necessário, você permite que outras classes interajam com sua classe de maneira flexível, sem depender de detalhes específicos.</li>
+<li>
+<p><strong>Abstração de complexidade:</strong> Ao ocultar os detalhes de implementação, você permite que outros desenvolvedores usem sua classe sem se preocupar com os detalhes internos. Isso simplifica o uso e promove a reutilização.</p>
+</li>
+<li>
+<p><strong>Manutenção e evolução:</strong> Se você precisar alterar a implementação interna da classe (por exemplo, otimizar ou corrigir bugs), a interface pública permanece a mesma. Isso evita impactos em outros componentes que dependem dela.</p>
+</li>
+<li>
+<p><strong>Segurança e validação:</strong> Você pode aplicar validações e restrições na interface pública para garantir que os dados sejam usados corretamente. Isso ajuda a evitar erros e comportamentos inesperados.</p>
+</li>
+<li>
+<p><strong>Flexibilidade:</strong> Ao expor apenas o necessário, você permite que outras classes interajam com sua classe de maneira flexível, sem depender de detalhes específicos.</p>
+</li>
 </ul>
-<p>O encapsulamento é essencial para criar código modular, seguro e fácil de manter. </p>
+<p>O encapsulamento é essencial para criar código modular, seguro e fácil de manter.</p>
 <p>Para aplicar encapsulamento em Java, siga estas práticas:</p>
 <ul>
-<li><strong>Atributos privados:</strong> Declare seus atributos como private para restringir o acesso direto a eles. Isso evita que outros componentes modifiquem o estado interno da classe diretamente.</li>
-<li><strong>Métodos públicos:</strong> Exponha apenas os métodos essenciais como public. Esses métodos devem fornecer uma interface clara para interagir com os atributos da classe. Por exemplo:</li>
+<li>
+<p><strong>Atributos privados:</strong> Declare seus atributos como private para restringir o acesso direto a eles. Isso evita que outros componentes modifiquem o estado interno da classe diretamente.</p>
+</li>
+<li>
+<p><strong>Métodos públicos:</strong> Exponha apenas os métodos essenciais como public. Esses métodos devem fornecer uma interface clara para interagir com os atributos da classe. Por exemplo:</p>
+</li>
 </ul>
-<p>![Interface gráfica do usuário, Texto, chat ou mensagem de texto</p>
-<p>Descrição gerada automaticamente](img/2024_07_28_Boas Práticas de Desenvolvimento em Java_image19.png)</p>
+<p><img alt="Interface gráfica do usuário, Texto, chat ou mensagem de texto Descrição gerada automaticamente" src="temp_media/media/image8.png" />{width="5.905555555555556in" height="3.553472222222222in"}</p>
 <p>Exemplo de encapsulamento de comportamento de uma classe em Java.</p>
 <ul>
-<li><strong>Construtores controlados:</strong> Use construtores para inicializar os atributos e definir seu estado inicial. Isso ajuda a garantir que a classe esteja em um estado válido desde o início.</li>
-<li><strong>Métodos privados e protegidos:</strong> Crie métodos privados ou protegidos para implementar a lógica interna da classe. Isso mantém os detalhes de implementação ocultos.</li>
-<li><strong>Interfaces públicas claras:</strong> Documente adequadamente os métodos públicos para que outros desenvolvedores saibam como usá-los corretamente.</li>
+<li>
+<p><strong>Construtores controlados:</strong> Use construtores para inicializar os atributos e definir seu estado inicial. Isso ajuda a garantir que a classe esteja em um estado válido desde o início.</p>
+</li>
+<li>
+<p><strong>Métodos privados e protegidos:</strong> Crie métodos privados ou protegidos para implementar a lógica interna da classe. Isso mantém os detalhes de implementação ocultos.</p>
+</li>
+<li>
+<p><strong>Interfaces públicas claras:</strong> Documente adequadamente os métodos públicos para que outros desenvolvedores saibam como usá-los corretamente.</p>
+</li>
 </ul>
 <p>O encapsulamento promove a segurança, modularidade e manutenção do código.</p>
-<p>__7. Coesão e Acoplamento: __</p>
+<p><strong>7. Coesão e Acoplamento:</strong></p>
 <p>Vamos falar sobre coesão e acoplamento em Java. Esses conceitos são fundamentais para criar um código robusto e de fácil manutenção.</p>
 <ul>
-<li><strong>Coesão:</strong> Refere-se ao grau com o qual um módulo (classe, método, componente) possui uma responsabilidade única e bem definida. Códigos coesos têm membros intimamente ligados, trabalhando juntos para um objetivo comum. Manter classes coesas significa evitar funcionalidades supérfluas e garantir que cada classe tenha uma única tarefa relevante. Isso simplifica a manutenção e reduz efeitos colaterais.</li>
-<li><strong>Acoplamento:</strong> Mede o quanto um módulo depende de outros módulos. Módulos altamente acoplados são fortemente dependentes uns dos outros. Reduzir o acoplamento é essencial para criar sistemas flexíveis e compreensíveis. Classes com baixo acoplamento são mais fáceis de modificar sem afetar outras partes do código.</li>
+<li>
+<p><strong>Coesão:</strong> Refere-se ao grau com o qual um módulo (classe, método, componente) possui uma responsabilidade única e bem definida. Códigos coesos têm membros intimamente ligados, trabalhando juntos para um objetivo comum. Manter classes coesas significa evitar funcionalidades supérfluas e garantir que cada classe tenha uma única tarefa relevante. Isso simplifica a manutenção e reduz efeitos colaterais.</p>
+</li>
+<li>
+<p><strong>Acoplamento:</strong> Mede o quanto um módulo depende de outros módulos. Módulos altamente acoplados são fortemente dependentes uns dos outros. Reduzir o acoplamento é essencial para criar sistemas flexíveis e compreensíveis. Classes com baixo acoplamento são mais fáceis de modificar sem afetar outras partes do código.</p>
+</li>
 </ul>
-<p>Portanto, ao projetar suas classes em Java, busque alta coesão (responsabilidades claras) e baixo acoplamento (dependências mínimas). Isso torna o código mais modular, fácil de entender e manter. </p>
-<p>__8. Tratamento de Erros: __</p>
+<p>Portanto, ao projetar suas classes em Java, busque alta coesão (responsabilidades claras) e baixo acoplamento (dependências mínimas). Isso torna o código mais modular, fácil de entender e manter.</p>
+<p><strong>8. Tratamento de Erros:</strong></p>
 <p>O tratamento de erros em Java é crucial para criar código robusto e legível. Aqui estão algumas boas práticas:</p>
 <ul>
-<li><strong>Use exceções apropriadamente:</strong> Capture exceções apenas quando você pode lidar com elas de maneira útil. Evite capturar exceções genéricas como <em>Exception</em> ou <em>Throwable</em>, pois isso pode mascarar bugs e dificultar a depuração.</li>
-<li><strong>Trate erros específicos:</strong> Identifique exceções específicas que podem ocorrer (por exemplo, <em>NullPointerException</em>, <em>IOException</em>) e trate cada uma delas separadamente. Isso torna o código mais claro e facilita a manutenção.</li>
-<li><strong>Não ignore exceções:</strong> Evite usar blocos <em>try-catch</em> vazios ou simplesmente imprimir mensagens de erro. Sempre tome alguma ação apropriada, como registrar logs ou notificar o usuário.</li>
-<li><strong>Use try-with-resources:</strong> Para recursos que precisam ser fechados (como arquivos ou conexões de banco de dados), utilize o bloco <em>try-with-resources</em> para garantir o fechamento automático e evitar vazamentos.</li>
+<li>
+<p><strong>Use exceções apropriadamente:</strong> Capture exceções apenas quando você pode lidar com elas de maneira útil. Evite capturar exceções genéricas como <em>Exception</em> ou <em>Throwable</em>, pois isso pode mascarar bugs e dificultar a depuração.</p>
+</li>
+<li>
+<p><strong>Trate erros específicos:</strong> Identifique exceções específicas que podem ocorrer (por exemplo, <em>NullPointerException</em>, <em>IOException</em>) e trate cada uma delas separadamente. Isso torna o código mais claro e facilita a manutenção.</p>
+</li>
+<li>
+<p><strong>Não ignore exceções:</strong> Evite usar blocos <em>try-catch</em> vazios ou simplesmente imprimir mensagens de erro. Sempre tome alguma ação apropriada, como registrar logs ou notificar o usuário.</p>
+</li>
+<li>
+<p><strong>Use try-with-resources:</strong> Para recursos que precisam ser fechados (como arquivos ou conexões de banco de dados), utilize o bloco <em>try-with-resources</em> para garantir o fechamento automático e evitar vazamentos.</p>
+</li>
 </ul>
 <p>Um tratamento de erros bem pensado melhora a qualidade do código e facilita a manutenção.</p>
 <p>Vamos criar e lançar uma exceção personalizada em Java, siga estas etapas:</p>
 <ol>
-<li>Criando uma exceção personalizada:</li>
-<li>Dentro de uma classe que herde de <em>Exception</em> (ou <em>RuntimeException</em> para exceções não verificadas).</li>
-<li>Adicione construtores para definir mensagens de erro e, se necessário, encadear exceções.</li>
+<li>
+<p>Criando uma exceção personalizada:</p>
+</li>
+<li>
+<p>Dentro de uma classe que herde de <em>Exception</em> (ou <em>RuntimeException</em> para exceções não verificadas).</p>
+</li>
+<li>
+<p>Adicione construtores para definir mensagens de erro e, se necessário, encadear exceções.</p>
+</li>
 </ol>
 <p>Por exemplo:</p>
-<p><img alt="" src="assets/img/2024_07_28_Boas Práticas de Desenvolvimento em Java_image20.png" /></p>
+<p><img alt="" src="temp_media/media/image9.png" />{width="5.905555555555556in" height="2.0965277777777778in"}</p>
 <p>Exemplo de uma classe para criação de um exceção específica.</p>
 <p>Lance a exceção e dentro do código, use a palavra-chave throw para lançar sua exceção personalizada.</p>
 <p>Por exemplo:</p>
-<p>![Interface gráfica do usuário, Texto, Aplicativo</p>
-<p>Descrição gerada automaticamente](img/2024_07_28_Boas Práticas de Desenvolvimento em Java_image21.png)</p>
+<p><img alt="Interface gráfica do usuário, Texto, Aplicativo Descrição gerada automaticamente" src="temp_media/media/image10.png" />{width="5.905555555555556in" height="1.6368055555555556in"}</p>
 <p>Exemplo de código Java para lançamento de uma exceção de erro específica.</p>
 <p>Trate a exceção e em outro lugar do código, onde você chama o método <em>verificarNumero</em>, use um bloco <em>try-catch</em> para tratar a exceção.</p>
 <p>Por exemplo:</p>
-<p>![Uma imagem contendo Linha do tempo</p>
-<p>Descrição gerada automaticamente](img/2024_07_28_Boas Práticas de Desenvolvimento em Java_image1.png)</p>
+<p><img alt="Uma imagem contendo Linha do tempo Descrição gerada automaticamente" src="temp_media/media/image11.png" />{width="5.905555555555556in" height="1.6368055555555556in"}</p>
 <p>Exemplo de código Java para captura de uma exceção de erro.</p>
 <p>Ao criar exceções personalizadas ajuda a identificar e tratar erros específicos em seu código.</p>
 <p>Exemplo completo:</p>
-<p>![Interface gráfica do usuário, Texto, Aplicativo, Email</p>
-<p>Descrição gerada automaticamente](img/2024_07_28_Boas Práticas de Desenvolvimento em Java_image10.png)</p>
+<p><img alt="Interface gráfica do usuário, Texto, Aplicativo, Email Descrição gerada automaticamente" src="temp_media/media/image12.png" />{width="5.905555555555556in" height="4.409722222222222in"}</p>
 <p>Exemplo completo de um código Java com tratamento de erro.</p>
-<p>Nesta classe o método <em>NumeroNegativoException</em> é a exceção personalizada, e o método <em>verificarNumero</em> verifica se um número é negativo e lança a exceção personalizada se necessário. E no método <em>main</em>, estamos testando a exceção e tratando-a com um bloco <em>try-catch</em>. </p>
-<p>__9. Documentação e Comentários: __</p>
+<p>Nesta classe o método <em>NumeroNegativoException</em> é a exceção personalizada, e o método <em>verificarNumero</em> verifica se um número é negativo e lança a exceção personalizada se necessário. E no método <em>main</em>, estamos testando a exceção e tratando-a com um bloco <em>try-catch</em>.</p>
+<p><strong>9. Documentação e Comentários:</strong></p>
 <p>A documentação de código é a espinha dorsal que sustenta a manutenção, escalabilidade e colaboração eficaz em projetos Java. Comentários bem elaborados são essenciais para descrever o propósito, a lógica por trás do código e sua funcionalidade. Eles devem ser escritos de maneira clara, concisa e sem ambiguidades, utilizando uma linguagem simples e direta para facilitar a compreensão tanto para membros atuais da equipe quanto para futuros desenvolvedores. Além disso, documentar funções e métodos, padronizar o estilo, usar exemplos significativos e manter a documentação atualizada são práticas essenciais para garantir que o código permaneça robusto e fácil de entender.</p>
-<p>__10. Refatoração Contínua: __</p>
+<p><strong>10. Refatoração Contínua:</strong></p>
 <p>A refatoração contínua é uma prática essencial para manter a qualidade e a performance do código em projetos Java. Ela envolve a revisão constante do código existente, com o objetivo de aprimorar sua estrutura, legibilidade e eficiência. Ao refatorar regularmente, evitamos a acumulação de dívida técnica, reduzimos a complexidade e facilitamos a manutenção. Além disso, a refatoração permite que o código se adapte às mudanças contínuas nos requisitos e no ambiente, garantindo um software mais robusto e sustentável a longo prazo.</p>
-<p>__11. Princípios de Design Orientado a Objetos: __</p>
+<p><strong>11. Princípios de Design Orientado a Objetos:</strong></p>
 <p>Vamos resumir os princípios de design orientado a objetos de forma concisa:</p>
 <ul>
-<li><strong>Herança:</strong> A herança permite que uma classe herde características e comportamentos de outra classe. É útil quando várias classes compartilham funcionalidades semelhantes. No entanto, use-a com moderação para evitar hierarquias complexas e rígidas.</li>
-<li><strong>Polimorfismo:</strong> O polimorfismo permite que objetos de diferentes classes sejam tratados de maneira uniforme. Isso é alcançado por meio de interfaces, classes abstratas e sobrescrita de métodos. Use-o para criar código flexível e extensível.</li>
-<li><strong>Composição:</strong> A composição envolve criar classes complexas combinando outras classes menores (componentes). Em vez de herdar tudo, você compõe objetos com base em suas necessidades específicas. Isso promove reutilização e modularidade.</li>
+<li>
+<p><strong>Herança:</strong> A herança permite que uma classe herde características e comportamentos de outra classe. É útil quando várias classes compartilham funcionalidades semelhantes. No entanto, use-a com moderação para evitar hierarquias complexas e rígidas.</p>
+</li>
+<li>
+<p><strong>Polimorfismo:</strong> O polimorfismo permite que objetos de diferentes classes sejam tratados de maneira uniforme. Isso é alcançado por meio de interfaces, classes abstratas e sobrescrita de métodos. Use-o para criar código flexível e extensível.</p>
+</li>
+<li>
+<p><strong>Composição:</strong> A composição envolve criar classes complexas combinando outras classes menores (componentes). Em vez de herdar tudo, você compõe objetos com base em suas necessidades específicas. Isso promove reutilização e modularidade.</p>
+</li>
 </ul>
 <p>Saiba como aplicar esses princípios de forma equilibrada, mantendo o código legível, flexível e fácil de manter.</p>
 <p><strong>12. Conclusão</strong></p>
 <p>Neste artigo, exploramos conceitos essenciais para desenvolvedores Java que desejam elevar a qualidade do código e adotar boas práticas. Lembre-se de aplicar herança, polimorfismo e composição de forma equilibrada, documentar seu código de maneira clara e concisa, refatorar continuamente para evitar dívidas técnicas e tratar erros de forma robusta. Testabilidade e injeção de dependência também são fundamentais para criar sistemas flexíveis e sustentáveis.</p>
 <p>À medida que você avança em sua jornada de desenvolvimento, lembre-se de que a busca constante por conhecimento e a aplicação diligente desses princípios farão de você um desenvolvedor mais habilidoso e confiante.</p>
-<p>Continue "codando" com paixão e curiosidade, e bons conceitos sempre estarão ao seu lado!</p>
-<p>Até a próxima! </p>
+<p>Continue \"codando\" com paixão e curiosidade, e bons conceitos sempre estarão ao seu lado!</p>
+<p>Até a próxima!</p>
+<hr />
 <p>Notas:</p>
 <ul>
-<li><strong>Frameworks</strong> em Java são estruturas pré-fabricadas de código que oferecem funcionalidades reutilizáveis para agilizar e padronizar o desenvolvimento de aplicações. Eles permitem que os desenvolvedores se concentrem na lógica de negócios específica da aplicação, em vez de reescrever código comum. Alguns exemplos populares incluem o <strong>Spring</strong>, que simplifica o desenvolvimento de aplicativos empresariais, e o <strong>Hibernate</strong>, que abstrai a persistência de dados.</li>
-<li>Uma <strong>interface</strong>, em linguagem Java, é semelhante a uma classe, mas com uma diferença importante: ela contém apenas assinaturas de métodos, campos e métodos padrão. Desde o Java 8, você também pode criar métodos padrão em interfaces. Uma classe que implementa uma interface deve fornecer implementações para todos os métodos declarados na interface. As interfaces são usadas para definir um padrão a ser seguido por classes em um determinado contexto, permitindo o polimorfismo e a reutilização de código.</li>
-<li>Implementar a interface <strong>Serializable</strong>, em linguagem Java, é um passo importante para permitir que objetos de uma classe sejam serializados e de serializados. A serialização envolve salvar o estado atual dos objetos em arquivos no formato binário, permitindo que esse estado seja recuperado posteriormente, recriando o objeto em memória exatamente como estava no momento da serialização. Para que um objeto possa ser serializado e de serializado, sua classe deve implementar a interface Serializable. Essa interface sinaliza à máquina virtual Java (JVM) que os objetos dessa classe estão aptos para a serialização. Caso você não deseje serializar um atributo específico de instância, basta marcá-lo como transient, e o objeto serializado não conterá informações referentes a esse atributo.</li>
+<li>
+<p><strong>Frameworks</strong> em Java são estruturas pré-fabricadas de código que oferecem funcionalidades reutilizáveis para agilizar e padronizar o desenvolvimento de aplicações. Eles permitem que os desenvolvedores se concentrem na lógica de negócios específica da aplicação, em vez de reescrever código comum. Alguns exemplos populares incluem o <strong>Spring</strong>, que simplifica o desenvolvimento de aplicativos empresariais, e o <strong>Hibernate</strong>, que abstrai a persistência de dados.</p>
+</li>
+<li>
+<p>Uma <strong>interface</strong>, em linguagem Java, é semelhante a uma classe, mas com uma diferença importante: ela contém apenas assinaturas de métodos, campos e métodos padrão. Desde o Java 8, você também pode criar métodos padrão em interfaces. Uma classe que implementa uma interface deve fornecer implementações para todos os métodos declarados na interface. As interfaces são usadas para definir um padrão a ser seguido por classes em um determinado contexto, permitindo o polimorfismo e a reutilização de código.</p>
+</li>
+<li>
+<p>Implementar a interface <strong>Serializable</strong>, em linguagem Java, é um passo importante para permitir que objetos de uma classe sejam serializados e de serializados. A serialização envolve salvar o estado atual dos objetos em arquivos no formato binário, permitindo que esse estado seja recuperado posteriormente, recriando o objeto em memória exatamente como estava no momento da serialização. Para que um objeto possa ser serializado e de serializado, sua classe deve implementar a interface Serializable. Essa interface sinaliza à máquina virtual Java (JVM) que os objetos dessa classe estão aptos para a serialização. Caso você não deseje serializar um atributo específico de instância, basta marcá-lo como transient, e o objeto serializado não conterá informações referentes a esse atributo.</p>
+</li>
 </ul>
-            </div>
-            
-            <footer class="article-footer">
-                <div class="article-author-bio">
-                    <h3>Sobre o Autor</h3>
-                    <p><strong>Christian Mulato</strong> é Desenvolvedor Java Sênior especializado em arquiteturas escaláveis e microsserviços. 
-                    Com experiência em Spring Boot, Docker, APIs REST e sistemas distribuídos.</p>
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank" class="author-link">
-                        Conecte-se no LinkedIn
-                    </a>
                 </div>
                 
-                <div class="article-navigation">
-                    <a href="../index.html" class="back-link">← Voltar aos artigos</a>
-                </div>
-            </footer>
-        </article>
+                <footer class="post-footer">
+                    <div class="author-info">
+                        <img src="assets/img/2024_07_28_boas_praticas_de_desenvolvimento_em_java_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <div class="author-details">
+                            <strong>Christian Mulato</strong>
+                            <p>Desenvolvedor Java e Arquiteto de Software</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
     </main>
-    
+
     <footer class="site-footer">
-        <div class="footer-container">
+        <div class="container">
             <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Christian Mulato</h3>
-                <p>Desenvolvedor Java Sênior especializado em Spring Boot, APIs REST e arquitetura de microsserviços.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/chmulato" target="_blank">GitHub</a>
-                <a href="../index.html">Artigos</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    
-    <!-- Theme Toggle Button -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-        <span id="themeIcon">🌙</span>
-    </button>
-    
-    <script>
-        // Tema manager
-        class ThemeManager {
-            constructor() {
-                this.themeToggle = document.getElementById('themeToggle');
-                this.themeIcon = document.getElementById('themeIcon');
-                this.init();
-            }
-            
-            init() {
-                const savedTheme = localStorage.getItem('theme');
-                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                const currentTheme = savedTheme || systemTheme;
-                
-                this.setTheme(currentTheme);
-                this.updateIcon(currentTheme);
-                
-                this.themeToggle.addEventListener('click', () => this.toggleTheme());
-            }
-            
-            toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                this.setTheme(newTheme);
-                this.updateIcon(newTheme);
-                localStorage.setItem('theme', newTheme);
-            }
-            
-            setTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-            
-            updateIcon(theme) {
-                this.themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-                this.themeToggle.setAttribute('aria-label', 
-                    theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
-            }
-        }
-        
-        // Inicializar quando DOM carregar
-        document.addEventListener('DOMContentLoaded', () => {
-            new ThemeManager();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-

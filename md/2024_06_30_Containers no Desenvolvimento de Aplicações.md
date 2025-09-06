@@ -1,10 +1,10 @@
-![Desenvolvimento de aplicações Java com Containers](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Desenvolvimento de aplicações Java com Containers](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Desenvolvimento de aplicações Java com Containers
 
 **Containers no Desenvolvimento de Aplicações**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -68,7 +68,7 @@ Para um exemplo prático, suponha que você esteja criando uma aplicação Sprin
 
 Crie um arquivo chamado *Dockerfile* na raiz do seu projeto Java.
 
-![](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="2.75in"}
+![](temp_media/media/image3.png){width="5.905555555555556in" height="2.75in"}
 
 Exemplo de um dockerfile para um ambiente Java 11 OpenJDK
 
@@ -94,7 +94,7 @@ Execute o comando *docker build -t minha-aplicacao .* para criar a imagem do con
 
 Crie um arquivo YAML *docker-compose.yml*.
 
-![](c:\dev\personal_articles\md\media/media/image4.png){width="5.905555555555556in" height="4.79375in"}
+![](temp_media/media/image4.png){width="5.905555555555556in" height="4.79375in"}
 
 Exemplo de um arquivo YAML docker-compose.yml
 

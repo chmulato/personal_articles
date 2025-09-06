@@ -1,10 +1,10 @@
-![O recurso computacional e os conceitos entre Stateless e Stateful.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3270833333333334in"}
+![O recurso computacional e os conceitos entre Stateless e Stateful.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3270833333333334in"}
 
 O recurso computacional e os conceitos entre Stateless e Stateful.
 
 **O Recurso Computacional**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -30,7 +30,7 @@ A especificação Java EE trata o estado stateless de maneira interessante. Vamo
 
 \- Stateless Session Beans: Esses beans não mantêm um estado de conversação com o pedido. Quando um pedido invoca os métodos de um bean stateless, as variáveis de instância do bean podem conter um estado específico para aquele pedido, mas apenas durante a duração da invocação. Após a conclusão do método, o estado específico do pedido não deve ser retido.
 
-![](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="3.7444444444444445in"}
+![](temp_media/media/image3.png){width="5.905555555555556in" height="3.7444444444444445in"}
 
 Exemplo esquemático em camada de classes em Java EE com acesso a um recurso Stateless
 

@@ -1,10 +1,10 @@
-![A produtividade está diretamente relacionada com alguns fatores.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.317361111111111in"}
+![A produtividade está diretamente relacionada com alguns fatores.](temp_media/media/image1.png){width="5.905555555555556in" height="3.317361111111111in"}
 
 A produtividade está diretamente relacionada com alguns fatores.
 
 **Produtividade versus Renda.**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
@@ -28,7 +28,7 @@ No entanto, é importante notar que muitos outros fatores também podem influenc
 
 ------------------------------------------------------------------------
 
-![](c:\dev\personal_articles\md\media/media/image3.jpeg){width="5.905555555555556in" height="5.905555555555556in"}
+![](temp_media/media/image3.jpeg){width="5.905555555555556in" height="5.905555555555556in"}
 
 A tecnologia de Informação está diretamente ligada a produtividade.
 

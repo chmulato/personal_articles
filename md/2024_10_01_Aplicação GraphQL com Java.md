@@ -1,10 +1,10 @@
-![Aplicação GraphQL com Java](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Aplicação GraphQL com Java](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Aplicação GraphQL com Java
 
 **Aplicação de GraphQL com Java**
 
-[![Christian Mulato](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/?lipi=urn%3Ali%3Apage%3Ad_flagship3_pulse_read%3Bau%2B4ptncQ7WWyVPxchNtJA%3D%3D)
 
@@ -36,7 +36,7 @@ Aqui estão os passos básicos:
 
 **Integração com Banco de Dados:** Conecte seu servidor *GraphQL* a um banco de dados para buscar e manipular dados conforme necessário.
 
-![Texto Descrição gerada automaticamente](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="4.010416666666667in"}
+![Texto Descrição gerada automaticamente](temp_media/media/image3.png){width="5.905555555555556in" height="4.010416666666667in"}
 
 Exemplo de código Java para utilização GraphQL
 

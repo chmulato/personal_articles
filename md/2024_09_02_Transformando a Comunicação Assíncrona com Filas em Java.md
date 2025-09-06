@@ -1,4 +1,4 @@
-![Imagem de capa do artigo](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Imagem de capa do artigo](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 **Transformando a Comunicação Assíncrona com Filas em Java**
 
@@ -16,25 +16,25 @@ Aqui estão alguns exemplos práticos de uso das classes *Queue*, *LinkedList* e
 
 **1. Filas de Impressão:** Utilizando *LinkedList* para gerenciar uma fila de documentos a serem impressos, onde os documentos são processados na ordem em que foram adicionados.
 
-![](c:\dev\personal_articles\md\media/media/image2.png){width="5.905555555555556in" height="1.275in"}
+![](temp_media/media/image2.png){width="5.905555555555556in" height="1.275in"}
 
 Método em linguagem Java para gerenciamento de filas de Impressão.
 
 **2. Processamento de Tarefas Assíncronas:** Usando *LinkedList* para gerenciar tarefas que precisam ser executadas em segundo plano.
 
-![](c:\dev\personal_articles\md\media/media/image3.png){width="5.905555555555556in" height="1.275in"}
+![](temp_media/media/image3.png){width="5.905555555555556in" height="1.275in"}
 
 Método em linguagem Java para gerenciamento de filas de tarefas agendadas.
 
 **3. Gerenciamento de Threads:** Utilizando *PriorityQueue* para gerenciar threads com diferentes prioridades.
 
-![](c:\dev\personal_articles\md\media/media/image4.png){width="5.905555555555556in" height="3.79375in"}
+![](temp_media/media/image4.png){width="5.905555555555556in" height="3.79375in"}
 
 Método em linguagem Java para gerenciamento de filas de tarefas concorrentes.
 
 **4. Sistemas de Mensagens:** Usando *LinkedList* para gerenciar mensagens em um sistema de chat, garantindo que as mensagens sejam processadas na ordem correta.
 
-![](c:\dev\personal_articles\md\media/media/image5.png){width="5.905555555555556in" height="0.8569444444444444in"}
+![](temp_media/media/image5.png){width="5.905555555555556in" height="0.8569444444444444in"}
 
 Método em linguagem Java para gerenciamento de filas.
 
@@ -56,19 +56,19 @@ Para usar o ***RabbitMQ Java Client*** em seu projeto, siga estes passos:
 
 **1. Adicionar a Dependência:** Se você estiver usando *Maven*, adicione a dependência do ***RabbitMQ Java Client*** ao seu pom.xml:
 
-![](c:\dev\personal_articles\md\media/media/image6.png){width="4.333333333333333in" height="1.0729166666666667in"}
+![](temp_media/media/image6.png){width="4.333333333333333in" height="1.0729166666666667in"}
 
 Arquivo XM do Maven para incluir a dependência do Rabbit MQ.
 
 **2. Configurar a Conexão:** Crie uma conexão com o servidor *RabbitMQ*:
 
-![](c:\dev\personal_articles\md\media/media/image7.png){width="5.905555555555556in" height="2.7736111111111112in"}
+![](temp_media/media/image7.png){width="5.905555555555556in" height="2.7736111111111112in"}
 
 Classe Java para conexão com o Rabbit MQ para enviar mensagens.
 
 **3. Consumir Mensagens:** Crie um consumidor para receber mensagens da fila:
 
-![](c:\dev\personal_articles\md\media/media/image8.png){width="5.905555555555556in" height="2.6590277777777778in"}
+![](temp_media/media/image8.png){width="5.905555555555556in" height="2.6590277777777778in"}
 
 Classe Java para conexão com o Rabbit MQ para receber mensagens.
 
@@ -80,19 +80,19 @@ Para usar a ***Kafka Java API*** em seu projeto, siga estes passos:
 
 **1. Adicionar a Dependência:** Se você estiver usando *Maven*, adicione a dependência do Kafka ao seu pom.xml:
 
-![](c:\dev\personal_articles\md\media/media/image9.png){width="4.541666666666667in" height="1.0416666666666667in"}
+![](temp_media/media/image9.png){width="4.541666666666667in" height="1.0416666666666667in"}
 
 Arquivo XM do *Maven* para incluir a dependência do Kafka.
 
 **2. Configurar o Produtor:** Crie um produtor para enviar mensagens ao *Kafka*:
 
-![](c:\dev\personal_articles\md\media/media/image10.png){width="5.905555555555556in" height="2.3020833333333335in"}
+![](temp_media/media/image10.png){width="5.905555555555556in" height="2.3020833333333335in"}
 
 Classe Java para conexão com o Kafka para enviar mensagens.
 
 **3. Configurar o Consumidor:** Crie um consumidor para receber mensagens do *Kafka*:
 
-![](c:\dev\personal_articles\md\media/media/image11.png){width="5.905555555555556in" height="2.7305555555555556in"}
+![](temp_media/media/image11.png){width="5.905555555555556in" height="2.7305555555555556in"}
 
 Classe Java para conexão com o Kafka para receber mensagens.
 
@@ -112,19 +112,19 @@ Aqui está um exemplo básico usando *RabbitMQ*:
 
 **2. Configurar a Fila Principal com *Dead-Letter Exchange*:** Configure a fila principal para redirecionar mensagens falhadas para a *fila de dead-letter*.
 
-![](c:\dev\personal_articles\md\media/media/image12.png){width="5.905555555555556in" height="0.7513888888888889in"}
+![](temp_media/media/image12.png){width="5.905555555555556in" height="0.7513888888888889in"}
 
 Método de comunicação de fila.
 
 **3. Consumir Mensagens com Tratamento de Erros:** Implemente o consumidor para processar mensagens e redirecionar falhas.
 
-![](c:\dev\personal_articles\md\media/media/image13.png){width="5.905555555555556in" height="1.7777777777777777in"}
+![](temp_media/media/image13.png){width="5.905555555555556in" height="1.7777777777777777in"}
 
 Exemplo de código Java para tratamento de erro.
 
 **4. Reprocessar Mensagens da *Fila de Dead-Letter*:** Crie um consumidor para reprocessar mensagens da fila de *dead-letter*.
 
-![](c:\dev\personal_articles\md\media/media/image14.png){width="5.905555555555556in" height="1.5638888888888889in"}
+![](temp_media/media/image14.png){width="5.905555555555556in" height="1.5638888888888889in"}
 
 Exemplo de código Java para tratamento de erro.
 
@@ -166,19 +166,19 @@ Passos para Implementação
 
 **1. Adicionar Dependência do RabbitMQ:** Adicione a dependência do RabbitMQ ao seu projeto Maven:
 
-![](c:\dev\personal_articles\md\media/media/image15.png){width="4.458333333333333in" height="1.03125in"}
+![](temp_media/media/image15.png){width="4.458333333333333in" height="1.03125in"}
 
 Arquivo XM do Maven para incluir a dependência do Rabbit MQ.
 
 **2. Configurar a Conexão com *RabbitMQ*:** Crie uma conexão com o servidor *RabbitMQ*:
 
-![](c:\dev\personal_articles\md\media/media/image16.png){width="5.905555555555556in" height="2.8444444444444446in"}
+![](temp_media/media/image16.png){width="5.905555555555556in" height="2.8444444444444446in"}
 
 Exemplo de código Java com conexão de fila para envio de mensagem.
 
 **3. Consumir Mensagens da Fila:** Crie um consumidor para processar os pedidos:
 
-![](c:\dev\personal_articles\md\media/media/image17.png){width="5.905555555555556in" height="2.8180555555555555in"}
+![](temp_media/media/image17.png){width="5.905555555555556in" height="2.8180555555555555in"}
 
 Exemplo de código Java com conexão de fila para recibo de mensagem.
 

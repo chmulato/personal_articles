@@ -1,10 +1,10 @@
-![Representação de um engenheiro químico utilizando ferramentas digitais e inteligência artificial em ambiente.](c:\dev\personal_articles\md\media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
+![Representação de um engenheiro químico utilizando ferramentas digitais e inteligência artificial em ambiente.](temp_media/media/image1.png){width="5.905555555555556in" height="3.3222222222222224in"}
 
 Representação de um engenheiro químico utilizando ferramentas digitais e inteligência artificial em ambiente.
 
 **Inteligência Artificial na Engenharia Química: Uma Nova Ferramenta para Resolver Problemas Clássicos com Agilidade e Precisão**
 
-[![Christian Mulato, #OPEN_TO_WORK](c:\dev\personal_articles\md\media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato, #OPEN_TO_WORK](temp_media/media/image2.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato **](https://www.linkedin.com/in/chmulato/)
 
