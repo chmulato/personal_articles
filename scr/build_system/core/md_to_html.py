@@ -147,6 +147,44 @@ class MarkdownToHtmlConverter:
         
         return content
     
+    def fix_html_image_paths(self, html_content: str, article_filename: str) -> str:
+        """
+        Corrige os caminhos das imagens no HTML gerado.
+        
+        Args:
+            html_content (str): Conteúdo HTML
+            article_filename (str): Nome do arquivo do artigo (sem extensão)
+            
+        Returns:
+            str: HTML com caminhos de imagem corrigidos
+        """
+        # Extrair data do nome do arquivo
+        date_match = re.search(r'(\d{4})_(\d{2})_(\d{2})', article_filename)
+        if not date_match:
+            logger.warning(f"Não foi possível extrair data de {article_filename}")
+            return html_content
+            
+        year, month, day = date_match.groups()
+        date_prefix = f"{year}_{month}_{day}"
+        
+        # Padrão para encontrar imagens temp_media
+        temp_media_pattern = r'src="temp_media[/\\][^"]*?[/\\]assets[/\\]img[/\\](\d{4}_\d{2}_\d{2}_IMAGE_\d{3}\.\w+)"'
+        
+        def replace_image_path(match):
+            image_name = match.group(1)
+            new_path = f'assets/img/{image_name}'
+            logger.debug(f"Corrigindo caminho da imagem: {match.group(0)} → src=\"{new_path}\"")
+            return f'src="{new_path}"'
+        
+        # Substituir os caminhos das imagens
+        corrected_html = re.sub(temp_media_pattern, replace_image_path, html_content)
+        
+        # Também corrigir variações com barras normais
+        temp_media_pattern2 = r'src="temp_media/[^"]*/assets/img/(\d{4}_\d{2}_\d{2}_IMAGE_\d{3}\.\w+)"'
+        corrected_html = re.sub(temp_media_pattern2, replace_image_path, corrected_html)
+        
+        return corrected_html
+    
     def generate_article_metadata(self, article_info: Dict, frontmatter: Dict) -> Dict:
         """
         Gera metadados completos para o artigo.
@@ -231,6 +269,9 @@ class MarkdownToHtmlConverter:
                 **metadata
             )
             
+            # Corrige caminhos das imagens no HTML gerado
+            full_html = self.fix_html_image_paths(full_html, md_file.stem)
+            
             # Salva arquivo HTML
             html_file = article_info['html_file']
             with open(html_file, 'w', encoding='utf-8') as f:
@@ -286,3 +327,57 @@ class MarkdownToHtmlConverter:
                 results['failed'].append(md_file)
         
         return results
+    
+    def convert_markdown_to_html(self, md_file_path: str) -> bool:
+        """
+        Converte um arquivo Markdown para HTML com correção automática de imagens.
+        
+        Args:
+            md_file_path (str): Caminho para o arquivo MD
+            
+        Returns:
+            bool: True se a conversão foi bem-sucedida
+        """
+        try:
+            md_file = Path(md_file_path)
+            if not md_file.exists():
+                logger.error(f"Arquivo MD não encontrado: {md_file}")
+                return False
+            
+            # Extrair informações básicas do arquivo
+            filename_stem = md_file.stem
+            
+            # Criar informações básicas do artigo
+            article_info = {
+                'title': extract_title_from_filename(filename_stem),
+                'date_iso': '2024-01-01',  # Data padrão, será extraída do nome
+                'date_formatted': '1 de Janeiro de 2024',
+                'normalized_name': filename_stem,
+                'html_file': ARTICLES_DIR / f"{filename_stem}.html",
+                'md_file': md_file
+            }
+            
+            # Extrair data do nome do arquivo se possível
+            date_match = re.search(r'(\d{4})_(\d{2})_(\d{2})', filename_stem)
+            if date_match:
+                year, month, day = date_match.groups()
+                try:
+                    date_obj = datetime(int(year), int(month), int(day))
+                    article_info['date_iso'] = date_obj.strftime('%Y-%m-%d')
+                    article_info['date_formatted'] = date_obj.strftime('%d de %B de %Y')
+                except:
+                    pass
+            
+            # Converter usando o método principal
+            html_file = self.convert_to_html(md_file, article_info)
+            
+            if html_file:
+                logger.info(f"Conversão bem-sucedida: {filename_stem}")
+                return True
+            else:
+                logger.error(f"Falha na conversão: {filename_stem}")
+                return False
+                
+        except Exception as e:
+            logger.error(f"Erro na conversão MD→HTML para {md_file_path}: {e}")
+            return False
