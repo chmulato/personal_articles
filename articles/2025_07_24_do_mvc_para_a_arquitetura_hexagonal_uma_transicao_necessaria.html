@@ -37,11 +37,9 @@
                 </header>
                 
                 <div class="post-content">
-                    <p><img alt="Do MVC para a Arquitetura Hexagonal." src="assets/img/2025_07_24_IMAGE_001.png" />{width="5.905555555555556in" height="3.3222222222222224in"}</p>
+                    <p><img alt="Do MVC para a Arquitetura Hexagonal." src="assets/img/2025_07_24_IMAGE_001.png" /></p>
 <p>Do MVC para a Arquitetura Hexagonal.</p>
-<p><strong>Do MVC para a Arquitetura Hexagonal: Uma Transição Necessária</strong></p>
-<p><a href="https://www.linkedin.com/in/chmulato/"><img alt="Christian Mulato, #OPEN_TO_WORK" src="assets/img/2025_07_24_IMAGE_002.jpeg" />{width="1.0416666666666667in" height="1.0416666666666667in"}</a></p>
-<p><a href="https://www.linkedin.com/in/chmulato/">**Christian Mulato **</a></p>
+<p><a href="https://www.linkedin.com/in/chmulato/"><strong>Christian Mulato</strong></a></p>
 <p>Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico</p>
 <p>24 de julho de 2025</p>
 <p><strong>Por que inventaram a Interface?</strong></p>
@@ -118,33 +116,34 @@
 <hr />
 <p><strong>Um exemplo simples</strong></p>
 <p><strong>Em MVC</strong></p>
-<p>\@RestController</p>
-<p>public class PedidoController {</p>
-<p>\@Autowired PedidoService service;</p>
-<p>\@PostMapping(\"/pedidos\")</p>
-<p>public ResponseEntity\&lt;Pedido&gt; criar(@RequestBody PedidoDTO dto) {</p>
-<p>return ResponseEntity.ok(service.criar(dto));</p>
-<p>}</p>
-<p>}</p>
+<pre><code>@RestController
+public class PedidoController {
+    @Autowired PedidoService service;
+    @PostMapping("/pedidos")
+    public ResponseEntity<Pedido> criar(@RequestBody PedidoDTO dto) {
+        return ResponseEntity.ok(service.criar(dto));
+    }
+}</code></pre>
 <p><strong>Em Hexagonal</strong></p>
-<p>public interface PedidoUseCase {</p>
-<p>Pedido criar(PedidoDTO dto);</p>
-<p>}</p>
-<p>public class PedidoApplicationService implements PedidoUseCase {</p>
-<p>private PedidoRepository repo;</p>
-<p>public Pedido criar(PedidoDTO dto) {</p>
-<p>// lógica de negócio aqui</p>
-<p>}</p>
-<p>}</p>
+<pre><code>public interface PedidoUseCase {
+    Pedido criar(PedidoDTO dto);
+}
+
+public class PedidoApplicationService implements PedidoUseCase {
+    private PedidoRepository repo;
+    public Pedido criar(PedidoDTO dto) {
+        // lógica de negócio aqui
+    }
+}</code></pre>
 <p>E no adaptador REST:</p>
-<p>\@RestController</p>
-<p>public class PedidoRestAdapter {</p>
-<p>private final PedidoUseCase useCase;</p>
-<p>\@PostMapping(\"/pedidos\")</p>
-<p>public ResponseEntity\&lt;Pedido&gt; criar(@RequestBody PedidoDTO dto) {</p>
-<p>return ResponseEntity.ok(useCase.criar(dto));</p>
-<p>}</p>
-<p>}</p>
+<pre><code>@RestController
+public class PedidoRestAdapter {
+    private final PedidoUseCase useCase;
+    @PostMapping("/pedidos")
+    public ResponseEntity<Pedido> criar(@RequestBody PedidoDTO dto) {
+        return ResponseEntity.ok(useCase.criar(dto));
+    }
+}</code></pre>
 <hr />
 <p><strong>Os desafios da transição</strong></p>
 <ol>
@@ -196,7 +195,7 @@
                 
                 <footer class="post-footer">
                     <div class="author-info">
-                        <img src="assets/img/2025_07_24_do_mvc_para_a_arquitetura_hexagonal_uma_transicao_necessaria_image1.jpg" alt="Christian Mulato" class="author-avatar">
+                        <img src="assets/img/foto_chri.jpg" alt="Christian Mulato" class="author-avatar">
                         <div class="author-details">
                             <strong>Christian Mulato</strong>
                             <p>Desenvolvedor Java e Arquiteto de Software</p>
