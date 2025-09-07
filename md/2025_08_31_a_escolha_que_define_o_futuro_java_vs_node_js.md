@@ -2,20 +2,7 @@
 
 ![Comparação de Stacks para Sistemas Financeiros](/articles/assets/img/2025_08_31_IMAGE_001.png)
 
-**Por Christian Mulato**  
-Desenvolvedor Java Sênior | Back-end | Spring Boot | APIs REST | Docker | Automação & IA
-
-Comparação de Stacks para Sistemas Financeiros
-
-**A Escolha que Define o Futuro: Java Enterprise vs Node.js em Exchanges**
-
-[![Christian Mulato, #OPEN_TO_WORK](/articles/assets/img/2025_08_31_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
-
-[**Christian Mulato **](https://www.linkedin.com/in/chmulato/)
-
-Desenvolvedor Java Sênior \| Back-end \| Spring Boot \| APIs REST \| Docker \| Automação & IA
-
-31 de agosto de 2025
+*31 de agosto de 2025*
 
 *Uma análise estratégica baseada em 15+ anos de experiência em sistemas bancários críticos*
 
@@ -192,10 +179,10 @@ A decisão tecnológica deve responder: "O objetivo é validação de mercado ou
 
 ---
 
-## Sobre o Autor
+[![Christian Mulato](/articles/assets/img/2025_08_31_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
 
-**Christian Mulato** possui mais de 15 anos de experiência em projetos de sistemas financeiros críticos, tendo participado de iniciativas em instituições como HSBC, Banco do Brasil e Mastercard. Na **Unisistemas**, construiu seu primeiro sistema completo utilizando a stack Java/MVC/Tomcat. Especialista em arquitetura de sistemas financeiros e tomada de decisões tecnológicas estratégicas, com experiência prática em múltiplos projetos de missão crítica.
+[**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
----
+Desenvolvedor Java Sênior | Back-end | Spring Boot | APIs REST | Docker | Automação & IA
 
 **Nota:** Este artigo sintetiza experiência prática em sistemas financeiros reais. Para decisões específicas, recomenda-se consultoria especializada em compliance e avaliação de contexto.
