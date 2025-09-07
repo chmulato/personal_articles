@@ -77,6 +77,6 @@ yarn-error.log
 .dist/
 
 # Temporary Markdown files (local only)
-md/
+# md/
 backup_removed_scripts/
 temp_media/
