@@ -1,6 +1,6 @@
-![Decisões Técnicas que a IA Não Pode Tomar](/articles/assets/img/2025_09_07_IMAGE_001.png)
-
 # Decisões Técnicas que a IA Não Pode Tomar: Lições de Desenvolvimento em Visão Computacional
+
+![Decisões Técnicas que a IA Não Pode Tomar](/articles/assets/img/2025_09_07_IMAGE_001.png)
 
 Vivemos em um momento em que a inteligência artificial (IA) tem mostrado resultados impressionantes. Sistemas de visão computacional conseguem identificar padrões complexos em imagens, detectar objetos em tempo real e até interpretar comportamentos com uma precisão surpreendente. No entanto, enquanto a IA automatiza tarefas repetitivas e analisa volumes massivos de dados, existem decisões críticas que apenas a mente humana pode tomar.
 
