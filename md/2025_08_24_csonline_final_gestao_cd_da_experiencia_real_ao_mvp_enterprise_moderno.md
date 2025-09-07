@@ -14,7 +14,7 @@
 - **Segurança robusta** validada
 - **Documentação completa** disponível
 - **Base técnica** para evolução
-![CSOnline - Sistema Enterprise Completo](temp_media\2025_08_24_CSOnline - Final - Gestão CD Da Experiência Real ao MVP Enterprise Moderno/assets/img/2025_08_24_IMAGE_001.png)
+![CSOnline - Sistema Enterprise Completo](/articles/assets/img/2025_08_24_IMAGE_001.png)
 
 ---
 
