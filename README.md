@@ -1,12 +1,18 @@
-# Personal Articles Build System
+# Christian Mulato - Technical Blog
 
-## Overview
+## About
 
-This project provides an automated build system that converts DOCX technical articles into a complete HTML website. The system features comprehensive processing control to prevent reprocessing and ensure efficient builds.
+This repository contains the source code and build system for my technical blog, which focuses on Java development, software architecture, and modern technology practices.
+
+**Blog URL:** [https://chmulato.github.io/personal_articles/](https://chmulato.github.io/personal_articles/)
 
 **Author:** Christian Mulato  
-**Purpose:** Technical blog with articles on Java development, software architecture, and modern technology  
-**Status:** Production ready with 59 processed articles
+**Content Focus:** Java Development, Software Architecture, DevOps, and Technology Innovation  
+**Status:** Active with 59+ published articles
+
+## Build System Overview
+
+This project provides an automated build system that converts DOCX technical articles into a complete HTML website. The system features comprehensive processing control to prevent reprocessing and ensure efficient builds.
 
 ## System Architecture
 
@@ -16,19 +22,19 @@ The build system is organized in a modular structure under `scr/build_system/`:
 
 ```
 build_system/
-├── core/                           # Core processing modules
-│   ├── docx_converter.py          # DOCX to Markdown converter
-│   ├── md_to_html.py             # Markdown to HTML converter  
-│   └── site_builder.py           # Complete site builder
-├── utils/                          # Utility modules
-│   ├── file_manager.py           # File system operations
-│   ├── normalizer.py             # Name normalization
+├── core/                              # Core processing modules
+│   ├── docx_converter.py              # DOCX to Markdown converter
+│   ├── md_to_html.py                  # Markdown to HTML converter  
+│   └── site_builder.py                # Complete site builder
+├── utils/                             # Utility modules
+│   ├── file_manager.py                # File system operations
+│   ├── normalizer.py                  # Name normalization
 │   └── processed_articles_manager.py  # Processing control
 ├── config/
-│   └── settings.py               # Centralized configuration
-├── build.py                      # Main build script
-├── processed_articles.txt        # Processing control list
-└── build.log                     # Build operation logs
+│   └── settings.py                    # Centralized configuration
+├── build.py                           # Main build script
+├── processed_articles.txt             # Processing control list
+└── build.log                          # Build operation logs
 ```
 
 ### Processing Pipeline
@@ -156,11 +162,11 @@ The system will automatically validate dependencies and directory structure on f
 personal_articles/
 ├── articles/                       # Generated HTML articles
 ├── assets/css/                     # Site stylesheets
-├── docx/                          # Source DOCX files (59 files)
-├── md/                            # Generated Markdown files
-├── scr/build_system/              # Build system (current)
-├── old_scripts/                   # Legacy scripts (backup)
-└── index.html                     # Site homepage
+├── docx/                           # Source DOCX files (59 files)
+├── md/                             # Generated Markdown files
+├── scr/build_system/               # Build system (current)
+├── old_scripts/                    # Legacy scripts (backup)
+└── index.html                      # Site homepage
 ```
 
 ## System Migration and Cleanup
@@ -201,12 +207,12 @@ This blog contains technical articles covering:
 
 ### Content Distribution
 
-- Java & Spring: 35 articles (58%)
+- Java & Spring: 35 articles (59%)
 - Software Architecture: 12 articles (20%)
-- DevOps & Containers: 8 articles (13%)
-- AI & Technology: 5 articles (9%)
+- DevOps & Containers: 8 articles (14%)
+- AI & Technology: 4 articles (7%)
 
-## Features
+## Website Features
 
 ### Dark/Light Theme System
 
@@ -227,13 +233,15 @@ The site includes a complete theme switching system:
 
 **Color Palette**
 
-| Element | Light Theme | Dark Theme |
-|---------|-------------|------------|
-| Primary Background | `#ffffff` | `#111827` |
-| Secondary Background | `#f9fafb` | `#1f2937` |
-| Primary Text | `#1f2937` | `#f9fafb` |
-| Secondary Text | `#6b7280` | `#d1d5db` |
-| Accent Color | `#2563eb` | `#3b82f6` |
+```
+| Element              | Light Theme | Dark Theme |
+|----------------------|-------------|------------|
+| Primary Background   | `#ffffff`   | `#111827`  |
+| Secondary Background | `#f9fafb`   | `#1f2937`  |
+| Primary Text         | `#1f2937`   | `#f9fafb`  |
+| Secondary Text       | `#6b7280`   | `#d1d5db`  |
+| Accent Color         | `#2563eb`   | `#3b82f6`  |
+```
 
 ## Technologies Used
 
@@ -269,5 +277,9 @@ Senior Java Developer & Software Architect
 - REST APIs: Design and documentation with OpenAPI
 - Testing: TDD, integration and unit testing
 - AI: Artificial Intelligence applied to software development
+
+**Connect:**
+- **Blog:** [https://chmulato.github.io/personal_articles/](https://chmulato.github.io/personal_articles/)
+- **LinkedIn:** [https://www.linkedin.com/in/chmulato/](https://www.linkedin.com/in/chmulato/)
 
 This build system provides reliable, efficient, and controlled processing of technical articles from DOCX source files into a complete responsive website.
