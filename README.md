@@ -1,285 +1,289 @@
-# Christian Mulato - Technical Blog
+# Christian Mulato - Blog Técnico
 
-## About
+## Sobre
 
-This repository contains the source code and build system for my technical blog, which focuses on Java development, software architecture, and modern technology practices.
+Este repositório contém o código-fonte e o sistema de compilação do meu blog técnico, que foca em desenvolvimento Java, arquitetura de software e práticas modernas de tecnologia.
 
-**Blog URL:** [https://chmulato.github.io/personal_articles/](https://chmulato.github.io/personal_articles/)
+**URL do Blog:** [https://chmulato.github.io/personal_articles/](https://chmulato.github.io/personal_articles/)
 
-**Author:** Christian Mulato  
-**Content Focus:** Java Development, Software Architecture, DevOps, and Technology Innovation  
-**Status:** Active with 59+ published articles
+**Autor:** Christian Mulato  
+**Foco do Conteúdo:** Desenvolvimento Java, Arquitetura de Software, DevOps e Inovação Tecnológica  
+**Status:** Ativo com mais de 61 artigos publicados
 
-## Build System Overview
+## Artigos
 
-This project provides an automated build system that converts DOCX technical articles into a complete HTML website. The system features comprehensive processing control to prevent reprocessing and ensure efficient builds.
+Para uma lista cronológica completa de todos os artigos neste repositório, consulte [ARTICLES.md](ARTICLES.md).
 
-## System Architecture
+## Visão Geral do Sistema de Compilação
 
-### Core Components
+Este projeto fornece um sistema de compilação automatizado que converte artigos técnicos em DOCX para um site HTML completo. O sistema apresenta controle abrangente de processamento para evitar reprocessamento e garantir compilações eficientes.
 
-The build system is organized in a modular structure under `scr/build_system/`:
+## Arquitetura do Sistema
+
+### Componentes Principais
+
+O sistema de compilação está organizado em uma estrutura modular em `scr/build_system/`:
 
 ```
 build_system/
-├── core/                              # Core processing modules
-│   ├── docx_converter.py              # DOCX to Markdown converter
-│   ├── md_to_html.py                  # Markdown to HTML converter  
-│   └── site_builder.py                # Complete site builder
-├── utils/                             # Utility modules
-│   ├── file_manager.py                # File system operations
-│   ├── normalizer.py                  # Name normalization
-│   └── processed_articles_manager.py  # Processing control
+├── core/                              # Módulos de processamento principal
+│   ├── docx_converter.py              # Conversor de DOCX para Markdown
+│   ├── md_to_html.py                  # Conversor de Markdown para HTML  
+│   └── site_builder.py                # Construtor completo do site
+├── utils/                             # Módulos utilitários
+│   ├── file_manager.py                # Operações do sistema de arquivos
+│   ├── normalizer.py                  # Normalização de nomes
+│   └── processed_articles_manager.py  # Controle de processamento
 ├── config/
-│   └── settings.py                    # Centralized configuration
-├── build.py                           # Main build script
-├── processed_articles.txt             # Processing control list
-└── build.log                          # Build operation logs
+│   └── settings.py                    # Configuração centralizada
+├── build.py                           # Script principal de compilação
+├── processed_articles.txt             # Lista de controle de processamento
+└── build.log                          # Logs de operação de compilação
 ```
 
-### Processing Pipeline
+### Pipeline de Processamento
 
-1. **DOCX Conversion**: Extracts content and media from DOCX files using Pandoc
-2. **Markdown Processing**: Converts DOCX to clean Markdown with proper formatting
-3. **HTML Generation**: Transforms Markdown to HTML with syntax highlighting
-4. **Site Building**: Generates complete website with responsive CSS and navigation
-5. **Asset Management**: Handles images, stylesheets, and other media files
+1. **Conversão DOCX**: Extrai conteúdo e mídia de arquivos DOCX usando Pandoc
+2. **Processamento Markdown**: Converte DOCX para Markdown limpo com formatação adequada
+3. **Geração HTML**: Transforma Markdown em HTML com realce de sintaxe
+4. **Construção do Site**: Gera um site completo com CSS responsivo e navegação
+5. **Gerenciamento de Ativos**: Lida com imagens, folhas de estilo e outros arquivos de mídia
 
-## Article Processing Control System
+## Sistema de Controle de Processamento de Artigos
 
-### Control Mechanism
+### Mecanismo de Controle
 
-The system implements rigorous control to prevent article reprocessing:
+O sistema implementa controle rigoroso para evitar o reprocessamento de artigos:
 
-- **processed_articles.txt**: Contains 59 processed articles in normalized format
-- **Incremental Builds**: Only processes articles NOT in the control list
-- **Automatic Updates**: Adds articles to list after successful processing
+- **processed_articles.txt**: Contém 61 artigos processados em formato normalizado
+- **Compilações Incrementais**: Processa apenas artigos NÃO presentes na lista de controle
+- **Atualizações Automáticas**: Adiciona artigos à lista após processamento bem-sucedido
 
-### Key Features
+### Principais Recursos
 
-**Complete Overlap Prevention**
-- Articles in the control list are never reprocessed
-- 100% protection against file conflicts
-- Granular control per individual article
+**Prevenção Completa de Sobreposição**
+- Artigos na lista de controle nunca são reprocessados
+- 100% de proteção contra conflitos de arquivos
+- Controle granular por artigo individual
 
-**Maximum Efficiency**  
-- Incremental builds process only new articles
-- Optimized processing time
-- Preserved computational resources
+**Máxima Eficiência**  
+- Compilações incrementais processam apenas novos artigos
+- Tempo de processamento otimizado
+- Recursos computacionais preservados
 
-**Total Flexibility**
-- Selective reprocessing when needed  
-- Synchronization with actual file state
-- Simple management commands
+**Flexibilidade Total**
+- Reprocessamento seletivo quando necessário  
+- Sincronização com o estado real do arquivo
+- Comandos simples de gerenciamento
 
-**Operational Robustness**
-- Persistent list across executions
-- Detailed operation logging
-- Automatic integrity validation
+**Robustez Operacional**
+- Lista persistente entre execuções
+- Registro detalhado de operações
+- Validação automática de integridade
 
-### Management Commands
+### Comandos de Gerenciamento
 
-The `processed_articles_manager.py` utility provides complete list management:
+O utilitário `processed_articles_manager.py` fornece gerenciamento completo da lista:
 
 ```bash
-# View detailed status
+# Ver status detalhado
 python -m utils.processed_articles_manager status
 
-# Remove article for reprocessing
-python -m utils.processed_articles_manager remove article_name
+# Remover artigo para reprocessamento
+python -m utils.processed_articles_manager remove nome_do_artigo
 
-# Synchronize with existing HTML files
+# Sincronizar com arquivos HTML existentes
 python -m utils.processed_articles_manager sync
 
-# List all processed articles
+# Listar todos os artigos processados
 python -m utils.processed_articles_manager list
 
-# Manually add article
-python -m utils.processed_articles_manager add article_name
+# Adicionar artigo manualmente
+python -m utils.processed_articles_manager add nome_do_artigo
 ```
 
-## Usage
+## Uso
 
-### Daily Operations
+### Operações Diárias
 
-**Check System Status**
+**Verificar Status do Sistema**
 ```bash
 cd c:\dev\personal_articles\scr\build_system
 python build.py --status
 ```
 
-**Process Only New Articles (Recommended)**
+**Processar Apenas Novos Artigos (Recomendado)**
 ```bash
 python build.py --new-only
 ```
 
-**Full Build (All Articles)**
+**Compilação Completa (Todos os Artigos)**
 ```bash
 python build.py
 ```
 
-### Reprocessing Specific Articles
+### Reprocessando Artigos Específicos
 
-1. Remove from control list:
+1. Remover da lista de controle:
 ```bash
-python -m utils.processed_articles_manager remove article_name
+python -m utils.processed_articles_manager remove nome_do_artigo
 ```
 
-2. Run incremental build:
+2. Executar compilação incremental:
 ```bash
 python build.py --new-only
 ```
 
-The system automatically:
-- Detects article not in list
-- Processes: DOCX → MD → HTML
-- Adds back to list after success
+O sistema automaticamente:
+- Detecta artigo não presente na lista
+- Processa: DOCX → MD → HTML
+- Adiciona de volta à lista após sucesso
 
-## Dependencies
+## Dependências
 
-### Required Software
+### Software Necessário
 - Python 3.x
-- Pandoc (for DOCX conversion)
+- Pandoc (para conversão DOCX)
 
-### Python Packages
+### Pacotes Python
 - markdown
 - pygments  
 - python-docx
 - beautifulsoup4
 
-## Installation and Setup
+## Instalação e Configuração
 
-1. Ensure Pandoc is installed on your system
-2. Install Python dependencies: `pip install -r requirements.txt`
-3. Navigate to build system: `cd scr/build_system`
-4. Run initial build: `python build.py`
+1. Certifique-se de que o Pandoc esteja instalado em seu sistema
+2. Instale as dependências Python: `pip install -r requirements.txt`
+3. Navegue até o sistema de compilação: `cd scr/build_system`
+4. Execute a compilação inicial: `python build.py`
 
-The system will automatically validate dependencies and directory structure on first run.
+O sistema validará automaticamente as dependências e a estrutura de diretórios na primeira execução.
 
-## Project Structure
+## Estrutura do Projeto
 
 ```
 personal_articles/
-├── articles/                       # Generated HTML articles
-├── assets/css/                     # Site stylesheets
-├── docx/                           # Source DOCX files (59 files)
-├── md/                             # Generated Markdown files
-├── scr/build_system/               # Build system (current)
-├── old_scripts/                    # Legacy scripts (backup)
-└── index.html                      # Site homepage
+├── articles/                       # Artigos HTML gerados
+├── assets/css/                     # Folhas de estilo do site
+├── docx/                           # Arquivos DOCX de origem (61 arquivos)
+├── md/                             # Arquivos Markdown gerados
+├── scr/build_system/               # Sistema de compilação (atual)
+├── old_scripts/                    # Scripts legados (backup)
+└── index.html                      # Página inicial do site
 ```
 
-## System Migration and Cleanup
+## Migração e Limpeza do Sistema
 
-### Legacy Script Management
+### Gerenciamento de Scripts Legados
 
-21 previous build scripts were systematically organized:
-- **Relocated**: Moved to `old_scripts/` directory as backup
-- **Documented**: Each script's purpose catalogued
-- **Preserved**: All functionality maintained for reference
+21 scripts de compilação anteriores foram organizados sistematicamente:
+- **Realocados**: Movidos para o diretório `old_scripts/` como backup
+- **Documentados**: O propósito de cada script foi catalogado
+- **Preservados**: Toda a funcionalidade mantida para referência
 
-### Modular Benefits
+### Benefícios Modulares
 
-- **Maintainability**: Clean separation of concerns
-- **Extensibility**: Easy to add new features
-- **Reliability**: Centralized error handling and logging
-- **Performance**: Optimized processing pipeline
+- **Manutenibilidade**: Separação clara de preocupações
+- **Extensibilidade**: Fácil adição de novos recursos
+- **Confiabilidade**: Tratamento e registro de erros centralizados
+- **Desempenho**: Pipeline de processamento otimizado
 
-## Current Status
+## Status Atual
 
-### Processing Statistics
-- Total DOCX files: 59
-- Articles processed: 59
-- Awaiting processing: 0
+### Estatísticas de Processamento
+- Total de arquivos DOCX: 61
+- Artigos processados: 61
+- Aguardando processamento: 0
 
-**System State**: All articles currently processed and up to date
+**Estado do Sistema**: Todos os artigos atualmente processados e atualizados
 
-## Content Overview
+## Visão Geral do Conteúdo
 
-This blog contains technical articles covering:
+Este blog contém artigos técnicos abrangendo:
 
-- **Java & Spring**: Advanced development, Spring Boot, Jakarta EE
-- **Software Architecture**: Microservices, Clean Architecture, Design Patterns
-- **DevOps**: Docker, Kubernetes, CI/CD, Automation
-- **APIs**: REST, GraphQL, OpenAPI, Documentation
-- **Testing**: TDD, Unit Testing, Integration
-- **AI & Technology**: Artificial Intelligence applied to development
+- **Java & Spring**: Desenvolvimento avançado, Spring Boot, Jakarta EE
+- **Arquitetura de Software**: Microsserviços, Clean Architecture, Padrões de Design
+- **DevOps**: Docker, Kubernetes, CI/CD, Automação
+- **APIs**: REST, GraphQL, OpenAPI, Documentação
+- **Testes**: TDD, Testes Unitários, Integração
+- **IA & Tecnologia**: Inteligência Artificial aplicada ao desenvolvimento
 
-### Content Distribution
+### Distribuição de Conteúdo
 
-- Java & Spring: 35 articles (59%)
-- Software Architecture: 12 articles (20%)
-- DevOps & Containers: 8 articles (14%)
-- AI & Technology: 4 articles (7%)
+- Java & Spring: 35 artigos (59%)
+- Arquitetura de Software: 12 artigos (20%)
+- DevOps & Containers: 8 artigos (14%)
+- IA & Tecnologia: 4 artigos (7%)
 
-## Website Features
+## Recursos do Site
 
-### Dark/Light Theme System
+### Sistema de Tema Claro/Escuro
 
-The site includes a complete theme switching system:
+O site inclui um sistema completo de alternância de temas:
 
-**Main Features**
-- Intuitive toggle button in upper right corner
-- Automatic persistence between sessions
-- Responsive design for desktop and mobile
-- Smooth transitions with 0.3s animations
-- System preference auto-detection
+**Principais Recursos**
+- Botão de alternância intuitivo no canto superior direito
+- Persistência automática entre sessões
+- Design responsivo para desktop e mobile
+- Transições suaves com animações de 0,3s
+- Detecção automática de preferência do sistema
 
-**Technical Implementation**
-- CSS Variables for easy maintenance
-- LocalStorage for user preference persistence
-- Media Queries for system preference detection
-- ARIA Labels for accessible buttons
+**Implementação Técnica**
+- Variáveis CSS para fácil manutenção
+- LocalStorage para persistência de preferência do usuário
+- Media Queries para detecção de preferência do sistema
+- Rótulos ARIA para botões acessíveis
 
-**Color Palette**
+**Paleta de Cores**
 
 ```
-| Element              | Light Theme | Dark Theme |
+| Elemento             | Tema Claro  | Tema Escuro |
 |----------------------|-------------|------------|
-| Primary Background   | `#ffffff`   | `#111827`  |
-| Secondary Background | `#f9fafb`   | `#1f2937`  |
-| Primary Text         | `#1f2937`   | `#f9fafb`  |
-| Secondary Text       | `#6b7280`   | `#d1d5db`  |
-| Accent Color         | `#2563eb`   | `#3b82f6`  |
+| Fundo Primário       | `#ffffff`   | `#111827`  |
+| Fundo Secundário     | `#f9fafb`   | `#1f2937`  |
+| Texto Primário       | `#1f2937`   | `#f9fafb`  |
+| Texto Secundário     | `#6b7280`   | `#d1d5db`  |
+| Cor de Destaque      | `#2563eb`   | `#3b82f6`  |
 ```
 
-## Technologies Used
+## Tecnologias Utilizadas
 
 ### Frontend
 - HTML5
 - CSS3
 - JavaScript
 
-### Build & Processing
+### Compilação & Processamento
 - Python
 - Markdown
-- Pygments for syntax highlighting
-- Python Markdown for processing
+- Pygments para destaque de sintaxe
+- Python Markdown para processamento
 
-### Tools
-- Mammoth: DOCX → Markdown conversion
-- Highlight.js: Frontend syntax highlighting
-- Inter Font: Modern typography
+### Ferramentas
+- Mammoth: Conversão DOCX → Markdown
+- Highlight.js: Destaque de sintaxe no frontend
+- Fonte Inter: Tipografia moderna
 
-## License
+## Licença
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para detalhes.
 
-## About the Author
+## Sobre o Autor
 
 **Christian Mulato**  
-Senior Java Developer & Software Architect
+Desenvolvedor Java Sênior & Arquiteto de Software
 
-**Specialties:**
-- Java/Spring Boot: Enterprise application development
-- Microservices: Distributed and scalable architecture
+**Especialidades:**
+- Java/Spring Boot: Desenvolvimento de aplicações empresariais
+- Microsserviços: Arquitetura distribuída e escalável
 - DevOps: Docker, Kubernetes, CI/CD
-- REST APIs: Design and documentation with OpenAPI
-- Testing: TDD, integration and unit testing
-- AI: Artificial Intelligence applied to software development
+- APIs REST: Design e documentação com OpenAPI
+- Testes: TDD, testes de integração e unitários
+- IA: Inteligência Artificial aplicada ao desenvolvimento de software
 
-**Connect:**
+**Conecte-se:**
 - **Blog:** [https://chmulato.github.io/personal_articles/](https://chmulato.github.io/personal_articles/)
 - **LinkedIn:** [https://www.linkedin.com/in/chmulato/](https://www.linkedin.com/in/chmulato/)
 
-This build system provides reliable, efficient, and controlled processing of technical articles from DOCX source files into a complete responsive website.
+Este sistema de compilação fornece processamento confiável, eficiente e controlado de artigos técnicos a partir de arquivos DOCX de origem em um site responsivo completo.
