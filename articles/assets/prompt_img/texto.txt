@@ -1,0 +1,14 @@
+Prompt 1: Reescrita de alta conversão
+ "Reescreve este conteúdo pra deixá-lo 10x mais persuasivo, claro e emocionalmente impactante. Estrutura o texto pra conduzir o leitor naturalmente à ação, sem parecer forçado."
+
+Prompt 2: Expansão de ideia
+ "Expande esta ideia simples num conteúdo completo com exemplos, metáforas e ganchos emocionais. Torna-o mais profundo, útil e valioso, sem adicionar palha."
+
+Prompt 3: Íman de primeira frase
+ "Cria 5 frases iniciais para este conteúdo que captem logo a atenção, gerem envolvimento emocional e façam com que as pessoas queiram continuar a ler, sem parecer sensacionalista."
+
+Prompt 4: Amplificador de personalidade
+ "Reescreve isto de forma a realçar o meu humor, sarcasmo ou ousadia, para que se destaque e pareça claramente com o meu estilo pessoal."
+
+Prompt 5: Mago da simplificação
+ "Simplifica esta mensagem para o nível de leitura de um aluno do 8.º ano, mantendo a credibilidade e clareza, para que seja fácil de entender por qualquer pessoa sem perder impacto."
