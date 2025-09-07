@@ -57,7 +57,7 @@ Em resumo, a IoC e a Arquitetura Hexagonal compartilham o objetivo de promover o
 
 ---
 
-[![Christian Mulato](/articles/assets/img/2024_04_07_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 

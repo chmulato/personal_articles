@@ -32,7 +32,7 @@ Em resumo, o **JDBC** é uma API para acessar bancos de dados diretamente, enqua
 
 ---
 
-[![Christian Mulato](/articles/assets/img/2024_03_31_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 

@@ -158,7 +158,7 @@ Consulte a [documentação oficial do Apache OpenWhisk](https://openwhisk.apache
 
 ---
 
-[![Christian Mulato](/articles/assets/img/2024_03_17_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](/articles/assets/img/fo)](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 

@@ -53,7 +53,7 @@ Ao aumentar a produtividade e as oportunidades de emprego, a TI pode ajudar a au
 
 ---
 
-[![Christian Mulato](/articles/assets/img/2024_03_20_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
