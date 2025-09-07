@@ -67,4 +67,4 @@ Este documento contém todos os artigos disponíveis no repositório, organizado
 4. [Produtividade versus Renda](md/2024_03_20_produtividade_versus_renda.md) - 20/03/2024
 3. [Solução de Aplicação nas Nuvens](md/2024_03_17_solucao_de_aplicacao_nas_nuvens.md) - 17/03/2024
 2. [Aplicação Web Java](md/2024_03_06_aplicacao_web_java.md) - 06/03/2024
-1. [Entre Números e Máquinas: O Mistério que Alimenta a Inteligência Artificial](md/2025_05_11_entre_numeros_e_maquinas_o_misterio_que_alimenta_a_inteligencia_artificial.md) - 11/05/2025
+1. [Aplicação Web Java](md/2024_03_06_aplicacao_web_java.md) - 06/03/2024

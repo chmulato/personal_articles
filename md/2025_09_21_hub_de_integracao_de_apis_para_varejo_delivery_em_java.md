@@ -1,6 +1,6 @@
 # Hub de Integração de APIs para Varejo Delivery em Java
 
-![Hub de Integração de APIs](/articles/assets/img/hub_api_integration.jpg)
+![Hub de Integração de APIs](/articles/assets/img/2025_09_21_IMAGE_001.png)
 
 ## Por que o varejo brasileiro precisa de um "único lugar" para integrar tudo
 

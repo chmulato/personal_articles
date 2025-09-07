@@ -1,10 +1,14 @@
-# Hub Local de Integração para Pequenas Cidades — um novo olhar para o varejo
+# Hub Local de Integração para Pequenas Cidades
+
+![Hub Local de Integração](/articles/assets/img/2025_09_28_IMAGE_001.png)
 
 ## Como CDs digitais podem transformar o abastecimento em mercados menores
 
 Quando falamos de inovação em varejo e delivery, a atenção quase sempre está nas grandes capitais. Mas e as **pequenas cidades brasileiras**? Nelas, os desafios são outros: logística fragmentada, fretes caros, prazos longos e varejistas locais sem poder de barganha frente às grandes redes.
 
 É nesse contexto que surge a ideia de um **Hub Local**: um **centro de distribuição físico + plataforma de integração via API**, que conecta **as principais marcas** diretamente ao pequeno varejo da cidade.
+
+---
 
 ## O problema
 
@@ -46,6 +50,8 @@ Um **CD digitalizado** que funciona como ponto de convergência:
 
 Esse modelo pode se expandir em rede: hubs interligados formando uma malha nacional de distribuição inteligente, onde **dados de consumo local** alimentam decisões de estoque e reposição em tempo real.
 
+---
+
 ## Chamado à ação
 
 Se você acredita que **inovação também precisa chegar às pequenas cidades**, vamos conversar. A proposta é simples, mas poderosa: **um Hub Local que conecta marcas, lojistas e consumidores de forma eficiente e digital**.
@@ -53,4 +59,3 @@ Se você acredita que **inovação também precisa chegar às pequenas cidades**
 *Gostou da ideia? Deixe seu comentário, marque alguém que pode se interessar ou mande uma mensagem para trocarmos ideias.*
 
 [![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)
-
