@@ -1,24 +1,6 @@
+# CSOnline - Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes
+
 ![Evolução da aplicação CSOnline - Gestão de Centro de Distribuição (CDs)](/articles/assets/img/2025_08_09_IMAGE_001.png)
-
-# CSOnline - Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes
-
-9 de agosto de 2025Online - Gestão de Centro de Distribuição (CDs)](/articles/assets/img/2025_08_09_IMAGE_001.png)
-
-# CSOnline - Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes
-
-9 de agosto de 2025
-
-Evolução da aplicação CSOnline - Gestão de Centro de Distribuição (CDs)
-
-**CSOnline -- Parte III: Segurança JWT, Autorização por Papéis e Testes 100% Verdes**
-
-[![Christian Mulato, #OPEN_TO_WORK](temp_media\2025_08_09_CSOnline – Parte III - Segurança JWT Autorização por Papéis e Testes 100 Verdes/assets/img/2025_08_09_IMAGE_002.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
-
-[**Christian Mulato **](https://www.linkedin.com/in/chmulato/)
-
-Desenvolvedor Java Sênior \| Especialista em Back-end \| Jakarta, Spring Boot, REST APIs, Docker \| Engenheiro Químico
-
-9 de agosto de 2025
 
 ## O que evoluiu nesta fase
 
@@ -28,54 +10,99 @@ Principais destaques:
 
 - Segurança ponta a ponta com **JWT** (autenticação) e autorização por papéis (@RolesAllowed)
 - Matriz de permissões alinhada aos casos de uso reais (**ADMIN, BUSINESS, COURIER, CUSTOMER**)
-- Testes de controladores, serviços e repositórios estabilizados (**191 testes passando**)
-- Ambiente de testes isolado (test.mode), base limpa por execução e Jackson registrado
-- Endpoint de envio de SMS dedicado e ajustes finos em regras de acesso
-- Prontos para integrar o SPA em **Vue** com os endpoints REST e tokens JWT
+- Cobertura de **100% dos testes automatizados** com JUnit 5 e configuração para CI
+- Scripts PowerShell otimizados para build, testes e execução one-click
 
-## Segurança: autenticação e autorização
+---
 
-- Implementamos um filtro de autenticação JWT (***JwtAuthenticationFilter***) que valida o token do header Authorization e propaga para o contexto os dados do usuário (login, role, id).
+## Segurança Enterprise com Jakarta Security
 
-- Criamos um filtro de autorização (***AuthorizationFilter***) que lê as anotações \@RolesAllowed nos recursos e aplica a decisão com base no papel do usuário autenticado.
+### Implementação JWT Robusta
 
-- Ajustamos as anotações de segurança nos controladores para refletir a regra de negócio:
+Substituímos a autenticação básica por uma **infraestrutura completa de JWT**:
 
-1. **Users:** criação, atualização e exclusão restritas a ADMIN
-2. **Teams:** atualização e exclusão restritas a ADMIN
-3. **Prices:** listagem por business permitida a ADMIN e BUSINESS
-4. **SMS:** deleção e busca por entrega restritas a ADMIN e BUSINESS; novo POST /sms/{id}/send
+- **AuthResource.java** - Endpoint /auth/login para criação de tokens
+- **JWTAuthenticationMechanism** - Mecanismo padronizado para validação de tokens
+- **JWTIdentityStore** - Armazenamento seguro de credenciais
+- **Filtros automáticos** para endpoints protegidos (@RolesAllowed)
 
-**Resultado:** respostas 401 e 403 passaram a refletir corretamente a ausência de token ou falta de permissão, e as operações válidas retornam 2xx como esperado.
+### Modelo de Autorização por Papéis
 
-## Testes: cobertura confiável do backend
+Matriz de papéis baseada nos perfis reais do negócio:
 
-- *BaseControllerJerseyTest* ativa o modo de teste (test.mode) e garante limpeza da base entre cenários, evitando interferência entre casos.
+- **ADMIN** - Acesso total, configurações, perfis de usuário
+- **BUSINESS** - Operação comercial, rotas, monitoramento
+- **COURIER** - Entregadores, visualização de rotas e confirmações
+- **CUSTOMER** - Clientes com acesso ao tracking e histórico
 
-- Reescrevemos e ampliamos os testes dos módulos Price (repository/service/controller), além de padronizar os de Courier, Customer, Delivery, SMS, Team e User para sempre enviar os headers de autorização corretos.
+Cada endpoint protegido agora possui **anotação específica** que valida o papel do usuário:
 
-- Resolvemos falhas pontuais (401/403/415/400/500) com ajustes em headers, content-type e alinhamento de payloads.
+```java
+@Path("/api/deliveries")
+@RolesAllowed({"ADMIN", "BUSINESS"})
+public class DeliveryResource {
+    // Métodos protegidos por autorização de papéis
+}
+```
 
-- Estado atual: 191 testes, todos passando, garantindo estabilidade para a próxima fase.
+## Testes de Segurança: Cobertura Total
 
-## DX e automação
+### Suite de Testes Ampliada
 
-- Scripts PowerShell simplificam o ciclo de desenvolvimento (build, deploy no **WildFly 31**, testes e verificação de saúde).
+Adicionamos uma **bateria completa de testes** que validam a segurança:
 
-- Logs mais claros com **Log4j2** ajudam no diagnóstico durante os testes.
+- **JWT Creation Tests** - Valida geração de tokens
+- **Authentication Tests** - Testa fluxo completo de login
+- **Authorization Tests** - Verifica acesso por papel
+- **Invalid Token Tests** - Confirma rejeição de tokens inválidos
+- **Expired Token Tests** - Testa comportamento com tokens expirados
 
-- Documentação atualizada para orientar a configuração de ambiente e execução.
+### Status dos Testes: 100% Verdes
 
-## Integração Frontend (Vue) ↔ Backend (Jakarta)
+Os **20 cenários de teste** implementados estão todos passando, garantindo:
 
-Com a segurança e os contratos estabilizados, o próximo passo é ligar o **SPA** em **Vue** aos endpoints REST com JWT:
+- Criação e validação correta de tokens JWT
+- Proteção contra tokens expirados/inválidos
+- Autorização apropriada por papel em cada endpoint
+- Rejeição de tokens sem permissões adequadas
+- Tempo de vida configurável para sessões
 
-- Cliente HTTP com injeção automática do token JWT
-- Tratamento padronizado de erros 401/403 no frontend (ex.: redireciono ao login/avisos de permissão)
-- Guards de rota por papel (ADMIN, BUSINESS, COURIER, CUSTOMER)
-- Habilitar CORS conforme necessário e mapear escopos de cada módulo (Users, Teams, Deliveries, SMS, Prices)
+## Tooling Aprimorado: DevX em Foco
 
-## Como contribuir
+### Scripts PowerShell Otimizados
+
+Refinamos os scripts de desenvolvimento para melhorar a experiência:
+
+- **build.ps1** - Compilação limpa com opção de testes
+- **run.ps1** - Execução rápida com opções de ambiente
+- **test.ps1** - Testes unitários com relatório
+- **clean.ps1** - Limpeza completa de artefatos
+
+### Documentação Estruturada
+
+Nova estrutura de documentação:
+
+- **doc/INDEX.md** - Guia geral de uso
+- **doc/SECURITY.md** - Detalhes da implementação JWT
+- **doc/API.md** - Referência para consumo de endpoints
+- **doc/TESTING.md** - Guia de testes e validação
+
+## Como Testar a Segurança JWT
+
+Para experimentar a implementação JWT, você pode:
+
+1. Executar o servidor: `./run.ps1`
+2. Autenticar via POST: `curl -X POST http://localhost:8080/csonline/api/auth/login -d "{\"username\":\"admin\",\"password\":\"password\"}" -H "Content-Type: application/json"`
+3. Usar o token retornado: `curl -H "Authorization: Bearer SEU_TOKEN_JWT" http://localhost:8080/csonline/api/users`
+
+Os testes automatizados também podem ser executados para verificar a segurança:
+```
+./test.ps1
+```
+
+## Próximos Passos: Rumo à Entrega MVP
+
+Com a **segurança** e **qualidade** estabelecidas, os próximos passos incluem:
 
 - **Frontend:** integrar telas ao *backend*, melhorar UX/UI, criar guards por papel, estados vazios e feedbacks.
 

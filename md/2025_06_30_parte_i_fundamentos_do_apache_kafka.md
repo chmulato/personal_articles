@@ -2,9 +2,11 @@
 
 ![Apache Kafka com Java - Gerenciamento de Filas](/articles/assets/img/2025_06_30_IMAGE_001.png)
 
-## Introdução
+## Entendendo os Conceitos Essenciais do Message Broker Mais Popular
 
 Esta parte apresenta os conceitos essenciais do Apache Kafka, sua arquitetura, principais componentes e comandos básicos para quem está começando.
+
+---
 
 ## O que é Apache Kafka?
 
@@ -29,145 +31,152 @@ Apache Kafka é uma plataforma distribuída de streaming de eventos, projetada p
 
 ## Instalação Rápida com Docker
 
+Para começar rapidamente, você pode usar Docker para criar um ambiente Kafka completo:
+
 ```bash
-docker-compose up -d
+# Crie uma rede para os containers
+docker network create kafka-net
+
+# Inicie o Zookeeper
+docker run -d --name zookeeper --network kafka-net -e ZOOKEEPER_CLIENT_PORT=2181 confluentinc/cp-zookeeper:7.3.0
+
+# Inicie o Kafka
+docker run -d --name kafka --network kafka-net -p 9092:9092 \
+    -e KAFKA_BROKER_ID=1 \
+    -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 \
+    -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092 \
+    -e KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT \
+    -e KAFKA_INTER_BROKER_LISTENER_NAME=PLAINTEXT \
+    -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 \
+    confluentinc/cp-kafka:7.3.0
 ```
 
-## Comandos Essenciais
+## Comandos Básicos
 
-- Criar um tópico:
+### Criando um Tópico
+
 ```bash
-kafka-topics --create --topic meu-topico --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
+docker exec -it kafka kafka-topics --create --topic meu-topico --bootstrap-server kafka:29092 --partitions 3 --replication-factor 1
 ```
 
-- Produzir mensagens:
+### Listando Tópicos
+
 ```bash
-kafka-console-producer --topic meu-topico --bootstrap-server localhost:9092
+docker exec -it kafka kafka-topics --list --bootstrap-server kafka:29092
 ```
 
-- Consumir mensagens:
+### Descrevendo um Tópico
+
 ```bash
-kafka-console-consumer --topic meu-topico --from-beginning --bootstrap-server localhost:9092
+docker exec -it kafka kafka-topics --describe --topic meu-topico --bootstrap-server kafka:29092
 ```
 
-## Exercícios Práticos
+### Produzindo Mensagens
 
-1. Suba o ambiente Kafka localmente.
-2. Crie tópicos com diferentes números de partições.
-3. Produza e consuma mensagens usando o terminal.
-4. Experimente criar múltiplos consumidores em um mesmo grupo.
+```bash
+docker exec -it kafka kafka-console-producer --topic meu-topico --bootstrap-server kafka:29092
+> Mensagem 1
+> Mensagem 2
+> Mensagem 3
+```
 
-## Recursos Recomendados
+### Consumindo Mensagens
 
-- [**Documentação Oficial do Apache Kafka**](https://kafka.apache.org/documentation/)
-- Livro: Kafka: The Definitive Guide (O'Reilly)
+```bash
+docker exec -it kafka kafka-console-consumer --topic meu-topico --from-beginning --bootstrap-server kafka:29092
+```
 
----
+## Configurações Importantes
 
-## Exemplo Java: Producer e Consumer Simples
+### Retenção de Mensagens
 
-A seguir, você encontra exemplos didáticos de um Producer e um Consumer em Java, ideais para quem está começando a experimentar o Apache Kafka na prática. Os arquivos completos estão disponíveis em: `parte1-fundamentos/src/main/java/SimpleProducer.java` e `parte1-fundamentos/src/main/java/SimpleConsumer.java`.
+O Kafka mantém as mensagens por um período configurável:
 
-### Como executar os exemplos
+```bash
+# Configurar retenção para 7 dias
+docker exec -it kafka kafka-configs --alter --entity-type topics --entity-name meu-topico --add-config retention.ms=604800000 --bootstrap-server kafka:29092
+```
 
-1. **Garanta que o Kafka está rodando em** `localhost:9092`
+### Número de Partições
 
-   Utilize o docker-compose.yml fornecido na pasta parte1-fundamentos/ para subir o ambiente local rapidamente:
+O número ideal de partições depende do paralelismo desejado:
 
-   ```bash
-   docker-compose up -d
-   ```
+```bash
+# Aumentar número de partições
+docker exec -it kafka kafka-topics --alter --topic meu-topico --partitions 6 --bootstrap-server kafka:29092
+```
 
-2. **Crie o tópico** `meu-topico` se necessário
+## Monitoramento Básico
 
-   Execute o comando abaixo para criar o tópico no seu cluster Kafka local:
+### Verificando Consumer Groups
 
-   ```bash
-   docker exec -it <nome_do_container_kafka> kafka-topics --bootstrap-server localhost:9092 --create --topic meu-topico --partitions 1 --replication-factor 1
-   ```
+```bash
+docker exec -it kafka kafka-consumer-groups --list --bootstrap-server kafka:29092
+```
 
-   Substitua `<nome_do_container_kafka>` pelo nome real do container Kafka em execução (ex: kafka ou kafka1).
+### Verificando Offsets de um Consumer Group
 
-3. **Compile e execute os exemplos Java usando Maven**
+```bash
+docker exec -it kafka kafka-consumer-groups --describe --group meu-grupo --bootstrap-server kafka:29092
+```
 
-   O projeto já possui um pom.xml pronto na pasta parte1-fundamentos com todas as dependências necessárias. Basta rodar:
+## Dicas e Melhores Práticas
 
-   ```bash
-   mvn compile
-   mvn exec:java -Dexec.mainClass=SimpleProducer
-   mvn exec:java -Dexec.mainClass=SimpleConsumer
-   ```
+1. **Particionamento adequado**: Escolha um número de partições que permita escalabilidade.
+2. **Chaves de particionamento**: Use chaves para garantir ordenação de mensagens relacionadas.
+3. **Replicação**: Em ambientes de produção, use fator de replicação >= 3.
+4. **Monitoramento**: Implemente monitoramento para identificar problemas cedo.
+5. **Gerenciamento de esquemas**: Considere usar Avro ou Protobuf com Schema Registry.
 
-   O **SimpleProducer** envia uma mensagem de exemplo para o tópico, e o **SimpleConsumer** consome e imprime as mensagens recebidas.
+## Ferramentas Úteis
 
-### Producer Java - Enviando uma mensagem
+- **Conduktor**: Interface gráfica para gerenciamento de clusters Kafka.
+- **Kafka Tool**: Ferramenta desktop para visualização e administração.
+- **kcat (anteriormente kafkacat)**: Utilitário de linha de comando versátil.
 
-O Producer é responsável por publicar mensagens em um tópico Kafka. Veja um exemplo básico:
+## Exemplos de Código Simples
+
+### Producer em Java
 
 ```java
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerRecord;
-import java.util.Properties;
+Properties props = new Properties();
+props.put("bootstrap.servers", "localhost:9092");
+props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
-public class SimpleProducer {
-    public static void main(String[] args) {
-        Properties props = new Properties();
-        props.put("bootstrap.servers", "localhost:9092");
-        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        
-        try (KafkaProducer<String, String> producer = new KafkaProducer<>(props)) {
-            producer.send(new ProducerRecord<>("meu-topico", "mensagem de exemplo"));
-            System.out.println("Mensagem enviada!");
-        }
+Producer<String, String> producer = new KafkaProducer<>(props);
+producer.send(new ProducerRecord<>("meu-topico", "chave", "valor"));
+producer.close();
+```
+
+### Consumer em Java
+
+```java
+Properties props = new Properties();
+props.put("bootstrap.servers", "localhost:9092");
+props.put("group.id", "meu-grupo");
+props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+
+Consumer<String, String> consumer = new KafkaConsumer<>(props);
+consumer.subscribe(Collections.singletonList("meu-topico"));
+
+while (true) {
+    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+    for (ConsumerRecord<String, String> record : records) {
+        System.out.printf("offset = %d, key = %s, value = %s%n", 
+                          record.offset(), record.key(), record.value());
     }
 }
 ```
-
-### Consumer Java - Lendo mensagens do tópico
-
-O Consumer é responsável por ler as mensagens publicadas em um tópico. Veja um exemplo básico:
-
-```java
-import org.apache.kafka.clients.consumer.ConsumerRecords;
-import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import java.util.Collections;
-import java.util.Properties;
-
-public class SimpleConsumer {
-    public static void main(String[] args) {
-        Properties props = new Properties();
-        props.put("bootstrap.servers", "localhost:9092");
-        props.put("group.id", "grupo-exemplo");
-        props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-        props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-        
-        try (KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props)) {
-            consumer.subscribe(Collections.singletonList("meu-topico"));
-            ConsumerRecords<String, String> records = consumer.poll(java.time.Duration.ofSeconds(5));
-            
-            for (ConsumerRecord<String, String> record : records) {
-                System.out.printf("Recebido: %s%n", record.value());
-            }
-        }
-    }
-}
-```
-
-**Dica:** Você pode modificar os exemplos para enviar e consumir múltiplas mensagens, testar diferentes tópicos ou experimentar com múltiplos consumidores para entender o funcionamento dos consumer groups.
 
 Esses exemplos são apenas para fins didáticos e funcionam em ambientes locais com o Kafka rodando no padrão (localhost:9092).
-
----
 
 ## Exercícios Práticos
 
 Para praticar e aprofundar os conceitos desta parte, consulte também o arquivo auxiliar:
 
 - `parte1-fundamentos/exercicios-parte1.md` — Exercícios de fundamentos, comandos básicos, experimentação inicial e espaço para anotações.
-
----
 
 ## Código-Fonte e Exemplos
 
@@ -176,5 +185,7 @@ Todo o conteúdo, exemplos práticos e arquivos de configuração deste artigo e
 [**🔗 github.com/chmulato/kafka-java-mastery**](https://github.com/chmulato/kafka-java-mastery)
 
 **Acesse, explore e contribua!**
+
+#ApacheKafka #Java #Messaging #EventStreaming #DataStreaming #Microservices #Integration #RealTimeData
 
 [![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)

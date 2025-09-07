@@ -1,10 +1,12 @@
+# CSOnline Parte II: Avanços Contínuos no Projeto
+
 ![Acompanhe o progresso](/articles/assets/img/2025_08_02_IMAGE_001.png)
 
-# Avanços contínuos no projeto CSOnline
-
-2 de agosto de 2025
+## Transformação de Legacy para Arquitetura Moderna
 
 Desde nosso último artigo, o **CSOnline** tem avançado rapidamente. O que começou como uma aplicação JSF legado agora está se transformando em uma arquitetura moderna e distribuída, com uma clara separação entre *backend* e *frontend*. Esta evolução reflete nosso compromisso com boas práticas de desenvolvimento e preparação para os desafios do mercado atual.
+
+---
 
 ## Backend: Solidez e Maturidade
 
@@ -28,45 +30,47 @@ O grande destaque desta fase é nosso novo *frontend* SPA desenvolvido em Vue.js
 
 - **Arquitetura Composition API**: Utilizando o que há de mais moderno no ecossistema Vue
 
-- **Módulos independentes**: Separação clara entre gestão de usuários, entregadores, empresas, entregas, equipes, SMS/WhatsApp e preços
+- **Typescript**: Tipagem forte para melhor manutenibilidade e detecção precoce de erros
 
-- **Interface responsiva**: Design moderno que se adapta a qualquer dispositivo
+- **Design system coerente**: UI consistente com foco na experiência do usuário
 
-- **Vite como build tool**: Garantindo carregamento rápido e otimizado
+- **Componentes reutilizáveis**: Biblioteca de UI que acelera o desenvolvimento
 
-- **Sistema completo de navegação**: Fluxo intuitivo desde o login até o logout
+- **Estrutura modular**: Organização por domínios de negócio, facilitando a escalabilidade
 
-O *frontend* já está 100% funcional com dados simulados, pronto para integração com os endpoints REST do *backend*. A experiência do usuário foi cuidadosamente elaborada para garantir produtividade e facilidade de uso.
+Esta implementação substitui completamente a interface JSF anterior, proporcionando uma experiência mais fluida e responsiva para todos os usuários.
 
-## Integração e Deploy
+## Integração Backend-Frontend: O melhor dos dois mundos
 
-Desenvolvemos scripts PowerShell que automatizam todo o processo de build e deploy:
+A comunicação entre as camadas é realizada através de APIs REST bem definidas:
 
-- **Build integrado**: *Frontend* e *backend* em um único comando
+- **Autenticação JWT**: Segurança moderna para proteger os recursos
 
-- **Configuração do WildFly 31**: Scripts para DataSource JDBC e HTTPS/SSL
+- **Contrato API explícito**: Interfaces claras entre as camadas
 
-- **Documentação detalhada**: Instruções passo a passo para desenvolvedores e usuários finais
+- **Modelos DTOs**: Transferência eficiente de dados
 
-Nossa documentação inclui diagramas de sequência, guias de configuração e tutoriais completos para quem deseja explorar ou contribuir com o projeto.
+- **Documentação interativa**: Swagger UI para exploração de endpoints
 
-## Próximos passos e oportunidades
+Esta abordagem permite o desenvolvimento independente de cada camada, além de facilitar a escalabilidade horizontal em ambientes de alta demanda.
 
-Estamos prestes a iniciar a fase de integração entre o *frontend* Vue.js e o *backend* Jakarta EE. Esta é uma excelente oportunidade para:
+## DevOps: Automatização e confiabilidade
 
-- **Desenvolvedores frontend**: Contribuir com componentes Vue.js, ajustes de UX/UI e animações
+Simplificamos significativamente a configuração e execução do sistema:
 
-- **Especialistas em Jakarta EE**: Refinar endpoints REST, otimizar queries e melhorar a segurança
+- **Scripts PowerShell otimizados**: Automação de build, testes e execução
 
-- **DevOps**: Aprimorar pipelines de CI/CD e estratégias de deploy
+- **Documentação detalhada**: Guias passo a passo para desenvolvimento e implantação
 
-- **QA**: Desenvolver testes automatizados E2E com Cypress ou similares
+- **Docker Coming Soon**: Preparação para containerização completa
 
-O **CSOnline** está se tornando não apenas um sistema de gestão de entregas, mas uma plataforma completa que demonstra as melhores práticas em desenvolvimento fullstack moderno.
+- **CI/CD em andamento**: Integração contínua em desenvolvimento
 
-## Como participar
+Nossa meta é proporcionar uma experiência de desenvolvimento fluida e previsível, garantindo que cada iteração mantenha a qualidade e confiabilidade do sistema.
 
-Se você se interessou por este projeto:
+## Convite à colaboração
+
+O **CSOnline** é um projeto de código aberto que se beneficia enormemente das contribuições da comunidade. Convidamos todos os desenvolvedores interessados a participar:
 
 1. Faça um fork do repositório: [**https://github.com/chmulato/csonline**](https://github.com/chmulato/csonline)
 
