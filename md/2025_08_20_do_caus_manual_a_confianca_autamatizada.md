@@ -1,6 +1,6 @@
 # Do Caos Manual à Confiança Automatizada
 
-![Automação de testes de API no CSOnline](temp_media\2025_08_20_Do Caus Manual à Confiança Autamatizada/assets/img/2025_08_20_IMAGE_001.png)
+![Automação de testes de API no CSOnline](/articles/assets/img/2025_08_20_IMAGE_001.png)
 
 **Da Necessidade ao Sistema: Como Construímos uma Suite de Testes Automatizados para APIs REST**
 
