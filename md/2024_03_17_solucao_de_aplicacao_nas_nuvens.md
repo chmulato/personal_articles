@@ -1,12 +1,10 @@
-![](temp_media/2024_03_17_Solução de aplicação nas nuvens/assets/img/2024_03_17_IMAGE_001.png)
+![Computação em nuvem](/articles/assets/img/2024_03_17_IMAGE_001.png)
 
 # Solução de aplicação nas nuvens
 
-*por [Christian Mulato](https://www.linkedin.com/in/chmulato/) — Desenvolvedor Java Sênior na Develcode*
-
 *17 de março de 2024*
 
-**Apache OpenWhisk** é uma plataforma ***serverless*** de código aberto que executa funções em resposta a eventos em qualquer escala. Ela gerencia a infraestrutura, servidores e escalabilidade usando **contêineres Docker**, permitindo que você se concentre em construir aplicativos incríveis e eficientes.
+**Apache OpenWhisk** é uma plataforma *serverless* de código aberto que executa funções em resposta a eventos em qualquer escala. Ela gerencia a infraestrutura, servidores e escalabilidade usando **contêineres Docker**, permitindo que você se concentre em construir aplicativos incríveis e eficientes.
 
 ## Principais características do Apache OpenWhisk
 
@@ -121,9 +119,7 @@ Essa é uma configuração básica para uso local.
 
 Implantar uma ação do **Apache OpenWhisk** em produção envolve algumas etapas importantes:
 
-![](temp_media/2024_03_17_Solução de aplicação nas nuvens/assets/img/2024_03_17_IMAGE_003.png)
-
-*Um exemplo esquemático das tecnologias envolvidas.*
+![Um exemplo esquemático das tecnologias envolvidas.](/articles/assets/img/2024_03_17_IMAGE_003.png)
 
 **1. Configuração do Ambiente**
 - Configure um ambiente OpenWhisk: local (Kubernetes ou Docker Compose) ou em nuvem pública (IBM Cloud, AWS, Google Cloud)
@@ -159,3 +155,11 @@ wsk action create minha-soma soma.js
 - Monitore o comportamento após a implantação
 
 Consulte a [documentação oficial do Apache OpenWhisk](https://openwhisk.apache.org/documentation.html) para práticas recomendadas e detalhes específicos sobre implantação em produção.
+
+---
+
+[![Christian Mulato](/articles/assets/img/2024_03_17_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
+
+[**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
+
+Desenvolvedor Java Sênior na Develcode
