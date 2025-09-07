@@ -1,18 +1,8 @@
-![QA a[![Christian Mulato, #OPEN_TO_WORK](/articles/assets/img/2025_08_06_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
-
-[**Christian Mulato **](https://www.linkedin.com/in/chmulato/)
-
-Desenvolvedor Java Sênior \| Especialista em Back-end \| Jakarta, Spring Boot, REST APIs, Docker \| Engenheiro Químicotizando testes de API com Robot Framework](/articles/assets/img/2025_08_06_IMAGE_001.png)
+![QA automatizando testes de API com Robot Framework](/articles/assets/img/2025_08_06_IMAGE_001.png)
 
 QA automatizando testes de API com Robot Framework
 
 **Automatizando Testes de APIs REST com Robot Framework: Guia Prático**
-
-[![Christian Mulato, #OPEN_TO_WORK](temp_media\2025_08_06_Automatizando Testes de APIs REST com Robot Framework - Guia Prático/assets/img/2025_08_06_IMAGE_002.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
-
-[**Christian Mulato **](https://www.linkedin.com/in/chmulato/)
-
-Desenvolvedor Java Sênior \| Especialista em Back-end \| Jakarta, Spring Boot, REST APIs, Docker \| Engenheiro Químico
 
 6 de agosto de 2025
 
@@ -47,136 +37,111 @@ O Robot Framework oferece uma abordagem baseada em palavras-chave para automaç�
 **Ambiente necessário:**
 
 - Python 3.8 ou superior
-
 - pip (gerenciador de pacotes Python)
-
 - Robot Framework
-
 - Requests Library
 
 **Configuração do Ambiente**
 
+```
 pip install robotframework
-
 pip install robotframework-requests
+```
 
 **Arquitetura do Projeto**
 
+```
 tests/
-
 ├── resources/
-
-│ └── keywords.robot
-
+│   └── keywords.robot
 ├── suites/
-
-│ └── api_tests.robot
-
+│   └── api_tests.robot
 └── variables/
-
-└── config.robot
+    └── config.robot
+```
 
 **Configuração de Variáveis**
 
 **Arquivo: variables/config.robot**
 
-\*\*\* Variables \*\*\*
-
-\${BASE_URL}
-
-https://api.seuprojeto.com/v1
+```
+*** Variables ***
+${BASE_URL}    https://api.seuprojeto.com/v1
+```
 
 **Implementação de Keywords Reutilizáveis**
 
 **Arquivo: resources/keywords.robot**
 
-\*\*\* Settings
+```
+*** Settings ***
+Library    RequestsLibrary
 
-\*\*\* Library    RequestsLibrary
+*** Keywords ***
+Iniciar Sessão na API
+    Create Session    api    ${BASE_URL}
 
-\*\*\* Keywords
-
-\*\*\* Iniciar Sessão na API     Create Session    api    \${BASE_URL}
-
-GET Deve Retornar 200     \[Arguments\]    \${endpoint}     \${response}=   
-
-GET On Session    api    \${endpoint}     Should Be Equal As Integers   
-
-\${response.status_code}    200
+GET Deve Retornar 200
+    [Arguments]    ${endpoint}
+    ${response}=    GET On Session    api    ${endpoint}
+    Should Be Equal As Integers    ${response.status_code}    200
+```
 
 **Casos de Teste**
 
 **Arquivo: suites/api_tests.robot**
 
-\*\*\* Settings \*\*\*
+```
+*** Settings ***
+Resource    ../variables/config.robot
+Resource    ../resources/keywords.robot
+Suite Setup    Iniciar Sessão na API
 
-Resource    ../variables/config.robot
-
-Resource    ../resources/keywords.robot
-
-Suite Setup    Iniciar Sessão na API
-
-\*\*\* Test Cases \*\*\*
-
+*** Test Cases ***
 Testar Endpoint de Status
-
-GET Deve Retornar 200    /status
+    GET Deve Retornar 200    /status
 
 Testar Endpoint de Usuário
-
-GET Deve Retornar 200    /users/1
+    GET Deve Retornar 200    /users/1
+```
 
 **Execução dos Testes**
 
+```
 robot -d results tests/suites/api_tests.robot
+```
 
 O comando gera um relatório HTML detalhado em results/report.html com status de execução e métricas de performance.
 
 **Vantagens da Implementação**
 
 - **Legibilidade:** Sintaxe próxima à linguagem natural, facilitando compreensão por equipes não técnicas
-
 - **Modularidade:** Keywords reutilizáveis reduzem duplicação de código
-
 - **Integração:** Compatibilidade nativa com pipelines CI/CD
-
 - **Relatórios:** Documentação automática de resultados
 
 **Integração com CI/CD**
 
 **Exemplo de GitHub Actions:**
 
+```yaml
 name: API Tests
-
-on: \[push\]
-
+on: [push]
 jobs:
-
-test:
-
-runs-on: ubuntu-latest
-
-steps:
-
-\- uses: actions/checkout@v2
-
-\- name: Set up Python
-
-uses: actions/setup-python@v2
-
-with:
-
-python-version: 3.11
-
-\- name: Install dependencies
-
-run: \|
-
-pip install robotframework robotframework-requests
-
-\- name: Run tests
-
-run: robot tests/suites/api_tests.robot
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+      - name: Install dependencies
+        run: |
+          pip install robotframework robotframework-requests
+      - name: Run tests
+        run: robot tests/suites/api_tests.robot
+```
 
 **Conclusão**
 
@@ -185,11 +150,8 @@ O **Robot Framework** oferece uma solução robusta para automação de testes d
 **Principais benefícios alcançados:**
 
 - Redução significativa no tempo de execução de testes
-
 - Padronização de processos de validação
-
 - Documentação automática de cenários de teste
-
 - Integração seamless com ferramentas de desenvolvimento
 
 ------------------------------------------------------------------------
@@ -197,5 +159,12 @@ O **Robot Framework** oferece uma solução robusta para automação de testes d
 **Recursos Adicionais:**
 
 - Documentação oficial: [**Robot Framework**](https://robotframework.org/)
-
 - Biblioteca de requisições: Requests Library
+
+------------------------------------------------------------------------
+
+[![Christian Mulato, #OPEN_TO_WORK](/articles/assets/img/2025_08_06_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
+
+[**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
+
+Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico

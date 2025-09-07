@@ -1,15 +1,15 @@
 # A Escolha que Define o Futuro: Java Enterprise vs Node.js em Exchanges
 
-![Comparação de Stacks para Sistemas Financeiros](temp_media\2025_08_31_A_Escolha_que_Define_o_Futuro_Java_vs_NodeJS/assets/img/2025_08_31_IMAGE_001.png)
+![Comparação de Stacks para Sistemas Financeiros](/articles/assets/img/2025_08_31_IMAGE_001.png)
 
 **Por Christian Mulato**  
-Desenvolvedor Java Sênior | Back-end | Spring Boot | APIs REST | Docker | Automação & IAo de Stacks para Sistemas Financeiros](temp_media\2025_08_31_A_Escolha_que_Define_o_Futuro_Java_vs_NodeJS/assets/img/2025_08_31_IMAGE_001.png){width="5.905555555555556in" height="3.3243055555555556in"}
+Desenvolvedor Java Sênior | Back-end | Spring Boot | APIs REST | Docker | Automação & IA
 
 Comparação de Stacks para Sistemas Financeiros
 
 **A Escolha que Define o Futuro: Java Enterprise vs Node.js em Exchanges**
 
-[![Christian Mulato, #OPEN_TO_WORK](temp_media\2025_08_31_A_Escolha_que_Define_o_Futuro_Java_vs_NodeJS/assets/img/2025_08_31_IMAGE_002.jpeg){width="1.0416666666666667in" height="1.0416666666666667in"}](https://www.linkedin.com/in/chmulato/)
+[![Christian Mulato, #OPEN_TO_WORK](/articles/assets/img/2025_08_31_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
 
 [**Christian Mulato **](https://www.linkedin.com/in/chmulato/)
 
