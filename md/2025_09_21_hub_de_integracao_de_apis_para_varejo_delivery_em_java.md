@@ -1,32 +1,8 @@
-# Hub de Integração ## O problema (em 5 linhas)
+# Hub de Integração de APIs para Varejo Delivery em Java
 
-1. Cada canal tem sua própria API, contrato e SLA  
-2. Lojistas e redes gastam tempo "traduzindo" dados  
-3. Ruptura por falta de sincronização de estoque  
-4. Duplicid## Chamado à ação
-
-Se você é do **varejo** ou **logística** e já cansou de "reinventar integração" a cada novo canal, vamos conversar. A ideia é construir **um hub único, em Java**, que reduza complexidade e acelere o go-live em semanas, não meses.
-
-*Curtiu a tese? Comenta aqui, envia DM ou marque alguém que precisa ler isso.*
-
-[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)integrações entre times e fornecedores  
-5. Falta de visão unificada (KPIs, margem por canal, O2O)
-
-**Oportunidade**: oferecer uma **API única** e **conectores prontos** para os principais players, reduzindo *time-to-market* e aumentando a confiabilidade.ra Varejo & Delivery — uma visão prática em Java
+![Hub de Integração de APIs](/articles/assets/img/hub_api_integration.jpg)
 
 ## Por que o varejo brasileiro precisa de um "único lugar" para integrar tudo
-
-Nos últimos anos, o ecossistema de vendas e entregas no Brasil se fragmentou: marketplaces (Magalu, Mercado Livre, Amazon, Shopee), apps de delivery (iFood, Rappi, Cornershop), e-commerces próprios, ERPs, TMS e last-mile. O resultado? Custos altos de integração, dados dispersos e decisões lentas.
-
-A tese deste artigo é simples: há espaço para uma startup de **Integração de APIs** (um *hub*) que unifique **pedidos, catálogo, estoque e logística** em uma **API única** — começando enxuto (MVP), mas pronta para escalar. E dá para fazer isso **em Java**, com um stack moderno, resiliente e observável.
-
-## Por que o varejo brasileiro precisa de um "único lugar" para integrar tudo
-
-Nos últimos anos, o ecossistema de vendas e entregas no Brasil se fragmentou: marketplaces (Magalu, Mercado Livre, Amazon, Shopee), apps de delivery (iFood, Rappi, Cornershop), e-commerces próprios, ERPs, TMS e last-mile. O resultado? Custos altos de integração, dados dispersos e decisões lentas.
-
-A tese deste artigo é simples: há espaço para uma startup de **Integração de APIs** (um *hub*) que unifique **pedidos, catálogo, estoque e logística** em uma **API única** — começando enxuto (MVP), mas pronta para escalar. E dá para fazer isso **em Java**, com um stack moderno, resiliente e observável.e Integração de APIs para Varejo & Delivery — uma visão prática em Java
-
-**Por que o varejo brasileiro precisa de um “único lugar” para integrar tudo**
 
 Nos últimos anos, o ecossistema de vendas e entregas no Brasil se fragmentou: marketplaces (Magalu, Mercado Livre, Amazon, Shopee), apps de delivery (iFood, Rappi, Cornershop), e-commerces próprios, ERPs, TMS e last-mile. O resultado? Custos altos de integração, dados dispersos e decisões lentas.
 
@@ -35,11 +11,12 @@ A tese deste artigo é simples: há espaço para uma startup de **Integração d
 ---
 
 ## O problema (em 5 linhas)
-1) Cada canal tem sua própria API, contrato e SLA;  
-2) Lojistas e redes gastam tempo “traduzindo” dados;  
-3) Ruptura por falta de sincronização de estoque;  
-4) Duplicidade de integrações entre times e fornecedores;  
-5) Falta de visão unificada (KPIs, margem por canal, O2O).
+
+1. Cada canal tem sua própria API, contrato e SLA  
+2. Lojistas e redes gastam tempo "traduzindo" dados  
+3. Ruptura por falta de sincronização de estoque  
+4. Duplicidade de integrações entre times e fornecedores  
+5. Falta de visão unificada (KPIs, margem por canal, O2O)
 
 **Oportunidade**: oferecer uma **API única** e **conectores prontos** para os principais players, reduzindo *time-to-market* e aumentando a confiabilidade.
 
@@ -224,7 +201,9 @@ public class OrderIngestService {
 ---
 
 ## Chamado à ação
-Se você é do **varejo** ou **logística** e já cansou de “reinventar integração” a cada novo canal, vamos conversar. A ideia é construir **um hub único, em Java**, que reduza complexidade e acelere o go-live em semanas, não meses.
+
+Se você é do **varejo** ou **logística** e já cansou de "reinventar integração" a cada novo canal, vamos conversar. A ideia é construir **um hub único, em Java**, que reduza complexidade e acelere o go-live em semanas, não meses.
 
 *Curtiu a tese? Comenta aqui, envia DM ou marque alguém que precisa ler isso.*
 
+[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)
