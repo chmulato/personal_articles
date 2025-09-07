@@ -6,8 +6,6 @@
 
 Desde nosso último artigo, o **CSOnline** tem avançado rapidamente. O que começou como uma aplicação JSF legado agora está se transformando em uma arquitetura moderna e distribuída, com uma clara separação entre *backend* e *frontend*. Esta evolução reflete nosso compromisso com boas práticas de desenvolvimento e preparação para os desafios do mercado atual.
 
-------------------------------------------------------------------------
-
 ## Backend: Solidez e Maturidade
 
 Nosso *backend* Jakarta EE 10 está mais robusto do que nunca:
@@ -23,8 +21,6 @@ Nosso *backend* Jakarta EE 10 está mais robusto do que nunca:
 - **Flexibilidade de configuração**: Suporte a ambientes com JTA (produção) e RESOURCE_LOCAL (desenvolvimento), documentados detalhadamente
 
 Os endpoints REST agora estão 100% funcionais, com testes unitários abrangentes garantindo a confiabilidade de cada operação CRUD.
-
-------------------------------------------------------------------------
 
 ## Frontend: A revolução em Vue.js
 
@@ -42,8 +38,6 @@ O grande destaque desta fase é nosso novo *frontend* SPA desenvolvido em Vue.js
 
 O *frontend* já está 100% funcional com dados simulados, pronto para integração com os endpoints REST do *backend*. A experiência do usuário foi cuidadosamente elaborada para garantir produtividade e facilidade de uso.
 
-------------------------------------------------------------------------
-
 ## Integração e Deploy
 
 Desenvolvemos scripts PowerShell que automatizam todo o processo de build e deploy:
@@ -55,8 +49,6 @@ Desenvolvemos scripts PowerShell que automatizam todo o processo de build e depl
 - **Documentação detalhada**: Instruções passo a passo para desenvolvedores e usuários finais
 
 Nossa documentação inclui diagramas de sequência, guias de configuração e tutoriais completos para quem deseja explorar ou contribuir com o projeto.
-
-------------------------------------------------------------------------
 
 ## Próximos passos e oportunidades
 
@@ -72,8 +64,6 @@ Estamos prestes a iniciar a fase de integração entre o *frontend* Vue.js e o *
 
 O **CSOnline** está se tornando não apenas um sistema de gestão de entregas, mas uma plataforma completa que demonstra as melhores práticas em desenvolvimento fullstack moderno.
 
-------------------------------------------------------------------------
-
 ## Como participar
 
 Se você se interessou por este projeto:
@@ -88,18 +78,8 @@ Se você se interessou por este projeto:
 
 Acreditamos que o desenvolvimento colaborativo gera não apenas software de melhor qualidade, mas também comunidades mais fortes e desenvolvedores mais experientes.
 
-------------------------------------------------------------------------
-
 Acompanhe a evolução do **CSOnline** e faça parte desta jornada de transformação tecnológica!
 
-------------------------------------------------------------------------
-
-[![Christian Mulato, #OPEN_TO_WORK](/articles/assets/img/2025_08_02_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
-
-[**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
-
-Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico
-
-------------------------------------------------------------------------
-
 #java #jakartaee #vuejs #spa #frontend #backend #fullstack #opensource #hsqldb #wildfly #devops #linkedin #devcommunity
+
+[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)

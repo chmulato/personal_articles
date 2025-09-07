@@ -54,14 +54,4 @@ Se você acredita que precisamos amadurecer o debate público, sair da trincheir
 
 Porque ainda somos, como dizia o Pink Floyd, apenas homens comuns. Mas não precisamos ser ingênuos para sempre.
 
-------------------------------------------------------------------------
-
-[![Christian Mulato, #OPEN_TO_WORK](/articles/assets/img/2025_08_01_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
-
-[**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
-
-Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico
-
-------------------------------------------------------------------------
-
-Feliz Aniversário! Meu amigo [**CHARLES FERREIRA DE OLIVEIRA**](https://www.linkedin.com/in/charles-ferreira-de-oliveira-ab679150/) Dia: 02 de agosto.
+[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)

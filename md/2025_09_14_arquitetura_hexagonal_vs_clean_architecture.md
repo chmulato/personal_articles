@@ -2,8 +2,6 @@
 
 ![Comparação entre Arquitetura Hexagonal e Arquitetura Limpa](/articles/assets/img/2025_09_14_IMAGE_001.png)
 
-*Legenda: Imagem gerada por IA representando a comparação entre Arquitetura Hexagonal e Arquitetura Limpa, com elementos visuais de portas, adaptadores e camadas concêntricas.*
-
 ## Introdução: Uma Experiência Prática na RD Saúde
 
 Há alguns anos, enquanto trabalhava como desenvolvedor Java sênior na RD Saúde, enfrentei um desafio comum em projetos de microserviços: como manter o código limpo, testável e independente de frameworks externos, especialmente em um ambiente onde as mudanças nos requisitos eram frequentes e a integração com sistemas legados era inevitável.
@@ -159,6 +157,4 @@ Ambas as arquiteturas promovem código sustentável, mas a escolha depende do co
 
 Na RD Saúde, essa combinação nos permitiu entregar microserviços robustos e escaláveis. E você? Já usou alguma dessas abordagens? Compartilhe nos comentários!
 
-*Christian Mulato*  
-*Desenvolvedor Java Sênior*  
-*14 de setembro de 2025*
+[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)

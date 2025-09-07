@@ -4,11 +4,6 @@
 
 **Da Necessidade ao Sistema: Como Construímos uma Suite de Testes Automatizados para APIs REST**
 
-**Por Christian Mulato**  
-Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico
-
-*20 de agosto de 2025*
-
 ## 1. O Desafio Inicial
 
 Durante o desenvolvimento do **CSOnline**, um sistema de gestão de entregas enterprise, nos deparamos com um problema comum mas crítico: como garantir que nossas APIs REST funcionassem consistentemente durante o desenvolvimento iterativo?
@@ -136,12 +131,10 @@ Construir ferramentas de teste não é apenas sobre encontrar bugs. É sobre cri
 
 No desenvolvimento de software, a pergunta não é "se" algo vai quebrar, mas "quando". Ter uma rede de segurança robusta transforma o medo de mudança em coragem para evolução.
 
----
-
 ## 12. Recursos e Contato
 
 **Call to Action:** E você, como garante a qualidade das suas APIs durante o desenvolvimento? Compartilhe suas estratégias nos comentários!
 
----
-
 *Artigo baseado na experiência real de desenvolvimento do sistema CSOnline - um projeto enterprise de gestão de entregas com Jakarta EE, Vue 3 e WildFly.*
+
+[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)

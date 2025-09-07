@@ -71,3 +71,5 @@ Esses recursos são projetados para atender a diferentes estilos de aprendizado 
 [**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
 
 Desenvolvedor Java Sênior na Develcode
+
+[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)

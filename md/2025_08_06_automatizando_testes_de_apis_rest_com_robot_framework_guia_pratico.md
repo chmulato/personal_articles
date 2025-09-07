@@ -1,12 +1,10 @@
 ![QA automatizando testes de API com Robot Framework](/articles/assets/img/2025_08_06_IMAGE_001.png)
 
-QA automatizando testes de API com Robot Framework
-
-**Automatizando Testes de APIs REST com Robot Framework: Guia Prático**
+# Automatizando Testes de APIs REST com Robot Framework: Guia Prático
 
 6 de agosto de 2025
 
-**A Rotina de Ana, a QA que Mudou Tudo**
+## A Rotina de Ana, a QA que Mudou Tudo
 
 Ana era QA sênior numa startup de ***fintech*** em crescimento acelerado. Todos os dias, ela chegava no escritório às 8h e já sabia o que a esperava: uma lista interminável de endpoints para testar manualmente.
 
@@ -28,11 +26,9 @@ Hoje, Ana é referência em automação na empresa. E tudo começou com uma simp
 
 "GET Deve Retornar 200"
 
-------------------------------------------------------------------------
-
 O Robot Framework oferece uma abordagem baseada em palavras-chave para automação de testes de **APIs RESTful**, combinando simplicidade de sintaxe com funcionalidades robustas. Este guia demonstra como implementar testes automatizados legíveis e extensíveis.
 
-**Requisitos Técnicos**
+## Requisitos Técnicos
 
 **Ambiente necessário:**
 
@@ -41,14 +37,14 @@ O Robot Framework oferece uma abordagem baseada em palavras-chave para automaç�
 - Robot Framework
 - Requests Library
 
-**Configuração do Ambiente**
+## Configuração do Ambiente
 
 ```
 pip install robotframework
 pip install robotframework-requests
 ```
 
-**Arquitetura do Projeto**
+## Arquitetura do Projeto
 
 ```
 tests/
@@ -60,7 +56,7 @@ tests/
     └── config.robot
 ```
 
-**Configuração de Variáveis**
+## Configuração de Variáveis
 
 **Arquivo: variables/config.robot**
 
@@ -69,7 +65,7 @@ tests/
 ${BASE_URL}    https://api.seuprojeto.com/v1
 ```
 
-**Implementação de Keywords Reutilizáveis**
+## Implementação de Keywords Reutilizáveis
 
 **Arquivo: resources/keywords.robot**
 
@@ -87,7 +83,7 @@ GET Deve Retornar 200
     Should Be Equal As Integers    ${response.status_code}    200
 ```
 
-**Casos de Teste**
+## Casos de Teste
 
 **Arquivo: suites/api_tests.robot**
 
@@ -105,7 +101,7 @@ Testar Endpoint de Usuário
     GET Deve Retornar 200    /users/1
 ```
 
-**Execução dos Testes**
+## Execução dos Testes
 
 ```
 robot -d results tests/suites/api_tests.robot
@@ -113,14 +109,14 @@ robot -d results tests/suites/api_tests.robot
 
 O comando gera um relatório HTML detalhado em results/report.html com status de execução e métricas de performance.
 
-**Vantagens da Implementação**
+## Vantagens da Implementação
 
 - **Legibilidade:** Sintaxe próxima à linguagem natural, facilitando compreensão por equipes não técnicas
 - **Modularidade:** Keywords reutilizáveis reduzem duplicação de código
 - **Integração:** Compatibilidade nativa com pipelines CI/CD
 - **Relatórios:** Documentação automática de resultados
 
-**Integração com CI/CD**
+## Integração com CI/CD
 
 **Exemplo de GitHub Actions:**
 
@@ -143,7 +139,7 @@ jobs:
         run: robot tests/suites/api_tests.robot
 ```
 
-**Conclusão**
+## Conclusão
 
 O **Robot Framework** oferece uma solução robusta para automação de testes de APIs REST, combinando sintaxe acessível com funcionalidades empresariais. A implementação de testes automatizados resulta em maior confiabilidade, redução de tempo de validação e melhoria contínua da qualidade do software.
 
@@ -154,17 +150,9 @@ O **Robot Framework** oferece uma solução robusta para automação de testes d
 - Documentação automática de cenários de teste
 - Integração seamless com ferramentas de desenvolvimento
 
-------------------------------------------------------------------------
-
-**Recursos Adicionais:**
+## Recursos Adicionais
 
 - Documentação oficial: [**Robot Framework**](https://robotframework.org/)
 - Biblioteca de requisições: Requests Library
 
-------------------------------------------------------------------------
-
-[![Christian Mulato, #OPEN_TO_WORK](/articles/assets/img/2025_08_06_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
-
-[**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
-
-Desenvolvedor Java Sênior | Especialista em Back-end | Jakarta, Spring Boot, REST APIs, Docker | Engenheiro Químico
+[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)

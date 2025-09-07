@@ -2,12 +2,6 @@
 
 ![Comparação de Stacks para Sistemas Financeiros](/articles/assets/img/2025_08_31_IMAGE_001.png)
 
-*31 de agosto de 2025*
-
-*Uma análise estratégica baseada em 15+ anos de experiência em sistemas bancários críticos*
-
----
-
 ## A História que Inspirou Esta Análise
 
 Durante um processo seletivo para a **Wisiex**, deparei-me com um desafio técnico que me fez refletir profundamente sobre uma questão fundamental: **como escolher a stack tecnológica ideal para sistemas financeiros críticos?**
@@ -19,8 +13,6 @@ Cada linha de código escrita naquele teste não era apenas uma solução técni
 Essa experiência me levou a questionar: *Em que momentos Java é realmente indispensável? Quando Node.js pode ser uma escolha mais estratégica? Como essa decisão impacta não apenas o produto, mas toda uma trajetória profissional?*
 
 Este artigo nasce dessa reflexão - uma síntese de **experiências reais em múltiplos projetos**, decisões acertadas e erros custosos que moldam a arquitetura de sistemas financeiros no mundo real.
-
----
 
 ## Resumo Executivo
 
@@ -147,15 +139,6 @@ Este artigo nasce dessa reflexão - uma síntese de **experiências reais em mú
 
 ### Triggers Críticos para Migração Java:
 
-1. Volume > 10k ordens/dia
-2. Regulamentação SEC/FINRA obrigatória
-3. Funding série B+ (compliance required)
-4. Memory leaks/instability em produção
-5. Security audit failures
-6. Team growth > 15 desenvolvedores
-
----
-
 ## 7. Conclusão Estratégica
 
 ### Diretrizes por Contexto Empresarial
@@ -177,12 +160,6 @@ A decisão tecnológica deve responder: "O objetivo é validação de mercado ou
 - **Node.js:** Ideal para validação de produto e prototipagem rápida;
 - **Java Enterprise:** Essencial para operações bancárias regulamentadas.
 
----
-
-[![Christian Mulato](/articles/assets/img/2025_08_31_IMAGE_002.jpeg)](https://www.linkedin.com/in/chmulato/)
-
-[**Christian Mulato**](https://www.linkedin.com/in/chmulato/)
-
-Desenvolvedor Java Sênior | Back-end | Spring Boot | APIs REST | Docker | Automação & IA
-
 **Nota:** Este artigo sintetiza experiência prática em sistemas financeiros reais. Para decisões específicas, recomenda-se consultoria especializada em compliance e avaliação de contexto.
+
+[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)

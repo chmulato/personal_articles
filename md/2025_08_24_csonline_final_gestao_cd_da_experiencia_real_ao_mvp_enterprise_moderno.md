@@ -1,6 +1,8 @@
 # CSOnline - Gestão CD: MVP Enterprise Completo e Lições de 11 Anos
 
-## Artigo Final para LinkedIn - - **90 tentativas falharam** - mas encontramos as 10 que funcionam
+## Artigo Final para LinkedIn
+
+- **90 tentativas falharam** - mas encontramos as 10 que funcionam
 - **Conhecemos os limites** da tecnologia atual
 - **Sabemos explicar** por que certas coisas falham
 - **Temos cicatrizes** de projetos reais
@@ -15,10 +17,6 @@
 - **Documentação completa** disponível
 - **Base técnica** para evolução
 ![CSOnline - Sistema Enterprise Completo](/articles/assets/img/2025_08_24_IMAGE_001.png)
-
----
-
-## CSOnline - Gestão CD: Da Experiência Real ao MVP Enterprise Moderno
 
 ## A Diferença Entre Promessas e Resultados Concretos
 
@@ -165,7 +163,7 @@ Testes: 20 testes de segurança automatizados
 
 Aprendemos que **experiência consolidada + tecnologia moderna + transparência total** vale mais que **promessas vazias + marketing agressivo + protótipos superficiais**.
 
-### IA Como Ferramenta, Não Milagre
+### A IA Como Ferramenta, Não Milagre
 
 A inteligência artificial foi **nossa força de trabalho** para superar limitações de recursos, não uma **solução mágica** para problemas inexistentes.
 
@@ -173,15 +171,11 @@ A inteligência artificial foi **nossa força de trabalho** para superar limita�
 
 Todo nosso trabalho está **públicamente verificável**. Não prometemos - **mostramos**.
 
----
-
 ## CSOnline - Gestão CD: MVP Pronto para Validação
 
 **Experiência real de 11 anos + Stack enterprise moderna + Desenvolvimento assistido por IA + Transparência total** = Um MVP sólido aguardando validação do mercado.
 
-**Acesse e Teste**: [GitHub Repository] | [Demo Local] | [Swagger UI Documentation]
-
----
+**Acesse e Teste**: [GitHub Repository](https://github.com/chmulato/csonline) | [Demo Local](http://localhost:8080/csonline) | [Swagger UI Documentation](http://localhost:8080/csonline/swagger-ui.html)
 
 ### Convite à Ação
 
@@ -190,12 +184,10 @@ Todo nosso trabalho está **públicamente verificável**. Não prometemos - **mo
 **Usuários**: Compartilhem feedback honesto sobre funcionalidades  
 **Céticos**: Verifiquem nosso código e tirem suas próprias conclusões
 
----
-
 **Não vendemos sonhos. Construímos soluções. Com transparência.**
 
 #EnterpriseDevelopment #MVP #RealExperience #OpenSource #TransparenciaTecnologica #DesenvolvimentoReal #JavakartaEE #Vue3 #LogisticsTech #SoftwareHonesto
 
----
-
 Repositório GitHub: [**https://github.com/chmulato/csonline**](https://github.com/chmulato/csonline)
+
+[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)

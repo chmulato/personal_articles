@@ -1,16 +1,24 @@
-# Hub de Integra## O problema (em 5 linhas)
+# Hub de Integração ## O problema (em 5 linhas)
 
 1. Cada canal tem sua própria API, contrato e SLA  
 2. Lojistas e redes gastam tempo "traduzindo" dados  
 3. Ruptura por falta de sincronização de estoque  
-4. Duplicidade de integra## Chamado à ação
+4. Duplicid## Chamado à ação
 
 Se você é do **varejo** ou **logística** e já cansou de "reinventar integração" a cada novo canal, vamos conversar. A ideia é construir **um hub único, em Java**, que reduza complexidade e acelere o go-live em semanas, não meses.
 
-*Curtiu a tese? Comenta aqui, envia DM ou marque alguém que precisa ler isso.* entre times e fornecedores  
+*Curtiu a tese? Comenta aqui, envia DM ou marque alguém que precisa ler isso.*
+
+[![Christian Mulato](/articles/assets/img/foto_chri.jpg)](https://www.linkedin.com/in/chmulato/)integrações entre times e fornecedores  
 5. Falta de visão unificada (KPIs, margem por canal, O2O)
 
-**Oportunidade**: oferecer uma **API única** e **conectores prontos** para os principais players, reduzindo *time-to-market* e aumentando a confiabilidade.PIs para Varejo & Delivery — uma visão prática em Java
+**Oportunidade**: oferecer uma **API única** e **conectores prontos** para os principais players, reduzindo *time-to-market* e aumentando a confiabilidade.ra Varejo & Delivery — uma visão prática em Java
+
+## Por que o varejo brasileiro precisa de um "único lugar" para integrar tudo
+
+Nos últimos anos, o ecossistema de vendas e entregas no Brasil se fragmentou: marketplaces (Magalu, Mercado Livre, Amazon, Shopee), apps de delivery (iFood, Rappi, Cornershop), e-commerces próprios, ERPs, TMS e last-mile. O resultado? Custos altos de integração, dados dispersos e decisões lentas.
+
+A tese deste artigo é simples: há espaço para uma startup de **Integração de APIs** (um *hub*) que unifique **pedidos, catálogo, estoque e logística** em uma **API única** — começando enxuto (MVP), mas pronta para escalar. E dá para fazer isso **em Java**, com um stack moderno, resiliente e observável.
 
 ## Por que o varejo brasileiro precisa de um "único lugar" para integrar tudo
 
@@ -35,8 +43,6 @@ A tese deste artigo é simples: há espaço para uma startup de **Integração d
 
 **Oportunidade**: oferecer uma **API única** e **conectores prontos** para os principais players, reduzindo *time-to-market* e aumentando a confiabilidade.
 
----
-
 ## A proposta
 
 Um **SaaS B2B** que centraliza integrações e expõe **um contrato padronizado**:
@@ -48,8 +54,6 @@ Um **SaaS B2B** que centraliza integrações e expõe **um contrato padronizado*
 - **Console**: painel para monitoração, alertas e gestão de chaves/API
 
 **Modelo de negócio**: assinatura por loja/filial + *overage* por volume de pedidos, com planos *Basic/Pro/Enterprise*.
-
----
 
 ## Arquitetura de referência (Java)
 
@@ -64,8 +68,6 @@ Um **SaaS B2B** que centraliza integrações e expõe **um contrato padronizado*
 - **Contrato**: OpenAPI 3.0, *schema registry* (Avro/JSON Schema) para eventos
 
 > Estilo arquitetural: **Hexagonal** (Ports & Adapters) + **SAGA** para coordenação de fluxos multi-serviço (ex.: pedido → reserva de estoque → pagamento → despacho).
-
----
 
 ## Domínio mínimo viável (MVP)
 
@@ -190,8 +192,6 @@ public class OrderIngestService {
 }
 ```
 
----
-
 ## Segurança, LGPD e compliance
 
 - **PII minimizada**: armazene somente o necessário, com *tokenization* para documentos e cartões  
@@ -200,8 +200,6 @@ public class OrderIngestService {
 - **Consentimento**: registre bases legais e finalidades (LGPD Art. 7º)  
 - **Segregação de dados**: *multi-tenant* com *row-level security*
 
----
-
 ## SLOs e observabilidade
 
 - **SLO ingestão**: P95 < 500 ms no edge, P99 < 2 s no fluxo assíncrono  
@@ -209,16 +207,12 @@ public class OrderIngestService {
 - **KPIs de negócio**: *fill rate*, tempo de ciclo, % cancelamento por canal  
 - **Alertas**: erro por conector, latência por parceiro, *dead letter queues*
 
----
-
 ## Roadmap sugerido
 
 **Mês 1–2 (MVP)**: Ingestão de pedidos + conectores de 2 canais + webhook de status  
 **Mês 3–4**: Catálogo/estoque unificado + conectores de logística  
 **Mês 5–6**: Console self-service, chaves API, faturação, relatórios  
 **Enterprise**: SAGA completa, *rate cards* de frete, roteirização e *what-if pricing*
-
----
 
 ## Diferenciais para o Brasil
 
