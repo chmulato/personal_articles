@@ -61,22 +61,22 @@ O sistema implementa controle rigoroso para evitar o reprocessamento de artigos:
 
 ### Principais Recursos
 
-**Prevenção Completa de Sobreposição**
-- Artigos na lista de controle nunca são reprocessados
-- 100% de proteção contra conflitos de arquivos
+**Prevenção de Sobreposição**
+- Artigos na lista de controle não são reprocessados
+- Proteção contra conflitos de arquivos
 - Controle granular por artigo individual
 
-**Máxima Eficiência**  
+**Eficiência de Processamento**  
 - Compilações incrementais processam apenas novos artigos
 - Tempo de processamento otimizado
 - Recursos computacionais preservados
 
-**Flexibilidade Total**
+**Flexibilidade**
 - Reprocessamento seletivo quando necessário  
 - Sincronização com o estado real do arquivo
 - Comandos simples de gerenciamento
 
-**Robustez Operacional**
+**Robustez**
 - Lista persistente entre execuções
 - Registro detalhado de operações
 - Validação automática de integridade
@@ -165,29 +165,28 @@ O sistema validará automaticamente as dependências e a estrutura de diretório
 ```
 personal_articles/
 ├── articles/                       # Artigos HTML gerados
-├── assets/css/                     # Folhas de estilo do site
+│   └── assets/                     # Ativos para os artigos
+│       ├── css/                    # Folhas de estilo
+│       ├── img/                    # Imagens dos artigos
+│       ├── js/                     # Scripts JavaScript
+│       └── prompt_img/             # Imagens para prompts
 ├── docx/                           # Arquivos DOCX de origem (61 arquivos)
 ├── md/                             # Arquivos Markdown gerados
-├── scr/build_system/               # Sistema de compilação (atual)
-├── old_scripts/                    # Scripts legados (backup)
-└── index.html                      # Página inicial do site
+├── scr/                            # Código-fonte
+│   └── build_system/               # Sistema de compilação
+├── ARTICLES.md                     # Lista completa de artigos
+├── index.html                      # Página inicial do site
+└── README.md                       # Documentação do projeto
 ```
 
 ## Migração e Limpeza do Sistema
 
-### Gerenciamento de Scripts Legados
+### Gerenciamento de Arquivos
 
-21 scripts de compilação anteriores foram organizados sistematicamente:
-- **Realocados**: Movidos para o diretório `old_scripts/` como backup
-- **Documentados**: O propósito de cada script foi catalogado
-- **Preservados**: Toda a funcionalidade mantida para referência
-
-### Benefícios Modulares
-
-- **Manutenibilidade**: Separação clara de preocupações
-- **Extensibilidade**: Fácil adição de novos recursos
-- **Confiabilidade**: Tratamento e registro de erros centralizados
-- **Desempenho**: Pipeline de processamento otimizado
+- **Organização**: Estrutura de diretórios clara e consistente
+- **Consolidação**: Arquivos CSS redundantes removidos
+- **Padronização**: Estilos e estrutura HTML normalizados
+- **Manutenção**: Sistema de temas e responsividade aprimorados
 
 ## Status Atual
 
@@ -208,13 +207,16 @@ Este blog contém artigos técnicos abrangendo:
 - **APIs**: REST, GraphQL, OpenAPI, Documentação
 - **Testes**: TDD, Testes Unitários, Integração
 - **IA & Tecnologia**: Inteligência Artificial aplicada ao desenvolvimento
+- **Mercado**: Análises e tendências do mercado de tecnologia
+- **Carreira**: Desenvolvimento profissional e competências técnicas
 
 ### Distribuição de Conteúdo
 
-- Java & Spring: 35 artigos (59%)
-- Arquitetura de Software: 12 artigos (20%)
-- DevOps & Containers: 8 artigos (14%)
-- IA & Tecnologia: 4 artigos (7%)
+- Java & Spring: ~59%
+- Arquitetura de Software: ~20%
+- DevOps & Containers: ~14%
+- IA & Tecnologia: ~7%
+- Mercado & Carreira: Em desenvolvimento
 
 ## Recursos do Site
 
@@ -223,29 +225,27 @@ Este blog contém artigos técnicos abrangendo:
 O site inclui um sistema completo de alternância de temas:
 
 **Principais Recursos**
-- Botão de alternância intuitivo no canto superior direito
+- Botão de alternância no canto superior direito
 - Persistência automática entre sessões
 - Design responsivo para desktop e mobile
-- Transições suaves com animações de 0,3s
+- Transições suaves com animações
 - Detecção automática de preferência do sistema
 
 **Implementação Técnica**
 - Variáveis CSS para fácil manutenção
 - LocalStorage para persistência de preferência do usuário
 - Media Queries para detecção de preferência do sistema
-- Rótulos ARIA para botões acessíveis
+- Rótulos ARIA para acessibilidade
 
 **Paleta de Cores**
 
-```
-| Elemento             | Tema Claro  | Tema Escuro |
-|----------------------|-------------|------------|
-| Fundo Primário       | `#ffffff`   | `#111827`  |
-| Fundo Secundário     | `#f9fafb`   | `#1f2937`  |
-| Texto Primário       | `#1f2937`   | `#f9fafb`  |
-| Texto Secundário     | `#6b7280`   | `#d1d5db`  |
-| Cor de Destaque      | `#2563eb`   | `#3b82f6`  |
-```
+| Elemento         | Tema Claro  | Tema Escuro |
+|------------------|-------------|-------------|
+| Fundo Primário   | `#ffffff`   | `#111827`   |
+| Fundo Secundário | `#f9fafb`   | `#1f2937`   |
+| Texto Primário   | `#1f2937`   | `#f9fafb`   |
+| Texto Secundário | `#6b7280`   | `#d1d5db`   |
+| Cor de Destaque  | `#2563eb`   | `#3b82f6`   |
 
 ## Tecnologias Utilizadas
 
