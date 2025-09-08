@@ -1,45 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Evolução do JavaEE para Jakarta EE: Impacto em Sistemas Bancários e de Varejo - Christian Mulato Dev Blog</title>
     <meta name="description" content="História do JavaEE para Jakarta EE e seu uso em sistemas bancários e de varejo">
-    <title>A Evolução do JavaEE para Jakarta EE: Impacto em Sistemas Bancários e de Varejo | Christian Mulato</title>
+    <meta name="author" content="Christian Mulato">
+    <meta name="keywords" content="Java, Desenvolvimento, JavaEE, Jakarta EE, Tecnologia">
     
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/article.css">
-    <link rel="stylesheet" href="assets/css/syntax-highlighting.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/highlight.css">
+    <style>
+        .code-block {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-right: 3px solid #3b82f6;
+            position: relative;
+        }
+        
+        .code-block::before {
+            content: "Java";
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background-color: #3b82f6;
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .code-block code {
+            background: transparent;
+            color: #e2e8f0;
+            text-shadow: none;
+            font-family: inherit;
+        }
+        
+        .language-java .keyword {
+            color: #93c5fd;
+        }
+        
+        .language-java .string {
+            color: #86efac;
+        }
+        
+        .language-java .comment {
+            color: #94a3b8;
+            font-style: italic;
+        }
+        
+        .language-java .annotation {
+            color: #fbbf24;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header class="article-header">
-            <div class="breadcrumbs">
-                <a href="../index.html">Home</a> &gt; 
-                <a href="../index.html?category=java">Java & Arquitetura</a> &gt; 
-                <span>A Evolução do JavaEE para Jakarta EE</span>
-            </div>
-            <div class="hero-image">
-                <img src="assets/img/2025_10_05_IMAGE_001.png" alt="História do JavaEE para Jakarta EE">
-            </div>
-            <h1>A Evolução do JavaEE para Jakarta EE: Impacto e Relevância em Sistemas Bancários e de Varejo</h1>
-            <div class="article-meta">
-                <span class="date">05 de outubro de 2025</span>
-                <span class="category">Java & Arquitetura</span>
-                <span class="author">Christian Mulato</span>
-            </div>
-        </header>
-        
-        <main class="article-content">
-            <section class="intro">
-                <p>O universo do desenvolvimento empresarial Java passou por uma transformação significativa ao longo das últimas duas décadas. O que começou como J2EE (Java 2 Enterprise Edition) evoluiu para JavaEE (Java Enterprise Edition) e agora continua seu legado como Jakarta EE. Esta plataforma empresarial robusta continua sendo a espinha dorsal de inúmeros sistemas críticos, especialmente nos setores bancário e de varejo, onde confiabilidade, segurança e escalabilidade são requisitos fundamentais.</p>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="../index.html">Christian Mulato Dev Blog</a></h1>
+            <nav class="main-nav">
+                <a href="../index.html">Início</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">A Evolução do JavaEE para Jakarta EE: Impacto e Relevância em Sistemas Bancários e de Varejo</h1>
+                    <div class="post-meta">
+                        <time datetime="2025-10-05">05/10/2025</time>
+                        <span class="post-author">Por Christian Mulato</span>
+                    </div>
+                    
+                </header>
                 
-                <p>Neste artigo, exploraremos a jornada histórica desta tecnologia, entenderemos o que motivou sua transição para Jakarta EE, e analisaremos como ela permanece relevante no cenário atual de desenvolvimento de software corporativo, com foco especial em aplicações bancárias e de varejo.</p>
-            </section>
-            
-            <section>
-                <h2>A Trajetória Histórica: Do J2EE ao Jakarta EE</h2>
+                <div class="post-content">
+                    <p><img alt="História do JavaEE para Jakarta EE" class="hero-image" src="assets/img/2025_10_05_IMAGE_001.png"></p>
+                    <p><em>A Evolução do JavaEE para Jakarta EE</em></p>
+
+                    <p>O universo do desenvolvimento empresarial Java passou por uma transformação significativa ao longo das últimas duas décadas. O que começou como J2EE (Java 2 Enterprise Edition) evoluiu para JavaEE (Java Enterprise Edition) e agora continua seu legado como Jakarta EE. Esta plataforma empresarial robusta continua sendo a espinha dorsal de inúmeros sistemas críticos, especialmente nos setores bancário e de varejo, onde confiabilidade, segurança e escalabilidade são requisitos fundamentais.</p>
                 
-                <h3>As Origens: J2EE (1999-2006)</h3>
+                    <p>Neste artigo, exploraremos a jornada histórica desta tecnologia, entenderemos o que motivou sua transição para Jakarta EE, e analisaremos como ela permanece relevante no cenário atual de desenvolvimento de software corporativo, com foco especial em aplicações bancárias e de varejo.</p>
+                
+                    <h2>A Trajetória Histórica: Do J2EE ao Jakarta EE</h2>
+                
+                    <h3>As Origens: J2EE (1999-2006)</h3>
                 <p>No final da década de 1990, a Sun Microsystems reconheceu a necessidade de uma plataforma padronizada para o desenvolvimento de aplicações empresariais Java. Em dezembro de 1999, lançou o J2EE 1.2, que introduziu tecnologias fundamentais como:</p>
                 
                 <ul>
@@ -77,9 +137,7 @@
                 </ul>
                 
                 <p>Esta transição representou mais que uma mudança de nome: significou um novo modelo de governança aberto, permitindo uma evolução mais rápida e alinhada às necessidades do mercado.</p>
-            </section>
             
-            <section>
                 <h2>Jakarta EE Hoje: Componentes e Tecnologias Relevantes</h2>
                 
                 <p>O ecossistema Jakarta EE mantém e evolui diversos componentes que permanecem cruciais para o desenvolvimento corporativo:</p>
@@ -108,9 +166,7 @@
                     <li><strong>MicroProfile</strong>: Extensão para desenvolvimento de microserviços</li>
                     <li><strong>Quarkus</strong>: Framework "Supersonic Subatomic Java" com suporte a Jakarta EE</li>
                 </ul>
-            </section>
             
-            <section>
                 <h2>Persistência do Jakarta EE no Setor Bancário</h2>
                 
                 <p>O setor bancário brasileiro e global continua sendo um dos maiores adotantes das tecnologias Jakarta EE, por razões estratégicas e técnicas:</p>
@@ -132,7 +188,7 @@
                 
                 <p>Os bancos geralmente operam com arquiteturas complexas onde a integridade transacional é crítica:</p>
                 
-                <pre><code class="language-java">@Stateless
+                <pre class="code-block"><code class="language-java">@Stateless
 public class TransferenciaBancariaEJB {
     @PersistenceContext
     private EntityManager em;
@@ -183,9 +239,7 @@ public class TransferenciaBancariaEJB {
                     <p>"Migramos gradualmente nossos sistemas para Jakarta EE, mantendo a compatibilidade com nossos EJBs legados. A mudança de namespace de javax para jakarta foi um desafio, mas os benefícios da governança aberta e do ritmo mais acelerado de inovação compensaram o esforço."</p>
                     <cite>— Arquiteto sênior de um dos maiores bancos do Brasil</cite>
                 </blockquote>
-            </section>
             
-            <section>
                 <h2>Jakarta EE no Varejo Moderno</h2>
                 
                 <p>O setor de varejo também se beneficia das capacidades do Jakarta EE, especialmente em:</p>
@@ -194,7 +248,7 @@ public class TransferenciaBancariaEJB {
                 
                 <p>As grandes redes varejistas precisam integrar lojas físicas, e-commerce, marketplaces e aplicativos móveis:</p>
                 
-                <pre><code class="language-java">@Path("/estoque")
+                <pre class="code-block"><code class="language-java">@Path("/estoque")
 @ApplicationScoped
 public class GerenciadorEstoqueResource {
     
@@ -262,9 +316,7 @@ public class GerenciadorEstoqueResource {
                     <p>"Nossa arquitetura combina microserviços modernos com sistemas core em Jakarta EE. Utilizamos EJBs e JPA para componentes críticos de negócio como processamento de pedidos e gestão financeira, enquanto adotamos APIs REST para integrações externas e front-ends."</p>
                     <cite>— Diretor de tecnologia de uma grande rede varejista brasileira</cite>
                 </blockquote>
-            </section>
             
-            <section>
                 <h2>Desafios e Estratégias de Modernização</h2>
                 
                 <p>Organizações que utilizam Jakarta EE enfrentam desafios específicos na era da computação em nuvem:</p>
@@ -317,7 +369,7 @@ public class GerenciadorEstoqueResource {
                     <li>Utilizar Kubernetes para gerenciamento de aplicações Jakarta EE</li>
                 </ul>
                 
-                <pre><code class="language-java">// Exemplo de modernização com CDI e Configuration
+                <pre class="code-block"><code class="language-java">// Exemplo de modernização com CDI e Configuration
 @ApplicationScoped
 public class ConfiguracoesModernasService {
     
@@ -350,9 +402,7 @@ public class ConfiguracoesModernasService {
         }
     }
 }</code></pre>
-            </section>
-            
-            <section>
+                
                 <h2>O Futuro: Jakarta EE e a Nuvem</h2>
                 
                 <p>O futuro do Jakarta EE está sendo moldado por sua adaptação à computação em nuvem:</p>
@@ -380,7 +430,6 @@ public class ConfiguracoesModernasService {
                 </ul>
             </section>
             
-            <section class="conclusion">
                 <h2>Conclusão</h2>
                 
                 <p>Jakarta EE continua sendo uma tecnologia fundamental no desenvolvimento de software corporativo, especialmente nos setores bancário e de varejo, onde a combinação de robustez, segurança e suporte a transações complexas é essencial. Sua evolução de J2EE para Java EE e agora Jakarta EE demonstra uma notável capacidade de adaptação, mantendo-se relevante em um cenário tecnológico em constante mudança.</p>
@@ -388,9 +437,7 @@ public class ConfiguracoesModernasService {
                 <p>As organizações que investiram pesadamente em JavaEE encontram em Jakarta EE um caminho claro para modernização gradual, permitindo que aproveitem seus investimentos existentes enquanto adotam paradigmas mais modernos. Para os desenvolvedores, compreender esta plataforma continua sendo uma habilidade valiosa, especialmente para aqueles que trabalham com sistemas críticos no setor financeiro e de varejo.</p>
                 
                 <p>A transição para a Eclipse Foundation e o novo nome Jakarta EE marcam não o fim, mas um renascimento desta plataforma empresarial, agora com uma governança mais aberta e um foco renovado em adaptação para os desafios da computação moderna.</p>
-            </section>
-            
-            <footer class="article-footer">
+                
                 <div class="tags">
                     <span class="tag">JavaEE</span>
                     <span class="tag">JakartaEE</span>
@@ -401,53 +448,26 @@ public class ConfiguracoesModernasService {
                 <div class="technologies">
                     <p><strong>Tecnologias mencionadas:</strong> Jakarta EE, Java EE, J2EE, EJB, JPA, CDI, JAX-RS, JTA, WildFly, WebSphere, MicroProfile, Quarkus</p>
                 </div>
-            </footer>
-        </main>
-        
-        <aside class="article-sidebar">
-            <div class="author-info">
-                <img src="../assets/images/profile.jpg" alt="Christian Mulato" class="author-image">
-                <h3>Christian Mulato</h3>
-                <p>Desenvolvedor Java Sênior | Arquitetura de Software | Microsserviços</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/chmulato/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/chmulato" target="_blank">GitHub</a>
+              </div><!-- /.post-content -->
+              
+              <footer class="post-footer">
+                <div class="author-info">
+                  <img src="assets/img/foto_chri.jpg" alt="Christian Mulato" class="author-avatar">
+                  <div class="author-details">
+                    <strong>Christian Mulato</strong>
+                    <p>Desenvolvedor Java e Arquiteto de Software</p>
+                  </div>
                 </div>
-            </div>
-            
-            <div class="toc">
-                <h3>Neste Artigo</h3>
-                <ul>
-                    <li><a href="#a-trajetória-histórica-do-j2ee-ao-jakarta-ee">A Trajetória Histórica: Do J2EE ao Jakarta EE</a></li>
-                    <li><a href="#jakarta-ee-hoje-componentes-e-tecnologias-relevantes">Jakarta EE Hoje: Componentes e Tecnologias</a></li>
-                    <li><a href="#persistência-do-jakarta-ee-no-setor-bancário">Persistência no Setor Bancário</a></li>
-                    <li><a href="#jakarta-ee-no-varejo-moderno">Jakarta EE no Varejo Moderno</a></li>
-                    <li><a href="#desafios-e-estratégias-de-modernização">Desafios e Estratégias de Modernização</a></li>
-                    <li><a href="#o-futuro-jakarta-ee-e-a-nuvem">O Futuro: Jakarta EE e a Nuvem</a></li>
-                    <li><a href="#conclusão">Conclusão</a></li>
-                </ul>
-            </div>
-            
-            <div class="related-articles">
-                <h3>Artigos Relacionados</h3>
-                <ul>
-                    <li><a href="2025_09_08_evolucao_da_linguagem_java.html">Evolução da Linguagem Java</a></li>
-                    <li><a href="2024_04_14_algumas_novidades_do_javaee.html">Algumas Novidades do JavaEE</a></li>
-                    <li><a href="2024_04_07_inversao_de_controle.html">Inversão de Controle</a></li>
-                    <li><a href="2024_03_24_o_desaparecimento_do_ejb.html">O Desaparecimento do EJB</a></li>
-                </ul>
-            </div>
-        </aside>
-    </div>
-    
+              </footer>
+            </article>
+        </div><!-- /.container -->
+    </main>
+
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Christian Mulato - Todos os direitos reservados</p>
-            <p>Powered by GitHub Pages</p>
+            <p>&copy; 2025 Christian Mulato. Todos os direitos reservados.</p>
         </div>
     </footer>
-    
-    <script src="assets/js/syntax-highlighting.js"></script>
-    <script src="assets/js/toc-generator.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

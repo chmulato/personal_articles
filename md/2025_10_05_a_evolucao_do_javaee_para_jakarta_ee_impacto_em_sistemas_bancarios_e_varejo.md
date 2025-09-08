@@ -93,33 +93,36 @@ O setor bancário brasileiro e global continua sendo um dos maiores adotantes da
 
    Os bancos geralmente operam com arquiteturas complexas onde a integridade transacional é crítica:
    
-   ```java
-   @Stateless
-   public class TransferenciaBancariaEJB {
-       @PersistenceContext
-       private EntityManager em;
-       
-       @Resource
-       private UserTransaction utx;
-       
-       @TransactionAttribute(TransactionAttributeType.REQUIRED)
-       public void realizarTransferencia(long contaOrigemId, long contaDestinoId, 
-                                       BigDecimal valor) throws Exception {
-           ContaBancaria origem = em.find(ContaBancaria.class, contaOrigemId);
-           ContaBancaria destino = em.find(ContaBancaria.class, contaDestinoId);
-           
-           // Validações...
-           
-           // Operação atômica garantida pela transação JTA
-           origem.debitar(valor);
-           destino.creditar(valor);
-           
-           // Registra operação para auditoria
-           RegistroTransacao log = new RegistroTransacao(origem, destino, valor);
-           em.persist(log);
-       }
-   }
-   ```
+   
+   > **Exemplo de Código: EJB para Transação Bancária**
+   >
+   > ```java
+   > @Stateless
+   > public class TransferenciaBancariaEJB {
+   >     @PersistenceContext
+   >     private EntityManager em;
+   >     
+   >     @Resource
+   >     private UserTransaction utx;
+   >     
+   >     @TransactionAttribute(TransactionAttributeType.REQUIRED)
+   >     public void realizarTransferencia(long contaOrigemId, long contaDestinoId, 
+   >                                      BigDecimal valor) throws Exception {
+   >         ContaBancaria origem = em.find(ContaBancaria.class, contaOrigemId);
+   >         ContaBancaria destino = em.find(ContaBancaria.class, contaDestinoId);
+   >         
+   >         // Validações...
+   >         
+   >         // Operação atômica garantida pela transação JTA
+   >         origem.debitar(valor);
+   >         destino.creditar(valor);
+   >         
+   >         // Registra operação para auditoria
+   >         RegistroTransacao log = new RegistroTransacao(origem, destino, valor);
+   >         em.persist(log);
+   >     }
+   > }
+   > ```
 
 3. **Integração com Sistemas Legados**
 
@@ -150,51 +153,53 @@ O setor de varejo também se beneficia das capacidades do Jakarta EE, especialme
 
 As grandes redes varejistas precisam integrar lojas físicas, e-commerce, marketplaces e aplicativos móveis:
 
-```java
-@Path("/estoque")
-@ApplicationScoped
-public class GerenciadorEstoqueResource {
-    
-    @Inject
-    private EstoqueService service;
-    
-    @GET
-    @Path("/{produtoId}/disponibilidade")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response verificarDisponibilidade(@PathParam("produtoId") long produtoId,
-                                           @QueryParam("lojaId") Long lojaId) {
-        DisponibilidadeProduto disponibilidade;
-        
-        if (lojaId != null) {
-            // Verifica estoque na loja específica
-            disponibilidade = service.verificarDisponibilidadeLoja(produtoId, lojaId);
-        } else {
-            // Verifica estoque em todas as lojas e centro de distribuição
-            disponibilidade = service.verificarDisponibilidadeGlobal(produtoId);
-        }
-        
-        return Response.ok(disponibilidade).build();
-    }
-    
-    @POST
-    @Path("/reserva")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response reservarProduto(ReservaProdutoRequest request) {
-        // Lógica transacional para reserva de produtos
-        ReservaProduto reserva = service.reservarProduto(
-            request.getProdutoId(),
-            request.getQuantidade(),
-            request.getLojaId(),
-            request.getClienteId()
-        );
-        
-        return Response.status(Response.Status.CREATED)
-                    .entity(reserva)
-                    .build();
-    }
-}
-```
+> **Exemplo de Código: API REST para Gerenciamento de Estoque no Varejo**
+>
+> ```java
+> @Path("/estoque")
+> @ApplicationScoped
+> public class GerenciadorEstoqueResource {
+>     
+>     @Inject
+>     private EstoqueService service;
+>     
+>     @GET
+>     @Path("/{produtoId}/disponibilidade")
+>     @Produces(MediaType.APPLICATION_JSON)
+>     public Response verificarDisponibilidade(@PathParam("produtoId") long produtoId,
+>                                            @QueryParam("lojaId") Long lojaId) {
+>         DisponibilidadeProduto disponibilidade;
+>         
+>         if (lojaId != null) {
+>             // Verifica estoque na loja específica
+>             disponibilidade = service.verificarDisponibilidadeLoja(produtoId, lojaId);
+>         } else {
+>             // Verifica estoque em todas as lojas e centro de distribuição
+>             disponibilidade = service.verificarDisponibilidadeGlobal(produtoId);
+>         }
+>         
+>         return Response.ok(disponibilidade).build();
+>     }
+>     
+>     @POST
+>     @Path("/reserva")
+>     @Consumes(MediaType.APPLICATION_JSON)
+>     @Produces(MediaType.APPLICATION_JSON)
+>     public Response reservarProduto(ReservaProdutoRequest request) {
+>         // Lógica transacional para reserva de produtos
+>         ReservaProduto reserva = service.reservarProduto(
+>             request.getProdutoId(),
+>             request.getQuantidade(),
+>             request.getLojaId(),
+>             request.getClienteId()
+>         );
+>         
+>         return Response.status(Response.Status.CREATED)
+>                     .entity(reserva)
+>                     .build();
+>     }
+> }
+> ```
 
 ### Gerenciamento de Grande Volume de Dados
 
@@ -254,41 +259,43 @@ As organizações têm adotado abordagens pragmáticas para evoluir seus sistema
    - Empacotar aplicações Jakarta EE em contêineres
    - Utilizar Kubernetes para gerenciamento de aplicações Jakarta EE
 
-```java
-// Exemplo de modernização com CDI e Configuration
-@ApplicationScoped
-public class ConfiguracoesModernasService {
-    
-    @Inject
-    @ConfigProperty(name = "service.timeout", defaultValue = "30000")
-    private long timeout;
-    
-    @Inject
-    @ConfigProperty(name = "feature.nova-precificacao.ativa", defaultValue = "false")
-    private boolean novaPrecificacaoAtiva;
-    
-    @Inject
-    private Logger logger;
-    
-    @Inject
-    private MetricsRegistry metrics;
-    
-    public Preco calcularPreco(Produto produto, Cliente cliente) {
-        Timer.Context timerContext = metrics.timer("calcular-preco").time();
-        
-        try {
-            if (novaPrecificacaoAtiva) {
-                logger.info("Usando novo algoritmo de precificação para {}", produto.getSku());
-                return algoritmoNovoPrecificacao.calcular(produto, cliente);
-            } else {
-                return algoritmoLegadoPrecificacao.calcular(produto, cliente);
-            }
-        } finally {
-            timerContext.stop();
-        }
-    }
-}
-```
+> **Exemplo de Código: Modernização com MicroProfile Config e CDI**
+>
+> ```java
+> // Exemplo de modernização com CDI e Configuration
+> @ApplicationScoped
+> public class ConfiguracoesModernasService {
+>     
+>     @Inject
+>     @ConfigProperty(name = "service.timeout", defaultValue = "30000")
+>     private long timeout;
+>     
+>     @Inject
+>     @ConfigProperty(name = "feature.nova-precificacao.ativa", defaultValue = "false")
+>     private boolean novaPrecificacaoAtiva;
+>     
+>     @Inject
+>     private Logger logger;
+>     
+>     @Inject
+>     private MetricsRegistry metrics;
+>     
+>     public Preco calcularPreco(Produto produto, Cliente cliente) {
+>         Timer.Context timerContext = metrics.timer("calcular-preco").time();
+>         
+>         try {
+>             if (novaPrecificacaoAtiva) {
+>                 logger.info("Usando novo algoritmo de precificação para {}", produto.getSku());
+>                 return algoritmoNovoPrecificacao.calcular(produto, cliente);
+>             } else {
+>                 return algoritmoLegadoPrecificacao.calcular(produto, cliente);
+>             }
+>         } finally {
+>             timerContext.stop();
+>         }
+>     }
+> }
+> ```
 
 ## O Futuro: Jakarta EE e a Nuvem
 
