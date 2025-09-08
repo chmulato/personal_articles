@@ -12,6 +12,8 @@ Este documento contém todos os artigos disponíveis no repositório, organizado
 
 ### 58. [Decisões Técnicas que a IA não pode Tomar: Lições de Desenvolvimento em Visão Computacional](md/2025_09_07_decisoes_tecnicas_que_a_ia_nao_pode_tomar_licoes_de_desenvolvimento_em_visao_computacional.md) - 07/09/2025
 
+### 57. [A Escolha que Define o Futuro: Java Enterprise vs Node.js em Exchanges](md/2025_08_31_a_escolha_que_define_o_futuro_java_vs_node_js.md) - 31/08/2025
+
 ### 56. [CSOnline Final: Gestão CD - Da Experiência Real ao MVP Enterprise Moderno](md/2025_08_24_csonline_final_gestao_cd_da_experiencia_real_ao_mvp_enterprise_moderno.md) - 24/08/2025
 
 ### 55. [Do Caos Manual à Confiança Automatizada](md/2025_08_20_do_caus_manual_a_confianca_autamatizada.md) - 20/08/2025
