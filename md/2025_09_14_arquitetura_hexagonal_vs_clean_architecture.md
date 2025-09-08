@@ -6,7 +6,7 @@
 
 Há alguns anos, enquanto trabalhava como desenvolvedor Java sênior na RD Saúde, enfrentei um desafio comum em projetos de microserviços: como manter o código limpo, testável e independente de frameworks externos, especialmente em um ambiente onde as mudanças nos requisitos eram frequentes e a integração com sistemas legados era inevitável.
 
-Naquele projeto, estávamos construindo um sistema de gestão de pacientes e agendamentos médicos, composto por vários microserviços. Inicialmente, adotamos uma abordagem mais tradicional com Spring Boot, mas logo percebemos os problemas: dependências acopladas, testes difíceis de isolar e dificuldades para trocar provedores de infraestrutura (como bancos de dados ou filas de mensagens) sem grandes refatorações.
+Naquele projeto, estávamos construindo um sistema de gestão de produtos e varejo de medicamentos, composto por vários microserviços. Inicialmente, adotamos uma abordagem mais tradicional com Spring Boot, mas logo percebemos os problemas: dependências acopladas, testes difíceis de isolar e dificuldades para trocar provedores de infraestrutura (como bancos de dados ou filas de mensagens) sem grandes refatorações.
 
 Foi aí que introduzimos a **Arquitetura Hexagonal**, também conhecida como Ports and Adapters, combinada com o conceito de **chassis** (um framework interno que encapsula as tecnologias transversais). Esse chassis nos permitiu abstrair camadas como persistência, comunicação externa e logging, tornando os microserviços mais modulares e resilientes.
 
