@@ -1,8 +1,12 @@
 # Lista de Artigos
 
-Este documento contém todos os artigos disponíveis no repositório, organizados em ordem cronológica decrescente (do mais recente para o mais antigo). A numeração indica a posição na cronologia, onde o número 1 é o artigo mais antigo e o número 61 é o mais recente.
+Este documento contém todos os artigos disponíveis no repositório, organizados em ordem cronológica decrescente (do mais recente para o mais antigo). A numeração indica a posição na cronologia, onde o número 1 é o artigo mais antigo e o número 63 é o mais recente.
 
 ## 2025
+
+### 63. [A Evolução do JavaEE para Jakarta EE: Impacto em Sistemas Bancários e de Varejo](md/2025_10_05_a_evolucao_do_javaee_para_jakarta_ee_impacto_em_sistemas_bancarios_e_varejo.md) - 05/10/2025
+
+### 62. [Inovação em Gestão de Conteúdo: Python para Blogs Automatizados](md/2025_09_09_inovacao_em_gestao_de_conteudo_python_para_blogs_automatizados.md) - 09/09/2025
 
 ### 61. [Hub Local de Integração para Pequenas Cidades](md/2025_09_28_hub_local_de_integracao_para_pequenas_cidades.md) - 28/09/2025
 

@@ -1,0 +1,37 @@
+Prompt para Geração de Imagem: "Evolução do JavaEE para Jakarta EE"
+
+Especificações técnicas:
+- Resolução: 1920x1080 pixels
+- Proporção: 16:9
+- Formato: JPG/PNG de alta qualidade
+- Estilo: Ilustração técnica moderna e profissional
+
+Descrição da imagem:
+Uma ilustração moderna que representa a evolução histórica do Java Enterprise Edition, desde o J2EE até o Jakarta EE atual. A imagem deve mostrar uma linha do tempo ou processo de transformação com os diferentes estágios da plataforma.
+
+Elementos principais a incluir:
+1. Representação visual de uma linha do tempo de 1999 a 2025
+2. Três estágios principais claramente identificados:
+   - J2EE (1999-2006) com o logo original da Sun Microsystems
+   - Java EE (2006-2017) com o logo da Oracle/Java
+   - Jakarta EE (2017-presente) com o logo atual da Eclipse Foundation
+3. Ícones representando os componentes principais (EJB, Servlets, JPA, CDI, etc.)
+4. Transição visual que representa a mudança de namespace de javax.* para jakarta.*
+5. Representação sutil de aplicações bancárias e de varejo no plano de fundo
+
+Texto a incluir (em português correto):
+- "A Evolução do Java Enterprise Edition"
+- Rótulos: "J2EE (1999-2006)", "JavaEE (2006-2017)", "Jakarta EE (2017-Presente)"
+
+Elementos visuais adicionais:
+- Símbolos de instituições financeiras e varejo sutilmente integrados
+- Cores: tons de azul (Java), verde (Eclipse) e laranja (Jakarta)
+- Código Java sutil no plano de fundo mostrando a evolução da sintaxe (de XML para anotações)
+
+Elementos a evitar:
+- Representações excessivamente técnicas ou confusas
+- Excesso de textos ou elementos que dificultem a compreensão
+- Qualquer erro gramatical no texto em português
+
+Contexto e uso:
+Esta imagem será usada como a imagem principal (hero image) de um artigo técnico sobre a evolução do Java EE para Jakarta EE e seu uso atual em sistemas bancários e de varejo no Brasil. A imagem deve transmitir continuidade e evolução, não ruptura.
