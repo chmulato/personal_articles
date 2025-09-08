@@ -18,7 +18,7 @@ Este documento contém todos os artigos disponíveis no repositório, organizado
 
 ### 55. [Do Caos Manual à Confiança Automatizada](md/2025_08_20_do_caus_manual_a_confianca_autamatizada.md) - 20/08/2025
 
-### 54. [CSOnline Final: Gestão CD - Da Experiência Real ao MVP Enterprise Moderno](md/2025_08_17_csonline_final_gestao_cd_da_experiencia_real_ao_mvp_enterprise_mderno.md) - 17/08/2025
+### 54. [O Paradoxo do Desenvolvedor Brasileiro](md/2025_08_17_o_paradoxo_do_desenvolvedor_brasileiro.md) - 17/08/2025
 
 ### 53. [CSOnline Parte IV: Gestão CD - Marco de Documentação Interativa Alcançado](md/2025_08_12_csonline_parte_iv_gestao_cd_marco_de_documentacao_interativa_alcancado.md) - 12/08/2025
 
