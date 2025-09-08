@@ -6,6 +6,18 @@
 
 Após meses de desenvolvimento, chegamos à conclusão do projeto CSOnline como MVP. Neste caminho, acumulamos conhecimento valioso: **90 tentativas falharam** - mas encontramos as 10 que funcionam; **conhecemos os limites** da tecnologia atual; **sabemos explicar** por que certas coisas falham; e **temos cicatrizes** de projetos reais.
 
+## CSOnline: Gestão de CD Como Deve Ser
+
+### O Que Oferecemos
+
+- **Cadastros completos** - Produtos, fornecedores, clientes
+- **Controle de estoque** - Entradas, saídas, ajustes
+- **Pedidos integrados** - Do registro à entrega
+- **Relatórios gerenciais** - Tomada de decisão
+- **API documentada** - Integrações facilitadas
+- **Segurança robusta** - Proteção de dados
+- **Rastreabilidade total** - Auditoria completa
+
 ---
 
 ## MVP vs. Produto Final: Expectativas Realistas
@@ -175,6 +187,17 @@ Todo nosso trabalho está **públicamente verificável**. Não prometemos - **mo
 **Não vendemos sonhos. Construímos soluções. Com transparência.**
 
 #EnterpriseDevelopment #MVP #RealExperience #OpenSource #TransparenciaTecnologica #DesenvolvimentoReal #JavakartaEE #Vue3 #LogisticsTech #SoftwareHonesto
+
+Repositório GitHub: [https://github.com/chmulato/csonline](https://github.com/chmulato/csonline)
+
+---
+
+**Christian Mulato**  
+Desenvolvedor Java Sênior | Especialista em Back-end Jakarta EE • Spring Boot • REST APIs
+
+👉 Interessado em testar o CSOnline? Entre em contato.  
+🔄 Se este projeto faz sentido para você, compartilhe para ampliar o alcance.  
+✅ Siga-me para mais projetos e reflexões sobre desenvolvimento enterprise.
 
 Repositório GitHub: [**https://github.com/chmulato/csonline**](https://github.com/chmulato/csonline)
 
