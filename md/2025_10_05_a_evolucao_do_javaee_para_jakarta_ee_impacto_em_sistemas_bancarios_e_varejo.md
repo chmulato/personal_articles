@@ -2,7 +2,7 @@
 
 *Por Christian Mulato | 05 de Outubro de 2025 | Categoria: Java & Arquitetura*
 
-![História do JavaEE para Jakarta EE](assets/img/2025_10_05_IMAGE_001.png)
+![História do JavaEE para Jakarta EE](/articles/assets/img/2025_10_05_IMAGE_001.png)
 
 ## Introdução
 
