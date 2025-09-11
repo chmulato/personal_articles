@@ -6,7 +6,7 @@ Este documento contém todos os artigos disponíveis no repositório, organizado
 
 ### 62. [A Evolução do JavaEE para Jakarta EE: Impacto em Sistemas Bancários e de Varejo](md/2025_10_05_a_evolucao_do_javaee_para_jakarta_ee_impacto_em_sistemas_bancarios_e_varejo.md) - 05/10/2025
 
-### 61. [Hub Local de Integração para Pequenas Cidades](md/2025_09_28_hub_local_de_integracao_para_pequenas_cidades.md) - 28/09/2025
+### 61. [Hub Central de Pedidos: Solução de Integração para E-commerce](md/2025_09_28_hub_local_de_integracao_para_pequenas_cidades.md) - 28/09/2025
 
 ### 60. [Hub de Integração de APIs para Varejo Delivery em Java](md/2025_09_21_hub_de_integracao_de_apis_para_varejo_delivery_em_java.md) - 21/09/2025
 
