@@ -1,8 +1,10 @@
 # Lista de Artigos
 
-Este documento contém todos os artigos disponíveis no repositório, organizados em ordem cronológica decrescente (do mais recente para o mais antigo). A numeração indica a posição na cronologia, onde o número 1 é o artigo mais antigo e o número 62 é o mais recente.
+Este documento contém todos os artigos disponíveis no repositório, organizados em ordem cronológica decrescente (do mais recente para o mais antigo). A numeração indica a posição na cronologia, onde o número 1 é o artigo mais antigo e o número 63 é o mais recente.
 
 ## 2025
+
+### 63. [Hub Town: de uma segunda-feira caótica a uma arquitetura confiável](md/2025_10_12_hub_town_e_suas_tecnologias.md) - 12/10/2025
 
 ### 62. [A Evolução do JavaEE para Jakarta EE: Impacto em Sistemas Bancários e de Varejo](md/2025_10_05_a_evolucao_do_javaee_para_jakarta_ee_impacto_em_sistemas_bancarios_e_varejo.md) - 05/10/2025
 
