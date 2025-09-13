@@ -72,7 +72,7 @@ A plataforma pode evoluir para um **ecossistema completo de e-commerce**: integr
 Se você gerencia vendas em múltiplos marketplaces e busca **eficiência operacional através da tecnologia**, esta solução foi desenvolvida pensando em você. O **Hub Central de Pedidos** já está funcional e pronto para demonstração.
 
 **Experimente agora mesmo:**
-- Clone o repositório: `https://github.com/chmulato/hub_town`
+- Clone o repositório: [https://github.com/chmulato/hub_town](https://github.com/chmulato/hub_town)
 - Execute: `.\start.ps1`
 - Acesse: `http://localhost:5173`
 
