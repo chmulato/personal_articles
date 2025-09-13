@@ -96,7 +96,7 @@ Se quiser mergulhar nos detalhes, os documentos de apoio trazem a vista completa
 ## Recursos e referências
 
 - Repositório (código-fonte): https://github.com/chmulato/hub_town
-- Artigo 1 (contexto e visão inicial): https://www.caracore.com.br/personal/articles/2025_09_28_hub_local_de_integracao_para_pequenas_cidades.html
+- Artigo 1 (contexto e visão inicial): articles/2025_09_28_hub_local_de_integracao_para_pequenas_cidades.html
 
 ## Dicionário técnico (para executivos)
 
