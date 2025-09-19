@@ -1,8 +1,10 @@
 # Lista de Artigos
 
-Este documento contém todos os artigos disponíveis no repositório, organizados em ordem cronológica decrescente (do mais recente para o mais antigo). A numeração indica a posição na cronologia, onde o número 1 é o artigo mais antigo e o número 63 é o mais recente.
+Este documento contém todos os artigos disponíveis no repositório, organizados em ordem cronológica decrescente (do mais recente para o mais antigo). A numeração indica a posição na cronologia, onde o número 1 é o artigo mais antigo e o número 64 é o mais recente.
 
 ## 2025
+
+### 64. [Modernização dirigindo o legado: REST sobre SOAP com baixo atrito](md/2025_10_19_modernizacao_dirigindo_o_legado_rest_sobre_soap_com_baixo_atrito.md) - 19/10/2025
 
 ### 63. [Hub Town: de uma segunda-feira caótica a uma arquitetura confiável](md/2025_10_12_hub_town_e_suas_tecnologias.md) - 12/10/2025
 
