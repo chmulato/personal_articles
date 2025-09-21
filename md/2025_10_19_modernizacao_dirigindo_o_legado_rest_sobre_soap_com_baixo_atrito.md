@@ -1,4 +1,4 @@
-![Modernização dirigindo o legado](assets/img/2025_10_19_IMAGE_001.png)
+![Modernização dirigindo o legado](/articles/assets/img/2025_10_19_IMAGE_001.png)
 <sub>Figura — Modernização dirigindo o legado.</sub>
 
 # Modernização dirigindo o legado: REST sobre SOAP com baixo atrito

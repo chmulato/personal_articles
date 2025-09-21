@@ -1,6 +1,6 @@
 # Hub Town: de uma segunda-feira caótica a uma arquitetura confiável
 
-![Arquitetura de ingestão e leitura do Hub Town](assets/img/2025_10_12_IMAGE_001.png)
+![Arquitetura de ingestão e leitura do Hub Town](/articles/assets/img/2025_10_12_IMAGE_001.png)
 <sub>Figura — Arquitetura de ingestão (Spring Boot) + mensageria (RabbitMQ) + persistência (PostgreSQL) + leitura/Frontend.</sub>
 
 Quando o comércio local começa a vender em múltiplos marketplaces, a segunda-feira não perdoa: números que não batem, relatórios que chegam tarde, decisões que dependem de dados que mudam a cada F5. O Hub Town nasceu para transformar esse cenário em rotina previsível: ingestão resiliente, leitura consistente, KPIs confiáveis.

@@ -1,8 +1,10 @@
 # Lista de Artigos
 
-Este documento contém todos os artigos disponíveis no repositório, organizados em ordem cronológica decrescente (do mais recente para o mais antigo). A numeração indica a posição na cronologia, onde o número 1 é o artigo mais antigo e o número 64 é o mais recente.
+Este documento contém todos os artigos disponíveis no repositório, organizados em ordem cronológica decrescente (do mais recente para o mais antigo). A numeração indica a posição na cronologia, onde o número 1 é o artigo mais antigo e o número 65 é o mais recente.
 
 ## 2025
+
+### 65. [Do código ao valor em minutos: automação que acelera entregas e reduz riscos](md/2025_10_26_do_codigo_ao_valor_em_minutos_automacao_que_acelera_entregas_e_reduz_riscos.md) - 26/10/2025
 
 ### 64. [Modernização dirigindo o legado: REST sobre SOAP com baixo atrito](md/2025_10_19_modernizacao_dirigindo_o_legado_rest_sobre_soap_com_baixo_atrito.md) - 19/10/2025
 
