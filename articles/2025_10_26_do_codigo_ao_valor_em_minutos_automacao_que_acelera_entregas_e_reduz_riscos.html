@@ -103,7 +103,8 @@
         <p>Saiba mais e acesse o código-fonte:</p>
         <p><a href="https://github.com/chmulato/app_jakarta" target="_blank" rel="noopener noreferrer">chmulato/app_jakarta</a></p>
 
-        <h2>Do build ao login em minutos: nosso fluxo de deploy automatizado com Python, Jakarta EE, Tomcat e WildFly</h2>
+  <section class="technical-section">
+  <h2>Do build ao login em minutos: nosso fluxo de deploy automatizado com Python, Jakarta EE, Tomcat e WildFly</h2>
         <p>Nos últimos meses, investimos tempo para tornar o ciclo “build → deploy → validar” do nosso projeto Java com Jakarta EE não apenas mais rápido, mas também previsível, reprodutível e confiável em ambientes de desenvolvimento e teste. O resultado é um orquestrador em Python (<code>main.py</code>) que, com um único comando, faz o build do WAR, configura datasources por servidor, executa deploy “frio” no Tomcat e “quente” no WildFly, garante o banco de dados no ar e valida o login da aplicação tanto por HTTP quanto via navegador headless.</p>
 
         <p>Publicaremos este relato no dia 26 de outubro de 2025 porque acreditamos que automatizar o caminho “da estação de trabalho ao servidor de aplicação” é a forma mais direta de reduzir atrito entre código e feedback, acelerar iterações e aumentar a qualidade.</p>
@@ -128,7 +129,9 @@
           <li>Logs e diagnósticos — Log diário com nome padrão <code>YYYY_MM_DD_nome.log</code>. Heurísticas de logs do container para detectar bind do JNDI ou falhas de driver. Validação HTTP opcional de “status JNDI/DB”, se a app expõe algum endpoint de saúde.</li>
         </ul>
 
-        <h3>Decisões técnicas que fizeram a diferença</h3>
+  <div class="callout"><strong>Dica:</strong> Use a opção 12 (E2E) para validar "fim a fim" em um único comando. Ela garante ambiente limpo, banco disponível, WAR implantado e login verificado.</div>
+
+  <h3>Decisões técnicas que fizeram a diferença</h3>
         <ul>
           <li>Context path padronizado dentro do WAR — Usamos <code>META-INF/context.xml</code> para declarar o caminho da aplicação, garantindo consistência entre os servidores.</li>
           <li>JNDI por container, sem gambiarras — WildFly: <code>java:/jdbc/PostgresDS</code> (non-jta-data-source em <code>persistence.xml</code>). Tomcat: <code>java:comp/env/jdbc/PostgresDS</code> com <code>Resource</code> e <code>resource-ref</code> apropriados.</li>
@@ -137,8 +140,10 @@
           <li>Deploys mais seguros — Cold deploy no Tomcat evita “deployment a quente” incompleto. Reinício do WildFly quando mexemos no <code>standalone.xml</code> ou nos módulos, garantindo que a nova config seja aplicada.</li>
         </ul>
 
-        <h3>Experiência do desenvolvedor</h3>
+  <h3>Experiência do desenvolvedor</h3>
         <p>Tudo converge na opção 12: uma execução não interativa que faz o “fim a fim” e termina dizendo, com evidências, se seu build realmente subiu e logou. É o tipo de feedback que elimina idas e vindas manuais, e dá confiança para focar no que importa: evolução do produto.</p>
+
+  <div class="callout"><strong>Nota:</strong> Se algo falhar, confira os logs gerados (padrão <code>YYYY_MM_DD_nome.log</code>) e os logs do container (bind de JNDI/driver). Eles mostram exatamente onde atuar.</div>
 
         <p>Principais checks feitos automaticamente:</p>
         <ul>
@@ -184,7 +189,8 @@
         </ul>
         <p>Me chame. Adoro falar sobre isso.</p>
 
-        <p><strong>Hashtags</strong>: #JakartaEE #Tomcat #WildFly #Java #Python #DevOps #Automation #PostgreSQL #Playwright #DX #DeveloperExperience #E2E #Quality #Testing</p>
+  </section>
+  <p><strong>Hashtags</strong>: #JakartaEE #Tomcat #WildFly #Java #Python #DevOps #Automation #PostgreSQL #Playwright #DX #DeveloperExperience #E2E #Quality #Testing</p>
       </div>
       <footer class="post-footer">
         <div class="author-info">
