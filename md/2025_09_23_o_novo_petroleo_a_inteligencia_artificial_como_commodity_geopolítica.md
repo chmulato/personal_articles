@@ -1,6 +1,6 @@
 ## O Novo Petróleo: A Inteligência Artificial como Commodity Geopolítica
 
-![Imagem principal do artigo](assets/img/2025_09_23_IMAGE_001.png)
+![Imagem principal do artigo](/articles/assets/img/2025_09_23_IMAGE_001.png)
 <sub><em>Figura — Antenas parabólicas como ouvidos cósmicos, simbolizando a busca por sinais no universo e a nova corrida global pelo poder computacional.</em></sub>
 
 A imagem de antenas parabólicas gigantes, como ouvidos cósmicos apontados para o infinito, evoca uma das mais profundas aspirações humanas: a busca por vida extraterrestre. Desde os primórdios do Projeto SETI, a análise de sinais de rádio em busca de padrões anômalos exigiu um poder computacional monumental. No entanto, o avanço meteórico da Inteligência Artificial (IA) e sua crescente comoditização não apenas revoluciona essa milenar jornada, mas redefine o próprio cenário geopolítico, transformando o acesso ao poder de processamento em uma nova e estratégica forma de domínio global.
