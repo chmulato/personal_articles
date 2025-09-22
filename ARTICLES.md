@@ -1,18 +1,20 @@
 # Lista de Artigos
 
-Este documento contém todos os artigos disponíveis no repositório, organizados em ordem cronológica decrescente (do mais recente para o mais antigo). A numeração indica a posição na cronologia, onde o número 1 é o artigo mais antigo e o número 65 é o mais recente.
+Este documento contém todos os artigos disponíveis no repositório, organizados em ordem cronológica decrescente (do mais recente para o mais antigo). A numeração indica a posição na cronologia, onde o número 1 é o artigo mais antigo e o número 66 é o mais recente.
 
 ## 2025
 
-### 65. [Do código ao valor em minutos: automação que acelera entregas e reduz riscos](md/2025_10_26_do_codigo_ao_valor_em_minutos_automacao_que_acelera_entregas_e_reduz_riscos.md) - 26/10/2025
+### 66. [Do código ao valor em minutos: automação que acelera entregas e reduz riscos](md/2025_10_26_do_codigo_ao_valor_em_minutos_automacao_que_acelera_entregas_e_reduz_riscos.md) - 26/10/2025
 
-### 64. [Modernização dirigindo o legado: REST sobre SOAP com baixo atrito](md/2025_10_19_modernizacao_dirigindo_o_legado_rest_sobre_soap_com_baixo_atrito.md) - 19/10/2025
+### 65. [Modernização dirigindo o legado: REST sobre SOAP com baixo atrito](md/2025_10_19_modernizacao_dirigindo_o_legado_rest_sobre_soap_com_baixo_atrito.md) - 19/10/2025
 
-### 63. [Hub Town: de uma segunda-feira caótica a uma arquitetura confiável](md/2025_10_12_hub_town_e_suas_tecnologias.md) - 12/10/2025
+### 64. [Hub Town: de uma segunda-feira caótica a uma arquitetura confiável](md/2025_10_12_hub_town_e_suas_tecnologias.md) - 12/10/2025
 
-### 62. [A Evolução do JavaEE para Jakarta EE: Impacto em Sistemas Bancários e de Varejo](md/2025_10_05_a_evolucao_do_javaee_para_jakarta_ee_impacto_em_sistemas_bancarios_e_varejo.md) - 05/10/2025
+### 63. [A Evolução do JavaEE para Jakarta EE: Impacto em Sistemas Bancários e de Varejo](md/2025_10_05_a_evolucao_do_javaee_para_jakarta_ee_impacto_em_sistemas_bancarios_e_varejo.md) - 05/10/2025
 
-### 61. [Hub Central de Pedidos: Solução de Integração para E-commerce](md/2025_09_28_hub_local_de_integracao_para_pequenas_cidades.md) - 28/09/2025
+### 62. [Hub Central de Pedidos: Solução de Integração para E-commerce](md/2025_09_28_hub_local_de_integracao_para_pequenas_cidades.md) - 28/09/2025
+
+### 61. [O Novo Petróleo: A Inteligência Artificial como Commodity Geopolítica](md/2025_09_23_o_novo_petroleo_a_inteligencia_artificial_como_commodity_geopolítica.md) - 23/09/2025
 
 ### 60. [Hub de Integração de APIs para Varejo Delivery em Java](md/2025_09_21_hub_de_integracao_de_apis_para_varejo_delivery_em_java.md) - 21/09/2025
 
