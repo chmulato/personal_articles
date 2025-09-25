@@ -345,6 +345,88 @@ body {
     border-right: 1px solid var(--border-color);
 }
 
+/* === CHALKBOARD (quadro de lousa) para códigos e tabelas === */
+.chalkboard {
+    position: relative;
+    margin: 1.5rem 0;
+    padding: 18px;
+    border-radius: 14px;
+    border: 12px solid #6b4f2a; /* moldura de madeira */
+    background: linear-gradient(145deg, #0f2f28 0%, #183d34 60%, #0f2f28 100%);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.25), inset 0 0 60px rgba(0,0,0,0.25);
+    overflow-x: auto;
+}
+
+.chalkboard::before {
+    /* efeito giz sutil */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(1200px 200px at 10% 10%, rgba(255,255,255,0.06), transparent 60%),
+                radial-gradient(800px 140px at 80% 30%, rgba(255,255,255,0.04), transparent 55%),
+                radial-gradient(600px 120px at 40% 80%, rgba(255,255,255,0.03), transparent 50%);
+    pointer-events: none;
+    border-radius: 2px;
+}
+
+.chalkboard pre {
+    background: transparent;
+    color: #eef7f2;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    line-height: 1.7;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.08), -0.5px 0.5px 0 rgba(255,255,255,0.06);
+    white-space: pre;
+}
+
+.chalkboard pre code {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 1rem;
+}
+
+.chalkboard .chalk-caption {
+    color: #d7ede4;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Tabelas em estilo quadro de lousa (suporta <pre> com tabela ASCII e <table>) */
+.chalkboard-table pre,
+.chalkboard-table table {
+    width: 100%;
+}
+
+.chalkboard-table table {
+    border-collapse: collapse;
+    color: #eef7f2;
+}
+
+.chalkboard-table table th,
+.chalkboard-table table td {
+    border: 1px dashed rgba(255,255,255,0.25);
+    padding: 8px 10px;
+    text-align: left;
+}
+
+.chalkboard-table table th {
+    font-weight: 700;
+}
+
+@media (max-width: 720px) {
+    .chalkboard {
+        border-width: 10px;
+        padding: 14px;
+    }
+    .chalkboard pre code {
+        font-size: 0.95rem;
+    }
+}
+
 .article-content h1 {
     font-size: 2.25rem;
     font-weight: 700;
