@@ -60,6 +60,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Filtros de artigos
     function initializeFilters() {
+        // Utilitário para gerar slugs sem acentos/símbolos
+        const slugify = (str) => {
+            if (!str) return '';
+            return str
+                .toString()
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/\p{Diacritic}+/gu, '') // remove acentos
+                .replace(/&/g, ' e ')
+                .replace(/[^a-z0-9\s-]/g, '')
+                .trim()
+                .replace(/\s+/g, '-')
+                .replace(/-+/g, '-');
+        };
         const categoryFilter = document.getElementById('categoryFilter');
         const searchInput = document.getElementById('searchInput');
         const articles = document.querySelectorAll('.article-card');
@@ -67,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Filtro por categoria
         if (categoryFilter) {
             categoryFilter.addEventListener('change', function() {
-                const selectedCategory = this.value.toLowerCase();
+                const selectedCategory = slugify(this.value);
                 filterArticles(selectedCategory, searchInput ? searchInput.value.toLowerCase() : '');
             });
         }
@@ -76,18 +90,20 @@ document.addEventListener('DOMContentLoaded', function() {
         if (searchInput) {
             searchInput.addEventListener('input', function() {
                 const searchTerm = this.value.toLowerCase();
-                const selectedCategory = categoryFilter ? categoryFilter.value.toLowerCase() : '';
+                const selectedCategory = categoryFilter ? slugify(categoryFilter.value) : '';
                 filterArticles(selectedCategory, searchTerm);
             });
         }
         
         function filterArticles(category, searchTerm) {
             articles.forEach(article => {
-                const articleCategory = article.querySelector('.category').textContent.toLowerCase();
+                const categoryEl = article.querySelector('.category');
+                const articleCategory = categoryEl ? categoryEl.textContent.toLowerCase() : '';
+                const articleSlug = article.dataset.categorySlug || slugify(articleCategory);
                 const articleTitle = article.querySelector('.article-title').textContent.toLowerCase();
                 const articleDescription = article.querySelector('.article-description').textContent.toLowerCase();
                 
-                const matchesCategory = !category || category === 'todas' || articleCategory.includes(category);
+                const matchesCategory = !category || category === 'todas' || articleSlug.includes(category);
                 const matchesSearch = !searchTerm || 
                     articleTitle.includes(searchTerm) || 
                     articleDescription.includes(searchTerm);
